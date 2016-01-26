@@ -2,21 +2,53 @@ var path = require('path');
 var webpack = require('webpack');
  
 module.exports = {
-  context: __dirname + '/app',
-  entry: {javascript: './js/app.js',
-		html: './index.html'},
-  output: { path: __dirname + '/dist' , filename: 'bundle.js' },
+  entry: './app/js/app.js',
+  output: {
+    path: __dirname + '/dist',
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
   module: {
     loaders: [
       {
         test: /.jsx?$/,
         loaders: ['react-hot', 'babel'],
         exclude: /node_modules/,
+        include: __dirname
       },
       {
-       test: /\.html$/,
-       loader: 'file?name=[name].[ext]'
-      }
+        test: /\.css$/,
+        loaders: [
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]',
+          'postcss',
+        ],
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style',
+          'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:5]',
+          'postcss',
+          'sass',
+        ],
+      },
+      {
+        test: /\.(woff2?|ttf|eot|svg)$/,
+        loaders: [ 'url?limit=10000' ],
+      },
     ]
   },
+  devServer: {
+    historyApiFallback: true
+  },
+  devtool: 'source-map',
+  plugins: [
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      Tether: "Tether"
+    })
+  ]
 };

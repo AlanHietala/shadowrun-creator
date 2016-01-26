@@ -66,3 +66,28 @@ export function savePriorities(metatypePriority, attributePriority, magicOrReson
 		}
 	}
 }
+export function setPriorityForPriorityName(priorityName, priority) {
+
+	let action = null;
+	switch(priorityName) {
+		case 'attributes':
+			action = setAttributePriority(priority);
+			break;
+		case 'skills':
+			action = setSkillsPriority(priority);
+			break;
+		case 'metatype':
+			action = setMetatypePriority(priority);
+			break;
+		case 'resources':
+			action = setResourcesPriority(priority);
+			break;
+		case 'magicOrResonance':
+			action = setMagicOrResonancePriority(priority);
+			break;
+		default:
+			break;
+
+	}
+	return action;
+};
