@@ -16,6 +16,15 @@ function createPriorityItem(id, name, priority) {
 	}
 }
 
+const mapDispatchToProps = (dispatch) => {
+	const boundActionCreators = bindActionCreators({
+		onPriorityChange: priorityActionCreators.setPriorityForPriorityName,
+		onSaveClick: priorityActionCreators.savePriorities
+	}, dispatch);
+
+	return boundActionCreators;
+};
+
 const mapStateToProps = (state) => {
 	const priorityItems = [
 		createPriorityItem('attributes', 'Attributes', state.priority.attributes),
@@ -28,31 +37,41 @@ const mapStateToProps = (state) => {
 	const isValid = state.priority.valid;
 	return {
 		priorityItems,
-		isValid
+		isValid,
+		attributesPriority: state.priority.attributes,
+		skillsPriority: state.priority.skills,
+		metatypePriority: state.priority.metatype,
+		resourcesPriority: state.priority.resources,
+		magicOrResonancePriority: state.priority.magicOrResonance
 	}
 };
 
 class PrioritiesListComponent extends React.Component {
 
 	render() {
-		const { dispatch } = this.props;
-		const boundActionCreators = bindActionCreators({onPriorityChange: priorityActionCreators.setPriorityForPriorityName}, dispatch)
 		const priorityItems = this.props.priorityItems
-		.map((item) => {
+			.map((item) => {
 				return (<Priority
 						key={item.id}
 						priorityData={item}
-						priorityChanged={boundActionCreators.onPriorityChange}
+						priorityChanged={this.props.onPriorityChange}
 				/>)
 			});
 		return (
 				<div>
+					<h2>Priorities</h2>
 					{priorityItems}
-					<button className={`btn btn-default ${css.saveMargin}`} disabled={!this.props.isValid} >Save</button>
+					<button className={`btn btn-default ${css.saveMargin}`} disabled={!this.props.isValid} onClick={() => {
+						this.props.onSaveClick(this.props.metatypePriority,
+							this.props.attributesPriority,
+							this.props.magicOrResonancePriority,
+							this.props.resourcesPriority,
+							this.props.skillsPriority);
+					}} >Save</button>
 			</div>
-					);
+		);
 	}
 }
 
-export default connect(mapStateToProps)(PrioritiesListComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(PrioritiesListComponent);
 

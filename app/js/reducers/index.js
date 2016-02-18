@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import PageReducer from './PageReducer';
 import  priority from './PrioritySelector';
-import resources from './Resources';
+import character from './CharacterReducer';
+import visibility from './VisibilityReducer';
 const shadowrunApp = combineReducers({
 	priority,
-	resources,
-	PageReducer
+	character,
+	visibility
 });
 
 export default shadowrunApp;

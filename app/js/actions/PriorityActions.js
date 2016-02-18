@@ -62,7 +62,12 @@ export function savePriorities(metatypePriority, attributePriority, magicOrReson
 		};
 	} else {
 		return {
-			type: priorityActions.ERROR_NOT_ALL_PRIORITIES_PRESENT
+			type: priorityActions.ERROR_NOT_ALL_PRIORITIES_PRESENT,
+			metatypePriority,
+			attributePriority,
+			magicOrResonancePriority,
+			resourcesPriority,
+			skillsPriority
 		}
 	}
 }

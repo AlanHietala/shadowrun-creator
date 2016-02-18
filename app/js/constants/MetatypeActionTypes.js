@@ -1,1 +1,0 @@
-export const SELECT_METATYPE = "SELECT_METATYPE";
