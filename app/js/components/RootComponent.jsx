@@ -3,7 +3,7 @@ import PrioritiesList from './PrioritiesList/PrioritiesList.jsx';
 import MetatypePicker from './MetatypePicker/MetatypePicker.jsx';
 import MagicTypes from './MagicTypes/MagicTypes.jsx';
 import Attributes from './Attributes/Attributes.jsx';
-import DevTools from '../containers/DevTools';
+
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
@@ -29,7 +29,7 @@ class RootComponent extends React.Component {
 		}
 
 		return (<div>{visibleComponents}
-				<DevTools /></div>
+				</div>
 		);
 	}
 }

@@ -1,4 +1,4 @@
-import characterReducer from "../app/js/reducers/Character";
+import characterReducer from "../app/js/reducers/CharacterReducer";
 import * as priorityActions from "../app/js/actions/PriorityActions";
 import * as priorityValues from "../app/js/constants/PriorityValues";
 import statsForPriorities from "../app/js/constants/StatsForPriorities";
