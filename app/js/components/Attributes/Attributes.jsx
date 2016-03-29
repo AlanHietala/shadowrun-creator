@@ -89,7 +89,7 @@ class AttributesComponent extends React.Component {
 					{attributeElements}
 				</div></div>);
 		} else {
-			return (<div></div>);
+			return (<div>Can't Select Attributes yet</div>);
 		}
 	}
 }
