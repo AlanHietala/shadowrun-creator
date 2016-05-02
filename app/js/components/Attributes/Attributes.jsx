@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Attribute from './Attribute.jsx';
-import {addAttribute, subtractAttribute} from '../../actions/AttributeActions';
+import {addAttribute, subtractAttribute, addSpecialAttribute, subtractSpecialAttribute} from '../../actions/AttributeActions';
 
 const mapStateToProps = (state) => {
 	let props = {
@@ -66,6 +66,7 @@ class AttributesComponent extends React.Component {
 		if(this.props.body) {
 			const {attributePoints, specialAttributePoints, body, agility, reaction, strength, willpower, logic, intelligence, charisma, edge, essence, magic, resonance, racial, addAttribute, subtractAttribute} = this.props;
 			const createAttribute = getAttributeCreator(addAttribute, subtractAttribute);
+			const createSpecialAttribute = getAttributeCreator(addSpecialAttribute, subtractSpecialAttribute);
 			let attributeList = [body, agility, reaction, strength, willpower, logic, intelligence, charisma, edge, essence];
 			if(this.props.magic) {
 				attributeList.push(magic)
@@ -78,7 +79,10 @@ class AttributesComponent extends React.Component {
 			attributeList.push(racial);
 
 			const attributeElements = attributeList.map((attributeData) => {
-				return createAttribute(attributeData);
+				const key = attributeData.key;
+
+					return createAttribute(attributeData);
+
 			});
 
 			return (

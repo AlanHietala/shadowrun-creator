@@ -51,7 +51,8 @@ export const human = [
 		key: 'edge',
 		minValue: 2,
 		value: 2,
-		maxValue: 7
+		maxValue: 7,
+		isSpecialAttribute: true
 	},
 	{ 
 		key: 'essence',

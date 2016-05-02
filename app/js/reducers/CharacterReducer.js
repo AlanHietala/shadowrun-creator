@@ -22,7 +22,7 @@ const character = (state = defaultState, action) => {
 			return addAttribute(state, action);
 			break;
 		case creationOptionActionTypes.SUBTRACT_ATTRIBUTE:
-			return subtractAttribute(state, action);
+			return addAttribute(state, action);
 			break;
 		default:
 			return state;
@@ -30,51 +30,83 @@ const character = (state = defaultState, action) => {
 	}
 };
 
+const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAvailableAttributePoints) => {
+	let isValid = false;
+	const changeWithinRange = attributeToSet.minValue <= newAttributeValue
+		&& newAttributeValue <= attributeToSet.maxValue
+		&& newAvailableAttributePoints >= 0;
+
+	if(changeWithinRange) {
+		if(isAttributeBeingIncreasedToNaturalLimit(attributeToSet, newAttributeValue)) {
+			isValid = !isAnyAttributeAtNaturalLimit(state);
+		} else {
+			isValid = true;
+		}
+	}
+
+	return isValid;
+};
+
+const isAttributeBeingIncreasedToNaturalLimit = (attributeToSet, newAttributeValue) => {
+	return attributeToSet.maxValue === newAttributeValue;
+}
+
+const isAnyAttributeAtNaturalLimit = (state) => {
+	let foundAttributeAtNaturalLimit = false;
+	for(let key in state.attributes) {
+		const attribute = state.attributes[key];
+		if(attribute.key !== 'essence' && attribute.key !== 'racial') {
+			if(attribute.maxValue === attribute.value) {
+				foundAttributeAtNaturalLimit = true;
+				break;
+			}
+		}
+	}
+
+	return foundAttributeAtNaturalLimit;
+}
+
 function addAttribute(state, action) {
+	const valueToAdd = action.type === creationOptionActionTypes.ADD_ATTRIBUTE ? 1 : -1;
 	const attributeToSet = state.attributes[action.payload.key];
+	const { creation } = state;
+	const isSpecialAttribute = action.payload.isSpecialAttribute;
+	const availableAttributePoints = isSpecialAttribute ?
+		creation.availableSpecialAttributePoints : creation.availableAttributePoints ;
+	const newAttributeValue = attributeToSet.value + valueToAdd;
+	const newAvailableAttributePoints = availableAttributePoints - valueToAdd;
 	let newState = state;
-	if(attributeToSet.value < attributeToSet.maxValue
-			&& state.creation.availableAttributePoints > 0) {
-		let value = attributeToSet.value + 1;
-		newState = setAttribute(state, action, attributeToSet, value);
-		newState = subtractAttributePoint(newState);
+	if(isAttributeChangeValid(state, attributeToSet, newAttributeValue, newAvailableAttributePoints)) {
+		newState = setAttribute(state, action, attributeToSet, newAttributeValue);
+		newState = addAttributePoint(-valueToAdd, newState, isSpecialAttribute);
 	}
 
 	return newState;
 }
 
-function subtractAttribute(state, action) {
-	const attributeToSet = state.attributes[action.payload.key];
-	let newState = state;
-	if(attributeToSet.value > attributeToSet.minValue) {
-		let value = attributeToSet.value - 1;
-		newState = setAttribute(state, action, attributeToSet, value);
-		newState = addAttributePoint(newState);
 
-	}
 
-	return newState;
-}
+function addAttributePoint(pointsToAdd, state, isSpecialAttribute) {
+	let creation = null;
 
-function subtractAttributePoint(state) {
-	return {
-		...state,
-		creation: {
-		...state.creation,
-		availableAttributePoints: state.creation.availableAttributePoints - 1
+	if(isSpecialAttribute) {
 
-		}
-	}
-}
-
-function addAttributePoint(state) {
-	return {
-		...state,
-		creation: {
+		creation = {
 			...state.creation,
-			availableAttributePoints: state.creation.availableAttributePoints + 1
+			availableSpecialAttributePoints: state.creation.availableSpecialAttributePoints + pointsToAdd
 
 		}
+	} else {
+		creation = {
+			...state.creation,
+			availableAttributePoints: state.creation.availableAttributePoints + pointsToAdd
+
+		}
+	}
+
+	return {
+		...state,
+		creation
 	}
 }
 
@@ -111,7 +143,8 @@ function getInitialAttributesForMagic(magicType) {
 				key: 'magic',
 				minValue: magicType.magic,
 				value: magicType.magic,
-				maxValue: 6
+				maxValue: 6,
+				isSpecialAttribute: true
 			}
 		};
 	} else if(magicType.resonance) {
@@ -120,7 +153,8 @@ function getInitialAttributesForMagic(magicType) {
 				key: 'resonance',
 				minValue: magicType.resonance,
 				value: magicType.resonance,
-				maxValue: 6
+				maxValue: 6,
+				isSpecialAttribute: true
 			}
 		};
 	}
