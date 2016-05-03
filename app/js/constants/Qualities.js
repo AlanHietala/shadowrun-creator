@@ -1,4 +1,4 @@
-export const positive = [
+export const positiveQualities = [
 	{
 		name: 'Ambidextrous',
 		karmaCost: 4
@@ -138,7 +138,7 @@ export const positive = [
 	}
 ];
 
-export const negative = [
+export const negativeQualities = [
 	{
 		name: 'Addiction (Mild)',
 		karmaCost:-4

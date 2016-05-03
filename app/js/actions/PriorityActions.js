@@ -1,40 +1,13 @@
 import * as priorityActions from '../constants/PriorityActionTypes';
 import * as priorityValues from '../constants/PriorityValues';
-import _ from 'lodash';
-export function setMetatypePriority(priorityValue) {
-	return {
-		type: priorityActions.SET_METATYPE_PRIORITY,
-		priority: priorityValue
-	};
-}
+import { createAction } from 'redux-actions';
 
-export function setAttributePriority(priorityValue) {
-	return {
-		type: priorityActions.SET_ATTRIBUTE_PRIORITY,
-		priority: priorityValue
-	};
-}
+export const setMetatypePriority = createAction(priorityActions.SET_METATYPE_PRIORITY);
+export const setAttributePriority = createAction(priorityActions.SET_ATTRIBUTE_PRIORITY);
+export const setMagicOrResonancePriority =  createAction(priorityActions.SET_MAGIC_OR_RESONANCE_PRIORITY);
+export const setResourcesPriority = createAction(priorityActions.SET_RESOURCES_PRIORITY);
+export const setSkillsPriority = createAction(priorityActions.SET_SKILLS_PRIORITY);
 
-export function setMagicOrResonancePriority(priorityValue) {
-	return {
-		type: priorityActions.SET_MAGIC_OR_RESONANCE_PRIORITY,
-		priority: priorityValue
-	};
-}
-
-export function setResourcesPriority(priorityValue) {
-	return {
-		type: priorityActions.SET_RESOURCES_PRIORITY,
-		priority: priorityValue
-	};
-}
-
-export function setSkillsPriority(priorityValue) {
-	return {
-		type: priorityActions.SET_SKILLS_PRIORITY,
-		priority: priorityValue
-	};
-}
 
 export function savePriorities(metatypePriority, attributePriority, magicOrResonancePriority, resourcesPriority, skillsPriority) {
 	var priorityMap = {};
@@ -51,24 +24,21 @@ export function savePriorities(metatypePriority, attributePriority, magicOrReson
 			&& priorityMap[priorityValues.PRIORITY_E];
 
 	if(allPrioritiesPresent) {
-
-		return {
-			type: priorityActions.SAVE_PRIORITIES,
+		return createAction(priorityActions.SAVE_PRIORITIES)({
 			metatypePriority,
 			attributePriority,
 			magicOrResonancePriority,
 			resourcesPriority,
 			skillsPriority
-		};
+		})
 	} else {
-		return {
-			type: priorityActions.ERROR_NOT_ALL_PRIORITIES_PRESENT,
+		return createAction(priorityActions.ERROR_NOT_ALL_PRIORITIES_PRESENT)({
 			metatypePriority,
 			attributePriority,
 			magicOrResonancePriority,
 			resourcesPriority,
 			skillsPriority
-		}
+		})
 	}
 }
 export function setPriorityForPriorityName(priorityName, priority) {

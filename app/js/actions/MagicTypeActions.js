@@ -1,7 +1,4 @@
 import * as creationActionTypes from "../constants/CreationOptionActionTypes";
-export function selectMagicType(magicType) {
-	return {
-		type: creationActionTypes.PICK_MAGIC_OR_RESONANCE_OPTION,
-		payload: magicType
-	}
-}
+import { createAction } from 'redux-actions';
+
+export const selectMagicType = createAction(creationActionTypes.PICK_MAGIC_OR_RESONANCE_OPTION);

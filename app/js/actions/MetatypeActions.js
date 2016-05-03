@@ -1,8 +1,4 @@
 import * as metatypeActionTypes from "../constants/CreationOptionActionTypes";
+import { createAction } from 'redux-actions';
 
-export function selectMetatype(metatype) {
-	return {
-		type: metatypeActionTypes.PICK_METATYPE_OPTION,
-		metatype: metatype
-	}
-}
+export const selectMetatype = createAction(metatypeActionTypes.PICK_METATYPE_OPTION);

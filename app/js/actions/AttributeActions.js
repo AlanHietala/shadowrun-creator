@@ -1,15 +1,5 @@
 import * as creationActionTypes from "../constants/CreationOptionActionTypes";
+import { createAction } from 'redux-actions';
 
-export function addAttribute(attribute) {
-	return {
-		type: creationActionTypes.ADD_ATTRIBUTE,
-		payload: attribute
-	}
-}
-
-export function subtractAttribute(attribute) {
-	return {
-		type: creationActionTypes.SUBTRACT_ATTRIBUTE,
-		payload: attribute
-	}
-}
+export const addAttribute = createAction(creationActionTypes.ADD_ATTRIBUTE);
+export const subtractAttribute = createAction(creationActionTypes.SUBTRACT_ATTRIBUTE);

@@ -176,14 +176,14 @@ function getInitialAttributesForMetatype(metatypeId) {
 function setMetatype(state, action) {
 	return {
 		...state,
-		metatype: action.metatype.metatype,
+		metatype: action.payload.metatype,
 		attributes: {
 			...state.attributes,
-			...getInitialAttributesForMetatype(action.metatype.id)
+			...getInitialAttributesForMetatype(action.payload.id)
 		},
 		creation: {
 			...state.creation,
-			availableSpecialAttributePoints: action.metatype.specialAttributePoints
+			availableSpecialAttributePoints: action.payload.specialAttributePoints
 		}
 	};
 }
@@ -192,11 +192,11 @@ function setStats(state, action) {
 	return {
 		...state,
 		creation: {
-			availableMetatypes: statsForPriorities[action.metatypePriority].metatype,
-			availableSkillPoints: statsForPriorities[action.skillsPriority].skills,
-			availableResources: statsForPriorities[action.resourcesPriority].resources,
-			availableMagicOrResonanceClasses: statsForPriorities[action.magicOrResonancePriority].magicOrResonance,
-			availableAttributePoints: statsForPriorities[action.attributePriority].attributes
+			availableMetatypes: statsForPriorities[action.payload.metatypePriority].metatype,
+			availableSkillPoints: statsForPriorities[action.payload.skillsPriority].skills,
+			availableResources: statsForPriorities[action.payload.resourcesPriority].resources,
+			availableMagicOrResonanceClasses: statsForPriorities[action.payload.magicOrResonancePriority].magicOrResonance,
+			availableAttributePoints: statsForPriorities[action.payload.attributePriority].attributes
 		}
 	}
 }
