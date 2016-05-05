@@ -1,10 +1,9 @@
 import bootstrap from 'bootstrap-loader';
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './store/configureStore';
 import DevTools from './containers/DevTools';
 import Foo from './components/FooComponent.jsx';
