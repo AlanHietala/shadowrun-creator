@@ -3,11 +3,19 @@ import * as creationOptionActionTypes from '../constants/CreationOptionActionTyp
 import * as initialAttributes from "../constants/InitialAttributes";
 import statsForPriorities from "../constants/StatsForPriorities";
 import * as qualityActionTypes from '../constants/QualityActionTypes';
-import * as priorityValues from "../constants/PriorityValues";
+import individualSkills from "../constants/Skills";
+import skillGroups from "../constants/SkillGroups";
+import * as skillActionTypes from "../constants/SkillActionTypes";
 
 const defaultState = {
 	qualities: [],
-	karma: 25
+	karma: 25,
+
+	skills: {
+		individualSkills,
+		skillGroups,
+		textFilter: ''
+	}
 };
 
 const character = (state = defaultState, action) => {
@@ -34,10 +42,53 @@ const character = (state = defaultState, action) => {
 		case qualityActionTypes.REMOVE_QUALITY:
 			return removeQuality(state, action);
 			break;
+		case skillActionTypes.MODIFY_SKILL:
+			return modifySkill(state, action);
+			break;
+		case skillActionTypes.MODIFY_SKILL_GROUP:
+			return modifySkillGroup(state, action);
+			break;
+		case skillActionTypes.FILTER_SKILL:
+			return filterSkill(state, action);
 		default:
 			return state;
 
 	}
+};
+
+const filterSkill = (state, action) => {
+	return {
+		state,
+		skills: {
+			...state.skills,
+				textFilter: action.payload
+		}
+	}
+}
+
+const modifySkill = (state, action) => {
+	const individualSkills = state.skills.individualSkills;
+	const skillIndex = individualSkills.indexOf(action.payload.skill);
+	const skillToModify = individualSkills[skillIndex];
+	const newValue = skillToModify.points + action.payload.addValue;
+	if(0 <= newValue && newValue <= 6) {
+		individualSkills[skillIndex] = {
+		...skillToModify,
+			points: newValue
+		};
+
+		return {
+			...state,
+			skills: {
+				...state.skills,
+				individualSkills: [...individualSkills]
+			}
+		};
+
+	} else {
+		return state;
+	}
+
 };
 
 const addQuality = (state, action) => {
@@ -91,7 +142,7 @@ const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAva
 
 const isAttributeBeingIncreasedToNaturalLimit = (attributeToSet, newAttributeValue) => {
 	return attributeToSet.maxValue === newAttributeValue;
-}
+};
 
 const isAnyAttributeAtNaturalLimit = (state) => {
 	let foundAttributeAtNaturalLimit = false;

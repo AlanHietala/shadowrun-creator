@@ -1,0 +1,3 @@
+export const MODIFY_SKILL = 'MODIFY_SKILL';
+export const MODIFY_SKILL_GROUP = 'MODIFY_SKILL_GROUP';
+export const FILTER_SKILL = 'FILTER_SKILL';
