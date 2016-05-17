@@ -45,12 +45,12 @@ class SkillPicker extends React.Component {
 			<div className="row">
 				<div className="col-md-4">
 					<h2>Character Skills</h2>
-					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } />
+					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifySkillFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } />
 				</div>
 				<div className="col-md-4">
 					<h2>Skill List</h2>
 					<input type="text" onChange={ filterSkills } />
-					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } />
+					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } />
 				</div>
 			</div>
 		</div>)

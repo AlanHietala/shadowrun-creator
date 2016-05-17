@@ -12,7 +12,7 @@ const defaultState = {
 	karma: 25,
 
 	skills: {
-		individualSkills,
+		individualSkills: individualSkills.skillArray,
 		skillGroups,
 		textFilter: ''
 	}
@@ -63,6 +63,30 @@ const filterSkill = (state, action) => {
 			...state.skills,
 				textFilter: action.payload
 		}
+	}
+}
+
+const modifySkillGroup = (state, action) => {
+	const skillGroups = state.skills.skillGroups;
+	const skillGroupIndex = skillGroups.indexOf(action.payload.skillGroup);
+	const skillGroupToModify = skillGroups[skillGroupIndex];
+	const newValue = skillGroupToModify.points + action.payload.addValue;
+	if(0 <= newValue && newValue <= 6) {
+		skillGroups[skillGroupIndex] = {
+			...skillGroupToModify,
+			points: newValue
+		};
+
+		return {
+			...state,
+			skills: {
+				...state.skills,
+				skillGroups: [...skillGroups]
+			}
+		};
+
+	} else {
+		return state;
 	}
 }
 
