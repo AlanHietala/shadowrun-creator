@@ -1,4 +1,4 @@
-import { updateAvailableSkillPoints, updateSkill } from './SkillReducerHelpers';
+import { updateAvailableSkillPoints, updateAvailableBonusSkillPoints, updateSkill } from './SkillReducerHelpers';
 
 export default (state, action) => {
 	const individualSkills = state.skills.individualSkills;
@@ -6,14 +6,32 @@ export default (state, action) => {
 	const skillToModify = individualSkills[skillIndex];
 	const newValue = skillToModify.points + action.payload.addValue;
 	const newSkillPoints = state.creation.availableSkillPoints.points - action.payload.addValue;
-	if(0 <= newValue && newValue <= 6 && 0 <= newSkillPoints) {
+	const isBonus = skillToModify.isBonus;
 
-		const newState = updateSkill(state, individualSkills, skillIndex, skillToModify, newValue);
+	let startingBonusValue = -1;
+
+	if(state.creation.bonusSkills) {
+		startingBonusValue = state.creation.bonusSkills.rating;
+	}
+
+	if(isBonus && newValue < startingBonusValue) {
+		return removeBonusSkill(state, individualSkills, skillIndex, skillToModify);
+
+	} else if(0 <= newValue && newValue <= 6 && 0 <= newSkillPoints) {
+		const newState = updateSkill(state, individualSkills, skillIndex, skillToModify, newValue, isBonus);
 		return updateAvailableSkillPoints(newState, newSkillPoints);
 
 	} else {
 		return state;
 	}
+
+
+};
+
+const removeBonusSkill = (state, individualSkills, skillIndex, skillToModify) => {
+	const newBonusSkillPoints = state.creation.bonusSkills.count + 1;
+	let newState = updateSkill(state, individualSkills, skillIndex, skillToModify, 0, false);
+	return updateAvailableBonusSkillPoints(newState, newBonusSkillPoints);
 };
 
 

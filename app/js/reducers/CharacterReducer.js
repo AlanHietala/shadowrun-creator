@@ -13,6 +13,7 @@ import setMagicOrResonanceOption from './MagicOrResonanceOptionReducer';
 import setMetatype from './SetMetatypeReducer';
 import setStats from './SetStatsReducer';
 import removeQuality from './RemoveQualityReducer';
+import modifyBonusSkill from './ModifyBonusSkillReducer';
 
 const defaultState = {
 	qualities: [],

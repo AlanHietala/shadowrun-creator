@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
 		skillGroupPoints: state.character.creation.availableSkillPoints.groupPoints,
 		individualSkills: state.character.skills.individualSkills,
 		skillGroups: state.character.skills.skillGroups,
-		textFilter: state.character.skills.textFilter
+		textFilter: state.character.skills.textFilter,
+		bonusSkills: state.character.creation.bonusSkills
 	}
 };
 
@@ -35,13 +36,30 @@ const mapDispatchToProps = (dispatch) => {
 
 class SkillPicker extends React.Component {
 	render() {
-		const { modifySkill, modifySkillGroup, skillPoints, skillGroupPoints, individualSkills, skillGroups, filterSkills, textFilter } = this.props;
+		const {
+			modifySkill,
+			modifySkillGroup,
+			skillPoints,
+			skillGroupPoints,
+			individualSkills,
+			skillGroups,
+			filterSkills,
+			textFilter,
+			bonusSkills,
+			modifyBonusSkill
+		} = this.props;
+
 		const moreThanZeroPoints = (skills) => skills.points > 0;
 		const zeroPoints = (skills) => {
 			let isFilterActive = textFilter !== '';
 			let isFilterMatching = skills.name.toLowerCase().indexOf(textFilter.toLowerCase()) > - 1;
 			return skills.points === 0 && (!isFilterActive || isFilterMatching);
 		};
+
+		const bonusSkillsFilter = (skills) => {
+			return skills.points === 0 && bonusSkills && skills.attribute === bonusSkills.attributeType;
+		};
+
 		return (<div>
 			<div className="row">
 				<div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints }</div>
@@ -52,6 +70,8 @@ class SkillPicker extends React.Component {
 					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } />
 				</div>
 				<div className="col-md-4">
+					<h2>Bonus Skills</h2>
+					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
 					<h2>Skill List</h2>
 					<input type="text" onChange={ filterSkills } />
 					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } />
