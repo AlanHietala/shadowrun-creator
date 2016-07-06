@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from  'react-redux';
-import {modifySkill, modifySkillGroup, filterSkill } from '../../actions/SkillActions';
+import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill } from '../../actions/SkillActions';
 import CharacterSkills from './CharacterSkills.jsx';
 const mapStateToProps = (state) => {
 	return {
@@ -25,6 +25,10 @@ const mapDispatchToProps = (dispatch) => {
 		filterSkills: (onChangeEvent) => {
 			const filterSkillAction = filterSkill(onChangeEvent.target.value);
 			dispatch(filterSkillAction);
+		},
+		modifyBonusSkill: (skill, addValue) => {
+			const modifyBonusSkillAction = modifyBonusSkill(skill, addValue);
+			dispatch(modifyBonusSkillAction);
 		}
 	}
 };

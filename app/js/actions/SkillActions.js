@@ -7,6 +7,14 @@ export const modifySkill  = createAction(skillActions.MODIFY_SKILL, (skill, addV
 		addValue
 	}
 });
+
+export const modifyBonusSkill  = createAction(skillActions.MODIFY_BONUS_SKILL, (skill, addValue) => {
+	return {
+		skill,
+		addValue
+	}
+});
+
 export const modifySkillGroup = createAction(skillActions.MODIFY_SKILL_GROUP, (skillGroup, addValue) => {
 	return {
 		skillGroup,
