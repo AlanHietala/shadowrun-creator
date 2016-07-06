@@ -1,409 +1,491 @@
+import * as attributeTypes from './AttributeTypes';
 const skillArray = [
 	{
 		name: 'Archery',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Automatics',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Blades',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Clubs',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Escape Artist',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Exotic Melee Weapon',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Exotic Range Weapon',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Gunnery',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Gymnastics',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Heavy Weapons',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Locksmith',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Longarms',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Palming',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Pistols',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Sneaking',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Throwing Weapon',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Unarmed Combat',
-		points: 0, attribute: 'agility',
+		points: 0,
+		attribute: attributeTypes.AGILITY,
 		canDefault: true
 	},
 	{
 		name: 'Diving',
-		points: 0, attribute: 'body',
+		points: 0,
+		attribute: attributeTypes.BODY,
 		canDefault: true
 	},
 	{
 		name: 'Free-Fall',
-		points: 0, attribute: 'body',
+		points: 0,
+		attribute: attributeTypes.BODY,
 		canDefault: true
 	},
 	{
 		name: 'Pilot Aerospace',
-		points: 0, attribute: 'reaction',
+		points: 0,
+		attribute: attributeTypes.REACTION,
 		canDefault: false
 
 	},
 	{
 		name: 'Pilot Aircraft',
-		points: 0, attribute: 'reaction',
+		points: 0,
+		attribute: attributeTypes.REACTION,
 		canDefault: false
 	},
 	{
 		name: 'Pilot Walker',
-		points: 0, attribute: 'reaction',
+		points: 0,
+		attribute: attributeTypes.REACTION,
 		canDefault: false
 	},
 	{
 		name: 'Pilot Exotic Vehicle',
-		points: 0, attribute: 'reaction',
+		points: 0,
+		attribute: attributeTypes.REACTION,
 		canDefault: false
 	},
 	{
 		name: 'Pilot Ground Craft',
-		points: 0, attribute: 'reaction',
+		points: 0,
+		attribute: attributeTypes.REACTION,
 		canDefault: true
 
 	},
 	{
 		name: 'Pilot Watercraft',
-		points: 0, attribute: 'reaction',
+		points: 0,
+		attribute: attributeTypes.REACTION,
 		canDefault: true
 	},
 	{
 		name: 'Running',
-		points: 0, attribute: 'strength',
+		points: 0,
+		attribute: attributeTypes.STRENGTH,
 		canDefault: true
 	},
 	{
 		name: 'Swimming',
-		points: 0, attribute: 'strength',
+		points: 0,
+		attribute: attributeTypes.STRENGTH,
 		canDefault: true
 	},
 	{
 		name: 'Con',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Etiquette',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Instruction',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Intimidation',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Leadership',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Negotiation',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Performance',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Impersonation',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Animal Handling',
-		points: 0, attribute: 'charisma',
+		points: 0,
+		attribute: attributeTypes.CHARISMA,
 		canDefault: true
 	},
 	{
 		name: 'Artisan',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: true
 	},
 	{
 		name: 'Assensing',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: false
 	},
 	{
 		name: 'Disguise',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: true
 	},
 	{
 		name: 'Interests Knowledge',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: true
 	},
 	{
 		name: 'Language',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: true
 	},
 	{
 		name: 'Navigation',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: true
 	},
 	{
 		name: 'Perception',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: true
 	},
 	{
 		name: 'Street Knowledge',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: true
 	},
 	{
 		name: 'Tracking',
-		points: 0, attribute: 'intuition',
+		points: 0,
+		attribute: attributeTypes.INTUITION,
 		canDefault: true
 	},
 	{
 		name: 'Academic Knowledge',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Aeronautics Mechanics',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Arcane',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Armorer',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Automotive Mechanics',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Biotechnology',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Chemistry',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Computer',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Cybertechnology',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Cybercombat',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Demolitions',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Electronic Warfare',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'First Aid',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Industrial Mechanics',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Hacking',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Hardware',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Medicine',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Nautical Mechanics',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Professional Knowledge',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Software',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: false
 	},
 	{
 		name: 'Forgery',
-		points: 0, attribute: 'logic',
+		points: 0,
+		attribute: attributeTypes.LOGIC,
 		canDefault: true
 	},
 	{
 		name: 'Astral Combat',
-		points: 0, attribute: 'willpower',
+		points: 0,
+		attribute: attributeTypes.WILLPOWER,
 		canDefault: false
 	},
 	{
 		name: 'Survival',
-		points: 0, attribute: 'willpower',
+		points: 0,
+		attribute: attributeTypes.WILLPOWER,
 		canDefault: true
 	},
 	{
 		name: 'Alchemy',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: true
 	},
 	{
 		name: 'Artificing',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: true
 	},
 	{
 		name: 'Banishing',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: false
 	},
 	{
 		name: 'Binding',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: false
 	},
 	{
 		name: 'Counterspelling',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: false
 	},
 	{
 		name: 'Ritual Spellcasting',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: false
 	},
 	{
 		name: 'Spellcasting',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: false
 	},
 	{
 		name: 'Summoning',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: false
 	},
 	{
 		name: 'Enchanting',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: false
 	},
 	{
 		name: 'Disenchanting',
-		points: 0, attribute: 'magic',
+		points: 0,
+		attribute: attributeTypes.MAGIC,
 		canDefault: false
 	},
 	{
 		name: 'Compiling',
-		points: 0, attribute: 'resonance',
+		points: 0,
+		attribute: attributeTypes.RESONANCE,
 		canDefault: false
 	},
 	{
 		name: 'Decompiling',
-		points: 0, attribute: 'resonance',
+		points: 0,
+		attribute: attributeTypes.RESONANCE,
 		canDefault: false
 	},
 	{
 		name: 'Registering',
-		points: 0, attribute: 'resonance',
+		points: 0,
+		attribute: attributeTypes.RESONANCE,
 		canDefault: false
 	}
 ];
@@ -414,7 +496,6 @@ const skillMap = {
 	clubs: skillArray[3],
 	escapeArtist: skillArray[4],
 	exoticMeleeWeapon: skillArray[5],
-
 	exoticRangeWeapon: skillArray[6],
 	gunnery: skillArray[7],
 	gymnastics: skillArray[8],

@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './store/configureStore';
-import DevTools from './containers/DevTools';
 import Foo from './components/FooComponent.jsx';
 import AppLayout from './components/AppLayout/AppLayout.jsx';
 import Creation from './components/Creation/Creation.jsx';
@@ -38,7 +37,6 @@ ReactDOM.render(
 					</Route> 
 				</Route>
 			</Router>
-			<DevTools />
 		</div>
 	</Provider>,
 	document.getElementById('app')

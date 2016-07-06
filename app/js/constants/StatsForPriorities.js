@@ -1,4 +1,5 @@
 import * as priorityValues from "./PriorityValues";
+import * as attributeTypes from './AttributeTypes';
 
 let statsForPriorities = {
 	getValuesForPriority(priorityType, priority) {
@@ -40,7 +41,21 @@ statsForPriorities[priorityValues.PRIORITY_A] = {
 			key: 'magician',
 			name: 'Magician',
 			magic: 6,
-			magicalSkills: {
+			bonusSkills: {
+				attributeType: attributeTypes.MAGIC,
+				count: 2,
+				rating: 5
+			},
+			spellCount: 10
+
+
+		},
+		{
+			key: 'mysticAdept',
+			name: 'Mystic Adept',
+			magic: 6,
+			bonusSkills: {
+				attributeType: attributeTypes.MAGIC,
 				count: 2,
 				rating: 5
 			},
@@ -48,24 +63,16 @@ statsForPriorities[priorityValues.PRIORITY_A] = {
 
 		},
 		{
-			key: 'mysticAdept',
-			name: 'Mystic Adept',
-			magic: 6,
-			magicalSkills: {
-				count: 2,
-				rating: 5
-			},
-			spellCount: 10
-		},
-		{
 			key: 'technomancer',
 			name: 'Technomancer',
 			resonance: 6,
-			resonanceSkills: {
+			bonusSkills: {
+				attributeType: attributeTypes.RESONANCE,
 				count: 2,
 				rating: 5
 			},
 			complexFormCount: 5
+
 		}
 	],
 	skills: {
@@ -104,32 +111,40 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
 			key: 'magician',
 			name: 'Magician',
 			magic: 4,
-			magicalSkills: {
+			bonusSkills: {
+				attributeType: attributeTypes.MAGIC,
 				count: 2,
 				rating: 4
+
 			},
-			spellCount: 7
+			 spellCount: 7
+
 
 		},
 		 {
 			key: 'mysticAdept',
 			name: 'Mystic Adept',
 			magic: 4,
-			magicalSkills: {
+			 bonusSkills: {
+				attributeType: attributeTypes.MAGIC,
 				count: 2,
 				rating: 4
 			},
-			spellCount: 7
+			 spellCount: 7
+
 		},
 		 {
 			key: 'technomancer',
 			name: 'Technomancer',
 			resonance: 4,
-			resonanceSkills: {
+			 bonusSkills: {
+				attributeType: attributeTypes.RESONANCE,
 				count: 2,
-				rating: 4
+				rating: 4,
+
 			},
-			complexFormCount: 2
+			 complexFormCount: 2
+
 		},
 		 {
 			key: 'adept',
@@ -144,7 +159,8 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
 			key: 'aspectedMagician',
 			name: 'Aspected Magician',
 			magic: 5,
-			magicalSkillGroup: {
+			bonusSkillGroup: {
+				attributeType: attributeTypes.MAGIC,
 				count: 1,
 				rating: 4
 			}
@@ -184,10 +200,13 @@ statsForPriorities[priorityValues.PRIORITY_C] = {
 			name: 'Magician',
 			magic: 3,
 			magicalSkills: {
+				attributeType: attributeTypes.MAGIC,
 				count: 0,
 				rating: 0
+
 			},
 			spellCount: 5
+
 
 		},
 		{
@@ -195,20 +214,24 @@ statsForPriorities[priorityValues.PRIORITY_C] = {
 			name: 'Mystic Adept',
 			magic: 3,
 			magicalSkills: {
+				attributeType: attributeTypes.MAGIC,
 				count: 0,
 				rating: 0
 			},
 			spellCount: 5
+
 		},
 		{
 			key: 'technomancer',
 			name: 'Technomancer',
 			resonance: 3,
 			resonanceSkills: {
+				attributeType: attributeTypes.RESONANCE,
 				count: 0,
 				rating: 0
 			},
 			complexFormCount: 1
+
 		},
 		{
 			key: 'adept',
@@ -223,7 +246,8 @@ statsForPriorities[priorityValues.PRIORITY_C] = {
 			key: 'aspectedMagician',
 			name: 'Aspected Magician',
 			magic: 3,
-			magicalSkillGroup: {
+			bonusSkillGroup: {
+				attributeType: attributeTypes.MAGIC,
 				count: 1,
 				rating: 2
 			}
@@ -263,7 +287,8 @@ statsForPriorities[priorityValues.PRIORITY_D] = {
 			key: 'aspectedMagician',
 			name: 'Aspected Magician',
 			magic: 2,
-			magicalSkillGroup: {
+			bonusSkillGroup: {
+				attributeType: attributeTypes.MAGIC,
 				count: 0,
 				rating: 0
 			}

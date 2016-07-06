@@ -4,8 +4,8 @@ import {modifySkill, modifySkillGroup, filterSkill } from '../../actions/SkillAc
 import CharacterSkills from './CharacterSkills.jsx';
 const mapStateToProps = (state) => {
 	return {
-		skillPoints: state.character.qualities,
-		skillGroupPoints: state.character.karma,
+		skillPoints: state.character.creation.availableSkillPoints.points,
+		skillGroupPoints: state.character.creation.availableSkillPoints.groupPoints,
 		individualSkills: state.character.skills.individualSkills,
 		skillGroups: state.character.skills.skillGroups,
 		textFilter: state.character.skills.textFilter
@@ -45,7 +45,7 @@ class SkillPicker extends React.Component {
 			<div className="row">
 				<div className="col-md-4">
 					<h2>Character Skills</h2>
-					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifySkillFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } />
+					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } />
 				</div>
 				<div className="col-md-4">
 					<h2>Skill List</h2>

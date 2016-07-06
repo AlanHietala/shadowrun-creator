@@ -1,18 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { createDevTools } from 'redux-devtools'
-import { persistState } from 'redux-devtools';
-import LogMonitor from 'redux-devtools-log-monitor'
-import DockMonitor from 'redux-devtools-dock-monitor'
-import DevTools from '../containers/DevTools';
 import rootReducer from '../reducers';
 
 const finalCreateStore = compose(
-	DevTools.instrument(),
-	persistState(
-		window.location.href.match(
-			/[?&]debug_session=([^&]+)\b/
-		)
-	)
+	window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore);
 
 export default function configureStore(initialState) {

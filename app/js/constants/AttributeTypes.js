@@ -1,0 +1,12 @@
+export const MAGIC = 'magic';
+export const RESONANCE = 'resonance';
+export const BODY = 'body';
+export const AGILITY = 'agility';
+export const REACTION = 'reaction';
+export const STRENGTH = 'strength';
+export const CHARISMA = 'charisma';
+export const INTUITION = 'intuition';
+export const LOGIC = 'logic';
+export const WILLPOWER = 'willpower';
+export const INTELLIGENCE = 'intelligence';
+export const ESSENCE = 'essence';

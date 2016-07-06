@@ -58,7 +58,7 @@ const character = (state = defaultState, action) => {
 
 const filterSkill = (state, action) => {
 	return {
-		state,
+		...state,
 		skills: {
 			...state.skills,
 				textFilter: action.payload
@@ -71,7 +71,8 @@ const modifySkillGroup = (state, action) => {
 	const skillGroupIndex = skillGroups.indexOf(action.payload.skillGroup);
 	const skillGroupToModify = skillGroups[skillGroupIndex];
 	const newValue = skillGroupToModify.points + action.payload.addValue;
-	if(0 <= newValue && newValue <= 6) {
+	const newSkillGroupPoints = state.creation.availableSkillPoints.groupPoints - action.payload.addValue;
+	if(0 <= newValue && newValue <= 6 && 0 <= newSkillGroupPoints) {
 		skillGroups[skillGroupIndex] = {
 			...skillGroupToModify,
 			points: newValue
@@ -79,6 +80,13 @@ const modifySkillGroup = (state, action) => {
 
 		return {
 			...state,
+			creation: {
+				...state.creation,
+				availableSkillPoints: {
+					...state.creation.availableSkillPoints,
+					groupPoints: newSkillGroupPoints
+				}
+			},
 			skills: {
 				...state.skills,
 				skillGroups: [...skillGroups]
@@ -95,7 +103,8 @@ const modifySkill = (state, action) => {
 	const skillIndex = individualSkills.indexOf(action.payload.skill);
 	const skillToModify = individualSkills[skillIndex];
 	const newValue = skillToModify.points + action.payload.addValue;
-	if(0 <= newValue && newValue <= 6) {
+	const newSkillPoints = state.creation.availableSkillPoints.points - action.payload.addValue;
+	if(0 <= newValue && newValue <= 6 && 0 <= newSkillPoints) {
 		individualSkills[skillIndex] = {
 		...skillToModify,
 			points: newValue
@@ -103,6 +112,13 @@ const modifySkill = (state, action) => {
 
 		return {
 			...state,
+			creation: {
+				...state.creation,
+				availableSkillPoints: {
+					...state.creation.availableSkillPoints,
+					points: newSkillPoints
+				}
+			},
 			skills: {
 				...state.skills,
 				individualSkills: [...individualSkills]
@@ -243,11 +259,23 @@ function setAttribute(state, action, attributeToSet, value) {
 }
 
 function setMagicOrResonanceOption(state, action) {
+	let creation = {};
+	creation.bonusSkills = action.payload.bonusSkills || null;
+	creation.bonusSkillGroup = action.payload.bonusSkillGroup || null;
+	creation.spellCount = action.payload.spellCount || 0;
+	creation.complexFormCount = action.payload.complexFormCount || 0;
+	creation.activeSkills = action.payload.activeSkills || null;
 	return {
 		...state,
 		attributes: {
 			...state.attributes,
 			...getInitialAttributesForMagic(action.payload)
+		},
+		magicType: action.payload.key,
+		creation: {
+			...state.creation,
+			...creation
+
 		}
 	};
 }

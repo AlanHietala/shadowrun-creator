@@ -14,7 +14,8 @@ const mapStateToProps = (state) => {
 	};
 	if(state.character.creation && state.character.creation.availableMetatypes) {
 		propList = {
-			availableMetatypes: state.character.creation.availableMetatypes
+			availableMetatypes: state.character.creation.availableMetatypes,
+			hasMagic: state.character.creation.availableMagicOrResonanceClasses.length > 0
 		};
 	}
 	return propList;
@@ -34,7 +35,11 @@ class MetatypePickerComponent extends React.Component {
 			.map((metatype) => {
 				return (<MetatypeItem key={metatype.id} metatypeData={metatype} selectMetatype={() => {
 					this.props.selectMetatype(metatype);
-					hashHistory.push('/creation/magic');
+					if(this.props.hasMagic) {
+						hashHistory.push('/creation/magic');
+					} else {
+						hashHistory.push('/creation/attributes');
+					}
 				}} />);
 			});
 		return (<div>
