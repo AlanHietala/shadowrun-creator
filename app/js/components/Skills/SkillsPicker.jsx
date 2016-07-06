@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from  'react-redux';
 import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill } from '../../actions/SkillActions';
 import CharacterSkills from './CharacterSkills.jsx';
+import * as attributeTypes from  '../../constants/AttributeTypes';
+
 const mapStateToProps = (state) => {
 	return {
 		skillPoints: state.character.creation.availableSkillPoints.points,
@@ -9,7 +11,9 @@ const mapStateToProps = (state) => {
 		individualSkills: state.character.skills.individualSkills,
 		skillGroups: state.character.skills.skillGroups,
 		textFilter: state.character.skills.textFilter,
-		bonusSkills: state.character.creation.bonusSkills
+		bonusSkills: state.character.creation.bonusSkills,
+		isResonanceAllowed: state.character.attributes.resonance > 0,
+		isMagicAllowed: state.character.attributes.magic > 0,
 	}
 };
 
@@ -46,14 +50,23 @@ class SkillPicker extends React.Component {
 			filterSkills,
 			textFilter,
 			bonusSkills,
-			modifyBonusSkill
+			modifyBonusSkill,
+			isMagicAllowed,
+			isResonanceAllowed
 		} = this.props;
 
 		const moreThanZeroPoints = (skills) => skills.points > 0;
 		const zeroPoints = (skills) => {
 			let isFilterActive = textFilter !== '';
 			let isFilterMatching = skills.name.toLowerCase().indexOf(textFilter.toLowerCase()) > - 1;
-			return skills.points === 0 && (!isFilterActive || isFilterMatching);
+			let isAllowedSkillForClass = true;
+
+			if(skills.attribute === attributeTypes.RESONANCE && !isResonanceAllowed
+				|| skills.attribute === attributeTypes.MAGIC && !isMagicAllowed) {
+				isAllowedSkillForClass = false;
+			}
+
+			return skills.points === 0 && (!isFilterActive || isFilterMatching) && isAllowedSkillForClass;
 		};
 
 		const bonusSkillsFilter = (skills) => {
@@ -62,7 +75,7 @@ class SkillPicker extends React.Component {
 
 		return (<div>
 			<div className="row">
-				<div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints }</div>
+				<div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusSkills.count } at level { bonusSkills.rating }</div>
 			</div>
 			<div className="row">
 				<div className="col-md-4">
