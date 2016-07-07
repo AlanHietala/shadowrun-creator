@@ -14,6 +14,8 @@ import MagicTypes from './components/MagicTypes/MagicTypes.jsx';
 import Attributes from './components/Attributes/Attributes.jsx';
 import QualityPicker from './components/Qualities/QualityPicker.jsx';
 import SkillsPicker from './components/Skills/SkillsPicker.jsx';
+import SpellsPicker from './components/Spells/SpellsPicker.jsx';
+
 const store = configureStore();
 
 
@@ -34,6 +36,7 @@ ReactDOM.render(
 						<Route path="attributes" component={ Attributes } />
 						<Route path="qualities" component={ QualityPicker } />
 						<Route path="skills" component={ SkillsPicker } />
+						<Route path="spells" component={ SpellsPicker } />
 					</Route> 
 				</Route>
 			</Router>

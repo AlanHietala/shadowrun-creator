@@ -3,6 +3,7 @@ import { connect } from  'react-redux';
 import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill } from '../../actions/SkillActions';
 import CharacterSkills from './CharacterSkills.jsx';
 import * as attributeTypes from  '../../constants/AttributeTypes';
+import { hashHistory } from 'react-router';
 
 const mapStateToProps = (state) => {
 	return {
@@ -73,9 +74,13 @@ class SkillPicker extends React.Component {
 			return skills.points === 0 && bonusSkills && skills.attribute === bonusSkills.attributeType;
 		};
 
+		const bonusPoints = bonusSkills ? bonusSkills.count : 0;
+		const bonusRating = bonusSkills ? bonusSkills.rating : 0;
+		const nextString = '/creation/spells';
 		return (<div>
 			<div className="row">
-				<div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusSkills.count } at level { bonusSkills.rating }</div>
+				<div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusPoints } at level { bonusRating }</div>
+				<button onClick={() => hashHistory.push(nextString) }>next</button>
 			</div>
 			<div className="row">
 				<div className="col-md-4">

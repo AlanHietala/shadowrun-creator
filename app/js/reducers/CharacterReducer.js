@@ -4,6 +4,7 @@ import * as qualityActionTypes from '../constants/QualityActionTypes';
 import individualSkills from "../constants/Skills";
 import skillGroups from "../constants/SkillGroups";
 import * as skillActionTypes from "../constants/SkillActionTypes";
+import * as spellActionTypes from "../constants/SpellActionTypes";
 import modifySkill from './ModifySkillReducer';
 import modifySkillGroup from './ModifySkillGroupReducer';
 import addAttribute from './AddAttributeReducer';
@@ -14,6 +15,7 @@ import setMetatype from './SetMetatypeReducer';
 import setStats from './SetStatsReducer';
 import removeQuality from './RemoveQualityReducer';
 import modifyBonusSkill from './ModifyBonusSkillReducer';
+import {addSpell, removeSpell} from './SpellReducers';
 
 const defaultState = {
 	qualities: [],
@@ -23,7 +25,8 @@ const defaultState = {
 		individualSkills: individualSkills.skillArray,
 		skillGroups,
 		textFilter: ''
-	}
+	},
+	spells: []
 };
 
 const character = (state = defaultState, action) => {
@@ -61,6 +64,10 @@ const character = (state = defaultState, action) => {
 			break;
 		case skillActionTypes.FILTER_SKILL:
 			return filterSkill(state, action);
+		case spellActionTypes.ADD_SPELL:
+			return addSpell(state, action);
+		case spellActionTypes.REMOVE_SPELL:
+			return removeSpell(state, action);
 		default:
 			return state;
 	}

@@ -1,7 +1,8 @@
-export const spells = {
+import * as spellCategories from './SpellCategories';
+export default {
 			combat: [
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: true,
 			isDirect: false,
 			name: 'Acid Stream',
@@ -13,7 +14,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: true,
 			isDirect: false,
 			name: 'Toxic Wave',
@@ -25,7 +26,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: false,
 			name: 'Punch',
@@ -37,7 +38,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: false,
 			name: 'Clout',
@@ -49,7 +50,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: false,
 			name: 'Blast',
@@ -61,7 +62,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'DeathTouch',
@@ -73,7 +74,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'Manabolt',
@@ -85,7 +86,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'Manaball',
@@ -97,7 +98,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: true,
 			isDirect: false,
 			name: 'Flamethrower',
@@ -109,7 +110,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: true,
 			isDirect: false,
 			name: 'Fireball',
@@ -121,7 +122,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: true,
 			isDirect: false,
 			name: 'Lightning Bolt',
@@ -133,7 +134,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: true,
 			isDirect: false,
 			name: 'Ball Lightning',
@@ -145,7 +146,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'Shatter',
@@ -157,7 +158,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'Powerbolt',
@@ -169,7 +170,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'Powerball',
@@ -181,7 +182,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'Knockout',
@@ -193,7 +194,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'Stunbolt',
@@ -205,7 +206,7 @@ export const spells = {
 			duration: 'I'
 		},
 		{
-			spellCategory: 'combat',
+			spellCategory: spellCategories.COMBAT,
 			isElemental: false,
 			isDirect: true,
 			name: 'Stunball',
@@ -219,7 +220,7 @@ export const spells = {
 	],
 	detection: [
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Analyze Device',
 			isActive: true,
 			isDirectional: true,
@@ -232,7 +233,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Analyze Magic',
 			isActive: true,
 			isDirectional: true,
@@ -245,7 +246,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Analyze Truth',
 			isActive: true,
 			isDirectional: true,
@@ -258,7 +259,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Clairaudience',
 			isActive: false,
 			isDirectional: true,
@@ -271,7 +272,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Clairvoyance',
 			isActive: false,
 			isDirectional: true,
@@ -284,7 +285,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Combat Sense',
 			isActive: true,
 			isDirectional: false,
@@ -297,7 +298,7 @@ export const spells = {
 			drain: 0
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect Enemies',
 			isActive: true,
 			isDirectional: false,
@@ -310,7 +311,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect Enemies, Extended',
 			isActive: true,
 			isDirectional: false,
@@ -323,7 +324,7 @@ export const spells = {
 			drain: 0
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect Individual',
 			isActive: true,
 			isDirectional: false,
@@ -336,7 +337,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect Life',
 			isActive: true,
 			isDirectional: false,
@@ -349,7 +350,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect [Life Form]',
 			isActive: true,
 			isDirectional: false,
@@ -362,7 +363,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect [Life Form], Extended',
 			isActive: true,
 			isDirectional: false,
@@ -375,7 +376,7 @@ export const spells = {
 			drain: 0
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect Magic',
 			isActive: true,
 			isDirectional: false,
@@ -388,7 +389,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect Magic, Extended',
 			isActive: true,
 			isDirectional: false,
@@ -401,7 +402,7 @@ export const spells = {
 			drain: 0
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Detect [Object]',
 			isActive: true,
 			isDirectional: false,
@@ -414,7 +415,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Mindlink',
 			isActive: true,
 			isDirectional: false,
@@ -427,7 +428,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'detection',
+			spellCategory: spellCategories.DETECTION,
 			name: 'Mind Probe',
 			isActive: true,
 			isDirectional: true,
@@ -442,7 +443,7 @@ export const spells = {
 	],
 	health: [
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Antidote',
 			isEssence: false,
 			isMana: true,
@@ -452,7 +453,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Cure Disease',
 			isEssence: true,
 			isMana: true,
@@ -462,7 +463,7 @@ export const spells = {
 			drain: -4
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Decrease [Attribute]',
 			isEssence: true,
 			isMana: false,
@@ -472,7 +473,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Detox',
 			isEssence: false,
 			isMana: true,
@@ -482,7 +483,7 @@ export const spells = {
 			drain: -6
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Heal',
 			isEssence: true,
 			isMana: true,
@@ -492,7 +493,7 @@ export const spells = {
 			drain: -4
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Increase [Attribute]',
 			isEssence: true,
 			isMana: false,
@@ -502,8 +503,8 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'health',
-			name: 'Incrase Reflexes',
+			spellCategory: spellCategories.HEALTH,
+			name: 'Increase Reflexes',
 			isEssence: true,
 			isMana: false,
 			isLOS: false,
@@ -512,7 +513,7 @@ export const spells = {
 			drain: 0
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Oxygenate',
 			isEssence: false,
 			isMana: false,
@@ -522,7 +523,7 @@ export const spells = {
 			drain: -5
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Prophylaxis',
 			isEssence: false,
 			isMana: true,
@@ -532,7 +533,7 @@ export const spells = {
 			drain: -4
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Resist Pain',
 			isEssence: false,
 			isMana: true,
@@ -542,7 +543,7 @@ export const spells = {
 			drain: -6
 		},
 		{
-			spellCategory: 'health',
+			spellCategory: spellCategories.HEALTH,
 			name: 'Stabilize',
 			isEssence: false,
 			isMana: true,
@@ -555,7 +556,7 @@ export const spells = {
 	],
 	illusion: [
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Agony',
 			isRealistic: true,
 			isMultisense: false,
@@ -566,7 +567,7 @@ export const spells = {
 			drain: -4
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Mass Agony',
 			isRealistic: true,
 			isMultisense: true,
@@ -577,7 +578,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Bugs',
 			isRealistic: true,
 			isMultisense: true,
@@ -588,7 +589,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Swarm',
 			isRealistic: true,
 			isMultisense: true,
@@ -599,7 +600,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Confusion',
 			isRealistic: true,
 			isMultisense: true,
@@ -610,7 +611,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Mass Confusion',
 			isRealistic: true,
 			isMultisense: true,
@@ -621,7 +622,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Chaos',
 			isRealistic: true,
 			isMultisense: true,
@@ -632,7 +633,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Chaotic World',
 			isRealistic: true,
 			isMultisense: true,
@@ -643,7 +644,7 @@ export const spells = {
 			drain: 0
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Entertainment',
 			isRealistic: false,
 			isMultisense: true,
@@ -654,7 +655,7 @@ export const spells = {
 			drain: -3
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Trid Entertainment',
 			isRealistic: false,
 			isMultisense: true,
@@ -665,7 +666,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Invisibility',
 			isRealistic: true,
 			isMultisense: false,
@@ -676,7 +677,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Improved Invisibility',
 			isRealistic: true,
 			isMultisense: false,
@@ -687,7 +688,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Mask',
 			isRealistic: true,
 			isMultisense: true,
@@ -698,7 +699,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Physical Mask',
 			isRealistic: true,
 			isMultisense: true,
@@ -709,7 +710,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Phantasm',
 			isRealistic: true,
 			isMultisense: true,
@@ -720,7 +721,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Trid Phantasm',
 			isRealistic: true,
 			isMultisense: true,
@@ -731,7 +732,7 @@ export const spells = {
 			drain: 0
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Hush',
 			isRealistic: true,
 			isMultisense: false,
@@ -742,7 +743,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Silence',
 			isRealistic: true,
 			isMultisense: false,
@@ -753,7 +754,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'illusion',
+			spellCategory: spellCategories.ILLUSION,
 			name: 'Stealth',
 			isRealistic: true,
 			isMultisense: false,
@@ -766,7 +767,7 @@ export const spells = {
 	],
 	manipulation: [
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Armor',
 			isPhysical: true,
 			isMental: false,
@@ -779,7 +780,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Control Actions',
 			isPhysical: false,
 			isMental: true,
@@ -792,7 +793,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Mob Control',
 			isPhysical: false,
 			isMental: true,
@@ -805,7 +806,7 @@ export const spells = {
 			drain: 1
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Control Thoughts',
 			isPhysical: false,
 			isMental: true,
@@ -818,7 +819,7 @@ export const spells = {
 			drain: 1
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Mob Mind',
 			isPhysical: false,
 			isMental: true,
@@ -831,7 +832,7 @@ export const spells = {
 			drain: 1
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'fling',
 			isPhysical: true,
 			isMental: false,
@@ -844,7 +845,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Ice Sheet',
 			isPhysical: false,
 			isMental: false,
@@ -856,7 +857,7 @@ export const spells = {
 			drain: 0
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Ignite',
 			isPhysical: true,
 			isMental: false,
@@ -868,7 +869,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Influence',
 			isPhysical: false,
 			isMental: true,
@@ -880,7 +881,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Levitate',
 			isPhysical: true,
 			isMental: false,
@@ -892,7 +893,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Light',
 			isPhysical: false,
 			isMental: false,
@@ -904,7 +905,7 @@ export const spells = {
 			drain: -4
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Magic Fingers',
 			isPhysical: true,
 			isMental: false,
@@ -916,7 +917,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Mana Barrier',
 			isPhysical: false,
 			isMental: false,
@@ -928,7 +929,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Physical Barrier',
 			isPhysical: false,
 			isMental: false,
@@ -940,7 +941,7 @@ export const spells = {
 			drain: -1
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Poltergeist',
 			isPhysical: false,
 			isMental: false,
@@ -952,7 +953,7 @@ export const spells = {
 			drain: -2
 		},
 		{
-			spellCategory: 'manipulation',
+			spellCategory: spellCategories.MANIPULATION,
 			name: 'Shadow',
 			isPhysical: false,
 			isMental: false,
