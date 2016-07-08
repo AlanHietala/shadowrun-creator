@@ -7,14 +7,15 @@ class SpellsPicker extends React.Component {
 	render() {
 		const { availableSpellCount, addSpell, removeSpell, chosenSpells } = this.props;
 
-		const combatSpells = spells.combat.map((combatSpell, index) => {
-			return (<Spell key={ combatSpell.name } showAddButton={true} showRemoveButton={false} spell={ combatSpell } clickAddFn={ () => addSpell(combatSpell) } clickRemoveFn={ () => removeSpell(index) } />)
+		const spellList = spells.map((spell, index) => {
+			return (<Spell key={ spell.name } showAddButton={true} showRemoveButton={false} spell={ spell } clickAddFn={ () => addSpell(spell) } clickRemoveFn={ () => removeSpell(index) } />)
 		});
 
 		const chosenSpellList = chosenSpells.map((spell, index) => {
 			return (<Spell key={ spell.name } showAddButton={false} showRemoveButton={true} spell={ spell } clickAddFn="" clickRemoveFn={ () => removeSpell(index) } />)
 
-		})
+		});
+		
 		return (<div>
 			<div className="row">
 				<div className="col-md-12">spells to pick: { availableSpellCount }</div>
@@ -25,8 +26,8 @@ class SpellsPicker extends React.Component {
 					{ chosenSpellList }
 				</div>
 				<div className="col-md-4">
-					<h2>Combat Spells</h2>
-					{ combatSpells }
+					<h2>Spell List</h2>
+					{ spellList }
 				</div>
 			</div>
 		</div>)

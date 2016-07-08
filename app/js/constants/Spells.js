@@ -1,6 +1,6 @@
 import * as spellCategories from './SpellCategories';
-export default {
-			combat: [
+export default [
+
 		{
 			spellCategory: spellCategories.COMBAT,
 			isElemental: true,
@@ -216,9 +216,8 @@ export default {
 			isPhysicalDamage: false,
 			drain: 0,
 			duration: 'I'
-		}
-	],
-	detection: [
+		},
+
 		{
 			spellCategory: spellCategories.DETECTION,
 			name: 'Analyze Device',
@@ -439,9 +438,7 @@ export default {
 			isPsychic: false,
 			duration: 'S',
 			drain: 0
-		}
-	],
-	health: [
+		},
 		{
 			spellCategory: spellCategories.HEALTH,
 			name: 'Antidote',
@@ -551,10 +548,8 @@ export default {
 			isArea: false,
 			duration: 'P',
 			drain: -4
-		}
+		},
 
-	],
-	illusion: [
 		{
 			spellCategory: spellCategories.ILLUSION,
 			name: 'Agony',
@@ -763,9 +758,8 @@ export default {
 			isMana: false,
 			duration: 'S',
 			drain: -2
-		}
-	],
-	manipulation: [
+		},
+
 		{
 			spellCategory: spellCategories.MANIPULATION,
 			name: 'Armor',
@@ -964,6 +958,5 @@ export default {
 			duration: 'S',
 			drain: -3
 		}
-	]
-};
+	];
 

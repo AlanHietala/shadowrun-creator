@@ -555,7 +555,7 @@ const skillMap = {
 	nauticalMechanics: skillArray[62],
 	professionalKnowledge: skillArray[63],
 	software: skillArray[64],
-	Forgery: skillArray[65],
+	forgery: skillArray[65],
 	astralCombat: skillArray[66],
 	survival: skillArray[67],
 	alchemy: skillArray[68],
