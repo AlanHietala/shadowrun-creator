@@ -1,4 +1,4 @@
-import * as spellActions from '../constants/SpellActionTypes';
+import * as spellActions from '../constants/spellActionTypes';
 import { createAction } from 'redux-actions';
 
 export const addSpell = createAction(spellActions.ADD_SPELL);

@@ -8,5 +8,4 @@ export const CHARISMA = 'charisma';
 export const INTUITION = 'intuition';
 export const LOGIC = 'logic';
 export const WILLPOWER = 'willpower';
-export const INTELLIGENCE = 'intelligence';
 export const ESSENCE = 'essence';

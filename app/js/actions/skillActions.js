@@ -1,4 +1,4 @@
-import * as skillActions from '../constants/SkillActionTypes';
+import * as skillActions from '../constants/skillActionTypes';
 import { createAction } from 'redux-actions';
 
 export const modifySkill  = createAction(skillActions.MODIFY_SKILL, (skill, addValue) => {

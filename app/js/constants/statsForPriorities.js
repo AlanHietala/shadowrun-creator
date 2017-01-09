@@ -1,5 +1,5 @@
-import * as priorityValues from "./PriorityValues";
-import * as attributeTypes from './AttributeTypes';
+import * as priorityValues from "./priorityValues";
+import * as attributeTypes from './attributeTypes';
 
 let statsForPriorities = {
 	getValuesForPriority(priorityType, priority) {

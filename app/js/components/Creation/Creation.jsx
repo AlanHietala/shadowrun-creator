@@ -11,5 +11,3 @@ export default function Creation({children}) {
 	)
 
 }
-
-export default Creation;

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import  priority from './PrioritySelector';
+import  priority from './prioritySelector';
 import character from './CharacterReducer';
-import visibility from './VisibilityReducer';
+import visibility from './visibilityReducer';
 import { routerReducer } from 'react-router-redux';
 const shadowrunApp = combineReducers({
 	priority,

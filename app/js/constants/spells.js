@@ -1,4 +1,4 @@
-import * as spellCategories from './SpellCategories';
+import * as spellCategories from './spellCategories';
 export default [
 
 		{

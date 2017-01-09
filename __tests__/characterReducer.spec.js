@@ -1,7 +1,7 @@
 import characterReducer from "../app/js/reducers/CharacterReducer";
 import * as priorityActions from "../app/js/actions/PriorityActions";
-import * as priorityValues from "../app/js/constants/PriorityValues";
-import statsForPriorities from "../app/js/constants/StatsForPriorities";
+import * as priorityValues from "../app/js/constants/priorityValues";
+import statsForPriorities from "../app/js/constants/statsForPriorities";
 import * as metatypeActions from "../app/js/actions/MetatypeActions";
 import deepFreeze from "deep-freeze";
 import expect from "expect";
@@ -45,40 +45,8 @@ describe('Character Reducer', () => {
 					availableSkillPoints: statsForPriorities[priorityValues.PRIORITY_E].skills
 				}
 			};
-			const stateAfter = {
-				creation: {
-					availableMetatypes: statsForPriorities[priorityValues.PRIORITY_A].metatype,
-					availableAttributePoints: statsForPriorities[priorityValues.PRIORITY_B].attributes,
-					availableMagicOrResonanceClasses: statsForPriorities[priorityValues.PRIORITY_C].magicOrResonance,
-					availableResources: statsForPriorities[priorityValues.PRIORITY_D].resources,
-					availableSkillPoints: statsForPriorities[priorityValues.PRIORITY_E].skills,
-					availableSpecialAttributePoints: 9
-				},
-				attributes: {
-					body: 1,
-					bodyMax: 6,
-					agility: 1,
-					agilityMax: 6,
-					reaction: 1,
-					reactionMax: 6,
-					strength: 1,
-					strengthMax: 6,
-					willpower: 1,
-					willpowerMax: 6,
-					logic: 1,
-					LogicMax: 6,
-					intelligence: 1,
-					intelligenceMax: 6,
-					charisma: 1,
-					charismaMax: 6,
-					edge: 2,
-					edgeMax: 7,
-					essence: 6
-				},
-				metatype: 'Human',
-				racial: 'none'
+			const stateAfter = { attributes: { agility: { key: 'agility', maxValue: 6, minValue: 1, value: 1 }, body: { key: 'body', maxValue: 6, minValue: 1, value: 1 }, charisma: { key: 'charisma', maxValue: 6, minValue: 1, value: 1 }, edge: { isSpecialAttribute: true, key: 'edge', maxValue: 7, minValue: 2, value: 2 }, essence: { key: 'essence', minValue: 6, value: 6 }, intuition: { key: 'intuition', maxValue: 6, minValue: 1, value: 1 }, logic: { key: 'logic', maxValue: 6, minValue: 1, value: 1 }, racial: { key: 'racial', value: 'none' }, reaction: { key: 'reaction', maxValue: 6, minValue: 1, value: 1 }, strength: { key: 'strength', maxValue: 6, minValue: 1, value: 1 }, willpower: { key: 'willpower', maxValue: 6, minValue: 1, value: 1 } }, creation: { availableAttributePoints: 20, availableMagicOrResonanceClasses: [ { key: 'magician', magic: 3, magicalSkills: { attributeType: 'magic', count: 0, rating: 0 }, name: 'Magician', spellCount: 5 }, { key: 'mysticAdept', magic: 3, magicalSkills: { attributeType: 'magic', count: 0, rating: 0 }, name: 'Mystic Adept', spellCount: 5 }, { complexFormCount: 1, key: 'technomancer', name: 'Technomancer', resonance: 3, resonanceSkills: { attributeType: 'resonance', count: 0, rating: 0 } }, { activeSkills: { count: 1, rating: 2 }, key: 'adept', magic: 4, name: 'Adept' }, { bonusSkillGroup: { attributeType: 'magic', count: 1, rating: 2 }, key: 'aspectedMagician', magic: 3, name: 'Aspected Magician' } ], availableMetatypes: [ { id: 'human', metatype: 'Human', specialAttributePoints: 9 }, { id: 'elf', metatype: 'Elf', specialAttributePoints: 8 }, { id: 'dwarf', metatype: 'Dwarf', specialAttributePoints: 7 }, { id: 'ork', metatype: 'Ork', specialAttributePoints: 7 }, { id: 'troll', metatype: 'Troll', specialAttributePoints: 5 } ], availableResources: 50000, availableSkillPoints: { groupPoints: 0, points: 18 }, availableSpecialAttributePoints: 9 }, metatype: 'Human' };
 
-			};
 
 			deepFreeze(stateBefore);
 			deepFreeze(stateAfter);

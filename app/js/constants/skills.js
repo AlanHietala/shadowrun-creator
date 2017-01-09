@@ -1,4 +1,4 @@
-import * as attributeTypes from './AttributeTypes';
+import * as attributeTypes from './attributeTypes';
 const skillArray = [
 	{
 		name: 'Archery',

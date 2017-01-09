@@ -21,5 +21,3 @@ export default function AppLayout({children}) {
 		)
 
 }
-
-export default AppLayout;

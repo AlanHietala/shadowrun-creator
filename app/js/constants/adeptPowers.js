@@ -1,8 +1,8 @@
-import * as actionTypes from './ActionTypes';
-import * as characterAreaTypes from './CharacterAreaTypes';
-import * as attributeTypes from './AttributeTypes';
-import * as limitTypes from './LimitTypes';
-import { skillMap } from './Skills';
+import * as actionTypes from './actionTypes';
+import * as characterAreaTypes from './characterAreaTypes';
+import * as attributeTypes from './attributeTypes';
+import * as limitTypes from './limitTypes';
+import { skillMap } from './skills';
 
 
 export default [

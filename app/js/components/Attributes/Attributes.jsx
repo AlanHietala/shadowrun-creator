@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Attribute from './Attribute.jsx';
 import { hashHistory } from 'react-router';
-import {addAttribute, subtractAttribute, addSpecialAttribute, subtractSpecialAttribute} from '../../actions/AttributeActions';
+import {addAttribute, subtractAttribute, addSpecialAttribute, subtractSpecialAttribute} from '../../actions/attributeActions';
 
 const mapStateToProps = (state) => {
 	let props = {};
@@ -40,13 +40,13 @@ const getAttributeCreator = (addAttributeFn, subtractAttributeFn) => (attribute)
 class AttributesComponent extends React.Component {
 
 	render() {
-		const {arePointsAvailable, attributePoints, specialAttributePoints, body, agility, reaction, strength, willpower, logic, intelligence, charisma, edge, essence, magic, resonance, racial, addAttribute, subtractAttribute} = this.props;
+		const {arePointsAvailable, attributePoints, specialAttributePoints, body, agility, reaction, strength, willpower, logic, intuition, charisma, edge, essence, magic, resonance, racial, addAttribute, subtractAttribute} = this.props;
 
 		if(body) {
-			const {attributePoints, specialAttributePoints, body, agility, reaction, strength, willpower, logic, intelligence, charisma, edge, essence, magic, resonance, racial, addAttribute, subtractAttribute} = this.props;
+			const {attributePoints, specialAttributePoints, body, agility, reaction, strength, willpower, logic, intuition, charisma, edge, essence, magic, resonance, racial, addAttribute, subtractAttribute} = this.props;
 			const createAttribute = getAttributeCreator(addAttribute, subtractAttribute);
 			const createSpecialAttribute = getAttributeCreator(addSpecialAttribute, subtractSpecialAttribute);
-			let attributeList = [body, agility, reaction, strength, willpower, logic, intelligence, charisma, edge, essence];
+			let attributeList = [body, agility, reaction, strength, willpower, logic, intuition, charisma, edge, essence];
 
 			if(magic) {
 				attributeList.push(magic)

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as priorityValues from '../../constants/PriorityValues';
+import * as priorityValues from '../../constants/priorityValues';
 import css from './priority.scss';
 import NonePriorityInfo from '../PriorityInfo/NonePriorityInfo.jsx';
 import MagicOrResonancePriorityInfo from '../PriorityInfo/MagicOrResonancePriorityInfo.jsx'

@@ -1,5 +1,5 @@
-import * as priorityActionTypes from '../constants/PriorityActionTypes';
-import * as priorityValues from '../constants/PriorityValues';
+import * as priorityActionTypes from '../constants/priorityActionTypes';
+import * as priorityValues from '../constants/priorityValues';
 
 const defaultState = {
 	attributes: priorityValues.PRIORITY_NONE,

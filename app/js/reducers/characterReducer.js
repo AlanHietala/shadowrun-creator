@@ -1,21 +1,21 @@
-import * as priorityActionTypes from "../constants/PriorityActionTypes";
-import * as creationOptionActionTypes from '../constants/CreationOptionActionTypes'
-import * as qualityActionTypes from '../constants/QualityActionTypes';
-import individualSkills from "../constants/Skills";
-import skillGroups from "../constants/SkillGroups";
-import * as skillActionTypes from "../constants/SkillActionTypes";
-import * as spellActionTypes from "../constants/SpellActionTypes";
-import modifySkill from './ModifySkillReducer';
-import modifySkillGroup from './ModifySkillGroupReducer';
+import * as priorityActionTypes from "../constants/priorityActionTypes";
+import * as creationOptionActionTypes from '../constants/creationOptionActionTypes'
+import * as qualityActionTypes from '../constants/qualityActionTypes';
+import individualSkills from "../constants/skills";
+import skillGroups from "../constants/skillGroups";
+import * as skillActionTypes from "../constants/skillActionTypes";
+import * as spellActionTypes from "../constants/spellActionTypes";
+import modifySkill from './modifySkillReducer';
+import modifySkillGroup from './modifySkillGroupReducer';
 import addAttribute from './AddAttributeReducer';
 import addQuality from './AddQualityReducer';
 import filterSkill from './FilterSkillReducer';
 import setMagicOrResonanceOption from './MagicOrResonanceOptionReducer';
-import setMetatype from './SetMetatypeReducer';
-import setStats from './SetStatsReducer';
-import removeQuality from './RemoveQualityReducer';
+import setMetatype from './setMetatypeReducer';
+import setStats from './setStatsReducer';
+import removeQuality from './removeQualityReducer';
 import modifyBonusSkill from './ModifyBonusSkillReducer';
-import {addSpell, removeSpell} from './SpellReducers';
+import {addSpell, removeSpell} from './spellReducers';
 
 const defaultState = {
 	qualities: [],

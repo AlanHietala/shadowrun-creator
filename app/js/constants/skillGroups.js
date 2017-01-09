@@ -1,4 +1,4 @@
-import skills from "./Skills";
+import skills from "./skills";
 export default [
 	{
 		name: 'Acting',

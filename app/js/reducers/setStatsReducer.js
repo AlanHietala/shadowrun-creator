@@ -1,4 +1,4 @@
-import statsForPriorities from '../constants/StatsForPriorities';
+import statsForPriorities from '../constants/statsForPriorities';
 
 export default (state, action) => {
 	return {

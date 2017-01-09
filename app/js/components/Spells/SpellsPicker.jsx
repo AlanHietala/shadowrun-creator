@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from  'react-redux';
-import spells from '../../constants/Spells';
+import spells from '../../constants/spells';
 import Spell from './Spell.jsx';
-import { addSpell, removeSpell } from '../../actions/SpellActions';
+import { addSpell, removeSpell } from '../../actions/spellActions';
 class SpellsPicker extends React.Component {
 	render() {
 		const { availableSpellCount, addSpell, removeSpell, chosenSpells } = this.props;

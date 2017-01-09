@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from  'react-redux';
-import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill } from '../../actions/SkillActions';
+import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill } from '../../actions/skillActions';
 import CharacterSkills from './CharacterSkills.jsx';
-import * as attributeTypes from  '../../constants/AttributeTypes';
+import * as attributeTypes from  '../../constants/attributeTypes';
 import { hashHistory } from 'react-router';
 
 const mapStateToProps = (state) => {

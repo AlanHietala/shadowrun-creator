@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from  'react-redux';
-import { positiveQualities, negativeQualities} from '../../constants/Qualities';
-import {addQuality, removeQuality } from '../../actions/QualityActions';
+import { positiveQualities, negativeQualities} from '../../constants/qualities';
+import {addQuality, removeQuality } from '../../actions/qualityActions';
 import QualityList from './QualityList.jsx';
 import CharacterQualities from './CharacterQualities.jsx';
 

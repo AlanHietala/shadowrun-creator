@@ -1,4 +1,4 @@
-import { updateAvailableSkillPoints, updateAvailableBonusSkillPoints, updateSkill } from './SkillReducerHelpers';
+import { updateAvailableSkillPoints, updateAvailableBonusSkillPoints, updateSkill } from './skillReducerHelpers';
 
 export default (state, action) => {
 	const individualSkills = state.skills.individualSkills;

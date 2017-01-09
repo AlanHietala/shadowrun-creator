@@ -1,5 +1,5 @@
-import * as priorityActions from '../constants/PriorityActionTypes';
-import * as priorityValues from '../constants/PriorityValues';
+import * as priorityActions from '../constants/priorityActionTypes';
+import * as priorityValues from '../constants/priorityValues';
 import { createAction } from 'redux-actions';
 
 export const setMetatypePriority = createAction(priorityActions.SET_METATYPE_PRIORITY);

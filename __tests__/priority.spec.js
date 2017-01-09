@@ -1,9 +1,9 @@
 import expect, { createSpy, spyOn, isSpy } from 'expect'
 import * as priorityActions from '../app/js/actions/PriorityActions';
-import * as actionTypes from '../app/js/constants/PriorityActionTypes';
-import * as priorityValues from '../app/js/constants/PriorityValues';
+import * as actionTypes from '../app/js/constants/priorityActionTypes';
+import * as priorityValues from '../app/js/constants/priorityValues';
 import deepFreeze from 'deep-freeze';
-import priority from '../app/js/reducers/PrioritySelector';
+import priority from '../app/js/reducers/prioritySelector';
 
 describe('Priority Actions', () => {
 	it('should create an action to set metatype PrioritiesList', () => {

@@ -1,4 +1,4 @@
-import * as initialAttributes from '../constants/InitialAttributes';
+import * as initialAttributes from '../constants/initialAttributes';
 
 export default (state, action) => {
 	return {
@@ -20,6 +20,7 @@ const getInitialAttributesForMetatype = (metatypeId) => {
 	initialAttributes[metatypeId].forEach((attribute) => {
 		attributes[attribute.key] = attribute;
 	});
+
 
 	return attributes;
 };

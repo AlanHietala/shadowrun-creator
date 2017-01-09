@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {selectMagicType} from '../../actions/MagicTypeActions';
+import {selectMagicType} from '../../actions/magicTypeActions';
 import Magician from './Magician.jsx';
 import AspectedMagician from './AspectedMagician.jsx';
 import Technomancer from './Technomancer.jsx';

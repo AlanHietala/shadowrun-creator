@@ -36,7 +36,7 @@ export const human = [
 		maxValue: 6
 	},
 	{
-		key: 'intelligence',
+		key: 'intuition',
 		minValue: 1, 
 		value: 1,
 		maxValue: 6
@@ -95,7 +95,7 @@ export const elf = [
 		value: 1,
 		maxValue: 6
 	},
-	{ key: 'intelligence',
+	{ key: 'intuition',
 		minValue: 1,
 		value: 1,
 		maxValue: 6
@@ -148,7 +148,7 @@ export const dwarf = [
 		value: 1,
 		maxValue: 6
 	},
-	{ key: 'intelligence',
+	{ key: 'intuition',
 		minValue: 1,
 		value: 1,
 		maxValue: 6
@@ -202,7 +202,7 @@ export const ork = [
 		value: 1,
 		maxValue: 5
 	},
-	{ key: 'intelligence',
+	{ key: 'intuition',
 		minValue: 1,
 		value: 1,
 		maxValue: 6
@@ -257,7 +257,7 @@ export const troll = [
 		value: 1,
 		maxValue: 5
 	},
-	{ key: 'intelligence',
+	{ key: 'intuition',
 		minValue: 1,
 		value: 1,
 		maxValue: 5
