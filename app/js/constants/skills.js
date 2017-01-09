@@ -4,489 +4,550 @@ const skillArray = [
 		name: 'Archery',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Bow',
+			'Crossbow',
+			'Non-Standard Ammunition',
+			'Slingshot'
+		]
 	},
 	{
 		name: 'Automatics',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Assault Rifles',
+			'Cyber-Implant',
+			'Machine Pistols',
+			'Submachine Guns'
+		]
 	},
 	{
 		name: 'Blades',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Axes',
+			'Knives',
+			'Swords',
+			'Parrying'
+		]
 	},
 	{
 		name: 'Clubs',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Batons',
+			'Hammers',
+			'Saps',
+			'Staves',
+			'Parrying'
+		]
 	},
 	{
 		name: 'Escape Artist',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: []
 	},
 	{
 		name: 'Exotic Melee Weapon',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: []
 	},
 	{
 		name: 'Exotic Range Weapon',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: []
 	},
 	{
 		name: 'Gunnery',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: []
 	},
 	{
 		name: 'Gymnastics',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: []
 	},
 	{
 		name: 'Heavy Weapons',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Assault Cannons',
+			'Grenade Launchers',
+			'Guided Missiles',
+			'Machine Guns',
+			'Rocket Launchers']
 	},
 	{
 		name: 'Locksmith',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: []
 	},
 	{
 		name: 'Longarms',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Extended-Range Shots',
+			'Long-Range Shots',
+			'Shotguns',
+			'Sniper Rifles'
+		]
 	},
 	{
 		name: 'Palming',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: []
 	},
 	{
 		name: 'Pistols',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Holdouts',
+			'Revolvers',
+			'Semi-Automatics',
+			'Tasers'
+		]
 	},
 	{
 		name: 'Sneaking',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: []
 	},
 	{
-		name: 'Throwing Weapon',
+		name: 'Throwing Weapons',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Aerodynamic',
+			'Blades',
+			'Non-Aerodynamic'
+		]
 	},
 	{
 		name: 'Unarmed Combat',
 		points: 0,
 		attribute: attributeTypes.AGILITY,
-		canDefault: true
+		canDefault: true,
+		specializations: [
+			'Blocking',
+			'Cyber Implants',
+			'Subduing Combat'
+		]
 	},
 	{
 		name: 'Diving',
 		points: 0,
 		attribute: attributeTypes.BODY,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Free-Fall',
 		points: 0,
 		attribute: attributeTypes.BODY,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Pilot Aerospace',
 		points: 0,
 		attribute: attributeTypes.REACTION,
-		canDefault: false
+		canDefault: false, specializations: []
 
 	},
 	{
 		name: 'Pilot Aircraft',
 		points: 0,
 		attribute: attributeTypes.REACTION,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Pilot Walker',
 		points: 0,
 		attribute: attributeTypes.REACTION,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Pilot Exotic Vehicle',
 		points: 0,
 		attribute: attributeTypes.REACTION,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Pilot Ground Craft',
 		points: 0,
 		attribute: attributeTypes.REACTION,
-		canDefault: true
+		canDefault: true, specializations: []
 
 	},
 	{
 		name: 'Pilot Watercraft',
 		points: 0,
 		attribute: attributeTypes.REACTION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Running',
 		points: 0,
 		attribute: attributeTypes.STRENGTH,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Swimming',
 		points: 0,
 		attribute: attributeTypes.STRENGTH,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Con',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Etiquette',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Instruction',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Intimidation',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Leadership',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Negotiation',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Performance',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Impersonation',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Animal Handling',
 		points: 0,
 		attribute: attributeTypes.CHARISMA,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Artisan',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Assensing',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Disguise',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Interests Knowledge',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Language',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Navigation',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Perception',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Street Knowledge',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Tracking',
 		points: 0,
 		attribute: attributeTypes.INTUITION,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Academic Knowledge',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Aeronautics Mechanics',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Arcane',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Armorer',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Automotive Mechanics',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Biotechnology',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Chemistry',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Computer',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Cybertechnology',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Cybercombat',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Demolitions',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Electronic Warfare',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'First Aid',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Industrial Mechanics',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Hacking',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Hardware',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Medicine',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Nautical Mechanics',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Professional Knowledge',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Software',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Forgery',
 		points: 0,
 		attribute: attributeTypes.LOGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Astral Combat',
 		points: 0,
 		attribute: attributeTypes.WILLPOWER,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Survival',
 		points: 0,
 		attribute: attributeTypes.WILLPOWER,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Alchemy',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Artificing',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: true
+		canDefault: true, specializations: []
 	},
 	{
 		name: 'Banishing',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Binding',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Counterspelling',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Ritual Spellcasting',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Spellcasting',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Summoning',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Enchanting',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Disenchanting',
 		points: 0,
 		attribute: attributeTypes.MAGIC,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Compiling',
 		points: 0,
 		attribute: attributeTypes.RESONANCE,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Decompiling',
 		points: 0,
 		attribute: attributeTypes.RESONANCE,
-		canDefault: false
+		canDefault: false, specializations: []
 	},
 	{
 		name: 'Registering',
 		points: 0,
 		attribute: attributeTypes.RESONANCE,
-		canDefault: false
+		canDefault: false, specializations: []
 	}
 ];
 const skillMap = {
