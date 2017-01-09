@@ -18,8 +18,6 @@ export default (state, action) => {
 	return newState;
 }
 
-
-
 const addAttributePoint = (pointsToAdd, state, isSpecialAttribute) => {
 	let creation = null;
 
