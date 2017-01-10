@@ -1,4 +1,4 @@
-import addQualityReducer from '../../app/js/reducers/addQualityReducer';
+import addQualityReducer from '../../app/js/reducers/qualityReducer';
 import {ADD_QUALITY, REMOVE_QUALITY} from '../../app/js/constants/qualityActionTypes';
 
 describe('quality Reducer', function () {

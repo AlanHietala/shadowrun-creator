@@ -1,4 +1,4 @@
-import * as creationOptionActionTypes from  '../constants/creationOptionActionTypes';
+import * as creationOptionActionTypes from  '../../constants/creationOptionActionTypes';
 
 export default (state, action) => {
 	const valueToAdd = action.type === creationOptionActionTypes.ADD_ATTRIBUTE ? 1 : -1;

@@ -1,3 +1,17 @@
+import * as spellActionTypes from '../../constants/spellActionTypes';
+
+export default (state, action) => {
+	switch(action.type) {
+		case spellActionTypes.ADD_SPELL:
+			return addSpell(state, action);
+			break;
+		case spellActionTypes.REMOVE_SPELL:
+			return removeSpell(state, action);
+			break;
+		default:
+			return state;
+	}
+}
 
 const addSpell = (state, action) => {
 	if(state.creation.spellCount > 0 && !isSpellAlreadyAdded(state.spells, action.payload)) {
@@ -37,8 +51,3 @@ const removeSpell = (state, action) => {
 	};
 };
 
-
-module.exports = {
-	addSpell,
-	removeSpell
-}

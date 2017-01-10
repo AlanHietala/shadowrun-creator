@@ -5,17 +5,13 @@ import individualSkills from "../constants/skills";
 import skillGroups from "../constants/skillGroups";
 import * as skillActionTypes from "../constants/skillActionTypes";
 import * as spellActionTypes from "../constants/spellActionTypes";
-import modifySkill from './modifySkillReducer';
-import modifySkillGroup from './modifySkillGroupReducer';
-import addAttribute from './AddAttributeReducer';
-import addQuality from './AddQualityReducer';
-import filterSkill from './FilterSkillReducer';
+import skills from './skills';
+import attribute from './attributes';
+import quality from './quality';
 import setMagicOrResonanceOption from './MagicOrResonanceOptionReducer';
 import setMetatype from './setMetatypeReducer';
 import setStats from './setStatsReducer';
-import removeQuality from './removeQualityReducer';
-import modifyBonusSkill from './ModifyBonusSkillReducer';
-import {addSpell, removeSpell} from './spellReducers';
+import spells from './spells';
 
 const defaultState = {
 	qualities: [],
@@ -29,47 +25,53 @@ const defaultState = {
 	spells: []
 };
 
+const skillActions = [
+	skillActionTypes.MODIFY_SKILL,
+	skillActionTypes.ADD_SKILL_SPECIALIZATION,
+	skillActionTypes.MODIFY_BONUS_SKILL,
+	skillActionTypes.MODIFY_SKILL_GROUP,
+	skillActionTypes.FILTER_SKILL
+];
+
+const attributeActions = [
+	creationOptionActionTypes.ADD_ATTRIBUTE,
+	creationOptionActionTypes.SUBTRACT_ATTRIBUTE
+];
+
+const spellActions = [
+	spellActionTypes.ADD_SPELL,
+	spellActionTypes.REMOVE_SPELL
+];
+
 const character = (state = defaultState, action) => {
 
-	switch(action.type) {
-		case priorityActionTypes.SAVE_PRIORITIES:
-			return setStats(state, action);
-			break;
-		case creationOptionActionTypes.PICK_METATYPE_OPTION:
-			return setMetatype(state, action);
-			break;
-		case creationOptionActionTypes.PICK_MAGIC_OR_RESONANCE_OPTION:
-			return setMagicOrResonanceOption(state, action);
-			break;
-		case creationOptionActionTypes.ADD_ATTRIBUTE:
-			return addAttribute(state, action);
-			break;
-		case creationOptionActionTypes.SUBTRACT_ATTRIBUTE:
-			return addAttribute(state, action);
-			break;
-		case qualityActionTypes.ADD_QUALITY:
-			return addQuality(state, action);
-			break;
-		case qualityActionTypes.REMOVE_QUALITY:
-			return removeQuality(state, action);
-			break;
-		case skillActionTypes.MODIFY_SKILL:
-			return modifySkill(state, action);
-			break;
-		case skillActionTypes.MODIFY_BONUS_SKILL:
-			return modifyBonusSkill(state, action);
-			break;
-		case skillActionTypes.MODIFY_SKILL_GROUP:
-			return modifySkillGroup(state, action);
-			break;
-		case skillActionTypes.FILTER_SKILL:
-			return filterSkill(state, action);
-		case spellActionTypes.ADD_SPELL:
-			return addSpell(state, action);
-		case spellActionTypes.REMOVE_SPELL:
-			return removeSpell(state, action);
-		default:
-			return state;
+	if(skillActions.includes(action.type)) {
+		return skills(state, action);
+	} else if(attributeActions.includes(action.type)) {
+		return attribute(state, action);
+	} else if(spellActions.includes(action.type)) {
+		return spells(state, action);
+	} else {
+		switch (action.type) {
+			case priorityActionTypes.SAVE_PRIORITIES:
+				return setStats(state, action);
+				break;
+			case creationOptionActionTypes.PICK_METATYPE_OPTION:
+				return setMetatype(state, action);
+				break;
+			case creationOptionActionTypes.PICK_MAGIC_OR_RESONANCE_OPTION:
+				return setMagicOrResonanceOption(state, action);
+				break;
+			case qualityActionTypes.ADD_QUALITY:
+				return quality(state, action);
+				break;
+			case qualityActionTypes.REMOVE_QUALITY:
+				return quality(state, action);
+				break;
+
+			default:
+				return state;
+		}
 	}
 };
 
