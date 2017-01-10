@@ -1,4 +1,4 @@
-import removeQualityReducer from '../../app/js/reducers/removeQualityReducer';
+import removeQualityReducer from '../../app/js/reducers/quality';
 import {REMOVE_QUALITY} from '../../app/js/constants/qualityActionTypes';
 
 describe('removeQualityReducer', function () {

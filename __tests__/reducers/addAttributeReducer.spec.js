@@ -1,4 +1,4 @@
-import addAttributeReducer from '../../app/js/reducers/addAttributeReducer';
+import addAttributeReducer from '../../app/js/reducers/attributes';
 import attributeActions from '../../app/js/actions/attributeActions';
 import {ADD_ATTRIBUTE, SUBTRACT_ATTRIBUTE} from '../../app/js/constants/creationOptionActionTypes';
 

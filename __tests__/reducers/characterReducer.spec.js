@@ -1,8 +1,8 @@
-import characterReducer from "../app/js/reducers/CharacterReducer";
-import * as priorityActions from "../app/js/actions/PriorityActions";
-import * as priorityValues from "../app/js/constants/priorityValues";
-import statsForPriorities from "../app/js/constants/statsForPriorities";
-import * as metatypeActions from "../app/js/actions/MetatypeActions";
+import characterReducer from "../../app/js/reducers/characterReducer";
+import * as priorityActions from "../../app/js/actions/priorityActions";
+import * as priorityValues from "../../app/js/constants/priorityValues";
+import statsForPriorities from "../../app/js/constants/statsForPriorities";
+import * as metatypeActions from "../../app/js/actions/MetatypeActions";
 import deepFreeze from "deep-freeze";
 import expect from "expect";
 
