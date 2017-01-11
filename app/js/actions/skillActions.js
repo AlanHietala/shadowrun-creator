@@ -1,6 +1,14 @@
 import * as skillActions from '../constants/skillActionTypes';
 import { createAction } from 'redux-actions';
 
+
+export const addSkillSpecialization = createAction(skillActions.ADD_SKILL_SPECIALIZATION, (skillIndex, specializationIndex) => {
+	return {
+		skillIndex,
+		specializationIndex
+	}
+});
+
 export const modifySkill  = createAction(skillActions.MODIFY_SKILL, (skill, addValue) => {
 	return {
 		skill,
@@ -23,3 +31,5 @@ export const modifySkillGroup = createAction(skillActions.MODIFY_SKILL_GROUP, (s
 });
 
 export const filterSkill = createAction(skillActions.FILTER_SKILL);
+
+
