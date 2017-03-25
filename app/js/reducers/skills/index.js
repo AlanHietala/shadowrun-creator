@@ -13,6 +13,9 @@ export default (state, action) => {
 		case skillActionTypes.ADD_SKILL_SPECIALIZATION:
 			return skillSpecialization(state, action);
 			break;
+		case skillActionTypes.REMOVE_SKILL_SPECIALIZATION:
+			return skillSpecialization(state, action);
+			break;
 		case skillActionTypes.MODIFY_BONUS_SKILL:
 			return modifyBonusSkill(state, action);
 			break;

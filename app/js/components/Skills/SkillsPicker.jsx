@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from  'react-redux';
-import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill, addSkillSpecialization } from '../../actions/skillActions';
+import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill, addSkillSpecialization, removeSkillSpecialization } from '../../actions/skillActions';
 import CharacterSkills from './CharacterSkills.jsx';
 import * as attributeTypes from  '../../constants/attributeTypes';
 import { hashHistory } from 'react-router';
@@ -39,6 +39,10 @@ const mapDispatchToProps = (dispatch) => {
 		addSpecialization: (skillIndex, specializationIndex) => {
 			const addSpecializationAction = addSkillSpecialization(skillIndex, specializationIndex);
 			dispatch(addSpecializationAction);
+		},
+		removeSpecialization: (skillIndex, specializationIndex) => {
+			const removeSpecializationAction = removeSkillSpecialization(skillIndex, specializationIndex);
+			dispatch(removeSpecializationAction);
 		}
 	}
 };
@@ -58,7 +62,8 @@ class SkillPicker extends React.Component {
 			modifyBonusSkill,
 			isMagicAllowed,
 			isResonanceAllowed,
-			addSpecialization
+			addSpecialization,
+			removeSpecialization
 		} = this.props;
 
 		const moreThanZeroPoints = (skills) => skills.points > 0;
@@ -90,7 +95,7 @@ class SkillPicker extends React.Component {
 			<div className="row">
 				<div className="col-md-4">
 					<h2>Character Skills</h2>
-					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization}/>
+					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>
 				</div>
 				<div className="col-md-4">
 					<h2>Bonus Skills</h2>

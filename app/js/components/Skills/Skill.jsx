@@ -1,11 +1,11 @@
 import React from 'react';
-export default ({ skill, modifyFn, addSpecializationFn }) => {
+export default ({ skill, modifyFn, addSpecializationFn, removeSpecializationFn }) => {
 	const specializations = skill.specializations.map((specialization, index) => {
 		return (<button key={specialization} onClick={() => addSpecializationFn(index)}>{specialization}</button> )
 	});
 
-	const selectedSpecializations = skill.selectedSpecializations.map((specialization) => {
-		return (<div key={specialization}>{specialization}</div> )
+	const selectedSpecializations = skill.selectedSpecializations.map((specialization, index) => {
+		return (<button key={specialization} onClick={ () => removeSpecializationFn(index)}>{specialization}</button> )
 	});
 
 	return (

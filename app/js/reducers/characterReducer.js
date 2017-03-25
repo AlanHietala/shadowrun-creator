@@ -28,6 +28,7 @@ const defaultState = {
 const skillActions = [
 	skillActionTypes.MODIFY_SKILL,
 	skillActionTypes.ADD_SKILL_SPECIALIZATION,
+	skillActionTypes.REMOVE_SKILL_SPECIALIZATION,
 	skillActionTypes.MODIFY_BONUS_SKILL,
 	skillActionTypes.MODIFY_SKILL_GROUP,
 	skillActionTypes.FILTER_SKILL

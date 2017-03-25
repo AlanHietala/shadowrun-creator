@@ -9,6 +9,13 @@ export const addSkillSpecialization = createAction(skillActions.ADD_SKILL_SPECIA
 	}
 });
 
+export const removeSkillSpecialization = createAction(skillActions.REMOVE_SKILL_SPECIALIZATION, (skillIndex, specializationIndex) => {
+	return {
+		skillIndex,
+		specializationIndex
+	}
+});
+
 export const modifySkill  = createAction(skillActions.MODIFY_SKILL, (skill, addValue) => {
 	return {
 		skill,
