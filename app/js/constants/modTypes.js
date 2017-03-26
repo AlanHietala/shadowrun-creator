@@ -1,0 +1,2 @@
+export const REACTION_MOD = 'REACTION_MOD';
+export const INITIATIVE_MOD = 'INITIATIVE_MOD';

@@ -1,5 +1,6 @@
 import * as priorityActionTypes from "../constants/priorityActionTypes";
 import * as creationOptionActionTypes from '../constants/creationOptionActionTypes'
+import * as itemActionTypes from '../constants/itemActionTypes';
 import * as qualityActionTypes from '../constants/qualityActionTypes';
 import individualSkills from "../constants/skills";
 import skillGroups from "../constants/skillGroups";
@@ -12,6 +13,7 @@ import setMagicOrResonanceOption from './MagicOrResonanceOptionReducer';
 import setMetatype from './setMetatypeReducer';
 import setStats from './setStatsReducer';
 import spells from './spells';
+import items from './items';
 
 const defaultState = {
 	qualities: [],
@@ -22,7 +24,8 @@ const defaultState = {
 		skillGroups,
 		textFilter: ''
 	},
-	spells: []
+	spells: [],
+	items: []
 };
 
 const skillActions = [
@@ -68,6 +71,9 @@ const character = (state = defaultState, action) => {
 				break;
 			case qualityActionTypes.REMOVE_QUALITY:
 				return quality(state, action);
+				break;
+			case itemActionTypes.ADD_ITEM:
+				return items(state, action);
 				break;
 
 			default:
