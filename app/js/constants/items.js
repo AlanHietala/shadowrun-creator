@@ -5,7 +5,7 @@ const items = [
 		name: 'Reaction Enhancers 1',
 		mods: [
 			{
-				effectType: modTypes.REACTION_MOD,
+				modType: modTypes.REACTION_MOD,
 				effect: 1
 			}
 		]

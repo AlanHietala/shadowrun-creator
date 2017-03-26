@@ -5,8 +5,22 @@ const itemsReducer = (state, action) => {
 		case itemActions.ADD_ITEM:
 			return handleAddItem(state, action);
 			break;
+		case itemActions.REMOVE_ITEM:
+			return handleRemoveItem(state, action);
 		default:
 			return state;
+	}
+}
+
+function handleRemoveItem(state, action) {
+	const items = [
+		...state.items.slice(0, action.payload),
+		...state.items.slice(action.payload + 1)
+	];
+
+	return {
+		...state,
+		items
 	}
 }
 

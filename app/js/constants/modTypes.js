@@ -1,2 +1,11 @@
 export const REACTION_MOD = 'REACTION_MOD';
 export const INITIATIVE_MOD = 'INITIATIVE_MOD';
+export const STRENGTH_MOD = 'STRENGTH_MOD';
+export const AGILITY_MOD = 'AGILITY_MOD';
+export const INTUITION_MOD = 'INTUITION_MOD';
+export const WILLPOWER_MOD = 'WILLPOWER_MOD';
+export const MAGIC_MOD = 'MAGIC_MOD';
+export const BODY_MOD = 'BODY_MOD';
+export const CHARISMA_MOD = 'CHARISMA_MOD';
+export const LOGIC_MOD = 'LOGIC_MOD';
+export const ESSENCE_MOD = 'ESSENCE_MOD';

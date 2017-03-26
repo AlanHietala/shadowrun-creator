@@ -1,4 +1,4 @@
-import { addItem } from '../../app/js/actions/itemActions';
+import { addItem, removeItem } from '../../app/js/actions/itemActions';
 import itemsReducer from '../../app/js/reducers/items';
 
 describe('Items Reducer', function () {
@@ -25,6 +25,36 @@ describe('Items Reducer', function () {
 			const addItemAction = addItem(item);
 			expect(itemsReducer(initialState, addItemAction)).toEqual(stateAfter);
 		});
+	});
+
+	describe('REMOVE_ITEM', function () {
+		it('should remove an item indicated by the item index', function () {
+			const initialState = {
+				items: [
+					{
+						name: 'item 1',
+						mods: []
+					},
+					{
+						name: 'item 2',
+						mods: []
+					}
+				]
+			};
+
+			const stateAfter = {
+				items: [
+					{
+						name: 'item 1',
+						mods: []
+					}
+				]
+			}
+
+			const removeItemAction = removeItem(1);
+			expect(itemsReducer(initialState, removeItemAction)).toEqual(stateAfter);
+		});
+
 	});
 
 	
