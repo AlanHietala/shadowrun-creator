@@ -3,7 +3,7 @@ import { connect } from  'react-redux';
 import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill, addSkillSpecialization, removeSkillSpecialization } from '../../actions/skillActions';
 import CharacterSkills from './CharacterSkills.jsx';
 import * as attributeTypes from  '../../constants/attributeTypes';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 const mapStateToProps = (state) => {
 	return {
@@ -90,7 +90,7 @@ class SkillPicker extends React.Component {
 		return (<div>
 			<div className="row">
 				<div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusPoints } at level { bonusRating }</div>
-				<button onClick={() => hashHistory.push(nextString) }>next</button>
+				<button onClick={() => browserHistory.push(nextString) }>next</button>
 			</div>
 			<div className="row">
 				<div className="col-md-4">

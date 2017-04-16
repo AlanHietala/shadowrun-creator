@@ -7,7 +7,7 @@ import AspectedMagician from './AspectedMagician.jsx';
 import Technomancer from './Technomancer.jsx';
 import Adept from './Adept.jsx';
 import MysticAdept from './MysticAdept.jsx';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 const mapStateToProps = (state) => {
 	let props = {};
@@ -57,7 +57,7 @@ class MagicTypesComponent extends React.Component {
 		if(this.props.magicClasses) {
 			const magicTypeComponents = this.props.magicClasses
 					.map((magicType) => {
-						return getMagicComponent(magicType, () => { selectMagicType(magicType); hashHistory.push('/creation/attributes') });
+						return getMagicComponent(magicType, () => { selectMagicType(magicType); browserHistory.push('/creation/attributes') });
 
 					});
 			return (

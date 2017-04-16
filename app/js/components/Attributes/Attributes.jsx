@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Attribute from './Attribute.jsx';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import {addAttribute, subtractAttribute, addSpecialAttribute, subtractSpecialAttribute} from '../../actions/attributeActions';
 
 const mapStateToProps = (state) => {
@@ -68,7 +68,7 @@ class AttributesComponent extends React.Component {
 					<div>
 					{attributeElements}
 					</div>
-					<button className="btn" disabled={arePointsAvailable} onClick={() => {hashHistory.push('/creation/skills');}}>Next</button>
+					<button className="btn" disabled={arePointsAvailable} onClick={() => {browserHistory.push('/creation/skills');}}>Next</button>
 				</div>);
 		} else {
 			return (<div>Can't Select Attributes yet</div>);

@@ -1,5 +1,5 @@
 import React from 'react';
-export default ({key, attributeData, addAttribute, subtractAttribute}) => {
+export default ({attributeData, addAttribute, subtractAttribute}) => {
 	return (
 		<div className="row">
 			<div className="col-md-1">{attributeData.key}</div>

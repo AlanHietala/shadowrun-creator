@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import Priority from '../Priority/Priority.jsx';
 import * as priorityActionCreators from '../../actions/priorityActions';
 import priorityStats from '../../constants/statsForPriorities';
-import {hashHistory} from 'react-router';
+import {browserHistory} from 'react-router';
 import css from './priority.scss';
 
 function createPriorityItem(id, name, priority) {
@@ -67,7 +67,7 @@ class PrioritiesListComponent extends React.Component {
 							this.props.magicOrResonancePriority,
 							this.props.resourcesPriority,
 							this.props.skillsPriority);
-						hashHistory.push('/creation/metatype')
+						browserHistory.push('/creation/metatype')
 					}} >Save</button>
 			</div>
 		);

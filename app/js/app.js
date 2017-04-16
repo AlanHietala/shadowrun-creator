@@ -1,8 +1,7 @@
-import bootstrap from 'bootstrap-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './store/configureStore';
 import Foo from './components/FooComponent.jsx';
@@ -15,32 +14,40 @@ import Attributes from './components/Attributes/Attributes.jsx';
 import QualityPicker from './components/Qualities/QualityPicker.jsx';
 import SkillsPicker from './components/Skills/SkillsPicker.jsx';
 import SpellsPicker from './components/Spells/SpellsPicker.jsx';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
 const store = configureStore();
 
 
 // Required for replaying actions from devtools to work
 
-const history = syncHistoryWithStore(hashHistory, store);
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
 	<Provider store={store}>
-		<div>
-			<Router history={history}>
-				<Route path="/" component={AppLayout}>
-					<IndexRoute component={Foo}/>
-					<Route path="creation" component={Creation}>
-						<Route path="priority" component={ PrioritiesList } />
-						<Route path="metatype" component={ MetatypePicker } />
-						<Route path="magic" component={ MagicTypes } />
-						<Route path="attributes" component={ Attributes } />
-						<Route path="qualities" component={ QualityPicker } />
-						<Route path="skills" component={ SkillsPicker } />
-						<Route path="spells" component={ SpellsPicker } />
-					</Route> 
-				</Route>
-			</Router>
-		</div>
+		<MuiThemeProvider>
+			<div>
+				<Router history={history}>
+					<Route path="/" component={AppLayout}>
+						<IndexRoute component={Foo}/>
+						<Route path="creation" component={Creation}>
+							<Route path="priority" component={ PrioritiesList } />
+							<Route path="metatype" component={ MetatypePicker } />
+							<Route path="magic" component={ MagicTypes } />
+							<Route path="attributes" component={ Attributes } />
+							<Route path="qualities" component={ QualityPicker } />
+							<Route path="skills" component={ SkillsPicker } />
+							<Route path="spells" component={ SpellsPicker } />
+						</Route>
+					</Route>
+				</Router>
+			</div>
+		</MuiThemeProvider>
 	</Provider>,
 	document.getElementById('app')
 )

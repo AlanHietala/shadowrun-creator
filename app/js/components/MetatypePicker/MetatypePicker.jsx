@@ -6,7 +6,7 @@ import * as metatypeActionCreators from '../../actions/metatypeActions';
 import priorityStats from '../../constants/statsForPriorities';
 import css from './metatype.picker.scss';
 import MetatypeItem from '../MetatypeItem/MetatypeItem.jsx';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 const mapStateToProps = (state) => {
 	let propList = {
@@ -36,9 +36,9 @@ class MetatypePickerComponent extends React.Component {
 				return (<MetatypeItem key={metatype.id} metatypeData={metatype} selectMetatype={() => {
 					this.props.selectMetatype(metatype);
 					if(this.props.hasMagic) {
-						hashHistory.push('/creation/magic');
+						browserHistory.push('/creation/magic');
 					} else {
-						hashHistory.push('/creation/attributes');
+						browserHistory.push('/creation/attributes');
 					}
 				}} />);
 			});
