@@ -7,5 +7,5 @@ export default ({priorityInfo}) => {
 		return `${item.metatype} (${item.specialAttributePoints})`
 	}).join(', ');
 
-	return (<div>{`You can use these metatypes (special attribute points): ${metatypeString}`}</div>)
+	return (<div>{`${metatypeString}`}</div>)
 }

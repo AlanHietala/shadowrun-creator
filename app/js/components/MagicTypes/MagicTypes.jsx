@@ -2,11 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {selectMagicType} from '../../actions/magicTypeActions';
-import Magician from './Magician.jsx';
-import AspectedMagician from './AspectedMagician.jsx';
-import Technomancer from './Technomancer.jsx';
-import Adept from './Adept.jsx';
-import MysticAdept from './MysticAdept.jsx';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
+import RaisedButton from 'material-ui/RaisedButton';
 import { browserHistory } from 'react-router';
 
 const mapStateToProps = (state) => {
@@ -25,31 +22,6 @@ const mapDispatchToProps = (dispatch) => {
 	}, dispatch);
 };
 
-const getMagicComponent = (magicData, selectType) => {
-	let magicType;
-	switch (magicData.key) {
-		case 'magician':
-			magicType = (<Magician key={magicData.key} magicData={magicData} selectType={selectType} />);
-			break;
-		case 'mysticAdept':
-			magicType = (<MysticAdept key={magicData.key} magicData={magicData} selectType={selectType} />);
-			break;
-		case 'technomancer':
-			magicType = (<Technomancer key={magicData.key} magicData={magicData} selectType={selectType} />);
-			break;
-		case 'adept':
-			magicType = (<Adept key={magicData.key} magicData={magicData} selectType={selectType} />);
-			break;
-		case 'aspectedMagician':
-			magicType = (<AspectedMagician key={magicData.key} magicData={magicData} selectType={selectType} />);
-			break;
-		default:
-			magicType = (<Magician key={magicData.key} magicData={magicData} selectType={selectType} />);
-	}
-
-	return magicType;
-}
-
 class MagicTypesComponent extends React.Component {
 
 	render() {
@@ -57,13 +29,25 @@ class MagicTypesComponent extends React.Component {
 		if(this.props.magicClasses) {
 			const magicTypeComponents = this.props.magicClasses
 					.map((magicType) => {
-						return getMagicComponent(magicType, () => { selectMagicType(magicType); browserHistory.push('/creation/attributes') });
+						return (<RadioButton  value={magicType} label={magicType.name} />);
 
 					});
 			return (
 					<div>
 						<h2>Magic Class</h2>
-						{magicTypeComponents}
+						<RadioButtonGroup
+							name="magicgroup"
+							onChange={(event, value) => {
+								selectMagicType(value);
+						}}>
+							{magicTypeComponents}
+						</RadioButtonGroup>
+						<RaisedButton
+							label="Save"
+							primary={true}
+							onClick={() => {
+								browserHistory.push('/creation/attributes');
+							}} />
 					</div>);
 		} else {
 			return (<div>Can't select magic yet</div>);

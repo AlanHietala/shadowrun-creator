@@ -5,6 +5,7 @@ import Priority from '../Priority/Priority.jsx';
 import * as priorityActionCreators from '../../actions/priorityActions';
 import priorityStats from '../../constants/statsForPriorities';
 import {browserHistory} from 'react-router';
+import RaisedButton from 'material-ui/RaisedButton'
 import css from './priority.scss';
 
 function createPriorityItem(id, name, priority) {
@@ -61,14 +62,19 @@ class PrioritiesListComponent extends React.Component {
 				<div>
 					<h2>Priorities</h2>
 					{priorityItems}
-					<button className={`btn btn-default ${css.saveMargin}`} disabled={!this.props.isValid} onClick={() => {
-						this.props.onSaveClick(this.props.metatypePriority,
-							this.props.attributesPriority,
-							this.props.magicOrResonancePriority,
-							this.props.resourcesPriority,
-							this.props.skillsPriority);
-						browserHistory.push('/creation/metatype')
-					}} >Save</button>
+
+					<RaisedButton
+						label="Save"
+						primary={true}
+						disabled={!this.props.isValid}
+						onClick={() => {
+							this.props.onSaveClick(this.props.metatypePriority,
+								this.props.attributesPriority,
+								this.props.magicOrResonancePriority,
+								this.props.resourcesPriority,
+								this.props.skillsPriority);
+							browserHistory.push('/creation/metatype')
+						}} />
 			</div>
 		);
 	}

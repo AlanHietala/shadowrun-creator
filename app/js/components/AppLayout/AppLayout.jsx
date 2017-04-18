@@ -2,8 +2,11 @@ import React from 'react';
 import {Link, browserHistory} from 'react-router'
 import AppBar from 'material-ui/AppBar'
 import Popover, {PopoverAnimationVertical} from 'material-ui/Popover'
-import Menu from 'material-ui/Menu'
+import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
+import Menu from 'material-ui/Menu'
+import {Tabs, Tab} from 'material-ui/Tabs'
+import Paper from 'material-ui/Paper'
 
 export default class AppLayout extends React.Component {
 	constructor(props) {
@@ -27,7 +30,7 @@ export default class AppLayout extends React.Component {
 		})
 	}
 
-	handleMenuItemSelected = (event) => {
+	handleMenuItemSelected = (path) => {
 		browserHistory.push('/creation/priority');
 		this.setState({
 			open: false
@@ -38,27 +41,23 @@ export default class AppLayout extends React.Component {
 		const { children } = this.props;
 		return (
 			<div>
+				<Drawer docked={false}
+						open={this.state.open}
+						onRequestChange={(open) => this.setState({open})}>
+
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/priority')}>Priorities</MenuItem>
+					<MenuItem value="metatype">Metatype</MenuItem>
+					<MenuItem value="magic">Magic</MenuItem>
+					<MenuItem value="attributes">Attributes</MenuItem>
+					<MenuItem value="qualities">Qualities</MenuItem>
+					<MenuItem value="skills">Skills</MenuItem>
+					<MenuItem value="spells">Spells</MenuItem>
+				</Drawer>
 				<AppBar
 					title="Shadowrun Creator"
 					onLeftIconButtonTouchTap={this.handleOpenMenu}>
 				</AppBar>
-				<li><Link to="/creation/priority">Create Character</Link></li>
-
-				<Popover
-					open={this.state.open}
-					anchorEl={this.state.menuAnchor}
-					anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-					targetOrigin={{horizontal: 'left', vertical: 'top'}}
-					onRequestClose={this.handleCloseMenu}
-					animation={PopoverAnimationVertical}
-				>
-					<Menu
-						onItemTouchTap={this.handleMenuItemSelected}>
-						<MenuItem primaryText="Create Character" />
-
-					</Menu>
-				</Popover>
-				<div>{children}</div>
+				<Paper>{children}</Paper>
 			</div>
 		)
 	}

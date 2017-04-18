@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import Attribute from './Attribute.jsx';
 import { browserHistory } from 'react-router';
 import {addAttribute, subtractAttribute, addSpecialAttribute, subtractSpecialAttribute} from '../../actions/attributeActions';
+import FlatButton from 'material-ui/FlatButton'
 
 const mapStateToProps = (state) => {
 	let props = {};
@@ -29,11 +30,19 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const getAttributeCreator = (addAttributeFn, subtractAttributeFn) => (attribute)  => {
-		return (<Attribute key={attribute.key}
-						   attributeData={attribute}
-						   addAttribute={() => {addAttributeFn(attribute)}}
-						   subtractAttribute={() => {subtractAttributeFn(attribute)}}
-		/>);
+		return (<div>
+			<span style={{width: '75px', display: 'inline-block'}}>{attribute.key}</span>
+			<FlatButton label="-" onTouchTap={(event) => {
+						event.preventDefault();
+						subtractAttributeFn(attribute);
+					}}/>
+			{attribute.value}
+			<FlatButton label="+"
+				onTouchTap={(event) => {
+					event.preventDefault();
+					addAttributeFn(attribute);
+				}}/>
+		</div>);
 };
 
 

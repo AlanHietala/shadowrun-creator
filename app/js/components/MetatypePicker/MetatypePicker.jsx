@@ -5,8 +5,40 @@ import Priority from '../Priority/Priority.jsx';
 import * as metatypeActionCreators from '../../actions/metatypeActions';
 import priorityStats from '../../constants/statsForPriorities';
 import css from './metatype.picker.scss';
-import MetatypeItem from '../MetatypeItem/MetatypeItem.jsx';
 import { browserHistory } from 'react-router';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import RaisedButton from 'material-ui/RaisedButton';
+
+
+
+class MetatypePickerComponent extends React.Component {
+
+	render() {
+		const {selectMetatype} = this.props;
+		const metatypes = this.props.availableMetatypes
+			.map((metatype) => {
+				return (<RadioButton value={metatype} label={`${metatype.metatype} (${metatype.specialAttributePoints})`}  />);
+			});
+		return (<div>
+			<h2>Metatype</h2>
+			<RadioButtonGroup name="metatypegroup" onChange={(event, value) => {
+				selectMetatype(value);
+			}}>
+				{metatypes}
+			</RadioButtonGroup>
+			<RaisedButton
+				label="Save"
+				primary={true}
+				onClick={() => {
+					if(this.props.hasMagic) {
+						browserHistory.push('/creation/magic');
+					} else {
+						browserHistory.push('/creation/attributes');
+					}
+				}} />
+		</div>);
+	}
+}
 
 const mapStateToProps = (state) => {
 	let propList = {
@@ -27,27 +59,5 @@ const mapDispatchToProps = (dispatch) => {
 		selectMetatype: metatypeActionCreators.selectMetatype
 	}, dispatch);
 };
-
-class MetatypePickerComponent extends React.Component {
-
-	render() {
-		const metatypes = this.props.availableMetatypes
-			.map((metatype) => {
-				return (<MetatypeItem key={metatype.id} metatypeData={metatype} selectMetatype={() => {
-					this.props.selectMetatype(metatype);
-					if(this.props.hasMagic) {
-						browserHistory.push('/creation/magic');
-					} else {
-						browserHistory.push('/creation/attributes');
-					}
-				}} />);
-			});
-		return (<div>
-			<h2>Metatype</h2>
-			<div className="row"><div key="header" className="col-md-1">Metatype</div><div className="col-md-1">Special Attributes</div></div>
-			{metatypes}
-		</div>);
-	}
-}
 
 export default connect(mapStateToProps, mapDispatchToProps)(MetatypePickerComponent);
