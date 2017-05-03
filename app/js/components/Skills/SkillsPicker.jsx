@@ -4,6 +4,16 @@ import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill, addSkillSp
 import CharacterSkills from './CharacterSkills.jsx';
 import * as attributeTypes from  '../../constants/attributeTypes';
 import { browserHistory } from 'react-router';
+import AllSkills from './AllSkills.jsx';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import {List, ListItem} from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
+const style = {
+	marginRight: 20,
+};
 
 const mapStateToProps = (state) => {
 	return {
@@ -48,6 +58,27 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 class SkillPicker extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			open: false
+		}
+
+
+	}
+
+	handleClose = () => {
+		this.setState({
+			open: false
+		})
+	}
+
+	handleOpen = () => {
+		this.setState({
+			open: true
+		})
+	}
 	render() {
 		const {
 			modifySkill,
@@ -87,6 +118,13 @@ class SkillPicker extends React.Component {
 		const bonusPoints = bonusSkills ? bonusSkills.count : 0;
 		const bonusRating = bonusSkills ? bonusSkills.rating : 0;
 		const nextString = '/creation/spells';
+
+		const actions = [
+			<FlatButton
+				label="close"
+				primary={true}
+				onTouchTap={this.handleClose}
+			/>];
 		return (<div>
 			<div className="row">
 				<div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusPoints } at level { bonusRating }</div>
@@ -97,13 +135,21 @@ class SkillPicker extends React.Component {
 					<h2>Character Skills</h2>
 					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>
 				</div>
-				<div className="col-md-4">
+				<Dialog actions={actions}
+						modal={false}
+						open={this.state.open}
+						autoScrollBodyContent={true}
+						onRequestClose={this.handleClose}>
+
 					<h2>Bonus Skills</h2>
-					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
+					<AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
 					<h2>Skill List</h2>
 					<input type="text" onChange={ filterSkills } />
-					<CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup }/>
-				</div>
+					<AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup }/>
+				</Dialog>
+				<FloatingActionButton style={style} onTouchTap={this.handleOpen}>
+					<ContentAdd />
+				</FloatingActionButton>
 			</div>
 		</div>)
 	}
