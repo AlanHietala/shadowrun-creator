@@ -31,7 +31,7 @@ export default class AppLayout extends React.Component {
 	}
 
 	handleMenuItemSelected = (path) => {
-		browserHistory.push('/creation/priority');
+		browserHistory.push(path);
 		this.setState({
 			open: false
 		})
@@ -46,12 +46,12 @@ export default class AppLayout extends React.Component {
 						onRequestChange={(open) => this.setState({open})}>
 
 					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/priority')}>Priorities</MenuItem>
-					<MenuItem value="metatype">Metatype</MenuItem>
-					<MenuItem value="magic">Magic</MenuItem>
-					<MenuItem value="attributes">Attributes</MenuItem>
-					<MenuItem value="qualities">Qualities</MenuItem>
-					<MenuItem value="skills">Skills</MenuItem>
-					<MenuItem value="spells">Spells</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/metatype')} value="metatype">Metatype</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/magic')}value="magic">Magic</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/attributes')}value="attributes">Attributes</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/qualities')}value="qualities">Qualities</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/skills')}value="skills">Skills</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/spells')}value="spells">Spells</MenuItem>
 				</Drawer>
 				<AppBar
 					title="Shadowrun Creator"

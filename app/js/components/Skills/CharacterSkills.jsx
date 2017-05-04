@@ -1,6 +1,6 @@
 import React from 'react';
 import Skill from './Skill.jsx';
-import SkillGroup from './SkillGroup.jsx';
+import { List } from 'material-ui/List';
 
 export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkillGroupFn, addSpecializationFn, removeSpecializationFn}) => {
 	const passThrough = a => true;
@@ -21,15 +21,7 @@ export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkill
 							return (<Skill key={skill.name} skill={skill} modifyFn={ modifyFn } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>)
 						});
 
-	const skillGroupList = skillGroups
-							.filter(filterFn)
-							.map((skillGroup) => {
-		return (<SkillGroup key={ skillGroup.name } skillGroup={ skillGroup } modifySkillGroupFn={ modifySkillGroupFn } />)
-	});
-
-	return (<div>
-		{skillGroupList}
+	return (<List>
 		{skillList}
-
-	</div>);
+	</List>);
 }

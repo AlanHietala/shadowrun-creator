@@ -23,19 +23,10 @@ export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkill
 			return (<AddSkill key={skill.name} skill={skill} modifyFn={ modifyFn } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>)
 		});
 
-	const skillGroupList = skillGroups
-		.filter(filterFn)
-		.map((skillGroup) => {
-			return (<AddSkillGroup key={ skillGroup.name } skillGroup={ skillGroup } modifySkillGroupFn={ modifySkillGroupFn } />)
-		});
-
-	return (<div><List>
-		<Subheader>Skill Groups</Subheader>
-		{skillGroupList}
-	</List>
+	return (
 		<List>
 			<Subheader>Skills</Subheader>
 			{skillList}
 
-		</List></div>);
+		</List>);
 }
