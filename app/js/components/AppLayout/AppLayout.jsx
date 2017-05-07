@@ -52,6 +52,9 @@ export default class AppLayout extends React.Component {
 					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/qualities')}value="qualities">Qualities</MenuItem>
 					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/skills')}value="skills">Skills</MenuItem>
 					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/spells')}value="spells">Spells</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/ware')}value="equipment">Equipment</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/equipment')}value="equipment">Equipment</MenuItem>
+
 				</Drawer>
 				<AppBar
 					title="Shadowrun Creator"

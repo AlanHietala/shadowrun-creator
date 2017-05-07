@@ -32,7 +32,8 @@ describe('StrengthSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -67,7 +68,8 @@ describe('StrengthSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -111,7 +113,8 @@ describe('StrengthSelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -149,7 +152,8 @@ describe('AgilitySelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -183,7 +187,8 @@ describe('AgilitySelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -227,7 +232,8 @@ describe('AgilitySelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -265,7 +271,8 @@ describe('WillpowerSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -299,7 +306,8 @@ describe('WillpowerSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -343,7 +351,8 @@ describe('WillpowerSelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -381,7 +390,8 @@ describe('magicSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -415,7 +425,8 @@ describe('magicSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -459,7 +470,8 @@ describe('magicSelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -497,7 +509,8 @@ describe('bodySelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -531,7 +544,8 @@ describe('bodySelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -575,7 +589,8 @@ describe('bodySelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -613,7 +628,8 @@ describe('reactionSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -647,7 +663,8 @@ describe('reactionSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -691,7 +708,8 @@ describe('reactionSelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -729,7 +747,8 @@ describe('charismaSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -763,7 +782,8 @@ describe('charismaSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -807,7 +827,8 @@ describe('charismaSelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -845,7 +866,8 @@ describe('intuitionSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -879,7 +901,8 @@ describe('intuitionSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -923,7 +946,8 @@ describe('intuitionSelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -961,7 +985,8 @@ describe('logicSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -995,7 +1020,8 @@ describe('logicSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -1039,7 +1065,8 @@ describe('logicSelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -1077,7 +1104,8 @@ describe('essenceSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -1111,7 +1139,8 @@ describe('essenceSelector', function () {
 							effect: 2
 						}
 					]
-				}]
+				}],
+				ware:[]
 			}
 		};
 
@@ -1155,7 +1184,8 @@ describe('essenceSelector', function () {
 								effect: 2
 							}
 						]
-					}]
+					}],
+				ware:[]
 			}
 		};
 
@@ -1178,7 +1208,8 @@ describe('AttributeSelector', function () {
 		let state = {
 			character: {
 				attributes:{},
-				items: []
+				items: [],
+				ware:[]
 			}
 		};
 

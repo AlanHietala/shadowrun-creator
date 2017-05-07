@@ -1,11 +1,11 @@
-import * as priorityActionTypes from "../constants/priorityActionTypes";
+import * as priorityActionTypes from '../constants/priorityActionTypes';
 import * as creationOptionActionTypes from '../constants/creationOptionActionTypes'
 import * as itemActionTypes from '../constants/itemActionTypes';
 import * as qualityActionTypes from '../constants/qualityActionTypes';
-import individualSkills from "../constants/skills";
-import skillGroups from "../constants/skillGroups";
-import * as skillActionTypes from "../constants/skillActionTypes";
-import * as spellActionTypes from "../constants/spellActionTypes";
+import individualSkills from '../constants/skills';
+import skillGroups from '../constants/skillGroups';
+import * as skillActionTypes from '../constants/skillActionTypes';
+import * as spellActionTypes from '../constants/spellActionTypes';
 import skills from './skills';
 import attribute from './attributes';
 import quality from './quality';
@@ -14,6 +14,7 @@ import setMetatype from './setMetatypeReducer';
 import setStats from './setStatsReducer';
 import spells from './spells';
 import items from './items';
+import ware from './ware'
 
 const defaultState = {
 	qualities: [],
@@ -25,7 +26,8 @@ const defaultState = {
 		textFilter: ''
 	},
 	spells: [],
-	items: []
+	items: [],
+	ware: []
 };
 
 const skillActions = [
@@ -75,7 +77,15 @@ const character = (state = defaultState, action) => {
 			case itemActionTypes.ADD_ITEM:
 				return items(state, action);
 				break;
-
+			case itemActionTypes.REMOVE_ITEM:
+				return items(state, action);
+				break;
+			case itemActionTypes.ADD_WARE:
+				return ware(state, action);
+				break;
+			case itemActionTypes.REMOVE_WARE:
+				return ware(state, action);
+				break;
 			default:
 				return state;
 		}

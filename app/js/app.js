@@ -14,6 +14,8 @@ import Attributes from './components/Attributes/Attributes.jsx';
 import QualityPicker from './components/Qualities/QualityPicker.jsx';
 import SkillsPicker from './components/Skills/SkillsPicker.jsx';
 import SpellsPicker from './components/Spells/SpellsPicker.jsx';
+import EquipmentPicker from './components/Equipment/EquipmentPicker.jsx';
+import WarePicker from './components/Ware/WarePicker.jsx';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -44,6 +46,8 @@ ReactDOM.render(
 							<Route path="qualities" component={ QualityPicker } />
 							<Route path="skills" component={ SkillsPicker } />
 							<Route path="spells" component={ SpellsPicker } />
+							<Route path="ware" component={ WarePicker } />
+							<Route path="equipment" component={ EquipmentPicker } />
 						</Route>
 					</Route>
 				</Router>
