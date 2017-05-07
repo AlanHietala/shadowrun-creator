@@ -9,7 +9,8 @@ import { strengthSelector,
 	intuitionSelector,
 logicSelector,
 essenceSelector,
-attributeSelector} from '../../app/js/selectors/characterSelectors';
+attributeSelector,
+resourcesSelector } from '../../app/js/selectors/characterSelectors';
 import * as modTypes from '../../app/js/constants/modTypes';
 
 describe('StrengthSelector', function () {
@@ -1246,6 +1247,98 @@ describe('AttributeSelector', function () {
 		state.character.attributes = attributes;
 
 		expect(attributeSelector(state)).toEqual(results)
+
+	});
+
+	describe('Resources Selector', function () {
+		it('should calculate your remaining resources', function () {
+			const state = {
+				character: {
+					creation: {
+						availableResources: 10000
+					},
+					attributes: {
+						essence: {
+							key: 'essence',
+							minValue: 1,
+							maxValue: 5,
+							value: 4
+						}
+					},
+					items: [{
+						name: 'Reaction Enhancers 1',
+						mods: [
+							{
+								modType: modTypes.ESSENCE_MOD,
+								effect: 2
+							}
+						],
+						cost: 5000
+					},
+					{
+						name: 'Reaction Enhancers 1',
+						mods: [
+							{
+								modType: modTypes.ESSENCE_MOD,
+								effect: 2
+							}
+						],
+						cost: 2000
+					}],
+					ware:[]
+				}
+			};
+
+			const expectedValue = 3000;
+			expect(resourcesSelector(state)).toEqual(expectedValue);
+
+		});
+
+		it('should calculate costs across both ware and items', function () {
+			const state = {
+				character: {
+					creation: {
+						availableResources: 10000
+					},
+					attributes: {
+						essence: {
+							key: 'essence',
+							minValue: 1,
+							maxValue: 5,
+							value: 4
+						}
+					},
+					items: [{
+						name: 'Reaction Enhancers 1',
+						mods: [
+							{
+								modType: modTypes.ESSENCE_MOD,
+								effect: 2
+							}
+						],
+						cost: 5000
+					}],
+					ware:[
+						{
+							name: 'Reaction Enhancers 1',
+							mods: [
+								{
+									modType: modTypes.ESSENCE_MOD,
+									effect: 2
+								}
+							],
+							cost: 2000
+						}
+					]
+				}
+			};
+
+			const expectedValue = 3000;
+			expect(resourcesSelector(state)).toEqual(expectedValue);
+		});
+
+
+
 
 	});
 

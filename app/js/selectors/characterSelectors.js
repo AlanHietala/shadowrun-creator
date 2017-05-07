@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 import * as attributeTypes from '../constants/attributeTypes';
 import * as modTypes from '../constants/modTypes';
+
 export const resourcesSelector = state => {
 	const initialResources = state.character.creation.availableResources;
 	const listsOfThingsThatCostMoney = [state.character.items, state.character.ware];
