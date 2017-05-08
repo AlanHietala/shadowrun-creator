@@ -1271,9 +1271,12 @@ describe('AttributeSelector', function () {
 							{
 								modType: modTypes.ESSENCE_MOD,
 								effect: 2
+							},
+							{
+								modType: modTypes.RESOURCES_MOD,
+								effect: 5000
 							}
-						],
-						cost: 5000
+						]
 					},
 					{
 						name: 'Reaction Enhancers 1',
@@ -1281,9 +1284,12 @@ describe('AttributeSelector', function () {
 							{
 								modType: modTypes.ESSENCE_MOD,
 								effect: 2
+							},
+							{
+								modType: modTypes.RESOURCES_MOD,
+								effect: 2000
 							}
-						],
-						cost: 2000
+						]
 					}],
 					ware:[]
 				}
@@ -1314,9 +1320,12 @@ describe('AttributeSelector', function () {
 							{
 								modType: modTypes.ESSENCE_MOD,
 								effect: 2
+							},
+							{
+								modType: modTypes.RESOURCES_MOD,
+								effect: 5000
 							}
-						],
-						cost: 5000
+						]
 					}],
 					ware:[
 						{
@@ -1325,9 +1334,13 @@ describe('AttributeSelector', function () {
 								{
 									modType: modTypes.ESSENCE_MOD,
 									effect: 2
+								},
+								{
+									modType: modTypes.RESOURCES_MOD,
+									effect: 2000
 								}
-							],
-							cost: 2000
+
+							]
 						}
 					]
 				}

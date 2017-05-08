@@ -9,7 +9,8 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import { addWare, removeWare } from '../../actions/itemActions';
 import wareList from '../../constants/ware';
-import { wareSelector } from '../../selectors/itemSelectors';
+import { characterWareSelector, addAvailabilityMetadataToItems } from '../../selectors/itemSelectors';
+import {essenceSelector, resourcesSelector} from '../../selectors/characterSelectors';
 
 class WarePicker extends React.Component {
 	constructor(props) {
@@ -31,6 +32,7 @@ class WarePicker extends React.Component {
 	}
 
 	render() {
+		const {resources, essence} = this.props;
 		const actions = [
 			<FlatButton
 				label="close"
@@ -40,6 +42,7 @@ class WarePicker extends React.Component {
 
 			return (<Paper>
 				<h2>Ware</h2>
+				<span>essence: {essence.computed} resources: {resources}</span>
 				<CharacterWare characterWare={this.props.characterWare} handleRemoveWare={this.props.handleRemoveWare}/>
 				<Dialog actions={actions}
 						modal={false}
@@ -63,7 +66,10 @@ const style = {
 }
 const mapStateToProps = (state) => {
 	return {
-		characterWare: wareSelector(state)
+		characterWare: characterWareSelector(state),
+		essence: essenceSelector(state),
+		resources: resourcesSelector(state),
+		wareList: addAvailabilityMetadataToItems(state, wareList)
 	}
 };
 

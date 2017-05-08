@@ -1,16 +1,14 @@
 import { createSelector } from 'reselect';
 import * as attributeTypes from '../constants/attributeTypes';
 import * as modTypes from '../constants/modTypes';
+import {getModReduce, resourcesModReduce} from './modHelpers';
 
 export const resourcesSelector = state => {
 	const initialResources = state.character.creation.availableResources;
 	const listsOfThingsThatCostMoney = [state.character.items, state.character.ware];
-
 	const spentResources = listsOfThingsThatCostMoney
-		.map((listThatCostsMoney) => {
-			return listThatCostsMoney.reduce((sum, item) => {
-				return sum + item.cost;
-			}, 0)
+		.map(listThatCostsMoney => {
+			return listThatCostsMoney.reduce(resourcesModReduce, 0)
 		})
 		.reduce((resourcesLeft, cost) => {
 			return resourcesLeft - cost
@@ -56,21 +54,17 @@ essenceSelector], (strength, agility, willpower, magic, body, reaction, charisma
 });
 // TODO: export const initiativeSelector = state => what goes here?
 
-const createModReduce = modType => (acc, item) => {
-	return acc + item.mods.reduce((acc, mod) => {
-			return mod.modType === modType ? acc + mod.effect : acc;
-		}, 0);
-}
+
 
 function computeAttribute(state, attributeType, modType) {
-	const modReduceFn = createModReduce(modType);
+	const modReduceFn = getModReduce(modType);
 	const base = state.character.attributes[attributeType].value;
 
 	let mods = state.character.items
 		.reduce(modReduceFn, 0);
 
 	mods = state.character.ware
-			.reduce(modReduceFn, mods)
+			.reduce(modReduceFn, mods);
 	const computed = base + mods;
 
 	return  {

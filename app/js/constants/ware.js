@@ -10,9 +10,12 @@ export default [
 			{
 				modType: modTypes.ESSENCE_MOD,
 				effect: -1
+			},
+			{
+				modType: modTypes.RESOURCES_MOD,
+				effect: 18000
 			}
-		],
-		cost: 18000
+		]
 	},
 	{
 		name: 'Muscle Toner 1',
@@ -25,7 +28,10 @@ export default [
 				modType: modTypes.ESSENCE_MOD,
 				effect: -1
 			},
-		],
-		cost: 5000
+			{
+				modType: modTypes.RESOURCES_MOD,
+				effect: 18000
+			}
+		]
 	}
 ]
