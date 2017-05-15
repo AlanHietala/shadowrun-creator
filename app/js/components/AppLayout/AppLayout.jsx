@@ -54,6 +54,7 @@ export default class AppLayout extends React.Component {
 					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/spells')}value="spells">Spells</MenuItem>
 					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/ware')}value="ware">Ware</MenuItem>
 					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/creation/equipment')}value="equipment">Equipment</MenuItem>
+					<MenuItem onTouchTap={() => this.handleMenuItemSelected('/sheet')}value="sheet">Sheet</MenuItem>
 
 				</Drawer>
 				<AppBar

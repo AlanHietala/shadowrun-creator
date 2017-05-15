@@ -46,7 +46,7 @@ class MagicTypesComponent extends React.Component {
 							label="Save"
 							primary={true}
 							onClick={() => {
-								browserHistory.push('/creation/attributes');
+								browserHistory.push('/sheet');
 							}} />
 					</div>);
 		} else {

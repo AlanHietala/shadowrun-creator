@@ -10,12 +10,11 @@ export const characterWareSelector = (state) => {
 	return state.character.ware;
 }
 
-export const addAvailabilityMetadataToItems = (state, wareList) => {
+export const wareListSelector = (state) => {
 	const availableResources = resourcesSelector(state);
 	const essence = essenceSelector(state);
 
-	return wareList.map(ware => {
-		console.log(essence)
+	return state.wareList.map(ware => {
 		const isEnoughEssence = essence.computed > getEssenceCostForItem(ware);
 		const isEnoughResources = availableResources > getResourceCostForItem(ware);
 		return {

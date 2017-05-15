@@ -33,7 +33,7 @@ class MetatypePickerComponent extends React.Component {
 					if(this.props.hasMagic) {
 						browserHistory.push('/creation/magic');
 					} else {
-						browserHistory.push('/creation/attributes');
+						browserHistory.push('/sheet');
 					}
 				}} />
 		</div>);

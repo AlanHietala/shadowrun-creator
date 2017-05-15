@@ -9,7 +9,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import { addWare, removeWare } from '../../actions/itemActions';
 import wareList from '../../constants/ware';
-import { characterWareSelector, addAvailabilityMetadataToItems } from '../../selectors/itemSelectors';
+import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors';
 import {essenceSelector, resourcesSelector} from '../../selectors/characterSelectors';
 
 class WarePicker extends React.Component {
@@ -69,7 +69,7 @@ const mapStateToProps = (state) => {
 		characterWare: characterWareSelector(state),
 		essence: essenceSelector(state),
 		resources: resourcesSelector(state),
-		wareList: addAvailabilityMetadataToItems(state, wareList)
+		wareList: wareListSelector(state)
 	}
 };
 

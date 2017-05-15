@@ -1,17 +1,8 @@
 import * as modTypes from '../../app/js/constants/modTypes';
-import {addAvailabilityMetadataToItems} from '../../app/js/selectors/itemSelectors';
+import {wareListSelector} from '../../app/js/selectors/itemSelectors';
 describe('Item Selectors', function () {
 	describe('availableWareSelector', function () {
 		it('should set isEnoughEssence to true if the characters essence left is > the ware essence mod', function () {
-			const wareList = [{
-				name: 'Reaction Enhancers 1',
-				mods: [
-					{
-						modType: modTypes.ESSENCE_MOD,
-						effect: 2
-					}
-				]
-			}]
 
 			const state = {
 				character: {
@@ -28,7 +19,16 @@ describe('Item Selectors', function () {
 					creation: {
 						availableResources: 20000
 					}
-				}
+				},
+				wareList: [{
+					name: 'Reaction Enhancers 1',
+					mods: [
+						{
+							modType: modTypes.ESSENCE_MOD,
+							effect: 2
+						}
+					]
+				}]
 			};
 
 			const expectedSelection = [{
@@ -43,7 +43,7 @@ describe('Item Selectors', function () {
 				isEnoughResources: true
 			}]
 
-			expect(addAvailabilityMetadataToItems(state, wareList)).toEqual(expectedSelection)
+			expect(wareListSelector(state)).toEqual(expectedSelection)
 
 		});
 
