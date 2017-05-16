@@ -10,3 +10,4 @@ export const CHARISMA_MOD = 'CHARISMA_MOD';
 export const LOGIC_MOD = 'LOGIC_MOD';
 export const ESSENCE_MOD = 'ESSENCE_MOD';
 export const RESOURCES_MOD = 'RESOURCES_MOD';
+export const INITIATIVE_DICE_MOD = 'INITIATIVE_DICE_MOD';

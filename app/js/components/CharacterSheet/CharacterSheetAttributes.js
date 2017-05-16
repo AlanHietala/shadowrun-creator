@@ -20,20 +20,23 @@ export default ({attributes}) => {
 		charisma,
 		intuition,
 		logic,
-		essence
+		essence,
+		initiative,
+		initiativeDice
 	} = attributes;
 	return (
 		<div style={styles.attributeList}>
-			<AttributeItem title="Bod" value={body.computed} />
-			<AttributeItem title="Str" value={strength.computed} />
-			<AttributeItem title="Agi" value={agility.computed} />
-			<AttributeItem title="Rea" value={reaction.computed} />
-			<AttributeItem title="Wil" value={willpower.computed} />
-			<AttributeItem title="Int" value={intuition.computed} />
-			<AttributeItem title="Log" value={logic.computed} />
-			<AttributeItem title="Cha" value={charisma.computed} />
-			<AttributeItem title="Magic" value={magic.computed} />
-			<AttributeItem title="Ess" value={essence.computed} />
+			<AttributeItem title="Bod" value={body.value} />
+			<AttributeItem title="Str" value={strength.value} />
+			<AttributeItem title="Agi" value={agility.value} />
+			<AttributeItem title="Rea" value={reaction.value} />
+			<AttributeItem title="Wil" value={willpower.value} />
+			<AttributeItem title="Int" value={intuition.value} />
+			<AttributeItem title="Log" value={logic.value} />
+			<AttributeItem title="Cha" value={charisma.value} />
+			<AttributeItem title="Magic" value={magic.value} />
+			<AttributeItem title="Ess" value={essence.value} />
+			<AttributeItem title="Init" value={`${initiative.value} + ${initiativeDice.value}d6`} />
 		</div>
 	)
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { attributeSelector } from '../../selectors/characterSelectors';
+import { characterSheetSelector } from '../../selectors/characterSelectors';
 import CharacterSheetAttributes from './CharacterSheetAttributes';
 import Attributes from '../Attributes'
 import Qualities from '../Qualities';
@@ -16,10 +16,10 @@ export class CharacterSheet extends React.Component {
 	}
 
 	render() {
-		const {attributes} = this.props
+		const {characterSheet} = this.props
 		return (
 			<div>
-			<CharacterSheetAttributes attributes={attributes} />
+			<CharacterSheetAttributes attributes={characterSheet} />
 				<Tabs>
 					<Tab label="Attr">
 						<Attributes />
@@ -46,7 +46,7 @@ export class CharacterSheet extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		attributes: attributeSelector(state)
+		characterSheet: characterSheetSelector(state)
 	}
 }
 

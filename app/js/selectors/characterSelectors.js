@@ -53,8 +53,55 @@ essenceSelector], (strength, agility, willpower, magic, body, reaction, charisma
 	}
 });
 // TODO: export const initiativeSelector = state => what goes here?
+const updateMod = (currentSheetItem, mod, item) => {
+	return {
+		value: currentSheetItem.value + mod.effect,
+		modifiedBy: currentSheetItem.modifiedBy.concat([item])
+	}
+}
+const updateCharacterSheet = (characterSheet, item) => {
+	return item.mods.reduce((sheet, mod) => {
+		return mod.modType === modTypes.ESSENCE_MOD ? {...sheet, essence: updateMod(sheet.essence, mod, item)}
+		: mod.modType === modTypes.RESOURCES_MOD ?  {...sheet, resources: updateMod(sheet.resources, mod, item)}
+		: mod.modType === modTypes.WILLPOWER_MOD ? {...sheet, willpower: updateMod(sheet.willpower, mod, item)}
+		: mod.modType === modTypes.REACTION_MOD ? {...sheet, reaction: updateMod(sheet.reaction, mod, item)}
+		: mod.modType === modTypes.MAGIC_MOD ? {...sheet, magic: updateMod(sheet.magic, mod, item)}
+		: mod.modType === modTypes.LOGIC_MOD ? {...sheet, logic: updateMod(sheet.logic, mod, item)}
+		: mod.modType === modTypes.INTUITION_MOD ? {...sheet, intuition: updateMod(sheet.intuition, mod, item)}
+		: mod.modType === modTypes.INITIATIVE_MOD ? {...sheet, initiative: updateMod(sheet.initiative, mod, item)}
+		: mod.modType === modTypes.CHARISMA_MOD ? {...sheet, charisma: updateMod(sheet.charisma, mod, item)}
+		: mod.modType === modTypes.BODY_MOD ? {...sheet, body: updateMod(sheet.body, mod, item)}
+		: mod.modType === modTypes.AGILITY_MOD ? {...sheet, agility: updateMod(sheet.agility, mod, item)}
+		: mod.modType === modTypes.STRENGTH_MOD ? {...sheet, strength: updateMod(sheet.strength, mod, item)}
+		: mod.modType === modTypes.INITIATIVE_DICE_MOD ? {...sheet, initiativeDice: updateMod(sheet.initiativeDice, mod, item)}
+		: sheet;
+	}, characterSheet)
+}
 
+export const characterSheetSelector = (state) => {
+	const initialCharacterSheet = {
+		strength: {value: state.character.attributes.strength.value, modifiedBy: []},
+		agility: {value: state.character.attributes.agility.value, modifiedBy: []},
+		willpower: {value: state.character.attributes.willpower.value, modifiedBy: []},
+		magic: {value: state.character.attributes.magic.value, modifiedBy: []},
+		body: {value: state.character.attributes.body.value, modifiedBy: []},
+		reaction: {value: state.character.attributes.reaction.value, modifiedBy: []},
+		charisma: {value: state.character.attributes.charisma.value, modifiedBy: []},
+		intuition: {value: state.character.attributes.intuition.value, modifiedBy: []},
+		logic: {value: state.character.attributes.logic.value, modifiedBy: []},
+		essence: {value: state.character.attributes.essence.value, modifiedBy:[]},
+		resources: {value: state.character.creation.availableResources, modifiedBy: []},
+		initiativeDice: {value: 1, modifiedBy: []},
+		initiative: {value: state.character.attributes.reaction.value + state.character.attributes.agility.value, modifiedBy: []}
+	}
+	const itemsList = state.character.items.concat(state.character.ware);
+	const computedCharacterSheet = itemsList
+		.reduce((characterSheet, item) => {
+			return updateCharacterSheet(characterSheet, item)
+		}, initialCharacterSheet);
 
+	return computedCharacterSheet;
+}
 
 function computeAttribute(state, attributeType, modType) {
 	const modReduceFn = getModReduce(modType);
