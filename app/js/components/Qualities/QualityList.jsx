@@ -1,12 +1,19 @@
 import React from 'react';
+import {List, ListItem} from 'material-ui/List';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 export default ({ qualities, clickHandler, buttonText }) => {
 
 	const nodes = qualities.map((quality, index) => {
-		return (<div>{ quality.name } cost: { quality.karmaCost } <button onClick={ () => clickHandler(quality, index) } className="btn">{ buttonText }</button></div>);
+		return (<ListItem
+			rightIcon={<ContentAdd />}
+			onTouchTap={ () => clickHandler(quality, index) }>
+			{ quality.name } cost: { quality.karmaCost }
+		</ListItem>);
+
 	});
 
-	return (<div>
+	return (<List>
 		{ nodes }
-	</div>)
+	</List>)
 }

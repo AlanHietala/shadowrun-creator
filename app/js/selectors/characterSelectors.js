@@ -91,15 +91,15 @@ export const characterSheetSelector = (state) => {
 		logic: {value: state.character.attributes.logic.value, modifiedBy: []},
 		essence: {value: state.character.attributes.essence.value, modifiedBy:[]},
 		resources: {value: state.character.creation.availableResources, modifiedBy: []},
-		initiativeDice: {value: 1, modifiedBy: []},
-		initiative: {value: state.character.attributes.reaction.value + state.character.attributes.agility.value, modifiedBy: []}
+		initiativeDice: {value: 1, modifiedBy: []}
 	}
 	const itemsList = state.character.items.concat(state.character.ware);
-	const computedCharacterSheet = itemsList
+	let computedCharacterSheet = itemsList
 		.reduce((characterSheet, item) => {
 			return updateCharacterSheet(characterSheet, item)
 		}, initialCharacterSheet);
-
+	const initiative = computedCharacterSheet.reaction.value + computedCharacterSheet.agility.value
+	computedCharacterSheet.initiative = {value: initiative, modifiedBy: []}
 	return computedCharacterSheet;
 }
 
