@@ -12,30 +12,30 @@ module.exports = {
 		loaders: [
 			{
 				test: /.jsx?$/,
-				loaders: ['react-hot', 'babel'],
+				loaders: ['react-hot-loader', 'babel-loader'],
 				exclude: /node_modules/,
 				include: __dirname
 			},
 			{
 				test: /\.css$/,
 				loaders: [
-					'style',
-					'css?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]',
-					'postcss',
+					'style-loader',
+					'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]',
+					'postcss-loader',
 				],
 			},
 			{
 				test: /\.scss$/,
 				loaders: [
-					'style',
-					'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:5]',
-					'postcss',
-					'sass',
+					'style-loader',
+					'css-loader?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:5]',
+					'postcss-loader',
+					'sass-loader',
 				],
 			},
 			{
 				test: /\.(woff2?|ttf|eot|svg)$/,
-				loaders: ['url?limit=10000'],
+				loaders: ['url-loader?limit=10000'],
 			},
 		]
 	},
