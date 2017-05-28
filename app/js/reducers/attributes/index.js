@@ -1,6 +1,9 @@
-import * as creationOptionActionTypes from  '../../constants/creationOptionActionTypes';
+import * as creationOptionActionTypes from  '../../constants/creationOptionActionTypes'
+import * as modTypes from '../../constants/modTypes'
+import * as attributeTypes from '../../constants/attributeTypes'
 
 export default (state, action) => {
+
 	const valueToAdd = action.type === creationOptionActionTypes.ADD_ATTRIBUTE ? 1 : -1;
 	const attributeToSet = state.attributes[action.payload.key];
 	const { creation } = state;
@@ -10,7 +13,7 @@ export default (state, action) => {
 	const newAttributeValue = attributeToSet.value + valueToAdd;
 	const newAvailableAttributePoints = availableAttributePoints - valueToAdd;
 	let newState = state;
-	if(isAttributeChangeValid(state, attributeToSet, newAttributeValue, newAvailableAttributePoints)) {
+	if(isAttributeChangeValid(state, attributeToSet, newAttributeValue, newAvailableAttributePoints, action.payload.key)) {
 		newState = setAttribute(state, action, attributeToSet, newAttributeValue);
 		newState = addAttributePoint(-valueToAdd, newState, isSpecialAttribute);
 	}
@@ -55,10 +58,26 @@ const setAttribute = (state, action, attributeToSet, value) => {
 	return newState;
 };
 
-const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAvailableAttributePoints) => {
+const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAvailableAttributePoints, attributeKey) => {
 	let isValid = false;
+	const maxModAttributeType = maxAttributeModMap[attributeKey];
+	console.log(attributeToSet)
+	const attributeToSetMaxMod = state.qualities.reduce((attributeMaxSum, quality) => {
+		return attributeMaxSum + quality.mods.reduce((modSum, mod) => {
+			console.log(maxModAttributeType)
+			if(mod.modType === maxModAttributeType) {
+				return modSum + mod.value
+			} else {
+				return modSum
+			}
+		}, 0)
+	}, 0)
+
+
+ 	//get attributeMaxMods from qualities the only place this comes from
+
 	const changeWithinRange = attributeToSet.minValue <= newAttributeValue
-		&& newAttributeValue <= attributeToSet.maxValue
+		&& newAttributeValue <= attributeToSet.maxValue + attributeToSetMaxMod
 		&& newAvailableAttributePoints >= 0;
 
 	if(changeWithinRange) {
@@ -90,3 +109,17 @@ const isAnyAttributeAtNaturalLimit = (state) => {
 
 	return foundAttributeAtNaturalLimit;
 };
+
+const maxAttributeModMap = {
+	[attributeTypes.BODY]: modTypes.MAX_BODY_MOD,
+	[attributeTypes.MAGIC]: modTypes.MAX_MAGIC_MOD,
+	[attributeTypes.RESONANCE]: modTypes.MAX_RESONANCE_MOD,
+	[attributeTypes.AGILITY]: modTypes.MAX_AGILITY_MOD,
+	[attributeTypes.REACTION]: modTypes.MAX_REACTION_MOD,
+	[attributeTypes.STRENGTH]: modTypes.MAX_STRENGTH_MOD,
+	[attributeTypes.CHARISMA]: modTypes.MAX_CHARISMA_MOD,
+	[attributeTypes.INTUITION]: modTypes.MAX_INTUITION_MOD,
+	[attributeTypes.LOGIC]: modTypes.MAX_LOGIC_MOD,
+	[attributeTypes.WILLPOWER]: modTypes.MAX_WILLPOWER_MOD,
+	[attributeTypes.ESSENCE]: modTypes.MAX_ESSENCE_MOD
+}
