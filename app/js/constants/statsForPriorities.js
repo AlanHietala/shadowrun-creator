@@ -107,7 +107,7 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
   ],
   attributes: 20,
   magicOrResonance: [
-		 {
+    {
       key: 'magician',
       name: 'Magician',
       magic: 4,
@@ -115,38 +115,37 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
         attributeType: attributeTypes.MAGIC,
         count: 2,
         rating: 4
-
       },
-			 spellCount: 7
+      spellCount: 7
 
 
     },
-		 {
+    {
       key: 'mysticAdept',
       name: 'Mystic Adept',
       magic: 4,
-			 bonusSkills: {
-   attributeType: attributeTypes.MAGIC,
-   count: 2,
-   rating: 4
- },
-			 spellCount: 7
+      bonusSkills: {
+        attributeType: attributeTypes.MAGIC,
+        count: 2,
+        rating: 4
+      },
+      spellCount: 7
 
     },
-		 {
+    {
       key: 'technomancer',
       name: 'Technomancer',
       resonance: 4,
-			 bonusSkills: {
-   attributeType: attributeTypes.RESONANCE,
-   count: 2,
-   rating: 4,
+      bonusSkills: {
+        attributeType: attributeTypes.RESONANCE,
+        count: 2,
+        rating: 4,
 
- },
-			 complexFormCount: 2
+      },
+      complexFormCount: 2
 
     },
-		 {
+    {
       key: 'adept',
       name: 'Adept',
       magic: 6,

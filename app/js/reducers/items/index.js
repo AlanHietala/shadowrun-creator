@@ -4,9 +4,10 @@ const itemsReducer = (state, action) => {
   switch(action.type) {
   case itemActions.ADD_ITEM:
     return handleAddItem(state, action)
-    break
+
   case itemActions.REMOVE_ITEM:
     return handleRemoveItem(state, action)
+
   default:
     return state
   }

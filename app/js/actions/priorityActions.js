@@ -65,4 +65,4 @@ export function setPriorityForPriorityName(priorityName, priority) {
 
   }
   return action
-};
+}

@@ -4,10 +4,8 @@ export default (state, action) => {
   switch(action.type) {
   case  qualityActionTypes.REMOVE_QUALITY:
     return removeQuality(state, action)
-    break
   case qualityActionTypes.ADD_QUALITY:
     return addQuality(state, action)
-    break
   default:
     return state
   }

@@ -61,10 +61,10 @@ const setAttribute = (state, action, attributeToSet, value) => {
 const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAvailableAttributePoints, attributeKey) => {
   let isValid = false
   const maxModAttributeType = maxAttributeModMap[attributeKey]
-  console.log(attributeToSet)
+
   const attributeToSetMaxMod = state.qualities.reduce((attributeMaxSum, quality) => {
     return attributeMaxSum + quality.mods.reduce((modSum, mod) => {
-      console.log(maxModAttributeType)
+
       if(mod.modType === maxModAttributeType) {
         return modSum + mod.value
       } else {
@@ -73,8 +73,6 @@ const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAva
     }, 0)
   }, 0)
 
-
- 	//get attributeMaxMods from qualities the only place this comes from
 
   const changeWithinRange = attributeToSet.minValue <= newAttributeValue
 		&& newAttributeValue <= attributeToSet.maxValue + attributeToSetMaxMod

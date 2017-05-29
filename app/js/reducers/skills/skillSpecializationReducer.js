@@ -5,7 +5,7 @@ export default (state, action) => {
   switch(action.type) {
   case skillActionTypes.ADD_SKILL_SPECIALIZATION:
     return addSkillSpecialization(state, action)
-    break
+
   case skillActionTypes.REMOVE_SKILL_SPECIALIZATION:
     return removeSkillSpecialization(state, action)
   default:

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { characterSheetSelector } from '../../selectors/characterSelectors'
 import CharacterSheetAttributes from './CharacterSheetAttributes'
@@ -10,6 +11,7 @@ import Ware from '../Ware'
 import Equipment from '../Equipment'
 
 import {Tabs, Tab} from 'material-ui/Tabs'
+
 export class CharacterSheet extends React.Component {
   constructor(props) {
     super(props)
@@ -44,16 +46,15 @@ export class CharacterSheet extends React.Component {
   }
 }
 
+CharacterSheet.propTypes = {
+  characterSheet: PropTypes.object.isRequired
+}
+
 const mapStateToProps = (state) => {
   return {
     characterSheet: characterSheetSelector(state)
   }
 }
 
-const mapDispatchToProps =  (dispatch) => {
-  return {
 
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterSheet)
+export default connect(mapStateToProps)(CharacterSheet)

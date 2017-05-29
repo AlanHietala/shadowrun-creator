@@ -4,7 +4,6 @@ const wareReducer = (state, action) => {
   switch(action.type) {
   case itemActions.ADD_WARE:
     return handleAddWare(state, action)
-    break
   case itemActions.REMOVE_WARE:
     return handleRemoveWare(state, action)
   default:

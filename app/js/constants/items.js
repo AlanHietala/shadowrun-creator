@@ -1,5 +1,5 @@
-import * as attributeTypes from  './attributeTypes'
 import * as modTypes from './modTypes'
+
 const items = [
   {
     name: 'Reaction Enhancers 1',

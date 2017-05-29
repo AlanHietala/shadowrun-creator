@@ -1,6 +1,5 @@
 import React from 'react'
-import {List, ListItem} from 'material-ui/List'
-import {Tabs, Tab} from 'material-ui/Tabs'
+import PropTypes from 'prop-types'
 
 const AttributeItem = ({title, value}) => {
   return (<div style={styles.attribute}>
@@ -9,7 +8,12 @@ const AttributeItem = ({title, value}) => {
 	</div>)
 }
 
-export default ({attributes}) => {
+AttributeItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
+}
+
+const CharacterSheetAttributes = ({attributes}) => {
   const {
 		strength,
 		agility,
@@ -54,3 +58,8 @@ const styles = {
     textAlign: 'center'
   }
 }
+
+CharacterSheetAttributes.propTypes = {
+  attributes: PropTypes.object.isRequired
+}
+export default CharacterSheetAttributes

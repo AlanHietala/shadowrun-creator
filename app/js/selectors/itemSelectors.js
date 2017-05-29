@@ -1,7 +1,6 @@
-import * as itemTypes from '../constants/itemTypes'
 import {essenceSelector, resourcesSelector} from './characterSelectors'
 import {getEssenceCostForItem, getResourceCostForItem} from './modHelpers'
-import * as modTypes from '../constants/modTypes'
+
 export const itemsSelector = (state) => {
   return state.character.items
 }

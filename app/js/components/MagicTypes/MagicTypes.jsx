@@ -6,22 +6,6 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton';
 import { browserHistory } from 'react-router';
 
-const mapStateToProps = (state) => {
-	let props = {};
-	if(state.character.creation) {
-		props = {
-			magicClasses: state.character.creation.availableMagicOrResonanceClasses
-		};
-	}
-	return props;
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({
-		selectMagicType: selectMagicType
-	}, dispatch);
-};
-
 class MagicTypesComponent extends React.Component {
 
 	render() {
@@ -54,6 +38,22 @@ class MagicTypesComponent extends React.Component {
 		}
 	}
 }
+
+const mapStateToProps = (state) => {
+  let props = {};
+  if(state.character.creation) {
+    props = {
+      magicClasses: state.character.creation.availableMagicOrResonanceClasses
+    };
+  }
+  return props;
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    selectMagicType: selectMagicType
+  }, dispatch);
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MagicTypesComponent);
 

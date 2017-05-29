@@ -39,19 +39,19 @@ const priority = (state = defaultState, action) => {
   switch (action.type) {
   case priorityActionTypes.SET_ATTRIBUTE_PRIORITY:
     return setAttributeUniquely('attributes', action.payload, state)
-    break
+
   case priorityActionTypes.SET_MAGIC_OR_RESONANCE_PRIORITY:
     return setAttributeUniquely('magicOrResonance', action.payload, state)
-    break
+
   case priorityActionTypes.SET_METATYPE_PRIORITY:
     return setAttributeUniquely('metatype', action.payload, state)
-    break
+
   case priorityActionTypes.SET_RESOURCES_PRIORITY:
     return setAttributeUniquely('resources', action.payload, state)
-    break
+
   case priorityActionTypes.SET_SKILLS_PRIORITY:
     return setAttributeUniquely('skills', action.payload, state)
-    break
+
   default:
     return state
 

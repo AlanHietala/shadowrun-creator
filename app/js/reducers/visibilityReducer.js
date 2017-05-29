@@ -23,7 +23,6 @@ const visibility = (state = defaultState, action) => {
         magicTypesVisible: true
       }
     }
-    break
   case creationOptionActionTypes.PICK_METATYPE_OPTION:
     if(state.magicTypesVisible) {
       return {
@@ -38,7 +37,6 @@ const visibility = (state = defaultState, action) => {
         attributesVisible: true
       }
     }
-    break
   case creationOptionActionTypes.PICK_MAGIC_OR_RESONANCE_OPTION:
     if(state.metatypeVisible) {
       return {
@@ -53,7 +51,6 @@ const visibility = (state = defaultState, action) => {
         attributesVisible: true
       }
     }
-    break
   default:
     return state
   }

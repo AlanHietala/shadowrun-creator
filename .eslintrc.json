@@ -1,7 +1,11 @@
 {
+    "extends": ["eslint:recommended",
+        "plugin:react/recommended"],
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "commonjs": true,
+        "node": true
     },
     "parser": "babel-eslint",
     "parserOptions": {
@@ -13,7 +17,6 @@
     },
     "plugins": [
         "react",
-        "jsx-a11y",
         "import"
     ],
     "rules": {

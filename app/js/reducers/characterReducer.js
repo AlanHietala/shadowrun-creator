@@ -61,31 +61,31 @@ const character = (state = defaultState, action) => {
     switch (action.type) {
     case priorityActionTypes.SAVE_PRIORITIES:
       return setStats(state, action)
-      break
+
     case creationOptionActionTypes.PICK_METATYPE_OPTION:
       return setMetatype(state, action)
-      break
+
     case creationOptionActionTypes.PICK_MAGIC_OR_RESONANCE_OPTION:
       return setMagicOrResonanceOption(state, action)
-      break
+
     case qualityActionTypes.ADD_QUALITY:
       return quality(state, action)
-      break
+
     case qualityActionTypes.REMOVE_QUALITY:
       return quality(state, action)
-      break
+
     case itemActionTypes.ADD_ITEM:
       return items(state, action)
-      break
+
     case itemActionTypes.REMOVE_ITEM:
       return items(state, action)
-      break
+
     case itemActionTypes.ADD_WARE:
       return ware(state, action)
-      break
+
     case itemActionTypes.REMOVE_WARE:
       return ware(state, action)
-      break
+
     default:
       return state
     }

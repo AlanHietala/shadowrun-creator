@@ -4,10 +4,8 @@ export default (state, action) => {
   switch(action.type) {
   case spellActionTypes.ADD_SPELL:
     return addSpell(state, action)
-    break
   case spellActionTypes.REMOVE_SPELL:
     return removeSpell(state, action)
-    break
   default:
     return state
   }
