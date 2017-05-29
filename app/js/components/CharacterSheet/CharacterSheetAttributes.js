@@ -1,16 +1,16 @@
 import React from 'react'
 import {List, ListItem} from 'material-ui/List'
-import {Tabs, Tab} from 'material-ui/Tabs';
+import {Tabs, Tab} from 'material-ui/Tabs'
 
 const AttributeItem = ({title, value}) => {
-	return (<div style={styles.attribute}>
+  return (<div style={styles.attribute}>
 		<div style={styles.attributeLine}>{title}</div>
 		<div style={styles.attributeLine}>{value}</div>
 	</div>)
 }
 
 export default ({attributes}) => {
-	const {
+  const {
 		strength,
 		agility,
 		willpower,
@@ -23,8 +23,8 @@ export default ({attributes}) => {
 		essence,
 		initiative,
 		initiativeDice
-	} = attributes;
-	return (
+	} = attributes
+  return (
 		<div style={styles.attributeList}>
 			<AttributeItem title="Bod" value={body.value} />
 			<AttributeItem title="Str" value={strength.value} />
@@ -38,19 +38,19 @@ export default ({attributes}) => {
 			<AttributeItem title="Ess" value={essence.value} />
 			<AttributeItem title="Init" value={`${initiative.value} + ${initiativeDice.value}d6`} />
 		</div>
-	)
+  )
 }
 
 const styles = {
-	attributeList: {
-		display: 'flex',
-		flexDirection: 'row'
-	},
-	attribute: {
-		flexDirection: 'column',
-		margin: '0.5rem'
-	},
-	attributeLine: {
-		textAlign: 'center'
-	}
+  attributeList: {
+    display: 'flex',
+    flexDirection: 'row'
+  },
+  attribute: {
+    flexDirection: 'column',
+    margin: '0.5rem'
+  },
+  attributeLine: {
+    textAlign: 'center'
+  }
 }

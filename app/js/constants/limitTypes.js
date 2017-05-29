@@ -1,3 +1,3 @@
-export const PHYSICAL_LIMIT = 'PHYSICAL_LIMIT';
-export const MENTAL_LIMIT = 'MENTAL_LIMIT';
-export const SOCIAL_LIMIT = 'SOCIAL_LIMIT';
+export const PHYSICAL_LIMIT = 'PHYSICAL_LIMIT'
+export const MENTAL_LIMIT = 'MENTAL_LIMIT'
+export const SOCIAL_LIMIT = 'SOCIAL_LIMIT'

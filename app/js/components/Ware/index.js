@@ -1,1 +1,1 @@
-export default from './WarePicker.jsx';
+export default from './WarePicker.jsx'

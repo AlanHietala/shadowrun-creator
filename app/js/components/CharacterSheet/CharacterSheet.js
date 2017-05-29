@@ -1,23 +1,23 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { characterSheetSelector } from '../../selectors/characterSelectors';
-import CharacterSheetAttributes from './CharacterSheetAttributes';
+import React from 'react'
+import { connect } from 'react-redux'
+import { characterSheetSelector } from '../../selectors/characterSelectors'
+import CharacterSheetAttributes from './CharacterSheetAttributes'
 import Attributes from '../Attributes'
-import Qualities from '../Qualities';
-import Skills from '../Skills';
-import Spells from '../Spells';
-import Ware from '../Ware';
-import Equipment from '../Equipment';
+import Qualities from '../Qualities'
+import Skills from '../Skills'
+import Spells from '../Spells'
+import Ware from '../Ware'
+import Equipment from '../Equipment'
 
 import {Tabs, Tab} from 'material-ui/Tabs'
 export class CharacterSheet extends React.Component {
-	constructor(props) {
-		super(props)
-	}
+  constructor(props) {
+    super(props)
+  }
 
-	render() {
-		const {characterSheet} = this.props
-		return (
+  render() {
+    const {characterSheet} = this.props
+    return (
 			<div>
 			<CharacterSheetAttributes attributes={characterSheet} />
 				<Tabs>
@@ -41,19 +41,19 @@ export class CharacterSheet extends React.Component {
 					</Tab>
 				</Tabs>
 			</div>)
-	}
+  }
 }
 
 const mapStateToProps = (state) => {
-	return {
-		characterSheet: characterSheetSelector(state)
-	}
+  return {
+    characterSheet: characterSheetSelector(state)
+  }
 }
 
 const mapDispatchToProps =  (dispatch) => {
-	return {
+  return {
 
-	}
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterSheet)

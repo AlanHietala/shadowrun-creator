@@ -1,1 +1,1 @@
-export const ATTRIBUTE = 'ATTRIBUTE';
+export const ATTRIBUTE = 'ATTRIBUTE'

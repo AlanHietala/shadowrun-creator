@@ -1,7 +1,7 @@
-import equipmentList from '../constants/items';
+import equipmentList from '../constants/items'
 
 const equipmentListReducer = (state=equipmentList, action) => {
-	return state;
+  return state
 }
 
-export default equipmentListReducer;
+export default equipmentListReducer

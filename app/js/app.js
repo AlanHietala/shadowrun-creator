@@ -1,35 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import configureStore from './store/configureStore';
-import Foo from './components/FooComponent.jsx';
-import AppLayout from './components/AppLayout/AppLayout.jsx';
-import Creation from './components/Creation/Creation.jsx';
-import PrioritiesList from './components/PrioritiesList/PrioritiesList.jsx';
-import MetatypePicker from './components/MetatypePicker/MetatypePicker.jsx';
-import MagicTypes from './components/MagicTypes/MagicTypes.jsx';
-import Attributes from './components/Attributes/Attributes.jsx';
-import QualityPicker from './components/Qualities/QualityPicker.jsx';
-import SkillsPicker from './components/Skills/SkillsPicker.jsx';
-import SpellsPicker from './components/Spells/SpellsPicker.jsx';
-import EquipmentPicker from './components/Equipment/EquipmentPicker.jsx';
-import WarePicker from './components/Ware/WarePicker.jsx';
-import CharacterSheet from './components/CharacterSheet';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import configureStore from './store/configureStore'
+import Foo from './components/FooComponent.jsx'
+import AppLayout from './components/AppLayout/AppLayout.jsx'
+import Creation from './components/Creation/Creation.jsx'
+import PrioritiesList from './components/PrioritiesList/PrioritiesList.jsx'
+import MetatypePicker from './components/MetatypePicker/MetatypePicker.jsx'
+import MagicTypes from './components/MagicTypes/MagicTypes.jsx'
+import Attributes from './components/Attributes/Attributes.jsx'
+import QualityPicker from './components/Qualities/QualityPicker.jsx'
+import SkillsPicker from './components/Skills/SkillsPicker.jsx'
+import SpellsPicker from './components/Spells/SpellsPicker.jsx'
+import EquipmentPicker from './components/Equipment/EquipmentPicker.jsx'
+import WarePicker from './components/Ware/WarePicker.jsx'
+import CharacterSheet from './components/CharacterSheet'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import styles from '../styles/main.scss'
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
+injectTapEventPlugin()
 
-const store = configureStore();
+const store = configureStore()
 
 
 // Required for replaying actions from devtools to work
 
-const history = syncHistoryWithStore(browserHistory, store);
+const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
 	<Provider store={store}>

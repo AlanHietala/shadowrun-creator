@@ -1,1 +1,1 @@
-export default from './CharacterSheet';
+export default from './CharacterSheet'
