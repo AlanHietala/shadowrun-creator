@@ -1,0 +1,15 @@
+{
+    "extends": "airbnb",
+    "env": {
+        "browser": true
+    },
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "rules": {
+        "semi": ["error", "never"],
+        "arrow-body-style": ["error", "as-needed"]
+    }
+}
