@@ -1,7 +1,7 @@
-import addAttributeReducer from '../../app/js/reducers/attributes';
-import attributeActions from '../../app/js/actions/attributeActions';
-import {ADD_ATTRIBUTE, SUBTRACT_ATTRIBUTE} from '../../app/js/constants/creationOptionActionTypes';
-import * as modTypes from '../../app/js/constants/modTypes'
+import addAttributeReducer from './attributesReducer';
+import attributeActions from '../../actions/attributeActions';
+import {ADD_ATTRIBUTE, SUBTRACT_ATTRIBUTE} from '../../constants/creationOptionActionTypes';
+import * as modTypes from '../../constants/modTypes'
 
 describe('Add Attribute Reducer', function () {
 	it('should increase an attribute referenced by key if the type is ADD_ATTRIBUTE', function () {

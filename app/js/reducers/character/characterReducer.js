@@ -1,21 +1,22 @@
-import * as priorityActionTypes from '../constants/priorityActionTypes'
-import * as creationOptionActionTypes from '../constants/creationOptionActionTypes'
-import * as itemActionTypes from '../constants/itemActionTypes'
-import * as qualityActionTypes from '../constants/qualityActionTypes'
-import individualSkills from '../constants/skills'
-import skillGroups from '../constants/skillGroups'
-import * as skillActionTypes from '../constants/skillActionTypes'
-import * as spellActionTypes from '../constants/spellActionTypes'
-import skills from './skills'
-import attribute from './attributes'
-import quality from './quality'
-import setMagicOrResonanceOption from './MagicOrResonanceOptionReducer'
-import setMetatype from './setMetatypeReducer'
-import setStats from './setStatsReducer'
-import spells from './spells'
-import items from './items'
-import ware from './ware'
-
+import * as priorityActionTypes from '../../constants/priorityActionTypes'
+import * as creationOptionActionTypes from '../../constants/creationOptionActionTypes'
+import * as itemActionTypes from '../../constants/itemActionTypes'
+import * as qualityActionTypes from '../../constants/qualityActionTypes'
+import individualSkills from '../../constants/skills'
+import skillGroups from '../../constants/skillGroups'
+import * as skillActionTypes from '../../constants/skillActionTypes'
+import * as spellActionTypes from '../../constants/spellActionTypes'
+import skills from '../skills'
+import attribute from '../attributes'
+import quality from '../quality'
+import setMagicOrResonanceOption from '../magic-or-resonance'
+import setMetatype from '../metatype'
+import setStats from '../stats'
+import spells from '../spells'
+import items from '../items'
+import ware from '../ware'
+import * as adeptPowerActionTypes from '../../constants/adeptPowerActionTypes'
+import adeptPowers from '../adept-powers'
 const defaultState = {
   qualities: [],
   karma: 25,
@@ -27,7 +28,8 @@ const defaultState = {
   },
   spells: [],
   items: [],
-  ware: []
+  ware: [],
+  adeptPowers: []
 }
 
 const skillActions = [
@@ -49,6 +51,13 @@ const spellActions = [
   spellActionTypes.REMOVE_SPELL
 ]
 
+const adeptActions = [
+  adeptPowerActionTypes.ADD_POWER,
+  adeptPowerActionTypes.REMOVE_POWER,
+  adeptPowerActionTypes.INCREASE_POWER,
+  adeptPowerActionTypes.DECREASE_POWER
+]
+
 const character = (state = defaultState, action) => {
 
   if(skillActions.includes(action.type)) {
@@ -57,6 +66,8 @@ const character = (state = defaultState, action) => {
     return attribute(state, action)
   } else if(spellActions.includes(action.type)) {
     return spells(state, action)
+  } else if(adeptActions.includes(action.type)) {
+    return adeptPowers(state, action)
   } else {
     switch (action.type) {
     case priorityActionTypes.SAVE_PRIORITIES:

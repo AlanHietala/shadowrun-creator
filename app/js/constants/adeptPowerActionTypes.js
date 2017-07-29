@@ -1,2 +1,4 @@
 export const ADD_POWER = 'ADD_POWER'
 export const REMOVE_POWER = 'REMOVE_POWER'
+export const DECREASE_POWER = 'DECREASE_POWER'
+export const INCREASE_POWER = 'INCREASE_POWER'
