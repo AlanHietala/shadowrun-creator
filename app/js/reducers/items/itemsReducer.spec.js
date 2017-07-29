@@ -1,5 +1,5 @@
-import { addItem, removeItem } from '../../app/js/actions/itemActions';
-import itemsReducer from '../../app/js/reducers/items';
+import { addItem, removeItem } from '../../actions/itemActions';
+import itemsReducer from './itemsReducer';
 
 describe('Items Reducer', function () {
 	describe('ADD_ITEM', function () {
@@ -57,5 +57,5 @@ describe('Items Reducer', function () {
 
 	});
 
-	
+
 });

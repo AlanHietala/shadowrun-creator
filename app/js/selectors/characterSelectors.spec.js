@@ -1,4 +1,4 @@
-import * as attributeTypes from '../../app/js/constants/attributeTypes';
+import * as attributeTypes from '../constants/attributeTypes';
 import { strengthSelector,
 	agilitySelector,
 	willpowerSelector,
@@ -10,8 +10,8 @@ import { strengthSelector,
 logicSelector,
 essenceSelector,
 attributeSelector,
-resourcesSelector } from '../../app/js/selectors/characterSelectors';
-import * as modTypes from '../../app/js/constants/modTypes';
+resourcesSelector } from './characterSelectors';
+import * as modTypes from '../constants/modTypes';
 
 describe('StrengthSelector', function () {
 	it('should return the base strength + mod value if there is one mod', function () {

@@ -1,5 +1,5 @@
-import * as modTypes from '../../app/js/constants/modTypes';
-import {wareListSelector} from '../../app/js/selectors/itemSelectors';
+import * as modTypes from '../constants/modTypes';
+import {wareListSelector} from './itemSelectors';
 describe('Item Selectors', function () {
 	describe('availableWareSelector', function () {
 		it('should set isEnoughEssence to true if the characters essence left is > the ware essence mod', function () {

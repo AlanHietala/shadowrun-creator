@@ -1,6 +1,6 @@
-import {addSkillSpecialization, removeSkillSpecialization} from '../../app/js/actions/skillActions';
-import * as attributesTypes from '../../app/js/constants/attributeTypes';
-import skillSpecializationReducer from '../../app/js/reducers/skills/skillSpecializationReducer';
+import {addSkillSpecialization, removeSkillSpecialization} from '../../actions/skillActions';
+import * as attributesTypes from '../../constants/attributeTypes';
+import skillSpecializationReducer from './skillSpecializationReducer';
 
 describe('Skills Reducer', function () {
 	describe('Specialization Reducer', function () {
