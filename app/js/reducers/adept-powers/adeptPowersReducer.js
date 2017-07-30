@@ -19,18 +19,22 @@ export default (state, action) => {
 
 const updatePower = (state, action, value) => {
   const adeptPower = state.adeptPowers[action.payload]
-  const newAdeptPower = {
-    ...adeptPower,
-    level: adeptPower.level + value
-  }
+		if(canModifyPower(state, adeptPower)) {
+	  const newAdeptPower = {
+	    ...adeptPower,
+	    level: adeptPower.level + value
+	  }
 
-  let adeptPowers = [...state.adeptPowers]
-  adeptPowers[action.payload] = newAdeptPower
+	  let adeptPowers = [...state.adeptPowers]
+	  adeptPowers[action.payload] = newAdeptPower
 
-  return {
-    ...state,
-    adeptPowers
-  }
+	  return {
+	    ...state,
+	    adeptPowers
+	  }
+	} else {
+		return state
+	}
 }
 
 const removePower = (state, action) => {
@@ -46,8 +50,10 @@ const removePower = (state, action) => {
 
 const addPower = (state, action) => {
   const power = action.payload
-  if(canAddPower()) {
-    state.adeptPowers.concat([{...power, level: 1}])
+  if(canAddPower(state, action.payload)) {
+    return { ...state,
+						adeptPowers: state.adeptPowers.concat([{...power, level: 1}])
+					}
   } else {
     return state
   }
@@ -59,5 +65,10 @@ const canAddPower = (state, power) => {
   const canAddPower = !isPowerAdded(state, power) && magicRating >= usedPowerPoints + power.cost
   return canAddPower
 }
-
+const canModifyPower = (state, power) => {
+	const usedPowerPoints = state.adeptPowers.reduce((sum, addedPower) => addedPower.level * addedPower.cost, 0)
+  const magicRating = state.attributes.magic.value
+  const canModify =  magicRating >= usedPowerPoints + power.cost
+  return canModify
+}
 const isPowerAdded = (state, power) => !!state.adeptPowers.find(addedPower => addedPower.key === power.key)

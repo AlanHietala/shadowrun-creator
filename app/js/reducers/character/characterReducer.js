@@ -2,7 +2,7 @@ import * as priorityActionTypes from '../../constants/priorityActionTypes'
 import * as creationOptionActionTypes from '../../constants/creationOptionActionTypes'
 import * as itemActionTypes from '../../constants/itemActionTypes'
 import * as qualityActionTypes from '../../constants/qualityActionTypes'
-import individualSkills from '../../constants/skills'
+import { skillArray } from '../../constants/skills'
 import skillGroups from '../../constants/skillGroups'
 import * as skillActionTypes from '../../constants/skillActionTypes'
 import * as spellActionTypes from '../../constants/spellActionTypes'
@@ -22,7 +22,7 @@ const defaultState = {
   karma: 25,
 
   skills: {
-    individualSkills: individualSkills.skillArray,
+    individualSkills: skillArray,
     skillGroups,
     textFilter: ''
   },

@@ -1,1 +1,1 @@
-export defualt from './attributesReducer'
+export default from './attributesReducer'

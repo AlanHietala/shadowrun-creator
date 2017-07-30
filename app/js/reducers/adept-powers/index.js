@@ -1,1 +1,2 @@
-export default from './adeptPowersReducer';
+export default from './adeptPowersReducer'
+export adeptPowerList from './adeptPowerListReducer'

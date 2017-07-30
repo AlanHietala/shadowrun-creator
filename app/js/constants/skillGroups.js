@@ -1,109 +1,109 @@
-import skills from "./skills"
+import { skillMap } from "./skills"
 export default [
   {
     name: 'Acting',
     points: 0,
-    skills: [skills.skillMap.con,
-      skills.skillMap.impersonation,
-      skills.skillMap.performance]
+    skills: [skillMap.con,
+      skillMap.impersonation,
+      skillMap.performance]
   },
   {
     name: 'Athletics',
     points: 0,
-    skills: [skills.skillMap.gymnastics,
-      skills.skillMap.running,
-      skills.skillMap.swimming]
+    skills: [skillMap.gymnastics,
+      skillMap.running,
+      skillMap.swimming]
   },
   {
     name: 'Biotech',
     points: 0,
-    skills: [skills.skillMap.cybertechnology,
-      skills.skillMap.firstAid,
-      skills.skillMap.medicine]
+    skills: [skillMap.cybertechnology,
+      skillMap.firstAid,
+      skillMap.medicine]
   },
   {
     name: 'Close Combat',
     points: 0,
-    skills: [skills.skillMap.blades,
-      skills.skillMap.clubs,
-      skills.skillMap.unarmedCombat]
+    skills: [skillMap.blades,
+      skillMap.clubs,
+      skillMap.unarmedCombat]
   },
   {
     name: 'Conjuring',
     points: 0,
-    skills: [skills.skillMap.banishing,
-      skills.skillMap.binding,
-      skills.skillMap.summoning]
+    skills: [skillMap.banishing,
+      skillMap.binding,
+      skillMap.summoning]
   },
   {
     name: 'Cracking',
     points: 0,
-    skills: [skills.skillMap.cybercombat,
-      skills.skillMap.electronicWarfare,
-      skills.skillMap.hacking]
+    skills: [skillMap.cybercombat,
+      skillMap.electronicWarfare,
+      skillMap.hacking]
   },
   {
     name: 'Electronics',
     points: 0,
-    skills: [skills.skillMap.computer,
-      skills.skillMap.hardware,
-      skills.skillMap.software]
+    skills: [skillMap.computer,
+      skillMap.hardware,
+      skillMap.software]
   },
   {
     name: 'Enchanting',
     points: 0,
-    skills: [skills.skillMap.alchemy,
-      skills.skillMap.artificing,
-      skills.skillMap.disenchanting]
+    skills: [skillMap.alchemy,
+      skillMap.artificing,
+      skillMap.disenchanting]
   },
   {
     name: 'Engineering',
     points: 0,
-    skills: [skills.skillMap.aeronauticsMechanics,
-      skills.skillMap.automotiveMechanics,
-      skills.skillMap.industrialMechanics,
-      skills.skillMap.nauticalMechanics]
+    skills: [skillMap.aeronauticsMechanics,
+      skillMap.automotiveMechanics,
+      skillMap.industrialMechanics,
+      skillMap.nauticalMechanics]
   },
   {
     name: 'Firearms',
     points: 0,
-    skills: [skills.skillMap.automatics,
-      skills.skillMap.longarms,
-      skills.skillMap.pistols]
+    skills: [skillMap.automatics,
+      skillMap.longarms,
+      skillMap.pistols]
   },
   {
     name: 'Influence',
     points: 0,
-    skills: [skills.skillMap.etiquette,
-      skills.skillMap.leadership,
-      skills.skillMap.negotiation]
+    skills: [skillMap.etiquette,
+      skillMap.leadership,
+      skillMap.negotiation]
   },
   {
     name: 'Outdoors',
     points: 0,
-    skills: [skills.skillMap.navigation,
-      skills.skillMap.survival,
-      skills.skillMap.tracking]
+    skills: [skillMap.navigation,
+      skillMap.survival,
+      skillMap.tracking]
   },
   {
     name: 'Sorcery',
     points: 0,
-    skills: [skills.skillMap.counterspelling,
-      skills.skillMap.ritualSpellcasting,
-      skills.skillMap.spellcasting]
+    skills: [skillMap.counterspelling,
+      skillMap.ritualSpellcasting,
+      skillMap.spellcasting]
   },
   {
     name: 'Stealth',
     points: 0,
-    skills: [skills.skillMap.disguise,
-      skills.skillMap.palming,
-      skills.skillMap.sneaking]
+    skills: [skillMap.disguise,
+      skillMap.palming,
+      skillMap.sneaking]
   },
   {
     name: 'Tasking',
     points: 0,
-    skills: [skills.skillMap.compiling,
-      skills.skillMap.decompiling,
-      skills.skillMap.registering]
+    skills: [skillMap.compiling,
+      skillMap.decompiling,
+      skillMap.registering]
   }
 ]

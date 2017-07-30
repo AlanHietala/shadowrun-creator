@@ -1,5 +1,5 @@
 import * as attributeTypes from './attributeTypes'
-const skillArray = [
+export const skillArray = [
   {
     name: 'Archery',
     points: 0,
@@ -551,7 +551,7 @@ const skillArray = [
     canDefault: false, selectedSpecializations: [],specializations: []
   }
 ]
-const skillMap = {
+export const skillMap = {
   archery: skillArray[0],
   automatics: skillArray[1],
   blades: skillArray[2],
@@ -633,8 +633,4 @@ const skillMap = {
   compiling: skillArray[78],
   decompiling: skillArray[79],
   registering: skillArray[80]
-}
-export default {
-  skillArray,
-  skillMap
 }
