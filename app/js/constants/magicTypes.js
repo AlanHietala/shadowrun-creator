@@ -1,0 +1,5 @@
+export const ADEPT = 'adept'
+export const MAGICIAN = 'magician'
+export const ASPECTED_MAGICIAN = 'aspectedMagician'
+export const MYSTIC_ADEPT = 'mysticAdept'
+export const TECHNOMANCER = 'technomancer'

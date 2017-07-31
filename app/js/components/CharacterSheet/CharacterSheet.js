@@ -7,18 +7,34 @@ import Attributes from '../Attributes'
 import Qualities from '../Qualities'
 import Skills from '../Skills'
 import Spells from '../Spells'
+import AdeptPowers from '../AdeptPowers'
 import Ware from '../Ware'
 import Equipment from '../Equipment'
-
+import * as magicTypes from '../../constants/magicTypes'
 import {Tabs, Tab} from 'material-ui/Tabs'
 
 export class CharacterSheet extends React.Component {
   constructor(props) {
     super(props)
   }
+	getMagicSection = (magicType) => {
+			let magicSection = null;
+			if (magicType === magicTypes.ADEPT) {
+				magicSection = ( <Tab label="Powers">
+					<AdeptPowers />
+				</Tab>)
+			} else if (magicType === magicTypes.MAGICIAN ||
+				magicType === magicTypes.ASPECTED_MAGICIAN) {
+				magicSection = ( <Tab label="Spells">
+					<Spells/>
+				</Tab>)
+			}
+			return magicSection
+	}
 
   render() {
     const {characterSheet} = this.props
+		const magicSection = this.getMagicSection(characterSheet.magicType)
     return (
 			<div>
 			<CharacterSheetAttributes attributes={characterSheet} />
@@ -32,9 +48,7 @@ export class CharacterSheet extends React.Component {
 					<Tab label="Equip">
 						<Equipment />
 					</Tab>
-					<Tab label="Spells">
-						<Spells/>
-					</Tab>
+					{ magicSection }
 					<Tab label="Ware">
 						<Ware />
 					</Tab>

@@ -1,2 +1,2 @@
-export characterAdeptPowersSelector = state => state.character.adeptPowers
-export adeptPowersSelector = state => state.adeptPowerList
+export const characterAdeptPowersSelector = state => state.character.adeptPowers
+export const adeptPowersSelector = state => state.adeptPowerList

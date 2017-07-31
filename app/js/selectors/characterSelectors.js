@@ -83,7 +83,7 @@ export const characterSheetSelector = (state) => {
     strength: {value: state.character.attributes.strength.value, modifiedBy: []},
     agility: {value: state.character.attributes.agility.value, modifiedBy: []},
     willpower: {value: state.character.attributes.willpower.value, modifiedBy: []},
-    magic: {value: state.character.attributes.magic.value, modifiedBy: []},
+    magic: {value: state.character.attributes.magic ? state.character.attributes.magic.value : 0, modifiedBy: []},
     body: {value: state.character.attributes.body.value, modifiedBy: []},
     reaction: {value: state.character.attributes.reaction.value, modifiedBy: []},
     charisma: {value: state.character.attributes.charisma.value, modifiedBy: []},
@@ -96,16 +96,18 @@ export const characterSheetSelector = (state) => {
   const itemsList = state.character.items.concat(state.character.ware)
   let computedCharacterSheet = itemsList
 		.reduce((characterSheet, item) => {
-  return updateCharacterSheet(characterSheet, item)
-}, initialCharacterSheet)
+		  return updateCharacterSheet(characterSheet, item)
+		}, initialCharacterSheet)
   const initiative = computedCharacterSheet.reaction.value + computedCharacterSheet.agility.value
   computedCharacterSheet.initiative = {value: initiative, modifiedBy: []}
+	computedCharacterSheet.magicType = state.character.magicType
   return computedCharacterSheet
 }
 
 function computeAttribute(state, attributeType, modType) {
   const modReduceFn = getModReduce(modType)
-  const base = state.character.attributes[attributeType].value
+
+  const base =  state.character.attributes[attributeType] ? state.character.attributes[attributeType].value : 0
 
   let mods = state.character.items
 		.reduce(modReduceFn, 0)

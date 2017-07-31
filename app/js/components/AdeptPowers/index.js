@@ -1,1 +1,1 @@
-export default from './AdeptPowerPicker'
+export default from './AdeptPowerPicker.jsx'

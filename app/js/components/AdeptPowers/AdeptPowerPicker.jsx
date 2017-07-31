@@ -1,60 +1,32 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import WareList from './AdeptPowerList.jsx';
-import CharacterWare from './CharacterWare.jsx';
 import Paper from 'material-ui/Paper';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import { addWare, removeWare } from '../../actions/itemActions';
-import wareList from '../../constants/ware';
-import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors';
-import {essenceSelector, resourcesSelector} from '../../selectors/characterSelectors';
+import { addPower, removePower, increasePower, decreasePower } from '../../actions/powerActions';
+import { characterAdeptPowersSelector, adeptPowersSelector } from '../../selectors/adeptPowerSelectors';
+import CharacterSheetSection from '../CharacterSheetSection'
+import AdeptPowerItem from './AdeptPowerItem.jsx'
 
-class WarePicker extends React.Component {
+class AdeptPowerPicker extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			open: false
-		}
-	}
-	handleClose = () => {
-		this.setState({
-			open: false
-		})
-	}
-
-	handleOpen = () => {
-		this.setState({
-			open: true
-		})
 	}
 
 	render() {
-		const {resources, essence} = this.props;
-		const actions = [
-			<FlatButton
-				label="close"
-				primary={true}
-				onTouchTap={this.handleClose}
-			/>];
+		const {adeptPowerList, handleAddPower, handleRemovePower, characterAdeptPowers} = this.props
 
 			return (<Paper>
-				<h2>Ware</h2>
-				<span>essence: {essence.computed} resources: {resources}</span>
-				<CharacterWare characterWare={this.props.characterWare} handleRemoveWare={this.props.handleRemoveWare}/>
-				<Dialog actions={actions}
-						modal={false}
-						open={this.state.open}
-						autoScrollBodyContent={true}
-						onRequestClose={this.handleClose}>
-					<WareList wareList={wareList} handleAddWare={this.props.handleAddWare} />
-
-				</Dialog>
-				<FloatingActionButton onTouchTap={this.handleOpen}>
-					<ContentAdd />
-				</FloatingActionButton>
+				<h2>Adept Powers</h2>
+				<CharacterSheetSection sectionTitle={'adept Powers'}
+				 characterSheetItems={characterAdeptPowers}
+				 allItems={adeptPowerList}
+				 handleAddItem={handleAddPower}
+				 handleRemoveItem={handleRemovePower}
+				 ItemComponent={AdeptPowerItem}
+ 			 	/>
 			</Paper>)
 	}
 
@@ -66,25 +38,23 @@ const style = {
 }
 const mapStateToProps = (state) => {
 	return {
-		characterWare: characterWareSelector(state),
-		essence: essenceSelector(state),
-		resources: resourcesSelector(state),
-		wareList: wareListSelector(state)
+		characterAdeptPowers: characterAdeptPowersSelector(state),
+		adeptPowerList: adeptPowersSelector(state)
 	}
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		handleAddWare: (ware) => {
-			const addWareAction = addWare(ware);
-			dispatch(addWareAction);
+		handleAddPower: (power) => {
+			const addPowerAction = addPower(power);
+			dispatch(addPowerAction);
 		},
-		handleRemoveWare: (wareIndex) => {
-			const removeWareAction = removeWare(wareIndex);
-			dispatch(removeWareAction);
+		handleRemovePower: (powerIndex) => {
+			const removePowerAction = removePower(powerIndex);
+			dispatch(removePowerAction);
 		}
 	}
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(WarePicker);
+export default connect(mapStateToProps, mapDispatchToProps)(AdeptPowerPicker);
