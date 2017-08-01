@@ -1,7 +1,7 @@
 import {essenceSelector, resourcesSelector} from './characterSelectors'
 import {getEssenceCostForItem, getResourceCostForItem} from './modHelpers'
 
-export const itemsSelector = (state) => {
+export const characterItemsSelector = (state) => {
   return state.character.items
 }
 
@@ -23,6 +23,3 @@ export const wareListSelector = (state) => {
     }
   })
 }
-
-
-

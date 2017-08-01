@@ -34,7 +34,7 @@ export default ({priorityData, priorityChanged}) => {
 				break;
 		}
 	}
-	console.log(priorityData.priority);
+	
 	return (<div>
 
 			<div style={{display: 'inline-block'}}>

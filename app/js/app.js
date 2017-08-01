@@ -37,7 +37,7 @@ ReactDOM.render(
 			<div>
 				<Router history={history}>
 					<Route path="/" component={AppLayout}>
-						<IndexRoute component={Foo}/>
+						<IndexRoute component={PrioritiesList}/>
 						<Route path="creation" component={Creation}>
 							<Route path="priority" component={ PrioritiesList } />
 							<Route path="metatype" component={ MetatypePicker } />

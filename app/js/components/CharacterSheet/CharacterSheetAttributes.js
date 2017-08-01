@@ -10,7 +10,7 @@ const AttributeItem = ({title, value}) => {
 
 AttributeItem.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.any.isRequired
 }
 
 const CharacterSheetAttributes = ({attributes}) => {

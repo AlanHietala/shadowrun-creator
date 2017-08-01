@@ -15,51 +15,26 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import {List, ListItem} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
+
 const style = {
 	marginRight: 20,
 };
 
-const mapStateToProps = (state) => {
-	return {
-		skillPoints: state.character.creation.availableSkillPoints.points,
-		skillGroupPoints: state.character.creation.availableSkillPoints.groupPoints,
-		individualSkills: state.character.skills.individualSkills,
-		skillGroups: state.character.skills.skillGroups,
-		textFilter: state.character.skills.textFilter,
-		bonusSkills: state.character.creation.bonusSkills,
-		isResonanceAllowed: state.character.attributes.resonance > 0,
-		isMagicAllowed: state.character.attributes.magic > 0,
+const styles = {
+	column: {
+		flexGrow: 1,
+		minWidth: '300px',
+		margin: '0.5rem'
+	},
+	container: {
+		display: 'flex',
+		flexDirection: 'row',
+		flexWrap: 'wrap'
+	},
+	button: {
+		margin: '1rem'
 	}
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return {
-		modifySkillGroup: (skillGroup, addValue) => {
-			const modifySkillGroupAction = modifySkillGroup(skillGroup, addValue);
-			dispatch(modifySkillGroupAction);
-		},
-		modifySkill: (skill, addValue) => {
-			const modifySkillAction = modifySkill(skill, addValue);
-			dispatch(modifySkillAction);
-		},
-		filterSkills: (onChangeEvent) => {
-			const filterSkillAction = filterSkill(onChangeEvent.target.value);
-			dispatch(filterSkillAction);
-		},
-		modifyBonusSkill: (skill, addValue) => {
-			const modifyBonusSkillAction = modifyBonusSkill(skill, addValue);
-			dispatch(modifyBonusSkillAction);
-		},
-		addSpecialization: (skillIndex, specializationIndex) => {
-			const addSpecializationAction = addSkillSpecialization(skillIndex, specializationIndex);
-			dispatch(addSpecializationAction);
-		},
-		removeSpecialization: (skillIndex, specializationIndex) => {
-			const removeSpecializationAction = removeSkillSpecialization(skillIndex, specializationIndex);
-			dispatch(removeSpecializationAction);
-		}
-	}
-};
+}
 
 class SkillPicker extends React.Component {
 
@@ -151,7 +126,6 @@ class SkillPicker extends React.Component {
 		return (<div>
 			<div className="row">
 				<div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusPoints } at level { bonusRating }</div>
-				<button onClick={() => browserHistory.push(nextString) }>next</button>
 			</div>
 			<div style={styles.container}>
 			<Paper style={styles.column}>
@@ -201,20 +175,46 @@ class SkillPicker extends React.Component {
 	}
 }
 
-const styles = {
-	column: {
-		flexGrow: 1,
-		minWidth: '300px',
-		margin: '0.5rem'
-	},
-	container: {
-		display: 'flex',
-		flexDirection: 'row',
-		flexWrap: 'wrap'
-	},
-	button: {
-		margin: '1rem'
+const mapStateToProps = (state) => {
+	return {
+		skillPoints: state.character.creation.availableSkillPoints.points,
+		skillGroupPoints: state.character.creation.availableSkillPoints.groupPoints,
+		individualSkills: state.character.skills.individualSkills,
+		skillGroups: state.character.skills.skillGroups,
+		textFilter: state.character.skills.textFilter,
+		bonusSkills: state.character.creation.bonusSkills,
+		isResonanceAllowed: state.character.attributes.resonance > 0,
+		isMagicAllowed: state.character.attributes.magic > 0,
 	}
-}
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		modifySkillGroup: (skillGroup, addValue) => {
+			const modifySkillGroupAction = modifySkillGroup(skillGroup, addValue);
+			dispatch(modifySkillGroupAction);
+		},
+		modifySkill: (skill, addValue) => {
+			const modifySkillAction = modifySkill(skill, addValue);
+			dispatch(modifySkillAction);
+		},
+		filterSkills: (onChangeEvent) => {
+			const filterSkillAction = filterSkill(onChangeEvent.target.value);
+			dispatch(filterSkillAction);
+		},
+		modifyBonusSkill: (skill, addValue) => {
+			const modifyBonusSkillAction = modifyBonusSkill(skill, addValue);
+			dispatch(modifyBonusSkillAction);
+		},
+		addSpecialization: (skillIndex, specializationIndex) => {
+			const addSpecializationAction = addSkillSpecialization(skillIndex, specializationIndex);
+			dispatch(addSpecializationAction);
+		},
+		removeSpecialization: (skillIndex, specializationIndex) => {
+			const removeSpecializationAction = removeSkillSpecialization(skillIndex, specializationIndex);
+			dispatch(removeSpecializationAction);
+		}
+	}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SkillPicker);

@@ -17,7 +17,11 @@ class MetatypePickerComponent extends React.Component {
 		const {selectMetatype} = this.props;
 		const metatypes = this.props.availableMetatypes
 			.map((metatype) => {
-				return (<RadioButton value={metatype} label={`${metatype.metatype} (${metatype.specialAttributePoints})`}  />);
+				return (<RadioButton
+					key={metatype.metatype}
+					value={metatype}
+					label={`${metatype.metatype} (${metatype.specialAttributePoints})`}
+				/>);
 			});
 		return (<div>
 			<h2>Metatype</h2>
