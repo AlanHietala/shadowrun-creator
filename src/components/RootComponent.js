@@ -5,15 +5,12 @@ import MagicTypes from './MagicTypes/MagicTypes'
 import Attributes from './Attributes/Attributes'
 
 import { connect } from 'react-redux'
-
-const mapStateToProps = (state) => {
-  return state.visibility
-}
+import PropTypes from 'prop-types'
 
 class RootComponent extends React.Component {
   render() {
     let visibleComponents = []
-    const {priorityVisible, metatypeVisible, magicTypesVisible, attributesVisible } = this.props
+    const { priorityVisible, metatypeVisible, magicTypesVisible, attributesVisible } = this.props
     if(priorityVisible) {
       visibleComponents.push(<PrioritiesList key="prioritiesList"/>)
     }
@@ -34,6 +31,15 @@ class RootComponent extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return state.visibility
+}
+
+RootComponent.propTypes = {
+  priorityVisible: PropTypes.bool,
+  metatypeVisible: PropTypes.bool,
+  magicTypesVisible: PropTypes.bool,
+  attributesVisible: PropTypes.bool,
+}
+
 export default connect(mapStateToProps, null)(RootComponent)
-
-

@@ -1,8 +1,9 @@
 import React from 'react'
 import SkillGroup from './SkillGroup'
+import PropTypes from 'prop-types'
 
-export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkillGroupFn, addSpecializationFn, removeSpecializationFn}) => {
-  const passThrough = a => true
+const CharacterSkillGroups = ({ skillGroups, filterFn, modifySkillGroupFn }) => {
+  const passThrough = () => true
 
   filterFn = filterFn || passThrough
 
@@ -16,3 +17,11 @@ export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkill
     {skillGroupList}
   </div>)
 }
+
+CharacterSkillGroups.propTypes = {
+  skillGroups: PropTypes.array,
+  filterFn: PropTypes.func,
+  modifySkillGroupFn: PropTypes.func,
+}
+
+export default CharacterSkillGroups

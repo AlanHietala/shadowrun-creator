@@ -1,17 +1,9 @@
 import React from 'react'
-
-import {ListItem} from 'material-ui/List'
+import { ListItem } from 'material-ui/List'
 import ContentAdd from 'material-ui/svg-icons/content/add'
+import PropTypes from 'prop-types'
 
-export default ({ skill, modifyFn, addSpecializationFn, removeSpecializationFn }) => {
-  const specializations = skill.specializations.map((specialization, index) => {
-    return (<button key={specialization} onClick={() => addSpecializationFn(index)}>{specialization}</button> )
-  })
-
-  const selectedSpecializations = skill.selectedSpecializations.map((specialization, index) => {
-    return (<button key={specialization} onClick={ () => removeSpecializationFn(index)}>{specialization}</button> )
-  })
-
+const AddSkill = ({ skill, modifyFn }) => {
   return (
     <ListItem
       rightIcon={<ContentAdd />}
@@ -20,3 +12,10 @@ export default ({ skill, modifyFn, addSpecializationFn, removeSpecializationFn }
     </ListItem>
   )
 }
+
+AddSkill.propTypes = {
+  skill: PropTypes.object,
+  modifyFn: PropTypes.func,
+}
+
+export default AddSkill

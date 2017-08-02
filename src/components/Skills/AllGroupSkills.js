@@ -1,11 +1,11 @@
 import React from 'react'
-import AddSkill from './AddSkill'
 import AddSkillGroup from './AddSkillGroup'
-import {List, ListItem} from 'material-ui/List'
+import { List } from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
+import PropTypes from 'prop-types'
 
-export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkillGroupFn, addSpecializationFn, removeSpecializationFn}) => {
-  const passThrough = a => true
+const AllGroupSkills = ({ skillGroups, filterFn, modifySkillGroupFn }) => {
+  const passThrough = () => true
 
   filterFn = filterFn || passThrough
 
@@ -20,3 +20,11 @@ export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkill
     {skillGroupList}
   </List>)
 }
+
+AllGroupSkills.propTypes = {
+  skillGroups: PropTypes.array,
+  filterFn: PropTypes.func,
+  modifySkillGroupFn: PropTypes.func,
+}
+
+export default AllGroupSkills
