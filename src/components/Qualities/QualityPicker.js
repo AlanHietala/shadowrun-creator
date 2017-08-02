@@ -5,6 +5,7 @@ import {addQuality, removeQuality } from '../../actions/qualityActions'
 import Paper from 'material-ui/Paper'
 import CharacterSheetSection from '../CharacterSheetSection'
 import QualityItem from './QualityItem'
+import PropTypes from 'prop-types'
 
 class QualityPicker extends React.Component {
   constructor(props) {
@@ -14,18 +15,18 @@ class QualityPicker extends React.Component {
   render() {
     const { selectedQualities, removeQuality, addQuality, karma } = this.props
     const qualities = positiveQualities.concat(negativeQualities)
-    return (
-      <Paper>
-        <h2>Qualities</h2>
-        <div>Karma: { karma }</div>
-        <CharacterSheetSection sectionTitle={'Qualities'}
-				 characterSheetItems={selectedQualities}
-				 allItems={qualities}
-				 handleAddItem={addQuality}
-				 handleRemoveItem={removeQuality}
-				 ItemComponent={QualityItem}
- 			 	/>
-      </Paper>)
+    return (<Paper>
+      <h2>Qualities</h2>
+      <div>Karma: { karma }</div>
+      <CharacterSheetSection
+        sectionTitle={'Qualities'}
+        characterSheetItems={selectedQualities}
+        allItems={qualities}
+        handleAddItem={addQuality}
+        handleRemoveItem={removeQuality}
+        ItemComponent={QualityItem}
+      />
+    </Paper>)
   }
 }
 
@@ -49,4 +50,10 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+QualityPicker.propTypes = {
+  selectedQualities: PropTypes.array,
+  removeQuality: PropTypes.func,
+  addQuality: PropTypes.func,
+  karma: PropTypes.number,
+}
 export default connect(mapStateToProps, mapDispatchToProps)(QualityPicker)

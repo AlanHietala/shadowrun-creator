@@ -1,10 +1,13 @@
 import React from 'react'
 import CreationSummary from '../CreationSummary/CreationSummary'
-export default ({children}) => {
+import PropTypes from 'prop-types'
 
-  return (<div>
+const Creation = ({children}) => (<div>
     <CreationSummary />
     {children}
   </div>
   )
+
+Creation.propTypes = {
+  children: PropTypes.any
 }

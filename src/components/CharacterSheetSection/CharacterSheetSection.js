@@ -15,29 +15,29 @@ export default class CharacterSheetSection extends React.Component {
     }
   }
 
- handleClose = () => {
-   this.setState({
-     open: false
-   })
- }
+  handleClose = () => {
+    this.setState({
+      open: false
+    })
+  }
 
- handleOpen = () => {
-   this.setState({
-     open: true
-   })
- }
+  handleOpen = () => {
+    this.setState({
+      open: true
+    })
+  }
 
- render() {
-   const {sectionTitle, characterSheetItems, allItems, handleAddItem, handleRemoveItem, ItemComponent} = this.props
+  render() {
+    const {sectionTitle, characterSheetItems, allItems, handleAddItem, handleRemoveItem, ItemComponent} = this.props
 
-   const actions = [
-     <FlatButton
+    const actions = [
+      <FlatButton
        label="close"
        primary={true}
        onTouchTap={this.handleClose}
      />]
 
-   return (<div>
+    return (<div>
      <CharacterItems ItemComponent={ItemComponent} characterItems={characterSheetItems} handleRemoveItem={handleRemoveItem}/>
      <Dialog actions={actions}
        modal={false}
@@ -50,5 +50,5 @@ export default class CharacterSheetSection extends React.Component {
        <ContentAdd />
      </FloatingActionButton>
    </div>)
- }
+  }
 }

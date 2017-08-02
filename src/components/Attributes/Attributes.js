@@ -1,13 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Attribute from './Attribute'
-import { browserHistory } from 'react-router'
 import {addAttribute, subtractAttribute, addSpecialAttribute, subtractSpecialAttribute} from '../../actions/attributeActions'
 import FlatButton from 'material-ui/FlatButton'
 
 const getAttributeCreator = (addAttributeFn, subtractAttributeFn) => (attribute)  => {
-  return (<div key={attribute.key}>
+  const attribute =  (<div key={attribute.key}>
     <span style={{width: '75px', display: 'inline-block'}}>{attribute.key}</span>
     <FlatButton label="-" onTouchTap={(event) => {
       event.preventDefault()
@@ -20,6 +18,8 @@ const getAttributeCreator = (addAttributeFn, subtractAttributeFn) => (attribute)
         addAttributeFn(attribute)
       }}/>
   </div>)
+  attribute.displayName = 'attribute'
+  return attribute
 }
 
 

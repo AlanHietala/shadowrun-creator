@@ -5,16 +5,14 @@ import CharacterSkills from './CharacterSkills'
 import CharacterSkillGroups from './CharacterSkillGroups'
 
 import * as attributeTypes from  '../../constants/attributeTypes'
-import { browserHistory } from 'react-router'
 import AllSkills from './AllSkills'
 import AllGroupSkills from './AllGroupSkills'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
-import {List, ListItem} from 'material-ui/List'
-import Subheader from 'material-ui/Subheader'
 import Paper from 'material-ui/Paper'
+import PropTypes from 'prop-types'
 
 const style = {
   marginRight: 20,
@@ -48,30 +46,30 @@ class SkillPicker extends React.Component {
 
   }
 
- handleGroupClose = () => {
-   this.setState({
-     groupOpen: false
-   })
- }
+  handleGroupClose = () => {
+    this.setState({
+      groupOpen: false
+    })
+  }
 
- handleGroupOpen = () => {
-   this.setState({
-     groupOpen: true
-   })
- }
- handleClose = () => {
-   this.setState({
-     skillOpen: false
-   })
- }
+  handleGroupOpen = () => {
+    this.setState({
+      groupOpen: true
+    })
+  }
+  handleClose = () => {
+    this.setState({
+      skillOpen: false
+    })
+  }
 
- handleOpen = () => {
-   this.setState({
-     skillOpen: true
-   })
- }
- render() {
-   const {
+  handleOpen = () => {
+    this.setState({
+      skillOpen: true
+    })
+  }
+  render() {
+    const {
      modifySkill,
      modifySkillGroup,
      skillPoints,
@@ -88,42 +86,44 @@ class SkillPicker extends React.Component {
      removeSpecialization
    } = this.props
 
-   const moreThanZeroPoints = (skills) => skills.points > 0
-   const zeroPoints = (skills) => {
-     let isFilterActive = textFilter !== ''
-     let isFilterMatching = skills.name.toLowerCase().indexOf(textFilter.toLowerCase()) > - 1
-     let isAllowedSkillForClass = true
+    const moreThanZeroPoints = (skills) => skills.points > 0
+    const zeroPoints = (skills) => {
+      let isFilterActive = textFilter !== ''
+      let isFilterMatching = skills.name.toLowerCase().indexOf(textFilter.toLowerCase()) > - 1
+      let isAllowedSkillForClass = true
 
-     if(skills.attribute === attributeTypes.RESONANCE && !isResonanceAllowed
+      if(skills.attribute === attributeTypes.RESONANCE && !isResonanceAllowed
     || skills.attribute === attributeTypes.MAGIC && !isMagicAllowed) {
-       isAllowedSkillForClass = false
-     }
+        isAllowedSkillForClass = false
+      }
 
-     return skills.points === 0 && (!isFilterActive || isFilterMatching) && isAllowedSkillForClass
-   }
+      return skills.points === 0 && (!isFilterActive || isFilterMatching) && isAllowedSkillForClass
+    }
 
-   const bonusSkillsFilter = (skills) => {
-     return skills.points === 0 && bonusSkills && skills.attribute === bonusSkills.attributeType
-   }
+    const bonusSkillsFilter = (skills) => {
+      return skills.points === 0 && bonusSkills && skills.attribute === bonusSkills.attributeType
+    }
 
-   const bonusPoints = bonusSkills ? bonusSkills.count : 0
-   const bonusRating = bonusSkills ? bonusSkills.rating : 0
-   const nextString = '/creation/spells'
+    const bonusPoints = bonusSkills ? bonusSkills.count : 0
+    const bonusRating = bonusSkills ? bonusSkills.rating : 0
 
-   const actions = [
-     <FlatButton
-       label="close"
-       primary={true}
-       onTouchTap={this.handleClose}
+    const actions = [
+      <FlatButton
+        key="close"
+        label="close"
+        primary={true}
+        onTouchTap={this.handleClose}
      />]
 
-   const groupActions = [
-     <FlatButton
-       label="close"
-       primary={true}
-       onTouchTap={this.handleGroupClose}
+    const groupActions = [
+      <FlatButton
+        key="close"
+        label="close"
+        primary={true}
+        onTouchTap={this.handleGroupClose}
      />]
-   return (<div>
+     
+    return (<div>
      <div className="row">
        <div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusPoints } at level { bonusRating }</div>
      </div>
@@ -172,7 +172,7 @@ class SkillPicker extends React.Component {
        </Paper>
      </div>
    </div>)
- }
+  }
 }
 
 const mapStateToProps = (state) => {
@@ -217,4 +217,21 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+SkillPicker.propTypes = {
+  modifySkill: PropTypes.func,
+  modifySkillGroup: PropTypes.func,
+  skillPoints: PropTypes.number,
+  skillGroupPoints: PropTypes.number,
+  individualSkills: PropTypes.array,
+  skillGroups: PropTypes.array,
+  filterSkills: PropTypes.func,
+  textFilter: PropTypes.func,
+  bonusSkills: PropTypes.object,
+  modifyBonusSkill: PropTypes.func,
+  isMagicAllowed: PropTypes.bool,
+  isResonanceAllowed: PropTypes.bool,
+  addSpecialization: PropTypes.func,
+  removeSpecialization: PropTypes.func,
+
+}
 export default connect(mapStateToProps, mapDispatchToProps)(SkillPicker)

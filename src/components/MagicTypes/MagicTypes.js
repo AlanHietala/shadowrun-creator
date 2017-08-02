@@ -5,15 +5,16 @@ import {selectMagicType} from '../../actions/magicTypeActions'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton'
 import { browserHistory } from 'react-router'
+import PropTypes from 'prop-types'
 
 class MagicTypesComponent extends React.Component {
 
   render() {
-    const {selectMagicType} = this.props
-    if(this.props.magicClasses) {
-      const magicTypeComponents = this.props.magicClasses
+    const {selectMagicType, magicClasses} = this.props
+    if(magicClasses) {
+      const magicTypeComponents = magicClasses
         .map((magicType) => {
-          return (<RadioButton  value={magicType} label={magicType.name} />)
+          return (<RadioButton key={magicType} value={magicType} label={magicType.name} />)
 
         })
       return (
@@ -34,7 +35,7 @@ class MagicTypesComponent extends React.Component {
             }} />
         </div>)
     } else {
-      return (<div>Can't select magic yet</div>)
+      return (<div>{'Can\'t select magic yet'}</div>)
     }
   }
 }
@@ -55,5 +56,8 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
+MagicTypesComponent.propTypes = {
+  selectMagicType: PropTypes.func,
+  magicClasses: PropTypes.array,
+}
 export default connect(mapStateToProps, mapDispatchToProps)(MagicTypesComponent)
-

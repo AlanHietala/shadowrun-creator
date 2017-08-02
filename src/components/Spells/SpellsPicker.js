@@ -5,21 +5,23 @@ import SpellItem from './SpellItem'
 import { addSpell, removeSpell } from '../../actions/spellActions'
 import CharacterSheetSection from '../CharacterSheetSection'
 import Paper from 'material-ui/Paper'
+import PropTypes from 'prop-types'
+
 class SpellsPicker extends React.Component {
   render() {
     const { availableSpellCount, addSpell, removeSpell, chosenSpells } = this.props
 
-    return (
-      <Paper>
-        <h2>Spells</h2>
-        <div>Available Spells: {availableSpellCount}</div>
-        <CharacterSheetSection sectionTitle={'Spells'}
-				 characterSheetItems={chosenSpells}
-				 allItems={spells}
-				 handleAddItem={addSpell}
-				 handleRemoveItem={removeSpell}
-				 ItemComponent={SpellItem}
- 			 	/>
+    return (<Paper>
+      <h2>Spells</h2>
+      <div>Available Spells: {availableSpellCount}</div>
+      <CharacterSheetSection
+        sectionTitle={'Spells'}
+        characterSheetItems={chosenSpells}
+        allItems={spells}
+        handleAddItem={addSpell}
+        handleRemoveItem={removeSpell}
+        ItemComponent={SpellItem}
+      />
       </Paper>)
   }
 }
@@ -44,5 +46,10 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-
+SpellsPicker.propTypes = {
+  availableSpellCount: PropTypes.number,
+  addSpell: PropTypes.func,
+  removeSpell: PropTypes.func,
+  chosenSpells: PropTypes.array,
+}
 export default connect(mapStateToProps, mapDispatchToProps)(SpellsPicker)

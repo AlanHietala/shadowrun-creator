@@ -7,6 +7,7 @@ import { characterWareSelector, wareListSelector } from '../../selectors/itemSel
 import {essenceSelector, resourcesSelector} from '../../selectors/characterSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
 import WareItem from './WareItem'
+import PropTypes from 'prop-types'
 
 class WarePicker extends React.Component {
   constructor(props) {
@@ -16,25 +17,21 @@ class WarePicker extends React.Component {
   render() {
     const {resources, essence, characterWare, handleAddWare, handleRemoveWare} = this.props
     return (<Paper>
-      <h2>Ware</h2>
-      <span>essence: {essence.computed} resources: {resources}</span>
-      <CharacterSheetSection
-				 sectionTitle={'ware'}
-				 characterSheetItems={characterWare}
-				 allItems={wareList}
-				 handleAddItem={handleAddWare}
-				 handleRemoveItem={handleRemoveWare}
-				 ItemComponent={WareItem}
-      />
-    </Paper>)
+<h2>Ware</h2>
+<span>essence: {essence.computed} resources: {resources}</span>
+<CharacterSheetSection
+sectionTitle={'ware'}
+characterSheetItems={characterWare}
+allItems={wareList}
+handleAddItem={handleAddWare}
+handleRemoveItem={handleRemoveWare}
+ItemComponent={WareItem}
+/>
+</Paper>)
   }
 
 }
-const style = {
-  actionButton: {
 
-  }
-}
 const mapStateToProps = (state) => {
   return {
     characterWare: characterWareSelector(state),
@@ -57,5 +54,12 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+WarePicker.propTypes = {
+  resources: PropTypes.number,
+  essence: PropTypes.number,
+  characterWare: PropTypes.array,
+  handleAddWare: PropTypes.func,
+  handleRemoveWare: PropTypes.func,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(WarePicker)

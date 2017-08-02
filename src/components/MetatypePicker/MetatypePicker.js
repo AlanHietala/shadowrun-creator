@@ -1,21 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Priority from '../Priority/Priority'
 import * as metatypeActionCreators from '../../actions/metatypeActions'
-import priorityStats from '../../constants/statsForPriorities'
-import css from './metatype.picker.scss'
 import { browserHistory } from 'react-router'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton'
-
+import PropTypes from 'prop-types'
 
 
 class MetatypePickerComponent extends React.Component {
 
   render() {
-    const {selectMetatype} = this.props
-    const metatypes = this.props.availableMetatypes
+    const {selectMetatype, availableMetatypes} = this.props
+    const metatypes = availableMetatypes
       .map((metatype) => {
         return (<RadioButton
           key={metatype.metatype}
@@ -64,4 +61,10 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
+MetatypePickerComponent.propTypes = {
+  selectMetatype: PropTypes.array,
+  availableMetatypes: PropTypes.array,
+  hasMagic: PropTypes.bool,
+
+}
 export default connect(mapStateToProps, mapDispatchToProps)(MetatypePickerComponent)
