@@ -6,7 +6,7 @@ import wareList from '../../constants/ware'
 import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors'
 import {essenceSelector, resourcesSelector} from '../../selectors/characterSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
-import WareItem from './WareItem.jsx'
+import WareItem from './WareItem'
 
 class WarePicker extends React.Component {
   constructor(props) {

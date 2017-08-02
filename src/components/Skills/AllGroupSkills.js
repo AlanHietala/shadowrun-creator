@@ -1,6 +1,6 @@
 import React from 'react'
-import AddSkill from './AddSkill.jsx'
-import AddSkillGroup from './AddSkillGroup.jsx'
+import AddSkill from './AddSkill'
+import AddSkillGroup from './AddSkillGroup'
 import {List, ListItem} from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
 

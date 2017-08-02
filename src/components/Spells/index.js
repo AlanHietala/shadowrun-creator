@@ -1,1 +1,1 @@
-export default from './SpellsPicker.jsx'
+export default from './SpellsPicker'

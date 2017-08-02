@@ -1,5 +1,5 @@
 import React from 'react'
-import SkillGroup from './SkillGroup.jsx'
+import SkillGroup from './SkillGroup'
 
 export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkillGroupFn, addSpecializationFn, removeSpecializationFn}) => {
   const passThrough = a => true

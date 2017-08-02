@@ -1,1 +1,1 @@
-export default from './EquipmentPicker.jsx'
+export default from './EquipmentPicker'

@@ -1,11 +1,7 @@
 import React from 'react'
-import {Link, browserHistory} from 'react-router'
 import AppBar from 'material-ui/AppBar'
-import Popover, {PopoverAnimationVertical} from 'material-ui/Popover'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
-import Menu from 'material-ui/Menu'
-import {Tabs, Tab} from 'material-ui/Tabs'
 import Paper from 'material-ui/Paper'
 
 export default class AppLayout extends React.Component {

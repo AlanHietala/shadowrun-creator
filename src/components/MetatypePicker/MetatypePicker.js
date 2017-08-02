@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Priority from '../Priority/Priority.jsx'
+import Priority from '../Priority/Priority'
 import * as metatypeActionCreators from '../../actions/metatypeActions'
 import priorityStats from '../../constants/statsForPriorities'
 import css from './metatype.picker.scss'

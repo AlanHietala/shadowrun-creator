@@ -1,1 +1,1 @@
-export default from './SkillsPicker.jsx'
+export default from './SkillsPicker'

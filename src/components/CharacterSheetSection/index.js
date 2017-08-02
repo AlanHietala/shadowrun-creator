@@ -1,1 +1,1 @@
-export default from './CharacterSheetSection.jsx'
+export default from './CharacterSheetSection'

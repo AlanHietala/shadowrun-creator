@@ -1,1 +1,1 @@
-export default from './QualityPicker.jsx'
+export default from './QualityPicker'

@@ -4,7 +4,7 @@ import { positiveQualities, negativeQualities} from '../../constants/qualities'
 import {addQuality, removeQuality } from '../../actions/qualityActions'
 import Paper from 'material-ui/Paper'
 import CharacterSheetSection from '../CharacterSheetSection'
-import QualityItem from './QualityItem.jsx'
+import QualityItem from './QualityItem'
 
 class QualityPicker extends React.Component {
   constructor(props) {

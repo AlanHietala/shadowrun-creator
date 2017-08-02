@@ -1,5 +1,5 @@
 import React from 'react'
-import Skill from './Skill.jsx'
+import Skill from './Skill'
 import { List } from 'material-ui/List'
 
 export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkillGroupFn, addSpecializationFn, removeSpecializationFn}) => {

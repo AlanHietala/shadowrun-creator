@@ -1,8 +1,8 @@
 import React from 'react'
-import PrioritiesList from './PrioritiesList/PrioritiesList.jsx'
-import MetatypePicker from './MetatypePicker/MetatypePicker.jsx'
-import MagicTypes from './MagicTypes/MagicTypes.jsx'
-import Attributes from './Attributes/Attributes.jsx'
+import PrioritiesList from './PrioritiesList/PrioritiesList'
+import MetatypePicker from './MetatypePicker/MetatypePicker'
+import MagicTypes from './MagicTypes/MagicTypes'
+import Attributes from './Attributes/Attributes'
 
 import { connect } from 'react-redux'
 

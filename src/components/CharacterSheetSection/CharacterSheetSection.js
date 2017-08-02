@@ -1,11 +1,11 @@
 import React from 'react'
-import CharacterItems from './CharacterItems.jsx'
+import CharacterItems from './CharacterItems'
 import Paper from 'material-ui/Paper'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
-import AllItemsList from './AllItemsList.jsx'
+import AllItemsList from './AllItemsList'
 export default class CharacterSheetSection extends React.Component {
 
   constructor(props) {

@@ -1,1 +1,1 @@
-export default from './Attributes.jsx'
+export default from './Attributes'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Priority from '../Priority/Priority.jsx'
+import Priority from '../Priority/Priority'
 import * as priorityActionCreators from '../../actions/priorityActions'
 import priorityStats from '../../constants/statsForPriorities'
 import {browserHistory} from 'react-router'

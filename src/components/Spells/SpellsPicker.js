@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from  'react-redux'
 import spells from '../../constants/spells'
-import SpellItem from './SpellItem.jsx'
+import SpellItem from './SpellItem'
 import { addSpell, removeSpell } from '../../actions/spellActions'
 import CharacterSheetSection from '../CharacterSheetSection'
 import Paper from 'material-ui/Paper'

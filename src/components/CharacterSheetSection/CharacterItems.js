@@ -1,6 +1,6 @@
 import React from 'react'
 import {List} from 'material-ui/List'
-import CharacterItem from './CharacterItem.jsx'
+import CharacterItem from './CharacterItem'
 
 export default ({ItemComponent, characterItems, handleRemoveItem}) => {
   const itemComponents = characterItems

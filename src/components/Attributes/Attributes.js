@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Attribute from './Attribute.jsx'
+import Attribute from './Attribute'
 import { browserHistory } from 'react-router'
 import {addAttribute, subtractAttribute, addSpecialAttribute, subtractSpecialAttribute} from '../../actions/attributeActions'
 import FlatButton from 'material-ui/FlatButton'

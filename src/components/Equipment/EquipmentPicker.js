@@ -4,7 +4,7 @@ import equipmentList from '../../constants/equipment'
 import { addItem, removeItem } from '../../actions/itemActions'
 import { characterItemsSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
-import EquipmentItem from './EquipmentItem.jsx'
+import EquipmentItem from './EquipmentItem'
 import Paper from 'material-ui/Paper'
 
 class EquipmentPicker extends React.Component {

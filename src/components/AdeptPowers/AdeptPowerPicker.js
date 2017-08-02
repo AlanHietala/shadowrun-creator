@@ -8,7 +8,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton'
 import { addPower, removePower, increasePower, decreasePower } from '../../actions/powerActions'
 import { characterAdeptPowersSelector, adeptPowersSelector } from '../../selectors/adeptPowerSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
-import AdeptPowerItem from './AdeptPowerItem.jsx'
+import AdeptPowerItem from './AdeptPowerItem'
 
 class AdeptPowerPicker extends React.Component {
   constructor(props) {
