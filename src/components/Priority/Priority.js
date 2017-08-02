@@ -1,6 +1,5 @@
 import React from 'react'
 import * as priorityValues from '../../constants/priorityValues'
-import css from './priority.scss'
 import NonePriorityInfo from '../PriorityInfo/NonePriorityInfo'
 import MagicOrResonancePriorityInfo from '../PriorityInfo/MagicOrResonancePriorityInfo'
 import MetatypePriorityInfo from '../PriorityInfo/MetatypePriorityInfo'
@@ -9,8 +8,9 @@ import ResourcesPriorityInfo from '../PriorityInfo/ResourcesPriorityInfo'
 import AttributesPriorityInfo from '../PriorityInfo/AttributesPriorityInfo'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
+import PropTypes from 'prop-types'
 
-export default ({priorityData, priorityChanged}) => {
+const Priority = ({ priorityData, priorityChanged }) => {
   let priorityInfo
   if(priorityData.priority === priorityValues.PRIORITY_NONE) {
     priorityInfo = (<NonePriorityInfo priorityInfo={priorityData.priorityInfo}/>)
@@ -34,7 +34,7 @@ export default ({priorityData, priorityChanged}) => {
       break
     }
   }
-	
+
   return (<div>
 
     <div style={{display: 'inline-block'}}>
@@ -58,3 +58,10 @@ export default ({priorityData, priorityChanged}) => {
     </div>
   </div>)
 }
+
+Priority.propTypes = {
+  priorityData: PropTypes.object,
+  priorityChanged: PropTypes.func,
+}
+
+export default Priority

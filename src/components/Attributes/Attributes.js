@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {addAttribute, subtractAttribute, addSpecialAttribute, subtractSpecialAttribute} from '../../actions/attributeActions'
+import {addAttribute, subtractAttribute} from '../../actions/attributeActions'
 import FlatButton from 'material-ui/FlatButton'
+import PropTypes from 'prop-types'
 
 const getAttributeCreator = (addAttributeFn, subtractAttributeFn) => (attribute)  => {
-  const attribute =  (<div key={attribute.key}>
+  const AttributeComponent =  (<div key={attribute.key}>
     <span style={{width: '75px', display: 'inline-block'}}>{attribute.key}</span>
     <FlatButton label="-" onTouchTap={(event) => {
       event.preventDefault()
@@ -18,8 +19,7 @@ const getAttributeCreator = (addAttributeFn, subtractAttributeFn) => (attribute)
         addAttributeFn(attribute)
       }}/>
   </div>)
-  attribute.displayName = 'attribute'
-  return attribute
+  return AttributeComponent
 }
 
 
@@ -30,7 +30,7 @@ class AttributesComponent extends React.Component {
     if(body) {
       const {attributePoints, specialAttributePoints, agility, racial, reaction, strength, willpower, logic, intuition, charisma, edge, essence, magic, resonance, addAttribute, subtractAttribute} = this.props
       const createAttribute = getAttributeCreator(addAttribute, subtractAttribute)
-      const createSpecialAttribute = getAttributeCreator(addSpecialAttribute, subtractSpecialAttribute)
+      //const createSpecialAttribute = getAttributeCreator(addSpecialAttribute, subtractSpecialAttribute)
       let attributeList = [body, agility, reaction, strength, willpower, logic, intuition, charisma, edge, essence]
 
       if(magic) {
@@ -39,11 +39,7 @@ class AttributesComponent extends React.Component {
         attributeList.push(resonance)
       }
 
-      const attributeElements = attributeList.map((attributeData) => {
-        const key = attributeData.key
-        return createAttribute(attributeData)
-      })
-
+      const attributeElements = attributeList.map((attributeData) => createAttribute(attributeData))
       return (
         <div>
           <h2>Assign Attributes</h2>
@@ -54,7 +50,7 @@ class AttributesComponent extends React.Component {
           </div>
         </div>)
     } else {
-      return (<div>Can't Select Attributes yet</div>)
+      return (<div>{'Can\'t Select Attributes yet'}</div>)
     }
   }
 }
@@ -80,6 +76,26 @@ const mapDispatchToProps = (dispatch) => {
     addAttribute: addAttribute,
     subtractAttribute: subtractAttribute
   }, dispatch)
+}
+
+AttributesComponent.propTypes = {
+  attributePoints: PropTypes.number,
+  specialAttributePoints: PropTypes.number,
+  body: PropTypes.number,
+  agility: PropTypes.number,
+  racial: PropTypes.number,
+  reaction: PropTypes.number,
+  strength: PropTypes.number,
+  willpower: PropTypes.number,
+  logic: PropTypes.number,
+  intuition: PropTypes.number,
+  charisma: PropTypes.number,
+  edge: PropTypes.number,
+  essence: PropTypes.number,
+  magic: PropTypes.number,
+  resonance: PropTypes.number,
+  addAttribute: PropTypes.func,
+  subtractAttribute: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AttributesComponent)

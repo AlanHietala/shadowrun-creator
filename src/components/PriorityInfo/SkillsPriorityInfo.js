@@ -1,7 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-
-export default ({priorityInfo}) => {
-
+const SkillsPriorityInfo = ({priorityInfo}) => {
   return (<div>{`Group pts: ${priorityInfo.groupPoints} skill pts: ${priorityInfo.points}`}</div>)
 }
+
+SkillsPriorityInfo.propTypes = {
+  priorityInfo: PropTypes.object,
+}
+
+export default SkillsPriorityInfo

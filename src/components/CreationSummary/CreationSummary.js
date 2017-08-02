@@ -1,8 +1,8 @@
 import React from 'react'
-export default function CreationSummary({children}) {
-  return (<div>
-			summary of creation
-  </div>
 
-  )
-}
+const CreationSummary = () => (<div>
+			summary of creation
+  </div>)
+
+
+export default CreationSummary

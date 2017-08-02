@@ -1,12 +1,13 @@
 import React from 'react'
 import CharacterItems from './CharacterItems'
-import Paper from 'material-ui/Paper'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import AllItemsList from './AllItemsList'
-export default class CharacterSheetSection extends React.Component {
+import PropTypes from 'prop-types'
+
+class CharacterSheetSection extends React.Component {
 
   constructor(props) {
     super(props)
@@ -32,6 +33,7 @@ export default class CharacterSheetSection extends React.Component {
 
     const actions = [
       <FlatButton
+       key="close"
        label="close"
        primary={true}
        onTouchTap={this.handleClose}
@@ -52,3 +54,14 @@ export default class CharacterSheetSection extends React.Component {
    </div>)
   }
 }
+
+CharacterSheetSection.propTypes = {
+  sectionTitle: PropTypes.string,
+  characterSheetItems: PropTypes.array,
+  allItems: PropTypes.array,
+  handleAddItem: PropTypes.func,
+  handleRemoveItem: PropTypes.func,
+  ItemComponent: PropTypes.element,
+}
+
+export default CharacterSheetSection

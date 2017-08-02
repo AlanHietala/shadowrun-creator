@@ -1,7 +1,5 @@
 import React from 'react'
 
+const NonePriorityInfo = () => (<div>{`Pick priority`}</div>)
 
-export default ({priorityInfo}) => {
-
-  return (<div>{`Pick priority`}</div>)
-}
+export default NonePriorityInfo

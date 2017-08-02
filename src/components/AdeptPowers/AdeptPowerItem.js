@@ -1,5 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({item}) => {
-  return <div> { item.name } </div>
+const AdeptPowerItem = ({item}) => (<div> { item.name } </div>)
+
+AdeptPowerItem.propTypes = {
+  item: PropTypes.object,
 }
+
+export default AdeptPowerItem

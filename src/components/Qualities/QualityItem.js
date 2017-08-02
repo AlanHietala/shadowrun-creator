@@ -1,3 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({item}) => <div>{item.name}</div>
+const QualityItem  = ({item}) => <div>{item.name}</div>
+
+QualityItem.propTypes = {
+  item: PropTypes.object,
+}
+
+export default QualityItem
