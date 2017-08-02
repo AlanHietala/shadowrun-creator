@@ -19,7 +19,9 @@ import WarePicker from './components/Ware/WarePicker.jsx'
 import CharacterSheet from './components/CharacterSheet'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import registerServiceWorker from './registerServiceWorker';
 
+import './index.css';
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin()
@@ -57,5 +59,5 @@ ReactDOM.render(
 			</div>
 		</MuiThemeProvider>
 	</Provider>,
-	document.getElementById('app')
+	document.getElementById('root')
 )
