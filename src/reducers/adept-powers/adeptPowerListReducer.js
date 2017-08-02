@@ -1,3 +1,3 @@
 import adeptPowerList from '../../constants/adeptPowers'
 
-export default (state=adeptPowerList, action) => state 
+export default (state=adeptPowerList) => state 

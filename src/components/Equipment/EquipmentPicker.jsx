@@ -9,34 +9,34 @@ import Paper from 'material-ui/Paper'
 
 class EquipmentPicker extends React.Component {
 
-	render() {
-		const { characterEquipment, handleAddEquipment, handleRemoveEquipment} = this.props
-		return(<Paper>
-				<h2>Equipment</h2>
-				<CharacterSheetSection
+  render() {
+    const { characterEquipment, handleAddEquipment, handleRemoveEquipment} = this.props
+    return(<Paper>
+      <h2>Equipment</h2>
+      <CharacterSheetSection
 				 sectionTitle={'Equipment'}
 				 characterSheetItems={characterEquipment}
 				 allItems={equipmentList}
 				 handleAddItem={handleAddEquipment}
 				 handleRemoveItem={handleRemoveEquipment}
 				 ItemComponent={EquipmentItem}
-				/>
-				</Paper>)
-	}
+      />
+    </Paper>)
+  }
 
 }
 
 const mapStateToProps = (state) => {
-	return {
-		characterEquipment: characterItemsSelector(state)
-	}
+  return {
+    characterEquipment: characterItemsSelector(state)
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return {
-		handleAddEquipment: equipment => dispatch(addItem(equipment)),
-		handleRemoveEquipment: index => dispatch(removeItem(index))
-	}
+  return {
+    handleAddEquipment: equipment => dispatch(addItem(equipment)),
+    handleRemoveEquipment: index => dispatch(removeItem(index))
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EquipmentPicker)

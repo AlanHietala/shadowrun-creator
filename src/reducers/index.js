@@ -11,7 +11,7 @@ const shadowrunApp = combineReducers({
   character,
   wareList,
   equipmentList,
-	adeptPowerList,
+  adeptPowerList,
   visibility,
   routing: routerReducer
 })

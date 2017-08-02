@@ -4,13 +4,12 @@ export default (state, action) => {
   switch(action.type) {
   case adeptPowerActionTypes.ADD_POWER:
     return addPower(state, action)
-    break
   case adeptPowerActionTypes.REMOVE_POWER:
     return removePower(state, action)
-    case adeptPowerActionTypes.INCREASE_POWER:
-      return updatePower(state, action, 1)
-    case adeptPowerActionTypes.DECREASE_POWER:
-      return updatePower(state, action, -1)
+  case adeptPowerActionTypes.INCREASE_POWER:
+    return updatePower(state, action, 1)
+  case adeptPowerActionTypes.DECREASE_POWER:
+    return updatePower(state, action, -1)
 
   default:
     return state
@@ -19,22 +18,22 @@ export default (state, action) => {
 
 const updatePower = (state, action, value) => {
   const adeptPower = state.adeptPowers[action.payload]
-		if(canModifyPower(state, adeptPower)) {
-	  const newAdeptPower = {
-	    ...adeptPower,
-	    level: adeptPower.level + value
-	  }
+  if(canModifyPower(state, adeptPower)) {
+    const newAdeptPower = {
+      ...adeptPower,
+      level: adeptPower.level + value
+    }
 
-	  let adeptPowers = [...state.adeptPowers]
-	  adeptPowers[action.payload] = newAdeptPower
+    let adeptPowers = [...state.adeptPowers]
+    adeptPowers[action.payload] = newAdeptPower
 
-	  return {
-	    ...state,
-	    adeptPowers
-	  }
-	} else {
-		return state
-	}
+    return {
+      ...state,
+      adeptPowers
+    }
+  } else {
+    return state
+  }
 }
 
 const removePower = (state, action) => {
@@ -52,8 +51,8 @@ const addPower = (state, action) => {
   const power = action.payload
   if(canAddPower(state, action.payload)) {
     return { ...state,
-						adeptPowers: state.adeptPowers.concat([{...power, level: 1}])
-					}
+      adeptPowers: state.adeptPowers.concat([{...power, level: 1}])
+    }
   } else {
     return state
   }
@@ -66,7 +65,7 @@ const canAddPower = (state, power) => {
   return canAddPower
 }
 const canModifyPower = (state, power) => {
-	const usedPowerPoints = state.adeptPowers.reduce((sum, addedPower) => addedPower.level * addedPower.cost, 0)
+  const usedPowerPoints = state.adeptPowers.reduce((sum, addedPower) => addedPower.level * addedPower.cost, 0)
   const magicRating = state.attributes.magic.value
   const canModify =  magicRating >= usedPowerPoints + power.cost
   return canModify

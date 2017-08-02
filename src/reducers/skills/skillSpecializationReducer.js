@@ -44,7 +44,7 @@ function removeSkillSpecialization(state, action) {
 
   let selectedSpecializations = selectedSkill.selectedSpecializations
   let newSelectedSpecializations = [...selectedSpecializations.slice(0, specializationToRemoveIndex)
-		, ...selectedSpecializations.slice(specializationToRemoveIndex + 1)]
+    , ...selectedSpecializations.slice(specializationToRemoveIndex + 1)]
 
   return createNewSkillState(selectedSkill, newSelectedSpecializations, newSkillPoints, state, action)
 

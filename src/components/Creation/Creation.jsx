@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link, browserHistory } from 'react-router';
-import CreationSummary from '../CreationSummary/CreationSummary.jsx';
+import React from 'react'
+import { Link, browserHistory } from 'react-router'
+import CreationSummary from '../CreationSummary/CreationSummary.jsx'
 export default function Creation({children}) {
 
-	return (<div>
-			<CreationSummary />
-			{children}
-		</div>
+  return (<div>
+    <CreationSummary />
+    {children}
+  </div>
 
-	)
+  )
 
 }

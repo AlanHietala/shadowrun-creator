@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 
 export default ({priorityInfo}) => {
-	const metatypeString = priorityInfo.map((item) => {
+  const metatypeString = priorityInfo.map((item) => {
 
-		return `${item.metatype} (${item.specialAttributePoints})`
-	}).join(', ');
+    return `${item.metatype} (${item.specialAttributePoints})`
+  }).join(', ')
 
-	return (<div>{`${metatypeString}`}</div>)
+  return (<div>{`${metatypeString}`}</div>)
 }

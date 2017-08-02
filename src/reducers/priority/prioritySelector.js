@@ -18,7 +18,7 @@ function setAttributeUniquely(attribute, attributeValue, currentState) {
 
   for(let key in newState) {
     if (newState[key] !== priorityValues.PRIORITY_NONE
-				&& newState[key] === attributeValue) {
+    && newState[key] === attributeValue) {
       newState[key] = priorityValues.PRIORITY_NONE
     }
   }
@@ -26,10 +26,10 @@ function setAttributeUniquely(attribute, attributeValue, currentState) {
   newState[attribute] = attributeValue
 
   newState.valid = (newState.attributes !== priorityValues.PRIORITY_NONE
-		&& newState.magicOrResonance !== priorityValues.PRIORITY_NONE
-		&& newState.metatype !== priorityValues.PRIORITY_NONE
-		&& newState.resources !== priorityValues.PRIORITY_NONE
-		&& newState.skills !== priorityValues.PRIORITY_NONE)
+  && newState.magicOrResonance !== priorityValues.PRIORITY_NONE
+  && newState.metatype !== priorityValues.PRIORITY_NONE
+  && newState.resources !== priorityValues.PRIORITY_NONE
+  && newState.skills !== priorityValues.PRIORITY_NONE)
 
   return newState
 

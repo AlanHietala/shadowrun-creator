@@ -18,10 +18,10 @@ export function savePriorities(metatypePriority, attributePriority, magicOrReson
   priorityMap[skillsPriority] = true
 
   const allPrioritiesPresent = priorityMap[priorityValues.PRIORITY_A]
-			&& priorityMap[priorityValues.PRIORITY_B]
-			&& priorityMap[priorityValues.PRIORITY_C]
-			&& priorityMap[priorityValues.PRIORITY_D]
-			&& priorityMap[priorityValues.PRIORITY_E]
+   && priorityMap[priorityValues.PRIORITY_B]
+   && priorityMap[priorityValues.PRIORITY_C]
+   && priorityMap[priorityValues.PRIORITY_D]
+   && priorityMap[priorityValues.PRIORITY_E]
 
   if(allPrioritiesPresent) {
     return createAction(priorityActions.SAVE_PRIORITIES)({

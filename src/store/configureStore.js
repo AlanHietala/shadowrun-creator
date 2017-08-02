@@ -2,7 +2,7 @@ import { createStore, compose } from 'redux'
 import rootReducer from '../reducers'
 
 const finalCreateStore = compose(
-	window.devToolsExtension ? window.devToolsExtension() : f => f
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)
 
 export default function configureStore(initialState) {
@@ -10,8 +10,8 @@ export default function configureStore(initialState) {
 
   if (module.hot) {
     module.hot.accept('../reducers', () =>
-			store.replaceReducer(require('../reducers').default)
-		)
+      store.replaceReducer(require('../reducers').default)
+    )
   }
 
   return store

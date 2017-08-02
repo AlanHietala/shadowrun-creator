@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 export default class FooComponent extends React.Component {
 
-	render() {
+  render() {
 
-		return (<div>
+    return (<div>
 			foo
-		</div>);
-	}
+    </div>)
+  }
 }

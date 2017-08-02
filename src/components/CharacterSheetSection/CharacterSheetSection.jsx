@@ -8,47 +8,47 @@ import FloatingActionButton from 'material-ui/FloatingActionButton'
 import AllItemsList from './AllItemsList.jsx'
 export default class CharacterSheetSection extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			open: false
-		}
-	}
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: false
+    }
+  }
 
-	handleClose = () => {
-		this.setState({
-			open: false
-		})
-	}
+ handleClose = () => {
+   this.setState({
+     open: false
+   })
+ }
 
-	handleOpen = () => {
-		this.setState({
-			open: true
-		})
-	}
+ handleOpen = () => {
+   this.setState({
+     open: true
+   })
+ }
 
-	render() {
-		const {sectionTitle, characterSheetItems, allItems, handleAddItem, handleRemoveItem, ItemComponent} = this.props
+ render() {
+   const {sectionTitle, characterSheetItems, allItems, handleAddItem, handleRemoveItem, ItemComponent} = this.props
 
-		const actions = [
-			<FlatButton
-				label="close"
-				primary={true}
-				onTouchTap={this.handleClose}
-			/>];
+   const actions = [
+     <FlatButton
+       label="close"
+       primary={true}
+       onTouchTap={this.handleClose}
+     />]
 
-		return (<div>
-				<CharacterItems ItemComponent={ItemComponent} characterItems={characterSheetItems} handleRemoveItem={handleRemoveItem}/>
-				<Dialog actions={actions}
-						modal={false}
-						open={this.state.open}
-						autoScrollBodyContent={true}
-						onRequestClose={this.handleClose}>
-					<AllItemsList title={sectionTitle} allItems={allItems} handleAddItem={handleAddItem} ItemComponent={ItemComponent}/>
-				</Dialog>
-				<FloatingActionButton onTouchTap={this.handleOpen}>
-					<ContentAdd />
-				</FloatingActionButton>
-			</div>)
-		}
+   return (<div>
+     <CharacterItems ItemComponent={ItemComponent} characterItems={characterSheetItems} handleRemoveItem={handleRemoveItem}/>
+     <Dialog actions={actions}
+       modal={false}
+       open={this.state.open}
+       autoScrollBodyContent={true}
+       onRequestClose={this.handleClose}>
+       <AllItemsList title={sectionTitle} allItems={allItems} handleAddItem={handleAddItem} ItemComponent={ItemComponent}/>
+     </Dialog>
+     <FloatingActionButton onTouchTap={this.handleOpen}>
+       <ContentAdd />
+     </FloatingActionButton>
+   </div>)
+ }
 }

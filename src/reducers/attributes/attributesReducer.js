@@ -9,7 +9,7 @@ export default (state, action) => {
   const { creation } = state
   const isSpecialAttribute = action.payload.isSpecialAttribute
   const availableAttributePoints = isSpecialAttribute ?
-		creation.availableSpecialAttributePoints : creation.availableAttributePoints
+    creation.availableSpecialAttributePoints : creation.availableAttributePoints
   const newAttributeValue = attributeToSet.value + valueToAdd
   const newAvailableAttributePoints = availableAttributePoints - valueToAdd
   let newState = state
@@ -75,8 +75,8 @@ const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAva
 
 
   const changeWithinRange = attributeToSet.minValue <= newAttributeValue
-		&& newAttributeValue <= attributeToSet.maxValue + attributeToSetMaxMod
-		&& newAvailableAttributePoints >= 0
+  && newAttributeValue <= attributeToSet.maxValue + attributeToSetMaxMod
+  && newAvailableAttributePoints >= 0
 
   if(changeWithinRange) {
     if(isAttributeBeingIncreasedToNaturalLimit(attributeToSet, newAttributeValue)) {

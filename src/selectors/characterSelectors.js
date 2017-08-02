@@ -7,12 +7,12 @@ export const resourcesSelector = state => {
   const initialResources = state.character.creation.availableResources
   const listsOfThingsThatCostMoney = [state.character.items, state.character.ware]
   const spentResources = listsOfThingsThatCostMoney
-		.map(listThatCostsMoney => {
-  return listThatCostsMoney.reduce(resourcesModReduce, 0)
-})
-		.reduce((resourcesLeft, cost) => {
-  return resourcesLeft - cost
-}, initialResources)
+    .map(listThatCostsMoney => {
+      return listThatCostsMoney.reduce(resourcesModReduce, 0)
+    })
+    .reduce((resourcesLeft, cost) => {
+      return resourcesLeft - cost
+    }, initialResources)
 
   return spentResources
 }
@@ -62,19 +62,19 @@ const updateMod = (currentSheetItem, mod, item) => {
 const updateCharacterSheet = (characterSheet, item) => {
   return item.mods.reduce((sheet, mod) => {
     return mod.modType === modTypes.ESSENCE_MOD ? {...sheet, essence: updateMod(sheet.essence, mod, item)}
-		: mod.modType === modTypes.RESOURCES_MOD ?  {...sheet, resources: updateMod(sheet.resources, mod, item)}
-		: mod.modType === modTypes.WILLPOWER_MOD ? {...sheet, willpower: updateMod(sheet.willpower, mod, item)}
-		: mod.modType === modTypes.REACTION_MOD ? {...sheet, reaction: updateMod(sheet.reaction, mod, item)}
-		: mod.modType === modTypes.MAGIC_MOD ? {...sheet, magic: updateMod(sheet.magic, mod, item)}
-		: mod.modType === modTypes.LOGIC_MOD ? {...sheet, logic: updateMod(sheet.logic, mod, item)}
-		: mod.modType === modTypes.INTUITION_MOD ? {...sheet, intuition: updateMod(sheet.intuition, mod, item)}
-		: mod.modType === modTypes.INITIATIVE_MOD ? {...sheet, initiative: updateMod(sheet.initiative, mod, item)}
-		: mod.modType === modTypes.CHARISMA_MOD ? {...sheet, charisma: updateMod(sheet.charisma, mod, item)}
-		: mod.modType === modTypes.BODY_MOD ? {...sheet, body: updateMod(sheet.body, mod, item)}
-		: mod.modType === modTypes.AGILITY_MOD ? {...sheet, agility: updateMod(sheet.agility, mod, item)}
-		: mod.modType === modTypes.STRENGTH_MOD ? {...sheet, strength: updateMod(sheet.strength, mod, item)}
-		: mod.modType === modTypes.INITIATIVE_DICE_MOD ? {...sheet, initiativeDice: updateMod(sheet.initiativeDice, mod, item)}
-		: sheet
+      : mod.modType === modTypes.RESOURCES_MOD ?  {...sheet, resources: updateMod(sheet.resources, mod, item)}
+        : mod.modType === modTypes.WILLPOWER_MOD ? {...sheet, willpower: updateMod(sheet.willpower, mod, item)}
+          : mod.modType === modTypes.REACTION_MOD ? {...sheet, reaction: updateMod(sheet.reaction, mod, item)}
+            : mod.modType === modTypes.MAGIC_MOD ? {...sheet, magic: updateMod(sheet.magic, mod, item)}
+              : mod.modType === modTypes.LOGIC_MOD ? {...sheet, logic: updateMod(sheet.logic, mod, item)}
+                : mod.modType === modTypes.INTUITION_MOD ? {...sheet, intuition: updateMod(sheet.intuition, mod, item)}
+                  : mod.modType === modTypes.INITIATIVE_MOD ? {...sheet, initiative: updateMod(sheet.initiative, mod, item)}
+                    : mod.modType === modTypes.CHARISMA_MOD ? {...sheet, charisma: updateMod(sheet.charisma, mod, item)}
+                      : mod.modType === modTypes.BODY_MOD ? {...sheet, body: updateMod(sheet.body, mod, item)}
+                        : mod.modType === modTypes.AGILITY_MOD ? {...sheet, agility: updateMod(sheet.agility, mod, item)}
+                          : mod.modType === modTypes.STRENGTH_MOD ? {...sheet, strength: updateMod(sheet.strength, mod, item)}
+                            : mod.modType === modTypes.INITIATIVE_DICE_MOD ? {...sheet, initiativeDice: updateMod(sheet.initiativeDice, mod, item)}
+                              : sheet
   }, characterSheet)
 }
 
@@ -95,12 +95,12 @@ export const characterSheetSelector = (state) => {
   }
   const itemsList = state.character.items.concat(state.character.ware)
   let computedCharacterSheet = itemsList
-		.reduce((characterSheet, item) => {
-		  return updateCharacterSheet(characterSheet, item)
-		}, initialCharacterSheet)
+    .reduce((characterSheet, item) => {
+      return updateCharacterSheet(characterSheet, item)
+    }, initialCharacterSheet)
   const initiative = computedCharacterSheet.reaction.value + computedCharacterSheet.agility.value
   computedCharacterSheet.initiative = {value: initiative, modifiedBy: []}
-	computedCharacterSheet.magicType = state.character.magicType
+  computedCharacterSheet.magicType = state.character.magicType
   return computedCharacterSheet
 }
 
@@ -110,10 +110,10 @@ function computeAttribute(state, attributeType, modType) {
   const base =  state.character.attributes[attributeType] ? state.character.attributes[attributeType].value : 0
 
   let mods = state.character.items
-		.reduce(modReduceFn, 0)
+    .reduce(modReduceFn, 0)
 
   mods = state.character.ware
-			.reduce(modReduceFn, mods)
+    .reduce(modReduceFn, mods)
   const computed = base + mods
 
   return  {

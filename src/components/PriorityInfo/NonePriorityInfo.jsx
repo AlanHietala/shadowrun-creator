@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 
 export default ({priorityInfo}) => {
 
-	return (<div>{`Pick priority`}</div>)
+  return (<div>{`Pick priority`}</div>)
 }
