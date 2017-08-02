@@ -1,9 +1,10 @@
 import React from 'react'
 import Skill from './Skill'
 import { List } from 'material-ui/List'
+import PropTypes from 'prop-types'
 
-export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkillGroupFn, addSpecializationFn, removeSpecializationFn}) => {
-  const passThrough = a => true
+const CharacterSkills = ({skills, filterFn, modifyFn, addSpecializationFn, removeSpecializationFn}) => {
+  const passThrough = () => true
   const createAddSpecializationForSkill = skillIndex => specializationIndex => {
     addSpecializationFn(skillIndex, specializationIndex)
   }
@@ -25,3 +26,13 @@ export default ({skills,  skillGroups, editable, filterFn, modifyFn, modifySkill
     {skillList}
   </List>)
 }
+
+CharacterSkills.propTypes = {
+  skills: PropTypes.array,
+  filterFn: PropTypes.func,
+  modifyFn: PropTypes.func,
+  addSpecializationFn: PropTypes.func,
+  removeSpecializationFn: PropTypes.func,
+}
+
+export default CharacterSkills

@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({skillGroup, modifySkillGroupFn}) => {
+const SkillGroup = ({skillGroup, modifySkillGroupFn}) => {
   const skills = skillGroup.skills.map((skill) => {
     return (<li key={ skill.name }> { skill.name }</li>)
   })
@@ -14,3 +15,10 @@ export default ({skillGroup, modifySkillGroupFn}) => {
     </div>
   )
 }
+
+SkillGroup.propTypes = {
+  skillGroup: PropTypes.object,
+  modifySkillGroupFn: PropTypes.func,
+}
+
+export default SkillGroup
