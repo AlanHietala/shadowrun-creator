@@ -24,6 +24,7 @@
         "semi": ["error", "never"],
         "indent": ["error", 2],
         "space-before-blocks": ["error", "always"],
-        "comma-dangle": ["error", "always-multiline"]
+        "comma-dangle": ["error", "always-multiline"],
+        "eol-last": ["error", "always"]
     }
 }
