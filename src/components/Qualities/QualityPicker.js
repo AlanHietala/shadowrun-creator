@@ -33,7 +33,7 @@ class QualityPicker extends React.Component {
 const mapStateToProps = (state) => {
   return {
     selectedQualities: state.character.qualities,
-    karma: state.character.karma
+    karma: state.character.karma,
   }
 }
 
@@ -46,7 +46,7 @@ const mapDispatchToProps = (dispatch) => {
     addQuality: (quality) => {
       const addQualityAction = addQuality(quality)
       dispatch(addQualityAction)
-    }
+    },
   }
 }
 

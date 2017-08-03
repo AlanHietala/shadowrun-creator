@@ -64,7 +64,7 @@ const mapStateToProps = (state) => {
       ...state.character.attributes,
       specialAttributePoints: availableSpecialAttributePoints,
       attributePoints: availableAttributePoints,
-      arePointsAvailable: availablePointsSum > 0
+      arePointsAvailable: availablePointsSum > 0,
     }
   }
 
@@ -74,7 +74,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     addAttribute: addAttribute,
-    subtractAttribute: subtractAttribute
+    subtractAttribute: subtractAttribute,
   }, dispatch)
 }
 

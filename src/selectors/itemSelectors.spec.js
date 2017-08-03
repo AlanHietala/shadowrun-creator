@@ -11,24 +11,24 @@ describe('Item Selectors', function () {
               key: 'essence',
               minValue: 1,
               maxValue: 5,
-              value: 4
-            }
+              value: 4,
+            },
           },
           items: [],
           ware:[],
           creation: {
-            availableResources: 20000
-          }
+            availableResources: 20000,
+          },
         },
         wareList: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.ESSENCE_MOD,
-              effect: 2
-            }
-          ]
-        }]
+              effect: 2,
+            },
+          ],
+        }],
       }
 
       const expectedSelection = [{
@@ -36,11 +36,11 @@ describe('Item Selectors', function () {
         mods: [
           {
             modType: modTypes.ESSENCE_MOD,
-            effect: 2
-          }
+            effect: 2,
+          },
         ],
         isEnoughEssence: true,
-        isEnoughResources: true
+        isEnoughResources: true,
       }]
 
       expect(wareListSelector(state)).toEqual(expectedSelection)

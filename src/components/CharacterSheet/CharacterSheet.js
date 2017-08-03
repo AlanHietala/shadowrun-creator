@@ -61,12 +61,12 @@ export class CharacterSheet extends React.Component {
 }
 
 CharacterSheet.propTypes = {
-  characterSheet: PropTypes.object.isRequired
+  characterSheet: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = (state) => {
   return {
-    characterSheet: characterSheetSelector(state)
+    characterSheet: characterSheetSelector(state),
   }
 }
 

@@ -7,36 +7,36 @@ describe('Add Attribute Reducer', function () {
     const initialState = {
       creation: {
         availableAttributePoints: 5,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:1,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const stateAfter = {
       creation: {
         availableAttributePoints: 4,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:2,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const action = {
       type: ADD_ATTRIBUTE,
       payload: {
-        key: 'strength'
-      }
+        key: 'strength',
+      },
     }
 
     expect(addAttributeReducer(initialState, action)).toEqual(stateAfter)
@@ -46,37 +46,37 @@ describe('Add Attribute Reducer', function () {
     const initialState = {
       creation: {
         availableAttributePoints: 5,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:2,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const stateAfter = {
       creation: {
         availableAttributePoints: 6,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:1,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
 
     const action = {
       type: SUBTRACT_ATTRIBUTE,
       payload: {
-        key: 'strength'
-      }
+        key: 'strength',
+      },
     }
     expect(addAttributeReducer(initialState, action)).toEqual(stateAfter)
   })
@@ -85,36 +85,36 @@ describe('Add Attribute Reducer', function () {
     const initialState = {
       creation: {
         availableAttributePoints: 0,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:2,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const stateAfter = {
       creation: {
         availableAttributePoints:0,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:2,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const action = {
       type: ADD_ATTRIBUTE,
       payload: {
-        key: 'strength'
-      }
+        key: 'strength',
+      },
     }
     expect(addAttributeReducer(initialState, action)).toEqual(stateAfter)
   })
@@ -123,36 +123,36 @@ describe('Add Attribute Reducer', function () {
     const initialState = {
       creation: {
         availableAttributePoints: 5,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:6,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const stateAfter = {
       creation: {
         availableAttributePoints: 5,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:6,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const action = {
       type: ADD_ATTRIBUTE,
       payload: {
-        key: 'strength'
-      }
+        key: 'strength',
+      },
     }
     expect(addAttributeReducer(initialState, action)).toEqual(stateAfter)
   })
@@ -161,48 +161,48 @@ describe('Add Attribute Reducer', function () {
     const initialState = {
       creation: {
         availableAttributePoints: 4,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:6,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
       qualities: [
         {
           mods: [{
             modType: modTypes.MAX_STRENGTH_MOD,
-            value: 1
-          }]
-        }
-      ]
+            value: 1,
+          }],
+        },
+      ],
     }
     const stateAfter = {
       creation: {
         availableAttributePoints: 3,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:7,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
       qualities: [{
         mods: [{
           modType: modTypes.MAX_STRENGTH_MOD,
-          value: 1
-        }]
-      }]
+          value: 1,
+        }],
+      }],
     }
     const action = {
       type: ADD_ATTRIBUTE,
       payload: {
-        key: 'strength'
-      }
+        key: 'strength',
+      },
     }
     expect(addAttributeReducer(initialState, action)).toEqual(stateAfter)
   })
@@ -210,36 +210,36 @@ describe('Add Attribute Reducer', function () {
     const initialState = {
       creation: {
         availableAttributePoints: 5,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:1,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const stateAfter = {
       creation: {
         availableAttributePoints: 5,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:1,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const action = {
       type: SUBTRACT_ATTRIBUTE,
       payload: {
-        key: 'strength'
-      }
+        key: 'strength',
+      },
     }
     expect(addAttributeReducer(initialState, action)).toEqual(stateAfter)
   })
@@ -248,46 +248,46 @@ describe('Add Attribute Reducer', function () {
     const initialState = {
       creation: {
         availableAttributePoints: 5,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:5,
           minValue:1,
-          maxValue:6
+          maxValue:6,
         },
         intuition: {
           value:6,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const stateAfter = {
       creation: {
         availableAttributePoints: 5,
-        availableSpecialAttributePoints: 2
+        availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:5,
           minValue:1,
-          maxValue:6
+          maxValue:6,
         },
         intuition: {
           value:6,
           minValue:1,
-          maxValue:6
-        }
+          maxValue:6,
+        },
       },
-      qualities: []
+      qualities: [],
     }
     const action = {
       type: ADD_ATTRIBUTE,
       payload: {
-        key: 'strength'
-      }
+        key: 'strength',
+      },
     }
     expect(addAttributeReducer(initialState, action)).toEqual(stateAfter)
   })

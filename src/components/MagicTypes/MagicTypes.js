@@ -43,7 +43,7 @@ const mapStateToProps = (state) => {
   let props = {}
   if(state.character.creation) {
     props = {
-      magicClasses: state.character.creation.availableMagicOrResonanceClasses
+      magicClasses: state.character.creation.availableMagicOrResonanceClasses,
     }
   }
   return props
@@ -51,7 +51,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    selectMagicType: selectMagicType
+    selectMagicType: selectMagicType,
   }, dispatch)
 }
 

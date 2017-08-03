@@ -6,10 +6,10 @@ const items = [
     mods: [
       {
         modType: modTypes.REACTION_MOD,
-        effect: 1
-      }
-    ]
-  }
+        effect: 1,
+      },
+    ],
+  },
 ]
 
 export default items

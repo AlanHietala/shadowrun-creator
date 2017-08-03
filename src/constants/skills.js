@@ -9,9 +9,9 @@ export const skillArray = [
       'Bow',
       'Crossbow',
       'Non-Standard Ammunition',
-      'Slingshot'
+      'Slingshot',
     ],
-    selectedSpecializations: []
+    selectedSpecializations: [],
   },
   {
     name: 'Automatics',
@@ -22,8 +22,8 @@ export const skillArray = [
       'Assault Rifles',
       'Cyber-Implant',
       'Machine Pistols',
-      'Submachine Guns'
-    ]
+      'Submachine Guns',
+    ],
   },
   {
     name: 'Blades',
@@ -34,8 +34,8 @@ export const skillArray = [
       'Axes',
       'Knives',
       'Swords',
-      'Parrying'
-    ]
+      'Parrying',
+    ],
   },
   {
     name: 'Clubs',
@@ -47,43 +47,43 @@ export const skillArray = [
       'Hammers',
       'Saps',
       'Staves',
-      'Parrying'
-    ]
+      'Parrying',
+    ],
   },
   {
     name: 'Escape Artist',
     points: 0,
     attribute: attributeTypes.AGILITY,
     canDefault: true,
-    selectedSpecializations: [],specializations: []
+    selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Exotic Melee Weapon',
     points: 0,
     attribute: attributeTypes.AGILITY,
     canDefault: true,
-    selectedSpecializations: [],specializations: []
+    selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Exotic Range Weapon',
     points: 0,
     attribute: attributeTypes.AGILITY,
     canDefault: true,
-    selectedSpecializations: [],specializations: []
+    selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Gunnery',
     points: 0,
     attribute: attributeTypes.AGILITY,
     canDefault: true,
-    selectedSpecializations: [],specializations: []
+    selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Gymnastics',
     points: 0,
     attribute: attributeTypes.AGILITY,
     canDefault: true,
-    selectedSpecializations: [],specializations: []
+    selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Heavy Weapons',
@@ -95,14 +95,14 @@ export const skillArray = [
       'Grenade Launchers',
       'Guided Missiles',
       'Machine Guns',
-      'Rocket Launchers']
+      'Rocket Launchers'],
   },
   {
     name: 'Locksmith',
     points: 0,
     attribute: attributeTypes.AGILITY,
     canDefault: true,
-    selectedSpecializations: [],specializations: []
+    selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Longarms',
@@ -113,15 +113,15 @@ export const skillArray = [
       'Extended-Range Shots',
       'Long-Range Shots',
       'Shotguns',
-      'Sniper Rifles'
-    ]
+      'Sniper Rifles',
+    ],
   },
   {
     name: 'Palming',
     points: 0,
     attribute: attributeTypes.AGILITY,
     canDefault: true,
-    selectedSpecializations: [],specializations: []
+    selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Pistols',
@@ -132,15 +132,15 @@ export const skillArray = [
       'Holdouts',
       'Revolvers',
       'Semi-Automatics',
-      'Tasers'
-    ]
+      'Tasers',
+    ],
   },
   {
     name: 'Sneaking',
     points: 0,
     attribute: attributeTypes.AGILITY,
     canDefault: true,
-    selectedSpecializations: [],specializations: []
+    selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Throwing Weapons',
@@ -150,8 +150,8 @@ export const skillArray = [
     selectedSpecializations: [],specializations: [
       'Aerodynamic',
       'Blades',
-      'Non-Aerodynamic'
-    ]
+      'Non-Aerodynamic',
+    ],
   },
   {
     name: 'Unarmed Combat',
@@ -161,395 +161,395 @@ export const skillArray = [
     selectedSpecializations: [],specializations: [
       'Blocking',
       'Cyber Implants',
-      'Subduing Combat'
-    ]
+      'Subduing Combat',
+    ],
   },
   {
     name: 'Diving',
     points: 0,
     attribute: attributeTypes.BODY,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Free-Fall',
     points: 0,
     attribute: attributeTypes.BODY,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Pilot Aerospace',
     points: 0,
     attribute: attributeTypes.REACTION,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
 
   },
   {
     name: 'Pilot Aircraft',
     points: 0,
     attribute: attributeTypes.REACTION,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Pilot Walker',
     points: 0,
     attribute: attributeTypes.REACTION,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Pilot Exotic Vehicle',
     points: 0,
     attribute: attributeTypes.REACTION,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Pilot Ground Craft',
     points: 0,
     attribute: attributeTypes.REACTION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
 
   },
   {
     name: 'Pilot Watercraft',
     points: 0,
     attribute: attributeTypes.REACTION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Running',
     points: 0,
     attribute: attributeTypes.STRENGTH,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Swimming',
     points: 0,
     attribute: attributeTypes.STRENGTH,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Con',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Etiquette',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Instruction',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Intimidation',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Leadership',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Negotiation',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Performance',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Impersonation',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Animal Handling',
     points: 0,
     attribute: attributeTypes.CHARISMA,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Artisan',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Assensing',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Disguise',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Interests Knowledge',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Language',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Navigation',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Perception',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Street Knowledge',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Tracking',
     points: 0,
     attribute: attributeTypes.INTUITION,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Academic Knowledge',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Aeronautics Mechanics',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Arcane',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Armorer',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Automotive Mechanics',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Biotechnology',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Chemistry',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Computer',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Cybertechnology',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Cybercombat',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Demolitions',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Electronic Warfare',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'First Aid',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Industrial Mechanics',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Hacking',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Hardware',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Medicine',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Nautical Mechanics',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Professional Knowledge',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Software',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Forgery',
     points: 0,
     attribute: attributeTypes.LOGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Astral Combat',
     points: 0,
     attribute: attributeTypes.WILLPOWER,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Survival',
     points: 0,
     attribute: attributeTypes.WILLPOWER,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Alchemy',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Artificing',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: true, selectedSpecializations: [],specializations: []
+    canDefault: true, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Banishing',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Binding',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Counterspelling',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Ritual Spellcasting',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Spellcasting',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Summoning',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Enchanting',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Disenchanting',
     points: 0,
     attribute: attributeTypes.MAGIC,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Compiling',
     points: 0,
     attribute: attributeTypes.RESONANCE,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Decompiling',
     points: 0,
     attribute: attributeTypes.RESONANCE,
-    canDefault: false, selectedSpecializations: [],specializations: []
+    canDefault: false, selectedSpecializations: [],specializations: [],
   },
   {
     name: 'Registering',
     points: 0,
     attribute: attributeTypes.RESONANCE,
-    canDefault: false, selectedSpecializations: [],specializations: []
-  }
+    canDefault: false, selectedSpecializations: [],specializations: [],
+  },
 ]
 export const skillMap = {
   archery: skillArray[0],
@@ -632,5 +632,5 @@ export const skillMap = {
   disenchanting: skillArray[77],
   compiling: skillArray[78],
   decompiling: skillArray[79],
-  registering: skillArray[80]
+  registering: skillArray[80],
 }

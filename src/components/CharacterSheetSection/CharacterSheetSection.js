@@ -12,19 +12,19 @@ class CharacterSheetSection extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
     }
   }
 
   handleClose = () => {
     this.setState({
-      open: false
+      open: false,
     })
   }
 
   handleOpen = () => {
     this.setState({
-      open: true
+      open: true,
     })
   }
 

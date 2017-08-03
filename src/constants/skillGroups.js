@@ -5,56 +5,56 @@ export default [
     points: 0,
     skills: [skillMap.con,
       skillMap.impersonation,
-      skillMap.performance]
+      skillMap.performance],
   },
   {
     name: 'Athletics',
     points: 0,
     skills: [skillMap.gymnastics,
       skillMap.running,
-      skillMap.swimming]
+      skillMap.swimming],
   },
   {
     name: 'Biotech',
     points: 0,
     skills: [skillMap.cybertechnology,
       skillMap.firstAid,
-      skillMap.medicine]
+      skillMap.medicine],
   },
   {
     name: 'Close Combat',
     points: 0,
     skills: [skillMap.blades,
       skillMap.clubs,
-      skillMap.unarmedCombat]
+      skillMap.unarmedCombat],
   },
   {
     name: 'Conjuring',
     points: 0,
     skills: [skillMap.banishing,
       skillMap.binding,
-      skillMap.summoning]
+      skillMap.summoning],
   },
   {
     name: 'Cracking',
     points: 0,
     skills: [skillMap.cybercombat,
       skillMap.electronicWarfare,
-      skillMap.hacking]
+      skillMap.hacking],
   },
   {
     name: 'Electronics',
     points: 0,
     skills: [skillMap.computer,
       skillMap.hardware,
-      skillMap.software]
+      skillMap.software],
   },
   {
     name: 'Enchanting',
     points: 0,
     skills: [skillMap.alchemy,
       skillMap.artificing,
-      skillMap.disenchanting]
+      skillMap.disenchanting],
   },
   {
     name: 'Engineering',
@@ -62,48 +62,48 @@ export default [
     skills: [skillMap.aeronauticsMechanics,
       skillMap.automotiveMechanics,
       skillMap.industrialMechanics,
-      skillMap.nauticalMechanics]
+      skillMap.nauticalMechanics],
   },
   {
     name: 'Firearms',
     points: 0,
     skills: [skillMap.automatics,
       skillMap.longarms,
-      skillMap.pistols]
+      skillMap.pistols],
   },
   {
     name: 'Influence',
     points: 0,
     skills: [skillMap.etiquette,
       skillMap.leadership,
-      skillMap.negotiation]
+      skillMap.negotiation],
   },
   {
     name: 'Outdoors',
     points: 0,
     skills: [skillMap.navigation,
       skillMap.survival,
-      skillMap.tracking]
+      skillMap.tracking],
   },
   {
     name: 'Sorcery',
     points: 0,
     skills: [skillMap.counterspelling,
       skillMap.ritualSpellcasting,
-      skillMap.spellcasting]
+      skillMap.spellcasting],
   },
   {
     name: 'Stealth',
     points: 0,
     skills: [skillMap.disguise,
       skillMap.palming,
-      skillMap.sneaking]
+      skillMap.sneaking],
   },
   {
     name: 'Tasking',
     points: 0,
     skills: [skillMap.compiling,
       skillMap.decompiling,
-      skillMap.registering]
-  }
+      skillMap.registering],
+  },
 ]

@@ -22,16 +22,16 @@ const styles = {
   column: {
     flexGrow: 1,
     minWidth: '300px',
-    margin: '0.5rem'
+    margin: '0.5rem',
   },
   container: {
     display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   button: {
-    margin: '1rem'
-  }
+    margin: '1rem',
+  },
 }
 
 class SkillPicker extends React.Component {
@@ -40,7 +40,7 @@ class SkillPicker extends React.Component {
     super(props)
     this.state = {
       skillOpen: false,
-      groupOpen: false
+      groupOpen: false,
     }
 
 
@@ -48,24 +48,24 @@ class SkillPicker extends React.Component {
 
   handleGroupClose = () => {
     this.setState({
-      groupOpen: false
+      groupOpen: false,
     })
   }
 
   handleGroupOpen = () => {
     this.setState({
-      groupOpen: true
+      groupOpen: true,
     })
   }
   handleClose = () => {
     this.setState({
-      skillOpen: false
+      skillOpen: false,
     })
   }
 
   handleOpen = () => {
     this.setState({
-      skillOpen: true
+      skillOpen: true,
     })
   }
   render() {
@@ -83,7 +83,7 @@ class SkillPicker extends React.Component {
       isMagicAllowed,
       isResonanceAllowed,
       addSpecialization,
-      removeSpecialization
+      removeSpecialization,
     } = this.props
 
     const moreThanZeroPoints = (skills) => skills.points > 0
@@ -213,7 +213,7 @@ const mapDispatchToProps = (dispatch) => {
     removeSpecialization: (skillIndex, specializationIndex) => {
       const removeSpecializationAction = removeSkillSpecialization(skillIndex, specializationIndex)
       dispatch(removeSpecializationAction)
-    }
+    },
   }
 }
 

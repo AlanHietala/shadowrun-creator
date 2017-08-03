@@ -7,8 +7,8 @@ export default [
     mods: [
       {
         modType: modTypes.RESOURCES_MOD,
-        effect: -725
-      }
+        effect: -725,
+      },
     ],
   },
   {
@@ -17,8 +17,8 @@ export default [
     mods: [
       {
         modType: modTypes.RESOURCES_MOD,
-        effect: -125
-      }
+        effect: -125,
+      },
     ],
   },
   {
@@ -27,8 +27,8 @@ export default [
     mods: [
       {
         modType: modTypes.RESOURCES_MOD,
-        effect: -500
-      }
+        effect: -500,
+      },
     ],
-  }
+  },
 ]

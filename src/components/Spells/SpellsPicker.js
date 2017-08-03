@@ -29,7 +29,7 @@ class SpellsPicker extends React.Component {
 const mapStateToProps = (state) => {
   return {
     availableSpellCount: state.character.creation.spellCount,
-    chosenSpells: state.character.spells
+    chosenSpells: state.character.spells,
   }
 }
 
@@ -42,7 +42,7 @@ const mapDispatchToProps = (dispatch) => {
     removeSpell: (index) => {
       const removeSpellAction = removeSpell(index)
       dispatch(removeSpellAction)
-    }
+    },
   }
 }
 

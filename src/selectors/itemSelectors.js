@@ -19,7 +19,7 @@ export const wareListSelector = (state) => {
     return {
       ...ware,
       isEnoughEssence,
-      isEnoughResources
+      isEnoughResources,
     }
   })
 }

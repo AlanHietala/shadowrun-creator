@@ -49,14 +49,14 @@ const createPriorityItem = (id, name, priority) => {
     id,
     name,
     priority,
-    priorityInfo: priorityStats.getValuesForPriority(id, priority)
+    priorityInfo: priorityStats.getValuesForPriority(id, priority),
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   const boundActionCreators = bindActionCreators({
     onPriorityChange: priorityActionCreators.setPriorityForPriorityName,
-    onSaveClick: priorityActionCreators.savePriorities
+    onSaveClick: priorityActionCreators.savePriorities,
   }, dispatch)
 
   return boundActionCreators
@@ -68,7 +68,7 @@ const mapStateToProps = (state) => {
     createPriorityItem('skills', 'Skills', state.priority.skills),
     createPriorityItem('metatype', 'Metatype', state.priority.metatype),
     createPriorityItem('resources', 'Resources', state.priority.resources),
-    createPriorityItem('magicOrResonance', 'Magic Or Resonance', state.priority.magicOrResonance)
+    createPriorityItem('magicOrResonance', 'Magic Or Resonance', state.priority.magicOrResonance),
   ]
 
   const isValid = state.priority.valid
@@ -79,7 +79,7 @@ const mapStateToProps = (state) => {
     skillsPriority: state.priority.skills,
     metatypePriority: state.priority.metatype,
     resourcesPriority: state.priority.resources,
-    magicOrResonancePriority: state.priority.magicOrResonance
+    magicOrResonancePriority: state.priority.magicOrResonance,
   }
 }
 
@@ -92,7 +92,7 @@ PrioritiesListComponent.propTypes = {
   attributesPriority: PropTypes.string,
   magicOrResonancePriority: PropTypes.string,
   resourcesPriority: PropTypes.string,
-  skillsPriority: PropTypes.string
+  skillsPriority: PropTypes.string,
 
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PrioritiesListComponent)

@@ -16,13 +16,13 @@ const addSpell = (state, action) => {
     const spells = state.spells.concat([action.payload])
     const creation = {
       ...state.creation,
-      spellCount: state.creation.spellCount - 1
+      spellCount: state.creation.spellCount - 1,
     }
 
     return {
       ...state,
       spells,
-      creation
+      creation,
     }
   } else {
     return state
@@ -36,16 +36,16 @@ const isSpellAlreadyAdded = (addedSpells, spellToCheck) => {
 const removeSpell = (state, action) => {
   const spells = [
     ...state.spells.slice(0, action.payload),
-    ...state.spells.slice(action.payload + 1)
+    ...state.spells.slice(action.payload + 1),
   ]
   const creation = {
     ...state.creation,
-    spellCount: state.creation.spellCount + 1
+    spellCount: state.creation.spellCount + 1,
   }
   return {
     ...state,
     spells,
-    creation
+    creation,
   }
 }
 

@@ -8,32 +8,32 @@ let statsForPriorities = {
     } else {
       return 'Nothing Selected'
     }
-  }
+  },
 }
 
 statsForPriorities[priorityValues.PRIORITY_A] = {
   metatype: [
     {
       id: 'human', metatype: 'Human',
-      specialAttributePoints: 9
+      specialAttributePoints: 9,
     },
     {
       id: 'elf', metatype: 'Elf',
-      specialAttributePoints: 8
+      specialAttributePoints: 8,
     },
     {
       id: 'dwarf', metatype: 'Dwarf',
-      specialAttributePoints: 7
+      specialAttributePoints: 7,
     },
     {
 
       id: 'ork', metatype: 'Ork',
-      specialAttributePoints: 7
+      specialAttributePoints: 7,
     },
     {
       id: 'troll', metatype: 'Troll',
-      specialAttributePoints: 5
-    }
+      specialAttributePoints: 5,
+    },
   ],
   attributes: 24,
   magicOrResonance: [
@@ -44,9 +44,9 @@ statsForPriorities[priorityValues.PRIORITY_A] = {
       bonusSkills: {
         attributeType: attributeTypes.MAGIC,
         count: 2,
-        rating: 5
+        rating: 5,
       },
-      spellCount: 10
+      spellCount: 10,
 
 
     },
@@ -57,9 +57,9 @@ statsForPriorities[priorityValues.PRIORITY_A] = {
       bonusSkills: {
         attributeType: attributeTypes.MAGIC,
         count: 2,
-        rating: 5
+        rating: 5,
       },
-      spellCount: 10
+      spellCount: 10,
 
     },
     {
@@ -69,41 +69,41 @@ statsForPriorities[priorityValues.PRIORITY_A] = {
       bonusSkills: {
         attributeType: attributeTypes.RESONANCE,
         count: 2,
-        rating: 5
+        rating: 5,
       },
-      complexFormCount: 5
+      complexFormCount: 5,
 
-    }
+    },
   ],
   skills: {
     points: 46,
-    groupPoints: 10
+    groupPoints: 10,
 
   },
-  resources: 450000
+  resources: 450000,
 }
 
 statsForPriorities[priorityValues.PRIORITY_B] = {
   metatype: [{
     id: 'human', metatype: 'Human',
-    specialAttributePoints: 7
+    specialAttributePoints: 7,
   },
   {
     id: 'elf', metatype: 'Elf',
-    specialAttributePoints: 6
+    specialAttributePoints: 6,
   },
   {
     id: 'dwarf', metatype: 'Dwarf',
-    specialAttributePoints: 4
+    specialAttributePoints: 4,
   },
   {
     id: 'ork', metatype: 'Ork',
-    specialAttributePoints: 4
+    specialAttributePoints: 4,
   },
   {
     id: 'troll', metatype: 'Troll',
-    specialAttributePoints: 0
-  }
+    specialAttributePoints: 0,
+  },
   ],
   attributes: 20,
   magicOrResonance: [
@@ -114,9 +114,9 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
       bonusSkills: {
         attributeType: attributeTypes.MAGIC,
         count: 2,
-        rating: 4
+        rating: 4,
       },
-      spellCount: 7
+      spellCount: 7,
 
 
     },
@@ -127,9 +127,9 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
       bonusSkills: {
         attributeType: attributeTypes.MAGIC,
         count: 2,
-        rating: 4
+        rating: 4,
       },
-      spellCount: 7
+      spellCount: 7,
 
     },
     {
@@ -142,7 +142,7 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
         rating: 4,
 
       },
-      complexFormCount: 2
+      complexFormCount: 2,
 
     },
     {
@@ -151,8 +151,8 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
       magic: 6,
       activeSkills: {
         count: 1,
-        rating: 4
-      }
+        rating: 4,
+      },
     },
     {
       key: 'aspectedMagician',
@@ -161,36 +161,36 @@ statsForPriorities[priorityValues.PRIORITY_B] = {
       bonusSkillGroup: {
         attributeType: attributeTypes.MAGIC,
         count: 1,
-        rating: 4
-      }
-    }
+        rating: 4,
+      },
+    },
   ],
   skills: {
     points: 36,
-    groupPoints: 5
+    groupPoints: 5,
 
   },
-  resources: 275000
+  resources: 275000,
 }
 
 statsForPriorities[priorityValues.PRIORITY_C] = {
   metatype: [
     {
       id: 'human', metatype: 'Human',
-      specialAttributePoints: 5
+      specialAttributePoints: 5,
     },
     {
       id: 'elf', metatype: 'Elf',
-      specialAttributePoints: 3
+      specialAttributePoints: 3,
     },
     {
       id: 'dwarf', metatype: 'Dwarf',
-      specialAttributePoints: 1
+      specialAttributePoints: 1,
     },
     {
       id: 'ork', metatype: 'Ork',
-      specialAttributePoints: 0
-    }
+      specialAttributePoints: 0,
+    },
   ],
   attributes: 16,
   magicOrResonance: [
@@ -201,10 +201,10 @@ statsForPriorities[priorityValues.PRIORITY_C] = {
       magicalSkills: {
         attributeType: attributeTypes.MAGIC,
         count: 0,
-        rating: 0
+        rating: 0,
 
       },
-      spellCount: 5
+      spellCount: 5,
 
 
     },
@@ -215,9 +215,9 @@ statsForPriorities[priorityValues.PRIORITY_C] = {
       magicalSkills: {
         attributeType: attributeTypes.MAGIC,
         count: 0,
-        rating: 0
+        rating: 0,
       },
-      spellCount: 5
+      spellCount: 5,
 
     },
     {
@@ -227,9 +227,9 @@ statsForPriorities[priorityValues.PRIORITY_C] = {
       resonanceSkills: {
         attributeType: attributeTypes.RESONANCE,
         count: 0,
-        rating: 0
+        rating: 0,
       },
-      complexFormCount: 1
+      complexFormCount: 1,
 
     },
     {
@@ -238,8 +238,8 @@ statsForPriorities[priorityValues.PRIORITY_C] = {
       magic: 4,
       activeSkills: {
         count: 1,
-        rating: 2
-      }
+        rating: 2,
+      },
     },
     {
       key: 'aspectedMagician',
@@ -248,28 +248,28 @@ statsForPriorities[priorityValues.PRIORITY_C] = {
       bonusSkillGroup: {
         attributeType: attributeTypes.MAGIC,
         count: 1,
-        rating: 2
-      }
-    }
+        rating: 2,
+      },
+    },
   ],
   skills: {
     points: 28,
-    groupPoints: 2
+    groupPoints: 2,
 
   },
-  resources: 140000
+  resources: 140000,
 
 }
 statsForPriorities[priorityValues.PRIORITY_D] = {
   metatype: [
     {
       id: 'human', metatype: 'Human',
-      specialAttributePoints: 3
+      specialAttributePoints: 3,
     },
     {
       id: 'elf', metatype: 'Elf',
-      specialAttributePoints: 0
-    }
+      specialAttributePoints: 0,
+    },
   ],
   attributes: 14,
   magicOrResonance: [
@@ -279,8 +279,8 @@ statsForPriorities[priorityValues.PRIORITY_D] = {
       magic: 2,
       activeSkills: {
         count: 0,
-        rating: 0
-      }
+        rating: 0,
+      },
     },
     {
       key: 'aspectedMagician',
@@ -289,32 +289,32 @@ statsForPriorities[priorityValues.PRIORITY_D] = {
       bonusSkillGroup: {
         attributeType: attributeTypes.MAGIC,
         count: 0,
-        rating: 0
-      }
-    }
+        rating: 0,
+      },
+    },
   ],
   skills: {
     points: 22,
-    groupPoints: 0
+    groupPoints: 0,
 
   },
-  resources: 50000
+  resources: 50000,
 }
 statsForPriorities[priorityValues.PRIORITY_E] = {
   metatype: [
     {
       id: 'human', metatype: 'Human',
-      specialAttributePoints: 1
-    }
+      specialAttributePoints: 1,
+    },
   ],
   attributes: 12,
   magicOrResonance: [],
   skills: {
     points: 18,
-    groupPoints: 0
+    groupPoints: 0,
 
   },
-  resources: 6000
+  resources: 6000,
 
 }
 

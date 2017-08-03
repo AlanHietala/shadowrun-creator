@@ -7,9 +7,9 @@ describe('AdeptPower Reducer', function () {
         adeptPowers: [],
         attributes: {
           magic: {
-            value: 6
-          }
-        }
+            value: 6,
+          },
+        },
       }
 
       const expectedState = {
@@ -18,13 +18,13 @@ describe('AdeptPower Reducer', function () {
           name: 'Adrenaline Boost',
           cost: 0.25,
           activation: 'FREE_ACTION',
-          level: 1
+          level: 1,
         }],
         attributes: {
           magic: {
-            value: 6
-          }
-        }
+            value: 6,
+          },
+        },
       }
 
       const action = addPower(
@@ -32,7 +32,7 @@ describe('AdeptPower Reducer', function () {
           key: 'adrenalineBoost',
           name: 'Adrenaline Boost',
           cost: 0.25,
-          activation: 'FREE_ACTION'
+          activation: 'FREE_ACTION',
 
         })
 
@@ -47,22 +47,22 @@ describe('AdeptPower Reducer', function () {
         name: 'Adrenaline Boost',
         cost: 0.25,
         activation: 'FREE_ACTION',
-        level: 1
+        level: 1,
       }],
       attributes: {
         magic: {
-          value: 6
-        }
-      }
+          value: 6,
+        },
+      },
     }
 
     const expectedState = {
       adeptPowers: [],
       attributes: {
         magic: {
-          value: 6
-        }
-      }
+          value: 6,
+        },
+      },
     }
 
     const action = removePower(0)
@@ -79,13 +79,13 @@ describe('AdeptPower Reducer', function () {
           name: 'Adrenaline Boost',
           cost: 0.25,
           activation: 'FREE_ACTION',
-          level: 1
+          level: 1,
         }],
         attributes: {
           magic: {
-            value: 6
-          }
-        }
+            value: 6,
+          },
+        },
       }
 
       const expectedState = {
@@ -94,13 +94,13 @@ describe('AdeptPower Reducer', function () {
           name: 'Adrenaline Boost',
           cost: 0.25,
           activation: 'FREE_ACTION',
-          level: 2
+          level: 2,
         }],
         attributes: {
           magic: {
-            value: 6
-          }
-        }
+            value: 6,
+          },
+        },
       }
 
       const action = increasePower(0)
@@ -115,13 +115,13 @@ describe('AdeptPower Reducer', function () {
           name: 'Adrenaline Boost',
           cost: 0.25,
           activation: 'FREE_ACTION',
-          level: 24
+          level: 24,
         }],
         attributes: {
           magic: {
-            value: 6
-          }
-        }
+            value: 6,
+          },
+        },
       }
 
       const expectedState = {
@@ -130,13 +130,13 @@ describe('AdeptPower Reducer', function () {
           name: 'Adrenaline Boost',
           cost: 0.25,
           activation: 'FREE_ACTION',
-          level: 24
+          level: 24,
         }],
         attributes: {
           magic: {
-            value: 6
-          }
-        }
+            value: 6,
+          },
+        },
       }
 
       const action = increasePower(0)
@@ -154,13 +154,13 @@ describe('AdeptPower Reducer', function () {
         name: 'Adrenaline Boost',
         cost: 0.25,
         activation: 'FREE_ACTION',
-        level: 2
+        level: 2,
       }],
       attributes: {
         magic: {
-          value: 6
-        }
-      }
+          value: 6,
+        },
+      },
     }
 
     const expectedState = {
@@ -169,13 +169,13 @@ describe('AdeptPower Reducer', function () {
         name: 'Adrenaline Boost',
         cost: 0.25,
         activation: 'FREE_ACTION',
-        level: 1
+        level: 1,
       }],
       attributes: {
         magic: {
-          value: 6
-        }
-      }
+          value: 6,
+        },
+      },
     }
 
     const action = decreasePower(0)

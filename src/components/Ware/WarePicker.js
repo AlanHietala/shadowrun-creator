@@ -33,7 +33,7 @@ class WarePicker extends React.Component {
 const mapStateToProps = (state) => {
   return {
     characterWare: characterWareSelector(state),
-    wareList: wareListSelector(state)
+    wareList: wareListSelector(state),
   }
 }
 
@@ -46,7 +46,7 @@ const mapDispatchToProps = (dispatch) => {
     handleRemoveWare: (wareIndex) => {
       const removeWareAction = removeWare(wareIndex)
       dispatch(removeWareAction)
-    }
+    },
   }
 }
 

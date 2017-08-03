@@ -29,14 +29,14 @@ class EquipmentPicker extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    characterEquipment: characterItemsSelector(state)
+    characterEquipment: characterItemsSelector(state),
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleAddEquipment: equipment => dispatch(addItem(equipment)),
-    handleRemoveEquipment: index => dispatch(removeItem(index))
+    handleRemoveEquipment: index => dispatch(removeItem(index)),
   }
 }
 

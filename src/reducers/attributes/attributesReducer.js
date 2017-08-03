@@ -28,18 +28,18 @@ const addAttributePoint = (pointsToAdd, state, isSpecialAttribute) => {
 
     creation = {
       ...state.creation,
-      availableSpecialAttributePoints: state.creation.availableSpecialAttributePoints + pointsToAdd
+      availableSpecialAttributePoints: state.creation.availableSpecialAttributePoints + pointsToAdd,
     }
   } else {
     creation = {
       ...state.creation,
-      availableAttributePoints: state.creation.availableAttributePoints + pointsToAdd
+      availableAttributePoints: state.creation.availableAttributePoints + pointsToAdd,
     }
   }
 
   return {
     ...state,
-    creation
+    creation,
   }
 }
 
@@ -47,13 +47,13 @@ const setAttribute = (state, action, attributeToSet, value) => {
   let newState = {
     ...state,
     attributes: {
-      ...state.attributes
-    }
+      ...state.attributes,
+    },
   }
 
   newState.attributes[action.payload.key] = {
     ...attributeToSet,
-    value
+    value,
   }
   return newState
 }
@@ -119,5 +119,5 @@ const maxAttributeModMap = {
   [attributeTypes.INTUITION]: modTypes.MAX_INTUITION_MOD,
   [attributeTypes.LOGIC]: modTypes.MAX_LOGIC_MOD,
   [attributeTypes.WILLPOWER]: modTypes.MAX_WILLPOWER_MOD,
-  [attributeTypes.ESSENCE]: modTypes.MAX_ESSENCE_MOD
+  [attributeTypes.ESSENCE]: modTypes.MAX_ESSENCE_MOD,
 }

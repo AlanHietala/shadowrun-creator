@@ -7,7 +7,7 @@ export default (state, action) => {
   if(0 <= newValue && newValue <= 6 && 0 <= newSkillGroupPoints) {
     skillGroups[skillGroupIndex] = {
       ...skillGroupToModify,
-      points: newValue
+      points: newValue,
     }
 
     return {
@@ -16,13 +16,13 @@ export default (state, action) => {
         ...state.creation,
         availableSkillPoints: {
           ...state.creation.availableSkillPoints,
-          groupPoints: newSkillGroupPoints
-        }
+          groupPoints: newSkillGroupPoints,
+        },
       },
       skills: {
         ...state.skills,
-        skillGroups: [...skillGroups]
-      }
+        skillGroups: [...skillGroups],
+      },
     }
 
   } else {

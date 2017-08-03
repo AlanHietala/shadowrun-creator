@@ -10,43 +10,43 @@ export default [
     key: 'adrenalineBoost',
     name: 'Adrenaline Boost',
     cost: 0.25,
-    activation: actionTypes.FREE_ACTION
+    activation: actionTypes.FREE_ACTION,
   },
   {
     key: 'astralPerception',
     name: 'Astral Perception',
     cost: 1,
-    activation: actionTypes.SIMPLE_ACTION
+    activation: actionTypes.SIMPLE_ACTION,
   },
   {
     key: 'attributeBoostStrength',
     name: 'Attribute Boost (Strength)',
     cost: 0.25,
-    activation: actionTypes.SIMPLE_ACTION
+    activation: actionTypes.SIMPLE_ACTION,
   },
   {
     key: 'attributeBoostBody',
     name: 'Attribute Boost (Body)',
     cost: 0.25,
-    activation: actionTypes.SIMPLE_ACTION
+    activation: actionTypes.SIMPLE_ACTION,
   },
   {
     key: 'attributeBoostAgility',
     name: 'Attribute Boost (Agility)',
     cost: 0.25,
-    activation: actionTypes.SIMPLE_ACTION
+    activation: actionTypes.SIMPLE_ACTION,
   },
   {
     key: 'attributeBoostReaction',
     name: 'Attribute Boost (Reaction)',
     cost: 0.25,
-    activation: actionTypes.SIMPLE_ACTION
+    activation: actionTypes.SIMPLE_ACTION,
   },
   {
     key: 'combatSense',
     name: 'Combat Sense',
     cost: 0.5,
-    activation: 'None'
+    activation: 'None',
   },
   {
     key: 'criticalStrike',
@@ -54,19 +54,19 @@ export default [
     cost: 0.5,
     affects: characterAreaTypes.SKILLS,
     affectsSkills: [skillMap.unarmedCombat, skillMap.clubs, skillMap.blades, skillMap.astralCombat, skillMap.exoticMeleeWeapon],
-    activation: 'None'
+    activation: 'None',
   },
   {
     key: 'dangerSense',
     name: 'Danger Sense',
     cost: 0.25,
-    activation: 'None'
+    activation: 'None',
   },
   {
     key: 'enhancedPerception',
     name: 'Enhanced Perception',
     cost: 0.5,
-    activation: 'None'
+    activation: 'None',
   },
   {
     key: 'enhancedAccuracy',
@@ -74,7 +74,7 @@ export default [
     cost: 0.25,
     affects: characterAreaTypes.SKILLS,
     affectsSkills: [skillMap.longarms, skillMap.pistols, skillMap.automatics, skillMap.throwingWeapon, skillMap.archery, skillMap.heavyWeapons, skillMap.clubs, skillMap.blades, skillMap.exoticMeleeWeapon],
-    activation: 'None'
+    activation: 'None',
   },
   {
     key: 'improvedAbility',
@@ -149,20 +149,20 @@ export default [
       skillMap.forgery,
       skillMap.astralCombat,
       skillMap.survival],
-    activation: 'None'
+    activation: 'None',
   },
   {
     key: 'improvedPhysicalAttribute',
     name: 'Improved Physical Attribute',
     cost: 1,
     affects: characterAreaTypes.ATTRIBUTES,
-    affectsAttributes: [attributeTypes.STRENGTH, attributeTypes.AGILITY, attributeTypes.BODY, attributeTypes.REACTION]
+    affectsAttributes: [attributeTypes.STRENGTH, attributeTypes.AGILITY, attributeTypes.BODY, attributeTypes.REACTION],
   },
   {
     key: 'improvedPotential',
     name: 'Improved Physical Attribute',
     cost: 1,
     affects: characterAreaTypes.LIMITS,
-    affectsLimits: [limitTypes.MENTAL_LIMIT, limitTypes.PHYSICAL_LIMIT, limitTypes.SOCIAL_LIMIT]
+    affectsLimits: [limitTypes.MENTAL_LIMIT, limitTypes.PHYSICAL_LIMIT, limitTypes.SOCIAL_LIMIT],
   },
 ]

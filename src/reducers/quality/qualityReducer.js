@@ -24,7 +24,7 @@ const addQuality = (state, action) => {
     return {
       ...state,
       qualities,
-      karma: newKarma
+      karma: newKarma,
     }
   } else {
     return state
@@ -36,12 +36,12 @@ const removeQuality = (state, action) => {
   const karma = state.karma
   const qualities = [
     ...state.qualities.slice(0, action.payload),
-    ...state.qualities.slice(action.payload + 1)
+    ...state.qualities.slice(action.payload + 1),
   ]
   return {
     ...state,
     qualities,
-    karma: karma + qualityToRemoveCost
+    karma: karma + qualityToRemoveCost,
   }
 }
 `uuuuu`

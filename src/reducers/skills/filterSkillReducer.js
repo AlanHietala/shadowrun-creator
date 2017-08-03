@@ -3,7 +3,7 @@ export default (state, action) => {
     ...state,
     skills: {
       ...state.skills,
-      textFilter: action.payload
-    }
+      textFilter: action.payload,
+    },
   }
 }

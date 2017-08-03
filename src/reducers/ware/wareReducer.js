@@ -14,12 +14,12 @@ const wareReducer = (state, action) => {
 function handleRemoveWare(state, action) {
   const ware = [
     ...state.ware.slice(0, action.payload),
-    ...state.ware.slice(action.payload + 1)
+    ...state.ware.slice(action.payload + 1),
   ]
 
   return {
     ...state,
-    ware
+    ware,
   }
 }
 
@@ -28,7 +28,7 @@ function handleAddWare(state, action) {
   const ware = state.ware.concat([action.payload])
   return {
     ...state,
-    ware
+    ware,
   }
 }
 

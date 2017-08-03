@@ -34,7 +34,7 @@ describe('Priority Actions', () => {
   it('should create an action to set metatype PrioritiesList', () => {
     const expectedAction = {
       type: actionTypes.SET_METATYPE_PRIORITY,
-      payload: priorityValues.PRIORITY_A
+      payload: priorityValues.PRIORITY_A,
     }
 
     expect(priorityActions.setMetatypePriority(priorityValues.PRIORITY_A)).toEqual(expectedAction)
@@ -43,7 +43,7 @@ describe('Priority Actions', () => {
   it('should create an action to set attribute PrioritiesList', () => {
     const expectedAction = {
       type: actionTypes.SET_ATTRIBUTE_PRIORITY,
-      payload: priorityValues.PRIORITY_A
+      payload: priorityValues.PRIORITY_A,
     }
 
     expect(priorityActions.setAttributePriority(priorityValues.PRIORITY_A)).toEqual(expectedAction)
@@ -52,7 +52,7 @@ describe('Priority Actions', () => {
   it('should create an action to set skills PrioritiesList', () => {
     const expectedAction = {
       type: actionTypes.SET_SKILLS_PRIORITY,
-      payload: priorityValues.PRIORITY_A
+      payload: priorityValues.PRIORITY_A,
     }
 
     expect(priorityActions.setSkillsPriority(priorityValues.PRIORITY_A)).toEqual(expectedAction)
@@ -61,7 +61,7 @@ describe('Priority Actions', () => {
   it('should create an action to set resources PrioritiesList', () => {
     const expectedAction = {
       type: actionTypes.SET_RESOURCES_PRIORITY,
-      payload: priorityValues.PRIORITY_A
+      payload: priorityValues.PRIORITY_A,
     }
 
     expect(priorityActions.setResourcesPriority(priorityValues.PRIORITY_A)).toEqual(expectedAction)

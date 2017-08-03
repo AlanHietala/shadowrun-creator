@@ -21,7 +21,7 @@ const updatePower = (state, action, value) => {
   if(canModifyPower(state, adeptPower)) {
     const newAdeptPower = {
       ...adeptPower,
-      level: adeptPower.level + value
+      level: adeptPower.level + value,
     }
 
     let adeptPowers = [...state.adeptPowers]
@@ -29,7 +29,7 @@ const updatePower = (state, action, value) => {
 
     return {
       ...state,
-      adeptPowers
+      adeptPowers,
     }
   } else {
     return state
@@ -43,7 +43,7 @@ const removePower = (state, action) => {
 
   return {
     ...state,
-    adeptPowers
+    adeptPowers,
   }
 }
 
@@ -51,7 +51,7 @@ const addPower = (state, action) => {
   const power = action.payload
   if(canAddPower(state, action.payload)) {
     return { ...state,
-      adeptPowers: state.adeptPowers.concat([{...power, level: 1}])
+      adeptPowers: state.adeptPowers.concat([{...power, level: 1}]),
     }
   } else {
     return state

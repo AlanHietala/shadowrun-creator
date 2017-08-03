@@ -8,12 +8,12 @@ const defaultState = {
   resources: priorityValues.PRIORITY_NONE,
   skills: priorityValues.PRIORITY_NONE,
   saved: false,
-  valid: false
+  valid: false,
 }
 
 function setAttributeUniquely(attribute, attributeValue, currentState) {
   let newState = {
-    ...currentState
+    ...currentState,
   }
 
   for(let key in newState) {

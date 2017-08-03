@@ -8,7 +8,7 @@ export default (state, action) => {
       availableSkillPoints: statsForPriorities[action.payload.skillsPriority].skills,
       availableResources: statsForPriorities[action.payload.resourcesPriority].resources,
       availableMagicOrResonanceClasses: statsForPriorities[action.payload.magicOrResonancePriority].magicOrResonance,
-      availableAttributePoints: statsForPriorities[action.payload.attributePriority].attributes
-    }
+      availableAttributePoints: statsForPriorities[action.payload.attributePriority].attributes,
+    },
   }
 }

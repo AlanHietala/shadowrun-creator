@@ -6,12 +6,12 @@ export default (state, action) => {
     metatype: action.payload.metatype,
     attributes: {
       ...state.attributes,
-      ...getInitialAttributesForMetatype(action.payload.id)
+      ...getInitialAttributesForMetatype(action.payload.id),
     },
     creation: {
       ...state.creation,
-      availableSpecialAttributePoints: action.payload.specialAttributePoints
-    }
+      availableSpecialAttributePoints: action.payload.specialAttributePoints,
+    },
   }
 }
 

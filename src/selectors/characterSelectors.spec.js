@@ -22,26 +22,26 @@ describe('StrengthSelector', function () {
             key: 'strength',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.STRENGTH_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(strengthSelector(state)).toEqual(selection)
@@ -55,26 +55,26 @@ describe('StrengthSelector', function () {
             key: 'strength',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
     expect(strengthSelector(state)).toEqual(selection)
@@ -88,35 +88,35 @@ describe('StrengthSelector', function () {
             key: 'strength',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.STRENGTH_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.STRENGTH_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
     expect(strengthSelector(state)).toEqual(selection)
@@ -133,26 +133,26 @@ describe('AgilitySelector', function () {
             key: 'agility',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.AGILITY_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(agilitySelector(state)).toEqual(selection)
@@ -168,26 +168,26 @@ describe('AgilitySelector', function () {
             key: 'agility',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -204,35 +204,35 @@ describe('AgilitySelector', function () {
             key: 'strength',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.AGILITY_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.AGILITY_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -252,26 +252,26 @@ describe('WillpowerSelector', function () {
             key: 'willpower',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.WILLPOWER_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(willpowerSelector(state)).toEqual(selection)
@@ -287,26 +287,26 @@ describe('WillpowerSelector', function () {
             key: 'willpower',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -323,35 +323,35 @@ describe('WillpowerSelector', function () {
             key: 'willpower',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.WILLPOWER_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.WILLPOWER_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -371,26 +371,26 @@ describe('magicSelector', function () {
             key: 'magic',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.MAGIC_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(magicSelector(state)).toEqual(selection)
@@ -406,26 +406,26 @@ describe('magicSelector', function () {
             key: 'magic',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -442,35 +442,35 @@ describe('magicSelector', function () {
             key: 'magic',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.MAGIC_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.MAGIC_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -490,26 +490,26 @@ describe('bodySelector', function () {
             key: 'body',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.BODY_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(bodySelector(state)).toEqual(selection)
@@ -525,26 +525,26 @@ describe('bodySelector', function () {
             key: 'body',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -561,35 +561,35 @@ describe('bodySelector', function () {
             key: 'body',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.BODY_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.BODY_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -609,26 +609,26 @@ describe('reactionSelector', function () {
             key: 'reaction',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(reactionSelector(state)).toEqual(selection)
@@ -644,26 +644,26 @@ describe('reactionSelector', function () {
             key: 'reaction',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.BODY_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -680,35 +680,35 @@ describe('reactionSelector', function () {
             key: 'reaction',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -728,26 +728,26 @@ describe('charismaSelector', function () {
             key: 'charisma',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.CHARISMA_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(charismaSelector(state)).toEqual(selection)
@@ -763,26 +763,26 @@ describe('charismaSelector', function () {
             key: 'charisma',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -799,35 +799,35 @@ describe('charismaSelector', function () {
             key: 'charisma',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.CHARISMA_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.CHARISMA_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -847,26 +847,26 @@ describe('intuitionSelector', function () {
             key: 'intuition',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.INTUITION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(intuitionSelector(state)).toEqual(selection)
@@ -882,26 +882,26 @@ describe('intuitionSelector', function () {
             key: 'intuition',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -918,35 +918,35 @@ describe('intuitionSelector', function () {
             key: 'intuition',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.INTUITION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.INTUITION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -966,26 +966,26 @@ describe('logicSelector', function () {
             key: 'logic',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.LOGIC_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(logicSelector(state)).toEqual(selection)
@@ -1001,26 +1001,26 @@ describe('logicSelector', function () {
             key: 'logic',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -1037,35 +1037,35 @@ describe('logicSelector', function () {
             key: 'logic',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.LOGIC_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.LOGIC_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -1085,26 +1085,26 @@ describe('essenceSelector', function () {
             key: 'essence',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.ESSENCE_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 2,
-      computed: 6
+      computed: 6,
     }
 
     expect(essenceSelector(state)).toEqual(selection)
@@ -1120,26 +1120,26 @@ describe('essenceSelector', function () {
             key: 'essence',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.REACTION_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 0,
-      computed: 4
+      computed: 4,
     }
 
 
@@ -1156,35 +1156,35 @@ describe('essenceSelector', function () {
             key: 'essence',
             minValue: 1,
             maxValue: 5,
-            value: 4
-          }
+            value: 4,
+          },
         },
         items: [{
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.ESSENCE_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         },
         {
           name: 'Reaction Enhancers 1',
           mods: [
             {
               modType: modTypes.ESSENCE_MOD,
-              effect: 2
-            }
-          ]
+              effect: 2,
+            },
+          ],
         }],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     const selection = {
       base: 4,
       mods: 4,
-      computed: 8
+      computed: 8,
     }
 
 
@@ -1201,8 +1201,8 @@ describe('AttributeSelector', function () {
       character: {
         attributes:{},
         items: [],
-        ware:[]
-      }
+        ware:[],
+      },
     }
 
     let attributes = {}
@@ -1217,7 +1217,7 @@ describe('AttributeSelector', function () {
       attributeTypes.CHARISMA,
       attributeTypes.INTUITION,
       attributeTypes.LOGIC,
-      attributeTypes.ESSENCE
+      attributeTypes.ESSENCE,
     ]
 
     attributeArray.forEach(attribute => {
@@ -1225,13 +1225,13 @@ describe('AttributeSelector', function () {
         key: attribute,
         minValue: 1,
         maxValue: 5,
-        value: 4
+        value: 4,
       }
 
       results[attribute] = {
         base: 4,
         mods: 0,
-        computed: 4
+        computed: 4,
       }
     })
 
@@ -1246,44 +1246,44 @@ describe('AttributeSelector', function () {
       const state = {
         character: {
           creation: {
-            availableResources: 10000
+            availableResources: 10000,
           },
           attributes: {
             essence: {
               key: 'essence',
               minValue: 1,
               maxValue: 5,
-              value: 4
-            }
+              value: 4,
+            },
           },
           items: [{
             name: 'Reaction Enhancers 1',
             mods: [
               {
                 modType: modTypes.ESSENCE_MOD,
-                effect: 2
+                effect: 2,
               },
               {
                 modType: modTypes.RESOURCES_MOD,
-                effect: 5000
-              }
-            ]
+                effect: 5000,
+              },
+            ],
           },
           {
             name: 'Reaction Enhancers 1',
             mods: [
               {
                 modType: modTypes.ESSENCE_MOD,
-                effect: 2
+                effect: 2,
               },
               {
                 modType: modTypes.RESOURCES_MOD,
-                effect: 2000
-              }
-            ]
+                effect: 2000,
+              },
+            ],
           }],
-          ware:[]
-        }
+          ware:[],
+        },
       }
 
       const expectedValue = 3000
@@ -1295,28 +1295,28 @@ describe('AttributeSelector', function () {
       const state = {
         character: {
           creation: {
-            availableResources: 10000
+            availableResources: 10000,
           },
           attributes: {
             essence: {
               key: 'essence',
               minValue: 1,
               maxValue: 5,
-              value: 4
-            }
+              value: 4,
+            },
           },
           items: [{
             name: 'Reaction Enhancers 1',
             mods: [
               {
                 modType: modTypes.ESSENCE_MOD,
-                effect: 2
+                effect: 2,
               },
               {
                 modType: modTypes.RESOURCES_MOD,
-                effect: 5000
-              }
-            ]
+                effect: 5000,
+              },
+            ],
           }],
           ware:[
             {
@@ -1324,17 +1324,17 @@ describe('AttributeSelector', function () {
               mods: [
                 {
                   modType: modTypes.ESSENCE_MOD,
-                  effect: 2
+                  effect: 2,
                 },
                 {
                   modType: modTypes.RESOURCES_MOD,
-                  effect: 2000
-                }
+                  effect: 2000,
+                },
 
-              ]
-            }
-          ]
-        }
+              ],
+            },
+          ],
+        },
       }
 
       const expectedValue = 3000

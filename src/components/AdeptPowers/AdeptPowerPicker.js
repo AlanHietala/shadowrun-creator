@@ -31,7 +31,7 @@ class AdeptPowerPicker extends React.Component {
 const mapStateToProps = (state) => {
   return {
     characterAdeptPowers: characterAdeptPowersSelector(state),
-    adeptPowerList: adeptPowersSelector(state)
+    adeptPowerList: adeptPowersSelector(state),
   }
 }
 
@@ -44,7 +44,7 @@ const mapDispatchToProps = (dispatch) => {
     handleRemovePower: (powerIndex) => {
       const removePowerAction = removePower(powerIndex)
       dispatch(removePowerAction)
-    }
+    },
   }
 }
 

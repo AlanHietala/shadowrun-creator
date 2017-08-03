@@ -11,19 +11,19 @@ class Skill extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
     }
   }
   handleTouchTap = (event) => {
     this.setState({
       open: true,
-      anchorEl: event.currentTarget
+      anchorEl: event.currentTarget,
     })
   }
 
   handleRequestClose = () => {
     this.setState({
-      open: false
+      open: false,
     })
   }
 
@@ -89,20 +89,20 @@ class Skill extends React.Component {
 
 const styles = {
   chip: {
-    marginLeft: 4
+    marginLeft: 4,
   },
   outerWrap: {
-    display: 'inline-block'
+    display: 'inline-block',
   },
   wrap: {
     flexWrap: 'wrap',
     display:'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   plusMinusButton: {
     minWidth: '20px',
-    color: 'green'
-  }
+    color: 'green',
+  },
 }
 
 Skill.propTypes = {

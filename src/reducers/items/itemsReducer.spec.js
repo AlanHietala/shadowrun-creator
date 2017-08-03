@@ -9,17 +9,17 @@ describe('Items Reducer', function () {
         mods: [
           {
             effectType: 'SomeMod',
-            effect: 1
-          }
-        ]
+            effect: 1,
+          },
+        ],
       }
 
       const initialState = {
-        items: []
+        items: [],
       }
 
       const stateAfter = {
-        items: [item]
+        items: [item],
       }
 
       const addItemAction = addItem(item)
@@ -33,22 +33,22 @@ describe('Items Reducer', function () {
         items: [
           {
             name: 'item 1',
-            mods: []
+            mods: [],
           },
           {
             name: 'item 2',
-            mods: []
-          }
-        ]
+            mods: [],
+          },
+        ],
       }
 
       const stateAfter = {
         items: [
           {
             name: 'item 1',
-            mods: []
-          }
-        ]
+            mods: [],
+          },
+        ],
       }
 
       const removeItemAction = removeItem(1)

@@ -5,7 +5,7 @@ const defaultState = {
   priorityVisible: true,
   metatypeVisible: false,
   atributesVisible: false,
-  magicTypesVisible: false
+  magicTypesVisible: false,
 }
 const visibility = (state = defaultState, action) => {
   switch(action.type) {
@@ -14,41 +14,41 @@ const visibility = (state = defaultState, action) => {
       return {
         ...state,
         metatypeVisible: true,
-        magicTypesVisible: false
+        magicTypesVisible: false,
       }
     } else {
       return {
         ...state,
         metatypeVisible: true,
-        magicTypesVisible: true
+        magicTypesVisible: true,
       }
     }
   case creationOptionActionTypes.PICK_METATYPE_OPTION:
     if(state.magicTypesVisible) {
       return {
         ...state,
-        metatypeVisible: false
+        metatypeVisible: false,
       }
 
     } else {
       return {
         ...state,
         metatypeVisible: false,
-        attributesVisible: true
+        attributesVisible: true,
       }
     }
   case creationOptionActionTypes.PICK_MAGIC_OR_RESONANCE_OPTION:
     if(state.metatypeVisible) {
       return {
         ...state,
-        magicTypesVisible: false
+        magicTypesVisible: false,
       }
 
     } else {
       return {
         ...state,
         magicTypesVisible: false,
-        attributesVisible: true
+        attributesVisible: true,
       }
     }
   default:

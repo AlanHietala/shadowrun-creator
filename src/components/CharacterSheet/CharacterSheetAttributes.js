@@ -10,7 +10,7 @@ const AttributeItem = ({title, value}) => {
 
 AttributeItem.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.any.isRequired
+  value: PropTypes.any.isRequired,
 }
 
 const CharacterSheetAttributes = ({attributes}) => {
@@ -27,7 +27,7 @@ const CharacterSheetAttributes = ({attributes}) => {
     essence,
     initiative,
     initiativeDice,
-    resources
+    resources,
   } = attributes
   return (
     <div style={styles.attributeList}>
@@ -50,18 +50,18 @@ const CharacterSheetAttributes = ({attributes}) => {
 const styles = {
   attributeList: {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   attribute: {
     flexDirection: 'column',
-    margin: '0.5rem'
+    margin: '0.5rem',
   },
   attributeLine: {
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 }
 
 CharacterSheetAttributes.propTypes = {
-  attributes: PropTypes.object.isRequired
+  attributes: PropTypes.object.isRequired,
 }
 export default CharacterSheetAttributes

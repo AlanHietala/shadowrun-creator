@@ -16,12 +16,12 @@ const itemsReducer = (state, action) => {
 function handleRemoveItem(state, action) {
   const items = [
     ...state.items.slice(0, action.payload),
-    ...state.items.slice(action.payload + 1)
+    ...state.items.slice(action.payload + 1),
   ]
 
   return {
     ...state,
-    items
+    items,
   }
 }
 
@@ -30,7 +30,7 @@ function handleAddItem(state, action) {
   const items = state.items.concat([action.payload])
   return {
     ...state,
-    items
+    items,
   }
 }
 

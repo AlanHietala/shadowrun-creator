@@ -9,8 +9,8 @@ describe('Skills Reducer', function () {
         const initialState = {
           creation: {
             availableSkillPoints: {
-              points: 5
-            }
+              points: 5,
+            },
           },
           skills: {
             individualSkills: [
@@ -20,19 +20,19 @@ describe('Skills Reducer', function () {
                 attribute: attributesTypes.AGILITY,
                 canDefault: true,
                 specializations: [
-                  'bar'
+                  'bar',
                 ],
-                selectedSpecializations: []
-              }
-            ]
-          }
+                selectedSpecializations: [],
+              },
+            ],
+          },
         }
 
         const stateAfter = {
           creation: {
             availableSkillPoints: {
-              points: 3
-            }
+              points: 3,
+            },
           },
           skills: {
             individualSkills: [{
@@ -41,11 +41,11 @@ describe('Skills Reducer', function () {
               attribute: attributesTypes.AGILITY,
               canDefault: true,
               specializations: [
-                'bar'
+                'bar',
               ],
-              selectedSpecializations: ['bar']
-            }]
-          }
+              selectedSpecializations: ['bar'],
+            }],
+          },
         }
 
         const action = addSkillSpecialization(0, 0)
@@ -58,8 +58,8 @@ describe('Skills Reducer', function () {
         const initialState = {
           creation: {
             availableSkillPoints: {
-              points: 1
-            }
+              points: 1,
+            },
           },
           skills: {
             individualSkills: [
@@ -69,19 +69,19 @@ describe('Skills Reducer', function () {
                 attribute: attributesTypes.AGILITY,
                 canDefault: true,
                 specializations: [
-                  'bar'
+                  'bar',
                 ],
-                selectedSpecializations: []
-              }
-            ]
-          }
+                selectedSpecializations: [],
+              },
+            ],
+          },
         }
 
         const stateAfter = {
           creation: {
             availableSkillPoints: {
-              points: 1
-            }
+              points: 1,
+            },
           },
           skills: {
             individualSkills: [{
@@ -90,11 +90,11 @@ describe('Skills Reducer', function () {
               attribute: attributesTypes.AGILITY,
               canDefault: true,
               specializations: [
-                'bar'
+                'bar',
               ],
-              selectedSpecializations: []
-            }]
-          }
+              selectedSpecializations: [],
+            }],
+          },
         }
 
         const action = addSkillSpecialization(0, 0)
@@ -107,8 +107,8 @@ describe('Skills Reducer', function () {
         const initialState = {
           creation: {
             availableSkillPoints: {
-              points: 3
-            }
+              points: 3,
+            },
           },
           skills: {
             individualSkills: [
@@ -118,19 +118,19 @@ describe('Skills Reducer', function () {
                 attribute: attributesTypes.AGILITY,
                 canDefault: true,
                 specializations: [
-                  'bar'
+                  'bar',
                 ],
-                selectedSpecializations: []
-              }
-            ]
-          }
+                selectedSpecializations: [],
+              },
+            ],
+          },
         }
 
         const stateAfter = {
           creation: {
             availableSkillPoints: {
-              points: 3
-            }
+              points: 3,
+            },
           },
           skills: {
             individualSkills: [{
@@ -139,11 +139,11 @@ describe('Skills Reducer', function () {
               attribute: attributesTypes.AGILITY,
               canDefault: true,
               specializations: [
-                'bar'
+                'bar',
               ],
-              selectedSpecializations: []
-            }]
-          }
+              selectedSpecializations: [],
+            }],
+          },
         }
 
         const action = addSkillSpecialization(0, 0)
@@ -156,8 +156,8 @@ describe('Skills Reducer', function () {
         const initialState = {
           creation: {
             availableSkillPoints: {
-              points: 3
-            }
+              points: 3,
+            },
           },
           skills: {
             individualSkills: [
@@ -167,12 +167,12 @@ describe('Skills Reducer', function () {
                 attribute: attributesTypes.AGILITY,
                 canDefault: true,
                 specializations: [
-                  'bar'
+                  'bar',
                 ],
-                selectedSpecializations: ['bar']
-              }
-            ]
-          }
+                selectedSpecializations: ['bar'],
+              },
+            ],
+          },
         }
 
 
@@ -190,8 +190,8 @@ describe('Skills Reducer', function () {
         const initialState = {
           creation: {
             availableSkillPoints: {
-              points: 3
-            }
+              points: 3,
+            },
           },
           skills: {
             individualSkills: [{
@@ -200,18 +200,18 @@ describe('Skills Reducer', function () {
               attribute: attributesTypes.AGILITY,
               canDefault: true,
               specializations: [
-                'bar'
+                'bar',
               ],
-              selectedSpecializations: ['bar']
-            }]
-          }
+              selectedSpecializations: ['bar'],
+            }],
+          },
         }
 
         const stateAfter = {
           creation: {
             availableSkillPoints: {
-              points: 5
-            }
+              points: 5,
+            },
           },
           skills: {
             individualSkills: [
@@ -221,12 +221,12 @@ describe('Skills Reducer', function () {
                 attribute: attributesTypes.AGILITY,
                 canDefault: true,
                 specializations: [
-                  'bar'
+                  'bar',
                 ],
-                selectedSpecializations: []
-              }
-            ]
-          }
+                selectedSpecializations: [],
+              },
+            ],
+          },
         }
         const action = removeSkillSpecialization(0, 0)
 

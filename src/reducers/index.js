@@ -13,7 +13,7 @@ const shadowrunApp = combineReducers({
   equipmentList,
   adeptPowerList,
   visibility,
-  routing: routerReducer
+  routing: routerReducer,
 })
 
 export default shadowrunApp

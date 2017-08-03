@@ -11,7 +11,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: -3,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -23,7 +23,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: -1,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -35,7 +35,7 @@ export default [
     isMana: false,
     isPhysicalDamage: false,
     drain: -6,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -47,7 +47,7 @@ export default [
     isMana: false,
     isPhysicalDamage: false,
     drain: -3,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -59,7 +59,7 @@ export default [
     isMana: false,
     isPhysicalDamage: false,
     drain: 0,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -71,7 +71,7 @@ export default [
     isMana: true,
     isPhysicalDamage: true,
     drain: -6,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -83,7 +83,7 @@ export default [
     isMana: true,
     isPhysicalDamage: true,
     drain: -3,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -95,7 +95,7 @@ export default [
     isMana: true,
     isPhysicalDamage: true,
     drain: 0,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -107,7 +107,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: -3,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -119,7 +119,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: -1,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -131,7 +131,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: -3,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -143,7 +143,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: -1,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -155,7 +155,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: -6,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -167,7 +167,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: -3,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -179,7 +179,7 @@ export default [
     isMana: false,
     isPhysicalDamage: true,
     drain: 0,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -191,7 +191,7 @@ export default [
     isMana: true,
     isPhysicalDamage: false,
     drain: -6,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -203,7 +203,7 @@ export default [
     isMana: true,
     isPhysicalDamage: false,
     drain: -3,
-    duration: 'I'
+    duration: 'I',
   },
   {
     spellCategory: spellCategories.COMBAT,
@@ -215,7 +215,7 @@ export default [
     isMana: true,
     isPhysicalDamage: false,
     drain: 0,
-    duration: 'I'
+    duration: 'I',
   },
 
   {
@@ -229,7 +229,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -242,7 +242,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -255,7 +255,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -268,7 +268,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -281,7 +281,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -294,7 +294,7 @@ export default [
     isExtendedArea: false,
     isPsychic: true,
     duration: 'S',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -307,7 +307,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -320,7 +320,7 @@ export default [
     isExtendedArea: true,
     isPsychic: false,
     duration: 'S',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -333,7 +333,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -346,7 +346,7 @@ export default [
     isExtendedArea: true,
     isPsychic: false,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -359,7 +359,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -372,7 +372,7 @@ export default [
     isExtendedArea: true,
     isPsychic: false,
     duration: 'S',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -385,7 +385,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -398,7 +398,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -411,7 +411,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -424,7 +424,7 @@ export default [
     isExtendedArea: false,
     isPsychic: true,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.DETECTION,
@@ -437,7 +437,7 @@ export default [
     isExtendedArea: false,
     isPsychic: false,
     duration: 'S',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -447,7 +447,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'P',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -457,7 +457,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'P',
-    drain: -4
+    drain: -4,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -467,7 +467,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -477,7 +477,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'P',
-    drain: -6
+    drain: -6,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -487,7 +487,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'P',
-    drain: -4
+    drain: -4,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -497,7 +497,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -507,7 +507,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'S',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -517,7 +517,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'S',
-    drain: -5
+    drain: -5,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -527,7 +527,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'S',
-    drain: -4
+    drain: -4,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -537,7 +537,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'P',
-    drain: -6
+    drain: -6,
   },
   {
     spellCategory: spellCategories.HEALTH,
@@ -547,7 +547,7 @@ export default [
     isLOS: false,
     isArea: false,
     duration: 'P',
-    drain: -4
+    drain: -4,
   },
 
   {
@@ -559,7 +559,7 @@ export default [
     isArea: false,
     isMana: true,
     duration: 'S',
-    drain: -4
+    drain: -4,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -570,7 +570,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -581,7 +581,7 @@ export default [
     isArea: false,
     isMana: true,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -592,7 +592,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -603,7 +603,7 @@ export default [
     isArea: false,
     isMana: true,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -614,7 +614,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -625,7 +625,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -636,7 +636,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'S',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -647,7 +647,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: -3
+    drain: -3,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -658,7 +658,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -669,7 +669,7 @@ export default [
     isArea: false,
     isMana: true,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -680,7 +680,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -691,7 +691,7 @@ export default [
     isArea: false,
     isMana: true,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -702,7 +702,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -713,7 +713,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -724,7 +724,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'S',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -735,7 +735,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -746,7 +746,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.ILLUSION,
@@ -757,7 +757,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
 
   {
@@ -771,7 +771,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -784,7 +784,7 @@ export default [
     isArea: false,
     isMana: true,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -797,7 +797,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: 1
+    drain: 1,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -810,7 +810,7 @@ export default [
     isArea: false,
     isMana: true,
     duration: 'S',
-    drain: 1
+    drain: 1,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -823,7 +823,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: 1
+    drain: 1,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -836,7 +836,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'I',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -848,7 +848,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'I',
-    drain: 0
+    drain: 0,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -860,7 +860,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'P',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -872,7 +872,7 @@ export default [
     isArea: false,
     isMana: true,
     duration: 'P',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -884,7 +884,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -896,7 +896,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'S',
-    drain: -4
+    drain: -4,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -908,7 +908,7 @@ export default [
     isArea: false,
     isMana: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -920,7 +920,7 @@ export default [
     isArea: true,
     isMana: true,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -932,7 +932,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'S',
-    drain: -1
+    drain: -1,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -944,7 +944,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'S',
-    drain: -2
+    drain: -2,
   },
   {
     spellCategory: spellCategories.MANIPULATION,
@@ -956,7 +956,7 @@ export default [
     isArea: true,
     isMana: false,
     duration: 'S',
-    drain: -3
-  }
+    drain: -3,
+  },
 ]
 

@@ -7,7 +7,7 @@ class AppLayout extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
     }
   }
 
@@ -15,19 +15,19 @@ class AppLayout extends React.Component {
     event.preventDefault()
     this.setState({
       open: true,
-      menuAnchor: event.currentTarget
+      menuAnchor: event.currentTarget,
     })
   }
 
   handleCloseMenu = () => {
     this.setState({
-      open: false
+      open: false,
     })
   }
 
   handleMenuItemSelected = () => {
     this.setState({
-      open: false
+      open: false,
     })
   }
 
@@ -43,8 +43,8 @@ class AppLayout extends React.Component {
 }
 const styles = {
   paper: {
-    padding: 12
-  }
+    padding: 12,
+  },
 }
 AppLayout.propTypes = {
   children: PropTypes.any,

@@ -49,14 +49,14 @@ export const attributeSelector = createSelector([strengthSelector,
     charisma,
     intuition,
     logic,
-    essence
+    essence,
   }
 })
 // TODO: export const initiativeSelector = state => what goes here?
 const updateMod = (currentSheetItem, mod, item) => {
   return {
     value: currentSheetItem.value + mod.effect,
-    modifiedBy: currentSheetItem.modifiedBy.concat([item])
+    modifiedBy: currentSheetItem.modifiedBy.concat([item]),
   }
 }
 const updateCharacterSheet = (characterSheet, item) => {
@@ -91,7 +91,7 @@ export const characterSheetSelector = (state) => {
     logic: {value: state.character.attributes.logic.value, modifiedBy: []},
     essence: {value: state.character.attributes.essence.value, modifiedBy:[]},
     resources: {value: state.character.creation.availableResources, modifiedBy: []},
-    initiativeDice: {value: 1, modifiedBy: []}
+    initiativeDice: {value: 1, modifiedBy: []},
   }
   const itemsList = state.character.items.concat(state.character.ware)
   let computedCharacterSheet = itemsList
@@ -119,6 +119,6 @@ function computeAttribute(state, attributeType, modType) {
   return  {
     base,
     mods,
-    computed
+    computed,
   }
 }

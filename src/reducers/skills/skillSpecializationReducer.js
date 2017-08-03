@@ -60,8 +60,8 @@ function createNewSkillState(selectedSkill, newSelectedSpecializations, newSkill
     ...state,
     skills: {
       ...state.skills,
-      individualSkills: newIndividualSkills
-    }
+      individualSkills: newIndividualSkills,
+    },
   }
 
   return updateAvailableSkillPoints(newState, newSkillPoints)

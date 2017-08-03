@@ -24,12 +24,12 @@ const defaultState = {
   skills: {
     individualSkills: skillArray,
     skillGroups,
-    textFilter: ''
+    textFilter: '',
   },
   spells: [],
   items: [],
   ware: [],
-  adeptPowers: []
+  adeptPowers: [],
 }
 
 const skillActions = [
@@ -38,24 +38,24 @@ const skillActions = [
   skillActionTypes.REMOVE_SKILL_SPECIALIZATION,
   skillActionTypes.MODIFY_BONUS_SKILL,
   skillActionTypes.MODIFY_SKILL_GROUP,
-  skillActionTypes.FILTER_SKILL
+  skillActionTypes.FILTER_SKILL,
 ]
 
 const attributeActions = [
   creationOptionActionTypes.ADD_ATTRIBUTE,
-  creationOptionActionTypes.SUBTRACT_ATTRIBUTE
+  creationOptionActionTypes.SUBTRACT_ATTRIBUTE,
 ]
 
 const spellActions = [
   spellActionTypes.ADD_SPELL,
-  spellActionTypes.REMOVE_SPELL
+  spellActionTypes.REMOVE_SPELL,
 ]
 
 const adeptActions = [
   adeptPowerActionTypes.ADD_POWER,
   adeptPowerActionTypes.REMOVE_POWER,
   adeptPowerActionTypes.INCREASE_POWER,
-  adeptPowerActionTypes.DECREASE_POWER
+  adeptPowerActionTypes.DECREASE_POWER,
 ]
 
 const character = (state = defaultState, action) => {

@@ -29,7 +29,7 @@ export function savePriorities(metatypePriority, attributePriority, magicOrReson
       attributePriority,
       magicOrResonancePriority,
       resourcesPriority,
-      skillsPriority
+      skillsPriority,
     })
   } else {
     return createAction(priorityActions.ERROR_NOT_ALL_PRIORITIES_PRESENT)({
@@ -37,7 +37,7 @@ export function savePriorities(metatypePriority, attributePriority, magicOrReson
       attributePriority,
       magicOrResonancePriority,
       resourcesPriority,
-      skillsPriority
+      skillsPriority,
     })
   }
 }

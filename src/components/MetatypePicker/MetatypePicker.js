@@ -39,12 +39,12 @@ class MetatypePickerComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   let propList = {
-    availableMetatypes: []
+    availableMetatypes: [],
   }
   if(state.character.creation && state.character.creation.availableMetatypes) {
     propList = {
       availableMetatypes: state.character.creation.availableMetatypes,
-      hasMagic: state.character.creation.availableMagicOrResonanceClasses.length > 0
+      hasMagic: state.character.creation.availableMagicOrResonanceClasses.length > 0,
     }
   }
   return propList
@@ -53,7 +53,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    selectMetatype: metatypeActionCreators.selectMetatype
+    selectMetatype: metatypeActionCreators.selectMetatype,
   }, dispatch)
 }
 

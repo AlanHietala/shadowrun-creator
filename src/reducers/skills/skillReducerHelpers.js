@@ -6,9 +6,9 @@ const updateAvailableSkillPoints =  (state, newSkillPoints) => {
       ...state.creation,
       availableSkillPoints: {
         ...state.creation.availableSkillPoints,
-        points: newSkillPoints
-      }
-    }
+        points: newSkillPoints,
+      },
+    },
   }
 }
 
@@ -16,15 +16,15 @@ const updateSkill = (state, individualSkills, skillIndex, skillToModify, newValu
   individualSkills[skillIndex] = {
     ...skillToModify,
     points: newValue,
-    isBonus
+    isBonus,
   }
 
   return {
     ...state,
     skills: {
       ...state.skills,
-      individualSkills: [...individualSkills]
-    }
+      individualSkills: [...individualSkills],
+    },
   }
 }
 
@@ -35,15 +35,15 @@ const updateAvailableBonusSkillPoints = (state, newBonusSkillPoints) => {
       ...state.creation,
       bonusSkills: {
         ...state.creation.bonusSkills,
-        count: newBonusSkillPoints
-      }
-    }
+        count: newBonusSkillPoints,
+      },
+    },
   }
 }
 
 module.exports = {
   updateSkill,
   updateAvailableSkillPoints,
-  updateAvailableBonusSkillPoints
+  updateAvailableBonusSkillPoints,
 
 }

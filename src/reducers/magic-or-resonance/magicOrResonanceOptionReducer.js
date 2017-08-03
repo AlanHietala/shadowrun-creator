@@ -9,14 +9,14 @@ export default (state, action) => {
     ...state,
     attributes: {
       ...state.attributes,
-      ...getInitialAttributesForMagic(action.payload)
+      ...getInitialAttributesForMagic(action.payload),
     },
     magicType: action.payload.key,
     creation: {
       ...state.creation,
-      ...creation
+      ...creation,
 
-    }
+    },
   }
 }
 
@@ -29,8 +29,8 @@ const getInitialAttributesForMagic = (magicType) => {
         minValue: magicType.magic,
         value: magicType.magic,
         maxValue: 6,
-        isSpecialAttribute: true
-      }
+        isSpecialAttribute: true,
+      },
     }
   } else if(magicType.resonance) {
     magicAttribute = {
@@ -39,8 +39,8 @@ const getInitialAttributesForMagic = (magicType) => {
         minValue: magicType.resonance,
         value: magicType.resonance,
         maxValue: 6,
-        isSpecialAttribute: true
-      }
+        isSpecialAttribute: true,
+      },
     }
   }
 
