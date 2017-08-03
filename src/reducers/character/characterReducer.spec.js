@@ -2,7 +2,7 @@ import characterReducer from "./characterReducer"
 import * as priorityActions from "../../actions/priorityActions"
 import * as priorityValues from "../../constants/priorityValues"
 import statsForPriorities from "../../constants/statsForPriorities"
-import * as metatypeActions from "../../actions/MetatypeActions"
+import * as metatypeActions from "../../actions/metatypeActions"
 import deepFreeze from "deep-freeze"
 
 describe('Character Reducer', () => {
