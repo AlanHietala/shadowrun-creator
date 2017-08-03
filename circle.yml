@@ -41,5 +41,5 @@ jobs:
           name: 'Maybe Deploy'
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              surge --project ./build --domain shadowruncreator.surge.sh
+              yarn run deploy
             fi
