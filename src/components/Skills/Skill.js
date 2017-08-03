@@ -7,7 +7,7 @@ import MenuItem from 'material-ui/MenuItem'
 import FlatButton from 'material-ui/FlatButton'
 import PropTypes from  'prop-types'
 
-class Skill extends React.Component{
+class Skill extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

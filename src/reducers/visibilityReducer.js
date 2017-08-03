@@ -10,7 +10,7 @@ const defaultState = {
 const visibility = (state = defaultState, action) => {
   switch(action.type) {
   case priorityActionTypes.SAVE_PRIORITIES:
-    if(action.payload.magicOrResonancePriority === priorityValues.PRIORITY_E){
+    if(action.payload.magicOrResonancePriority === priorityValues.PRIORITY_E) {
       return {
         ...state,
         metatypeVisible: true,
