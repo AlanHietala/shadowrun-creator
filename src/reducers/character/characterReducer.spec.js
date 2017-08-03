@@ -4,7 +4,6 @@ import * as priorityValues from "../../constants/priorityValues"
 import statsForPriorities from "../../constants/statsForPriorities"
 import * as metatypeActions from "../../actions/MetatypeActions"
 import deepFreeze from "deep-freeze"
-import expect from "expect"
 
 describe('Character Reducer', () => {
   describe('SAVE_PRIORITIES Action', () => {
