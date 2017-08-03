@@ -70,21 +70,21 @@ class SkillPicker extends React.Component {
   }
   render() {
     const {
-     modifySkill,
-     modifySkillGroup,
-     skillPoints,
-     skillGroupPoints,
-     individualSkills,
-     skillGroups,
-     filterSkills,
-     textFilter,
-     bonusSkills,
-     modifyBonusSkill,
-     isMagicAllowed,
-     isResonanceAllowed,
-     addSpecialization,
-     removeSpecialization
-   } = this.props
+      modifySkill,
+      modifySkillGroup,
+      skillPoints,
+      skillGroupPoints,
+      individualSkills,
+      skillGroups,
+      filterSkills,
+      textFilter,
+      bonusSkills,
+      modifyBonusSkill,
+      isMagicAllowed,
+      isResonanceAllowed,
+      addSpecialization,
+      removeSpecialization
+    } = this.props
 
     const moreThanZeroPoints = (skills) => skills.points > 0
     const zeroPoints = (skills) => {
@@ -113,7 +113,7 @@ class SkillPicker extends React.Component {
         label="close"
         primary={true}
         onTouchTap={this.handleClose}
-     />]
+      />]
 
     const groupActions = [
       <FlatButton
@@ -121,57 +121,57 @@ class SkillPicker extends React.Component {
         label="close"
         primary={true}
         onTouchTap={this.handleGroupClose}
-     />]
-     
+      />]
+
     return (<div>
-     <div className="row">
-       <div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusPoints } at level { bonusRating }</div>
-     </div>
-     <div style={styles.container}>
-       <Paper style={styles.column}>
-         <h2>Skill Groups</h2>
-         <CharacterSkillGroups skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>
+      <div className="row">
+        <div className="col-md-10">Skill Points: { skillPoints } Skill Group Points: { skillGroupPoints } Bonus Points: { bonusPoints } at level { bonusRating }</div>
+      </div>
+      <div style={styles.container}>
+        <Paper style={styles.column}>
+          <h2>Skill Groups</h2>
+          <CharacterSkillGroups skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>
 
-         <Dialog actions={groupActions}
-           modal={false}
-           open={this.state.groupOpen}
-           autoScrollBodyContent={true}
-           onRequestClose={this.handleGroupClose}>
+          <Dialog actions={groupActions}
+            modal={false}
+            open={this.state.groupOpen}
+            autoScrollBodyContent={true}
+            onRequestClose={this.handleGroupClose}>
 
-           <h2>Bonus Skills</h2>
-           <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
-           <h2>Skill List</h2>
-           <input type="text" onChange={ filterSkills } />
-           <AllGroupSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup }/>
-         </Dialog>
-         <FloatingActionButton style={style} onTouchTap={this.handleGroupOpen}>
-           <ContentAdd />
-         </FloatingActionButton>
-       </Paper>
-       <Paper style={styles.column}>
-         <div className="col-md-4">
-           <h2>Skills</h2>
-           <CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>
-         </div>
-         <Dialog actions={actions}
-           modal={false}
-           open={this.state.skillOpen}
-           autoScrollBodyContent={true}
-           onRequestClose={this.handleClose}>
+            <h2>Bonus Skills</h2>
+            <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
+            <h2>Skill List</h2>
+            <input type="text" onChange={ filterSkills } />
+            <AllGroupSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup }/>
+          </Dialog>
+          <FloatingActionButton style={style} onTouchTap={this.handleGroupOpen}>
+            <ContentAdd />
+          </FloatingActionButton>
+        </Paper>
+        <Paper style={styles.column}>
+          <div className="col-md-4">
+            <h2>Skills</h2>
+            <CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>
+          </div>
+          <Dialog actions={actions}
+            modal={false}
+            open={this.state.skillOpen}
+            autoScrollBodyContent={true}
+            onRequestClose={this.handleClose}>
 
-           <h2>Bonus Skills</h2>
-           <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
-           <h2>Skill List</h2>
-           <input type="text" onChange={ filterSkills } />
-           <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup }/>
-         </Dialog>
+            <h2>Bonus Skills</h2>
+            <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
+            <h2>Skill List</h2>
+            <input type="text" onChange={ filterSkills } />
+            <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup }/>
+          </Dialog>
 
-         <FloatingActionButton style={styles.button} onTouchTap={this.handleOpen}>
-           <ContentAdd />
-         </FloatingActionButton>
-       </Paper>
-     </div>
-   </div>)
+          <FloatingActionButton style={styles.button} onTouchTap={this.handleOpen}>
+            <ContentAdd />
+          </FloatingActionButton>
+        </Paper>
+      </div>
+    </div>)
   }
 }
 
@@ -225,7 +225,7 @@ SkillPicker.propTypes = {
   individualSkills: PropTypes.array,
   skillGroups: PropTypes.array,
   filterSkills: PropTypes.func,
-  textFilter: PropTypes.func,
+  textFilter: PropTypes.string,
   bonusSkills: PropTypes.object,
   modifyBonusSkill: PropTypes.func,
   isMagicAllowed: PropTypes.bool,

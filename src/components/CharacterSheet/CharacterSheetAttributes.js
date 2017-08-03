@@ -26,7 +26,8 @@ const CharacterSheetAttributes = ({attributes}) => {
     logic,
     essence,
     initiative,
-    initiativeDice
+    initiativeDice,
+    resources
   } = attributes
   return (
     <div style={styles.attributeList}>
@@ -41,6 +42,7 @@ const CharacterSheetAttributes = ({attributes}) => {
       <AttributeItem title="Magic" value={magic.value} />
       <AttributeItem title="Ess" value={essence.value} />
       <AttributeItem title="Init" value={`${initiative.value} + ${initiativeDice.value}d6`} />
+      <AttributeItem title="Res" value={resources.value} />
     </div>
   )
 }

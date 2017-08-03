@@ -21,13 +21,13 @@ export class CharacterSheet extends React.Component {
     let magicSection = null
     if (magicType === magicTypes.ADEPT) {
       magicSection = ( <Tab label="Powers">
-       <AdeptPowers />
-     </Tab>)
+        <AdeptPowers />
+      </Tab>)
     } else if (magicType === magicTypes.MAGICIAN ||
     magicType === magicTypes.ASPECTED_MAGICIAN) {
       magicSection = ( <Tab label="Spells">
-       <Spells/>
-     </Tab>)
+        <Spells/>
+      </Tab>)
     }
     return magicSection
   }
@@ -36,27 +36,27 @@ export class CharacterSheet extends React.Component {
     const {characterSheet} = this.props
     const magicSection = this.getMagicSection(characterSheet.magicType)
     return (
-     <div>
-       <CharacterSheetAttributes attributes={characterSheet} />
-       <Tabs>
-         <Tab label="Attr">
-           <Attributes />
-         </Tab>
-         <Tab label="Qual">
-           <Qualities />
-         </Tab>
-         <Tab label="Equip">
-           <Equipment />
-         </Tab>
-         { magicSection }
-         <Tab label="Ware">
-           <Ware />
-         </Tab>
-         <Tab label="Skills">
-           <Skills />
-         </Tab>
-       </Tabs>
-     </div>)
+      <div>
+        <CharacterSheetAttributes attributes={characterSheet} />
+        <Tabs>
+          <Tab label="Attr">
+            <Attributes />
+          </Tab>
+          <Tab label="Qual">
+            <Qualities />
+          </Tab>
+          <Tab label="Equip">
+            <Equipment />
+          </Tab>
+          { magicSection }
+          <Tab label="Ware">
+            <Ware />
+          </Tab>
+          <Tab label="Skills">
+            <Skills />
+          </Tab>
+        </Tabs>
+      </div>)
   }
 }
 

@@ -13,7 +13,7 @@ export default [
       },
       {
         modType: modTypes.RESOURCES_MOD,
-        effect: 18000
+        effect: -18000
       }
     ]
   },
@@ -30,7 +30,7 @@ export default [
       },
       {
         modType: modTypes.RESOURCES_MOD,
-        effect: 18000
+        effect: -18000
       }
     ]
   }

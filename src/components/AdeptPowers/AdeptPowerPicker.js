@@ -16,15 +16,15 @@ class AdeptPowerPicker extends React.Component {
     const {adeptPowerList, handleAddPower, handleRemovePower, characterAdeptPowers} = this.props
 
     return (<Paper>
-              <h2>Adept Powers</h2>
-              <CharacterSheetSection sectionTitle={'adept Powers'}
-                characterSheetItems={characterAdeptPowers}
-                allItems={adeptPowerList}
-                handleAddItem={handleAddPower}
-                handleRemoveItem={handleRemovePower}
-                ItemComponent={AdeptPowerItem}
-                />
-            </Paper>)
+      <h2>Adept Powers</h2>
+      <CharacterSheetSection sectionTitle={'adept Powers'}
+        characterSheetItems={characterAdeptPowers}
+        allItems={adeptPowerList}
+        handleAddItem={handleAddPower}
+        handleRemoveItem={handleRemovePower}
+        ItemComponent={AdeptPowerItem}
+      />
+    </Paper>)
   }
 }
 

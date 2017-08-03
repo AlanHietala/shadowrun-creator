@@ -1,17 +1,34 @@
+import * as modTypes from './modTypes'
+
 export default [
   {
+    key: 'aresPredatorV',
     name: 'Ares Predator V',
-    cost: 750,
-    mods: [],
+    mods: [
+      {
+        modType: modTypes.RESOURCES_MOD,
+        effect: -725
+      }
+    ],
   },
   {
+    key: 'streetLineSpecial',
     name: 'Streetline Special',
-    cost: 500,
-    mods: [],
+    mods: [
+      {
+        modType: modTypes.RESOURCES_MOD,
+        effect: -125
+      }
+    ],
   },
   {
-    name: 'Slap patch',
-    cost: 20,
-    mods: [],
+    key: 'traumaPatch',
+    name: 'Trauma Patch',
+    mods: [
+      {
+        modType: modTypes.RESOURCES_MOD,
+        effect: -500
+      }
+    ],
   }
 ]

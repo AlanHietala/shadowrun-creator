@@ -4,7 +4,6 @@ import Paper from 'material-ui/Paper'
 import { addWare, removeWare } from '../../actions/itemActions'
 import wareList from '../../constants/ware'
 import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors'
-import {essenceSelector, resourcesSelector} from '../../selectors/characterSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
 import WareItem from './WareItem'
 import PropTypes from 'prop-types'
@@ -15,19 +14,18 @@ class WarePicker extends React.Component {
   }
 
   render() {
-    const {resources, essence, characterWare, handleAddWare, handleRemoveWare} = this.props
+    const {characterWare, handleAddWare, handleRemoveWare} = this.props
     return (<Paper>
-<h2>Ware</h2>
-<span>essence: {essence.computed} resources: {resources}</span>
-<CharacterSheetSection
-sectionTitle={'ware'}
-characterSheetItems={characterWare}
-allItems={wareList}
-handleAddItem={handleAddWare}
-handleRemoveItem={handleRemoveWare}
-ItemComponent={WareItem}
-/>
-</Paper>)
+      <h2>Ware</h2>
+      <CharacterSheetSection
+        sectionTitle={'ware'}
+        characterSheetItems={characterWare}
+        allItems={wareList}
+        handleAddItem={handleAddWare}
+        handleRemoveItem={handleRemoveWare}
+        ItemComponent={WareItem}
+      />
+    </Paper>)
   }
 
 }
@@ -35,8 +33,6 @@ ItemComponent={WareItem}
 const mapStateToProps = (state) => {
   return {
     characterWare: characterWareSelector(state),
-    essence: essenceSelector(state),
-    resources: resourcesSelector(state),
     wareList: wareListSelector(state)
   }
 }
@@ -55,8 +51,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 WarePicker.propTypes = {
-  resources: PropTypes.number,
-  essence: PropTypes.number,
   characterWare: PropTypes.array,
   handleAddWare: PropTypes.func,
   handleRemoveWare: PropTypes.func,

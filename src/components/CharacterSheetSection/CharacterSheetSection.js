@@ -33,25 +33,25 @@ class CharacterSheetSection extends React.Component {
 
     const actions = [
       <FlatButton
-       key="close"
-       label="close"
-       primary={true}
-       onTouchTap={this.handleClose}
-     />]
+        key="close"
+        label="close"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />]
 
     return (<div>
-     <CharacterItems ItemComponent={ItemComponent} characterItems={characterSheetItems} handleRemoveItem={handleRemoveItem}/>
-     <Dialog actions={actions}
-       modal={false}
-       open={this.state.open}
-       autoScrollBodyContent={true}
-       onRequestClose={this.handleClose}>
-       <AllItemsList title={sectionTitle} allItems={allItems} handleAddItem={handleAddItem} ItemComponent={ItemComponent}/>
-     </Dialog>
-     <FloatingActionButton onTouchTap={this.handleOpen}>
-       <ContentAdd />
-     </FloatingActionButton>
-   </div>)
+      <CharacterItems ItemComponent={ItemComponent} characterItems={characterSheetItems} handleRemoveItem={handleRemoveItem}/>
+      <Dialog actions={actions}
+        modal={false}
+        open={this.state.open}
+        autoScrollBodyContent={true}
+        onRequestClose={this.handleClose}>
+        <AllItemsList title={sectionTitle} allItems={allItems} handleAddItem={handleAddItem} ItemComponent={ItemComponent}/>
+      </Dialog>
+      <FloatingActionButton onTouchTap={this.handleOpen}>
+        <ContentAdd />
+      </FloatingActionButton>
+    </div>)
   }
 }
 
@@ -61,7 +61,7 @@ CharacterSheetSection.propTypes = {
   allItems: PropTypes.array,
   handleAddItem: PropTypes.func,
   handleRemoveItem: PropTypes.func,
-  ItemComponent: PropTypes.element,
+  ItemComponent: PropTypes.func,
 }
 
 export default CharacterSheetSection

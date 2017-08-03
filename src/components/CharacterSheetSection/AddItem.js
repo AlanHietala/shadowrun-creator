@@ -4,13 +4,13 @@ import ContentAdd from 'material-ui/svg-icons/content/add'
 import PropTypes from 'prop-types'
 
 const AddItem = ({ItemComponent, item, handleAddItem}) => (<ListItem
-    rightIcon={<ContentAdd />}
-    onTouchTap={ () => handleAddItem(item) }>
-    <ItemComponent item={item} />
-  </ListItem>)
+  rightIcon={<ContentAdd />}
+  onTouchTap={ () => handleAddItem(item) }>
+  <ItemComponent item={item} />
+</ListItem>)
 
 AddItem.propTypes = {
-  ItemComponent: PropTypes.element,
+  ItemComponent: PropTypes.func,
   item: PropTypes.object,
   handleAddItem: PropTypes.func,
 }

@@ -15,5 +15,7 @@ AllItemsList.propTypes = {
   title: PropTypes.string,
   allItems: PropTypes.array,
   handleAddItem: PropTypes.func,
-  ItemComponent: PropTypes.element,
+  ItemComponent: PropTypes.func,
 }
+
+export default AllItemsList

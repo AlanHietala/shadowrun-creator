@@ -13,16 +13,16 @@ class EquipmentPicker extends React.Component {
   render() {
     const { characterEquipment, handleAddEquipment, handleRemoveEquipment} = this.props
     return(<Paper>
-        <h2>Equipment</h2>
-        <CharacterSheetSection
-          sectionTitle={'Equipment'}
-          characterSheetItems={characterEquipment}
-          allItems={equipmentList}
-          handleAddItem={handleAddEquipment}
-          handleRemoveItem={handleRemoveEquipment}
-          ItemComponent={EquipmentItem}
-        />
-      </Paper>)
+      <h2>Equipment</h2>
+      <CharacterSheetSection
+        sectionTitle={'Equipment'}
+        characterSheetItems={characterEquipment}
+        allItems={equipmentList}
+        handleAddItem={handleAddEquipment}
+        handleRemoveItem={handleRemoveEquipment}
+        ItemComponent={EquipmentItem}
+      />
+    </Paper>)
   }
 
 }

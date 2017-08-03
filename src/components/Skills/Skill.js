@@ -32,57 +32,57 @@ class Skill extends React.Component{
 
     const specializations = skill.specializations.map((specialization, index) => {
       return (<MenuItem primaryText={specialization} key={specialization}
-								onTouchTap={() => {
-  addSpecializationFn(index)
-  this.handleRequestClose()
-}}>
-							</MenuItem> )
+        onTouchTap={() => {
+          addSpecializationFn(index)
+          this.handleRequestClose()
+        }}>
+      </MenuItem> )
     })
 
     const selectedSpecializations = skill.selectedSpecializations.map((specialization, index) => {
 
       return (<Chip
-								key={specialization}
-								onRequestDelete={() => removeSpecializationFn(index)}
-								style={styles.chip}>
-								{specialization}
-						</Chip>)
+        key={specialization}
+        onRequestDelete={() => removeSpecializationFn(index)}
+        style={styles.chip}>
+        {specialization}
+      </Chip>)
     })
 
     return (
-<ListItem style={styles.wrap}>
+      <ListItem style={styles.wrap}>
 
-<span>{ skill.points } - { skill.name }</span>
-<FlatButton style={styles.plusMinusButton} label="-" onTouchTap={(event) => {
-  event.preventDefault()
-  modifyFn(skill, -1)
-}}/>
-<FlatButton style={styles.plusMinusButton} label="+" onTouchTap={(event) => {
-  event.preventDefault()
-  modifyFn(skill, 1)
-}}/>
+        <span>{ skill.points } - { skill.name }</span>
+        <FlatButton style={styles.plusMinusButton} label="-" onTouchTap={(event) => {
+          event.preventDefault()
+          modifyFn(skill, -1)
+        }}/>
+        <FlatButton style={styles.plusMinusButton} label="+" onTouchTap={(event) => {
+          event.preventDefault()
+          modifyFn(skill, 1)
+        }}/>
 
-<FlatButton
-onTouchTap={(event) => {
-  event.preventDefault()
-  this.handleTouchTap(event)
-}}
-label="+Specs"
-/>
+        <FlatButton
+          onTouchTap={(event) => {
+            event.preventDefault()
+            this.handleTouchTap(event)
+          }}
+          label="+Specs"
+        />
 
-<div style={styles.outerWrap}><div style={styles.wrap}>{selectedSpecializations}</div></div>
-<Popover
-open={this.state.open}
-anchorEl={this.state.anchorEl}
-anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-targetOrigin={{horizontal: 'left', vertical: 'top'}}
-onRequestClose={this.handleRequestClose}
->
-<Menu>
-{specializations}
-</Menu>
-</Popover>
-</ListItem>
+        <div style={styles.outerWrap}><div style={styles.wrap}>{selectedSpecializations}</div></div>
+        <Popover
+          open={this.state.open}
+          anchorEl={this.state.anchorEl}
+          anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+          targetOrigin={{horizontal: 'left', vertical: 'top'}}
+          onRequestClose={this.handleRequestClose}
+        >
+          <Menu>
+            {specializations}
+          </Menu>
+        </Popover>
+      </ListItem>
     )
   }
 }

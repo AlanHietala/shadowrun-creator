@@ -2,16 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as metatypeActionCreators from '../../actions/metatypeActions'
-import { browserHistory } from 'react-router'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 
 class MetatypePickerComponent extends React.Component {
 
   render() {
-    const {selectMetatype, availableMetatypes} = this.props
+    const {hasMagic, selectMetatype, availableMetatypes} = this.props
+    const nextLink = hasMagic ? '/creation/magic' : '/sheet'
     const metatypes = availableMetatypes
       .map((metatype) => {
         return (<RadioButton
@@ -30,13 +31,8 @@ class MetatypePickerComponent extends React.Component {
       <RaisedButton
         label="Save"
         primary={true}
-        onClick={() => {
-          if(this.props.hasMagic) {
-            browserHistory.push('/creation/magic')
-          } else {
-            browserHistory.push('/sheet')
-          }
-        }} />
+        containerElement={<Link to={nextLink} />}
+      />
     </div>)
   }
 }
@@ -62,9 +58,9 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 MetatypePickerComponent.propTypes = {
-  selectMetatype: PropTypes.array,
+  selectMetatype: PropTypes.func,
   availableMetatypes: PropTypes.array,
   hasMagic: PropTypes.bool,
-
+  history: PropTypes.object,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(MetatypePickerComponent)

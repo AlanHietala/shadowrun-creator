@@ -2,7 +2,7 @@ import React from 'react'
 
 const CreationSummary = () => (<div>
 			summary of creation
-  </div>)
+</div>)
 
 
 export default CreationSummary

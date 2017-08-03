@@ -14,7 +14,7 @@ const CharacterItem = ({ItemComponent, item, handleRemoveItem}) => {
 }
 
 CharacterItem.propTypes = {
-  ItemComponent: PropTypes.element,
+  ItemComponent: PropTypes.func,
   item: PropTypes.object,
   handleRemoveItem: PropTypes.func
 }

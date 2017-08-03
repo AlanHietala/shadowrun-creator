@@ -22,7 +22,7 @@ class SpellsPicker extends React.Component {
         handleRemoveItem={removeSpell}
         ItemComponent={SpellItem}
       />
-      </Paper>)
+    </Paper>)
   }
 }
 

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import {selectMagicType} from '../../actions/magicTypeActions'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton'
-import { browserHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 class MagicTypesComponent extends React.Component {
@@ -14,7 +14,7 @@ class MagicTypesComponent extends React.Component {
     if(magicClasses) {
       const magicTypeComponents = magicClasses
         .map((magicType) => {
-          return (<RadioButton key={magicType} value={magicType} label={magicType.name} />)
+          return (<RadioButton key={magicType.name} value={magicType} label={magicType.name} />)
 
         })
       return (
@@ -30,9 +30,8 @@ class MagicTypesComponent extends React.Component {
           <RaisedButton
             label="Save"
             primary={true}
-            onClick={() => {
-              browserHistory.push('/sheet')
-            }} />
+            containerElement={<Link to={'/sheet'} />}
+          />
         </div>)
     } else {
       return (<div>{'Can\'t select magic yet'}</div>)
@@ -59,5 +58,6 @@ const mapDispatchToProps = (dispatch) => {
 MagicTypesComponent.propTypes = {
   selectMagicType: PropTypes.func,
   magicClasses: PropTypes.array,
+  history: PropTypes.object,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(MagicTypesComponent)
