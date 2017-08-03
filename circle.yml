@@ -42,6 +42,3 @@ jobs:
       if [ "${CIRCLE_BRANCH}" == "master" ]; then
         surge --project ./build --domain shadowruncreator.surge.sh
       fi
-
-
-        surge --project ./path/to/your-project --domain your-project.surge.sh
