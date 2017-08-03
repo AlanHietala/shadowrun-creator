@@ -1,4 +1,5 @@
 import * as modTypes from './modTypes'
+
 export default [
   {
     name: 'Reaction Enhancer 1',

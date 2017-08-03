@@ -1,4 +1,5 @@
 import * as spellCategories from './spellCategories'
+
 export default [
 
   {

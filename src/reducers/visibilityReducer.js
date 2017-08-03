@@ -1,6 +1,7 @@
 import * as priorityActionTypes from "../constants/priorityActionTypes"
 import * as creationOptionActionTypes from '../constants/creationOptionActionTypes'
 import * as priorityValues from '../constants/priorityValues'
+
 const defaultState = {
   priorityVisible: true,
   metatypeVisible: false,

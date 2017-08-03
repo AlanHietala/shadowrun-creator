@@ -1,4 +1,5 @@
 import { skillMap } from "./skills"
+
 export default [
   {
     name: 'Acting',

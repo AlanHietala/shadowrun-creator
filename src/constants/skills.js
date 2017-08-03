@@ -1,4 +1,5 @@
 import * as attributeTypes from './attributeTypes'
+
 export const skillArray = [
   {
     name: 'Archery',

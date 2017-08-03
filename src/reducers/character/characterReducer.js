@@ -17,6 +17,7 @@ import items from '../items'
 import ware from '../ware'
 import * as adeptPowerActionTypes from '../../constants/adeptPowerActionTypes'
 import adeptPowers from '../adept-powers'
+
 const defaultState = {
   qualities: [],
   karma: 25,

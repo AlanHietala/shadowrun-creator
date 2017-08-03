@@ -1,5 +1,6 @@
 import adeptPowersReducer from './adeptPowersReducer'
 import { addPower, removePower, increasePower, decreasePower } from '../../actions/powerActions'
+
 describe('AdeptPower Reducer', function () {
   describe('Add Power', function () {
     it('should add a power', () => {

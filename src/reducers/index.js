@@ -6,6 +6,7 @@ import { wareList } from './ware'
 import equipmentList from './equipment-list'
 import { adeptPowerList } from './adept-powers'
 import { routerReducer } from 'react-router-redux'
+
 const shadowrunApp = combineReducers({
   priority,
   character,
