@@ -28,6 +28,9 @@ const CharacterSheetAttributes = ({attributes}) => {
     initiative,
     initiativeDice,
     resources,
+    physicalLimit,
+    mentalLimit,
+    socialLimit,
   } = attributes
   return (
     <div style={styles.attributeList}>
@@ -43,6 +46,9 @@ const CharacterSheetAttributes = ({attributes}) => {
       <AttributeItem title="Ess" value={essence.value} />
       <AttributeItem title="Init" value={`${initiative.value} + ${initiativeDice.value}d6`} />
       <AttributeItem title="Res" value={resources.value} />
+      <AttributeItem title="P lim" value={physicalLimit} />
+      <AttributeItem title="M lim" value={mentalLimit} />
+      <AttributeItem title="S lim" value={socialLimit} />
     </div>
   )
 }

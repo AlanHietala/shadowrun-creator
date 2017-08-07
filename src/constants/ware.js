@@ -3,6 +3,7 @@ import * as modTypes from './modTypes'
 export default [
   {
     name: 'Reaction Enhancer 1',
+    tags: [],
     mods: [
       {
         modType: modTypes.REACTION_MOD,
@@ -20,6 +21,7 @@ export default [
   },
   {
     name: 'Muscle Toner 1',
+    tags: [],
     mods: [
       {
         modType: modTypes.STRENGTH_MOD,
