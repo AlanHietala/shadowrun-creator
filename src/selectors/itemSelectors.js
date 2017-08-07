@@ -5,6 +5,10 @@ export const characterItemsSelector = (state) => {
   return state.character.items
 }
 
+export const characterWeaponsSelector = (state) => {
+  return state.character.weapons
+}
+
 export const characterWareSelector = (state) => {
   return state.character.ware
 }
