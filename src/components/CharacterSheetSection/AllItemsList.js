@@ -21,8 +21,11 @@ class AllItemsList extends React.Component {
 
   render() {
     const {title, allItems, handleAddItem, ItemComponent} = this.props
-    const filteredItems = allItems.filter(item => this.state.filterString === ''
-      || item.name.toLowerCase().indexOf(this.state.filterString) > -1)
+    const filteredItems = allItems.filter(item => {
+      const itemNameAndTags = [item.name.toLowerCase(), ...item.tags].join(' ')
+      return this.state.filterString === ''
+      || itemNameAndTags.indexOf(this.state.filterString) > -1
+    })
     const itemList = filteredItems
       .map((item, index) => (<AddItem key={index}
         item={item}

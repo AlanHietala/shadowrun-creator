@@ -7,6 +7,7 @@ export default [
     isElemental: true,
     isDirect: false,
     name: 'Acid Stream',
+    tags: [],
     isLOS: true,
     isArea: false,
     isMana: false,
@@ -19,6 +20,7 @@ export default [
     isElemental: true,
     isDirect: false,
     name: 'Toxic Wave',
+    tags: [],
     isLOS: true,
     isArea: true,
     isMana: false,
@@ -31,6 +33,7 @@ export default [
     isElemental: false,
     isDirect: false,
     name: 'Punch',
+    tags: [],
     isLOS: false,
     isArea: false,
     isMana: false,
@@ -43,6 +46,7 @@ export default [
     isElemental: false,
     isDirect: false,
     name: 'Clout',
+    tags: [],
     isLOS: true,
     isArea: false,
     isMana: false,
@@ -55,6 +59,7 @@ export default [
     isElemental: false,
     isDirect: false,
     name: 'Blast',
+    tags: [],
     isLOS: true,
     isArea: true,
     isMana: false,
@@ -67,6 +72,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'DeathTouch',
+    tags: [],
     isLOS: false,
     isArea: false,
     isMana: true,
@@ -79,6 +85,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'Manabolt',
+    tags: [],
     isLOS: true,
     isArea: false,
     isMana: true,
@@ -91,6 +98,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'Manaball',
+    tags: [],
     isLOS: true,
     isArea: true,
     isMana: true,
@@ -103,6 +111,7 @@ export default [
     isElemental: true,
     isDirect: false,
     name: 'Flamethrower',
+    tags: [],
     isLOS: true,
     isArea: false,
     isMana: false,
@@ -115,6 +124,7 @@ export default [
     isElemental: true,
     isDirect: false,
     name: 'Fireball',
+    tags: [],
     isLOS: true,
     isArea: true,
     isMana: false,
@@ -127,6 +137,7 @@ export default [
     isElemental: true,
     isDirect: false,
     name: 'Lightning Bolt',
+    tags: [],
     isLOS: true,
     isArea: false,
     isMana: false,
@@ -139,6 +150,7 @@ export default [
     isElemental: true,
     isDirect: false,
     name: 'Ball Lightning',
+    tags: [],
     isLOS: true,
     isArea: true,
     isMana: false,
@@ -151,6 +163,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'Shatter',
+    tags: [],
     isLOS: false,
     isArea: false,
     isMana: false,
@@ -163,6 +176,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'Powerbolt',
+    tags: [],
     isLOS: true,
     isArea: false,
     isMana: false,
@@ -175,6 +189,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'Powerball',
+    tags: [],
     isLOS: true,
     isArea: true,
     isMana: false,
@@ -187,6 +202,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'Knockout',
+    tags: [],
     isLOS: false,
     isArea: false,
     isMana: true,
@@ -199,6 +215,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'Stunbolt',
+    tags: [],
     isLOS: true,
     isArea: false,
     isMana: true,
@@ -211,6 +228,7 @@ export default [
     isElemental: false,
     isDirect: true,
     name: 'Stunball',
+    tags: [],
     isLOS: true,
     isArea: true,
     isMana: true,
@@ -222,6 +240,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Analyze Device',
+    tags: [],
     isActive: true,
     isDirectional: true,
     isMana: false,
@@ -235,6 +254,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Analyze Magic',
+    tags: [],
     isActive: true,
     isDirectional: true,
     isMana: false,
@@ -248,6 +268,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Analyze Truth',
+    tags: [],
     isActive: true,
     isDirectional: true,
     isMana: true,
@@ -261,6 +282,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Clairaudience',
+    tags: [],
     isActive: false,
     isDirectional: true,
     isMana: true,
@@ -274,6 +296,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Clairvoyance',
+    tags: [],
     isActive: false,
     isDirectional: true,
     isMana: true,
@@ -287,6 +310,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Combat Sense',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -300,6 +324,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect Enemies',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -313,6 +338,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect Enemies, Extended',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -326,6 +352,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect Individual',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -339,6 +366,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect Life',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -352,6 +380,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect [Life Form]',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -365,6 +394,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect [Life Form], Extended',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -378,6 +408,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect Magic',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -391,6 +422,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect Magic, Extended',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -404,6 +436,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Detect [Object]',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: false,
@@ -417,6 +450,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Mindlink',
+    tags: [],
     isActive: true,
     isDirectional: false,
     isMana: true,
@@ -430,6 +464,7 @@ export default [
   {
     spellCategory: spellCategories.DETECTION,
     name: 'Mind Probe',
+    tags: [],
     isActive: true,
     isDirectional: true,
     isMana: true,
@@ -443,6 +478,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Antidote',
+    tags: [],
     isEssence: false,
     isMana: true,
     isLOS: false,
@@ -453,6 +489,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Cure Disease',
+    tags: [],
     isEssence: true,
     isMana: true,
     isLOS: false,
@@ -463,6 +500,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Decrease [Attribute]',
+    tags: [],
     isEssence: true,
     isMana: false,
     isLOS: false,
@@ -473,6 +511,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Detox',
+    tags: [],
     isEssence: false,
     isMana: true,
     isLOS: false,
@@ -483,6 +522,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Heal',
+    tags: [],
     isEssence: true,
     isMana: true,
     isLOS: false,
@@ -493,6 +533,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Increase [Attribute]',
+    tags: [],
     isEssence: true,
     isMana: false,
     isLOS: false,
@@ -503,6 +544,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Increase Reflexes',
+    tags: [],
     isEssence: true,
     isMana: false,
     isLOS: false,
@@ -513,6 +555,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Oxygenate',
+    tags: [],
     isEssence: false,
     isMana: false,
     isLOS: false,
@@ -523,6 +566,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Prophylaxis',
+    tags: [],
     isEssence: false,
     isMana: true,
     isLOS: false,
@@ -533,6 +577,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Resist Pain',
+    tags: [],
     isEssence: false,
     isMana: true,
     isLOS: false,
@@ -543,6 +588,7 @@ export default [
   {
     spellCategory: spellCategories.HEALTH,
     name: 'Stabilize',
+    tags: [],
     isEssence: false,
     isMana: true,
     isLOS: false,
@@ -554,6 +600,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Agony',
+    tags: [],
     isRealistic: true,
     isMultisense: false,
     isLOS: true,
@@ -565,6 +612,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Mass Agony',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -576,6 +624,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Bugs',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -587,6 +636,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Swarm',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -598,6 +648,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Confusion',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -609,6 +660,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Mass Confusion',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -620,6 +672,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Chaos',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -631,6 +684,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Chaotic World',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -642,6 +696,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Entertainment',
+    tags: [],
     isRealistic: false,
     isMultisense: true,
     isLOS: true,
@@ -653,6 +708,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Trid Entertainment',
+    tags: [],
     isRealistic: false,
     isMultisense: true,
     isLOS: true,
@@ -664,6 +720,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Invisibility',
+    tags: [],
     isRealistic: true,
     isMultisense: false,
     isLOS: true,
@@ -675,6 +732,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Improved Invisibility',
+    tags: [],
     isRealistic: true,
     isMultisense: false,
     isLOS: true,
@@ -686,6 +744,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Mask',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: false,
@@ -697,6 +756,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Physical Mask',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: false,
@@ -708,6 +768,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Phantasm',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -719,6 +780,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Trid Phantasm',
+    tags: [],
     isRealistic: true,
     isMultisense: true,
     isLOS: true,
@@ -730,6 +792,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Hush',
+    tags: [],
     isRealistic: true,
     isMultisense: false,
     isLOS: true,
@@ -741,6 +804,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Silence',
+    tags: [],
     isRealistic: true,
     isMultisense: false,
     isLOS: true,
@@ -752,6 +816,7 @@ export default [
   {
     spellCategory: spellCategories.ILLUSION,
     name: 'Stealth',
+    tags: [],
     isRealistic: true,
     isMultisense: false,
     isLOS: true,
@@ -764,6 +829,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Armor',
+    tags: [],
     isPhysical: true,
     isMental: false,
     isEnvironmental: false,
@@ -777,6 +843,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Control Actions',
+    tags: [],
     isPhysical: false,
     isMental: true,
     isEnvironmental: false,
@@ -790,6 +857,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Mob Control',
+    tags: [],
     isPhysical: false,
     isMental: true,
     isEnvironmental: false,
@@ -803,6 +871,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Control Thoughts',
+    tags: [],
     isPhysical: false,
     isMental: true,
     isEnvironmental: false,
@@ -816,6 +885,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Mob Mind',
+    tags: [],
     isPhysical: false,
     isMental: true,
     isEnvironmental: false,
@@ -829,6 +899,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'fling',
+    tags: [],
     isPhysical: true,
     isMental: false,
     isEnvironmental: false,
@@ -842,6 +913,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Ice Sheet',
+    tags: [],
     isPhysical: false,
     isMental: false,
     isEnvironmental: true,
@@ -854,6 +926,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Ignite',
+    tags: [],
     isPhysical: true,
     isMental: false,
     isEnvironmental: false,
@@ -866,6 +939,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Influence',
+    tags: [],
     isPhysical: false,
     isMental: true,
     isEnvironmental: false,
@@ -878,6 +952,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Levitate',
+    tags: [],
     isPhysical: true,
     isMental: false,
     isEnvironmental: false,
@@ -890,6 +965,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Light',
+    tags: [],
     isPhysical: false,
     isMental: false,
     isEnvironmental: true,
@@ -902,6 +978,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Magic Fingers',
+    tags: [],
     isPhysical: true,
     isMental: false,
     isEnvironmental: false,
@@ -914,6 +991,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Mana Barrier',
+    tags: [],
     isPhysical: false,
     isMental: false,
     isEnvironmental: true,
@@ -926,6 +1004,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Physical Barrier',
+    tags: [],
     isPhysical: false,
     isMental: false,
     isEnvironmental: true,
@@ -938,6 +1017,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Poltergeist',
+    tags: [],
     isPhysical: false,
     isMental: false,
     isEnvironmental: true,
@@ -950,6 +1030,7 @@ export default [
   {
     spellCategory: spellCategories.MANIPULATION,
     name: 'Shadow',
+    tags: [],
     isPhysical: false,
     isMental: false,
     isEnvironmental: true,
@@ -960,4 +1041,3 @@ export default [
     drain: -3,
   },
 ]
-
