@@ -79,6 +79,10 @@ const updateCharacterSheet = (characterSheet, item) => {
 }
 
 export const characterSheetSelector = (state) => {
+  if (!state.character.attributes) {
+    return null
+  }
+
   const initialCharacterSheet = {
     strength: {value: state.character.attributes.strength.value, modifiedBy: []},
     agility: {value: state.character.attributes.agility.value, modifiedBy: []},
@@ -93,6 +97,7 @@ export const characterSheetSelector = (state) => {
     resources: {value: state.character.creation.availableResources, modifiedBy: []},
     initiativeDice: {value: 1, modifiedBy: []},
   }
+
   const itemsList = state.character.items.concat(state.character.ware)
   let computedCharacterSheet = itemsList
     .reduce((characterSheet, item) => {
