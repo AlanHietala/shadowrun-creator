@@ -106,7 +106,24 @@ export const characterSheetSelector = (state) => {
   const initiative = computedCharacterSheet.reaction.value + computedCharacterSheet.agility.value
   computedCharacterSheet.initiative = {value: initiative, modifiedBy: []}
   computedCharacterSheet.magicType = state.character.magicType
+
+  computedCharacterSheet = computeLimits(computedCharacterSheet)
   return computedCharacterSheet
+}
+
+function computeLimits(sheet) {
+  const physicalLimit = Math.ceil(((sheet.strength.value  * 2) + sheet.body.value  + sheet.reaction.value ) / 3)
+  const mentalLimit = Math.ceil(((sheet.logic.value * 2) + sheet.intuition.value  + sheet.willpower.value ) / 3)
+  const socialLimit = Math.ceil(((sheet.charisma.value  * 2) + sheet.willpower.value  + sheet.essence.value ) / 3)
+
+  const newSheet = {
+    ...sheet,
+    physicalLimit,
+    mentalLimit,
+    socialLimit,
+  }
+
+  return newSheet
 }
 
 function computeAttribute(state, attributeType, modType) {
