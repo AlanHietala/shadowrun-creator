@@ -74,7 +74,10 @@ const updateCharacterSheet = (characterSheet, item) => {
                         : mod.modType === modTypes.AGILITY_MOD ? {...sheet, agility: updateMod(sheet.agility, mod, item)}
                           : mod.modType === modTypes.STRENGTH_MOD ? {...sheet, strength: updateMod(sheet.strength, mod, item)}
                             : mod.modType === modTypes.INITIATIVE_DICE_MOD ? {...sheet, initiativeDice: updateMod(sheet.initiativeDice, mod, item)}
-                              : sheet
+                              : mod.modType === modTypes.PHYSICAL_LIMIT_MOD ? {...sheet, physicalLimitMod: updateMod(sheet.physicalLimitMod, mod, item)}
+                                : mod.modType === modTypes.SOCIAL_LIMIT_MOD ? {...sheet, socialLimitMod: updateMod(sheet.socialLimitMod, mod, item)}
+                                  : mod.modType === modTypes.MENTAL_LIMIT_MOD ? {...sheet, mentalLimitMod: updateMod(sheet.mentalLimitMod, mod, item)}
+                                    : sheet
   }, characterSheet)
 }
 
@@ -96,6 +99,9 @@ export const characterSheetSelector = (state) => {
     essence: {value: state.character.attributes.essence.value, modifiedBy:[]},
     resources: {value: state.character.creation.availableResources, modifiedBy: []},
     initiativeDice: {value: 1, modifiedBy: []},
+    physicalLimitMod: {value: 0, modifiedBy: []},
+    mentalLimitMod: {value: 0, modifiedBy: []},
+    socialLimitMod: {value: 0, modifiedBy: []},
   }
 
   const itemsList = state.character.items.concat(state.character.ware).concat(state.character.weapons)
@@ -112,9 +118,9 @@ export const characterSheetSelector = (state) => {
 }
 
 function computeLimits(sheet) {
-  const physicalLimit = Math.ceil(((sheet.strength.value  * 2) + sheet.body.value  + sheet.reaction.value ) / 3)
-  const mentalLimit = Math.ceil(((sheet.logic.value * 2) + sheet.intuition.value  + sheet.willpower.value ) / 3)
-  const socialLimit = Math.ceil(((sheet.charisma.value  * 2) + sheet.willpower.value  + sheet.essence.value ) / 3)
+  const physicalLimit = Math.ceil(((sheet.strength.value  * 2) + sheet.body.value  + sheet.reaction.value ) / 3) + sheet.physicalLimitMod.value
+  const mentalLimit = Math.ceil(((sheet.logic.value * 2) + sheet.intuition.value  + sheet.willpower.value ) / 3) + sheet.mentalLimitMod.value
+  const socialLimit = Math.ceil(((sheet.charisma.value  * 2) + sheet.willpower.value  + sheet.essence.value ) / 3) + sheet.socialLimitMod.value
 
   const newSheet = {
     ...sheet,
