@@ -37,4 +37,22 @@ export default [
       },
     ],
   },
+  {
+    name: 'Tailored Pheremones I',
+    tags: [],
+    mods: [
+      {
+        modType: modTypes.SOCIAL_LIMIT_MOD,
+        effect: 1,
+      },
+      {
+        modType: modTypes.ESSENCE_MOD,
+        effect: -0.2,
+      },
+      {
+        modType: modTypes.RESOURCES_MOD,
+        effect: -13000,
+      },
+    ],
+  },
 ]
