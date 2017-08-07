@@ -77,7 +77,8 @@ const updateCharacterSheet = (characterSheet, item) => {
                               : mod.modType === modTypes.PHYSICAL_LIMIT_MOD ? {...sheet, physicalLimitMod: updateMod(sheet.physicalLimitMod, mod, item)}
                                 : mod.modType === modTypes.SOCIAL_LIMIT_MOD ? {...sheet, socialLimitMod: updateMod(sheet.socialLimitMod, mod, item)}
                                   : mod.modType === modTypes.MENTAL_LIMIT_MOD ? {...sheet, mentalLimitMod: updateMod(sheet.mentalLimitMod, mod, item)}
-                                    : sheet
+                                    : mod.modType === modTypes.OVERFLOW_MOD ? {...sheet, overflowMod: updateMod(sheet.overflowMod, mod, item)}
+                                      : sheet
   }, characterSheet)
 }
 
@@ -102,6 +103,7 @@ export const characterSheetSelector = (state) => {
     physicalLimitMod: {value: 0, modifiedBy: []},
     mentalLimitMod: {value: 0, modifiedBy: []},
     socialLimitMod: {value: 0, modifiedBy: []},
+    overflowMod: {value: 0, modifiedBy: []},
   }
 
   const itemsList = state.character.items.concat(state.character.ware).concat(state.character.weapons)
@@ -114,7 +116,22 @@ export const characterSheetSelector = (state) => {
   computedCharacterSheet.magicType = state.character.magicType
 
   computedCharacterSheet = computeLimits(computedCharacterSheet)
+  computedCharacterSheet = computeConditionMonitors(computedCharacterSheet)
+
   return computedCharacterSheet
+}
+
+function computeConditionMonitors(sheet) {
+  const physicalBoxes = Math.ceil((sheet.body.value / 2) + 8)
+  const stunBoxes = Math.ceil((sheet.willpower.value / 2) + 8)
+  const overflowBoxes = sheet.body.value + sheet.overflowMod.value
+
+  return {
+    ...sheet,
+    physicalBoxes,
+    stunBoxes,
+    overflowBoxes,
+  }
 }
 
 function computeLimits(sheet) {

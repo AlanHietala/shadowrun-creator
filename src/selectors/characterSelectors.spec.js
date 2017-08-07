@@ -1354,8 +1354,10 @@ describe('AttributeSelector', function () {
 
   })
   describe('CharacterSheetSelector', () => {
-    it('should calculate limits at the end even if ware affects it', () => {
-      const state = {
+    let state = null
+    beforeEach(() => {
+
+      state = {
         character: {
           creation: {
             availableResources: 10000,
@@ -1436,9 +1438,35 @@ describe('AttributeSelector', function () {
           ],
         },
       }
+    })
+    it('should calculate limits at the end even if ware affects it', () => {
+
       const expectedPhysicalLimit = 7
       expect(characterSheetSelector(state).physicalLimit).toBe(expectedPhysicalLimit)
     })
 
+    it('should calculate the number of physical boxes', () => {
+
+      const expectedPhysicalBoxes = 10
+      expect(characterSheetSelector(state).physicalBoxes).toBe(expectedPhysicalBoxes)
+    })
+    it('should calculate the overflow with an augmentation', () => {
+      state.character.ware.push({
+        name: 'overflow Thing',
+        mods: [
+          {
+            modType: modTypes.OVERFLOW_MOD,
+            effect: 1,
+          },
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: 2000,
+          },
+
+        ],
+      })
+      const expectedOverflow = 5
+      expect(characterSheetSelector(state).overflowBoxes).toBe(expectedOverflow)
+    })
   })
 })

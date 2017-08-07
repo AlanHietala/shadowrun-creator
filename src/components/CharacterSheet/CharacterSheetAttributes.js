@@ -31,6 +31,9 @@ const CharacterSheetAttributes = ({attributes}) => {
     physicalLimit,
     mentalLimit,
     socialLimit,
+    physicalBoxes,
+    stunBoxes,
+    overflowBoxes,
   } = attributes
   return (
     <div style={styles.attributeList}>
@@ -49,6 +52,9 @@ const CharacterSheetAttributes = ({attributes}) => {
       <AttributeItem title="P lim" value={physicalLimit} />
       <AttributeItem title="M lim" value={mentalLimit} />
       <AttributeItem title="S lim" value={socialLimit} />
+      <AttributeItem title="Pbox" value={physicalBoxes} />
+      <AttributeItem title="Pbox" value={stunBoxes} />
+      <AttributeItem title="Pbox" value={overflowBoxes} />
     </div>
   )
 }
