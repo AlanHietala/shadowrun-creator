@@ -17,6 +17,7 @@ describe('Item Selectors', function () {
           },
           items: [],
           ware:[],
+          weapons: [],
           creation: {
             availableResources: 20000,
           },

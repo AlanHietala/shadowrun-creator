@@ -7,6 +7,7 @@ import Attributes from '../Attributes'
 import Qualities from '../Qualities'
 import Skills from '../Skills'
 import Spells from '../Spells'
+import Weapons from '../Weapons'
 import AdeptPowers from '../AdeptPowers'
 import Ware from '../Ware'
 import Equipment from '../Equipment'
@@ -51,6 +52,9 @@ export class CharacterSheet extends React.Component {
             </Tab>
             <Tab label="Equip">
               <Equipment />
+            </Tab>
+            <Tab label="Weapons">
+              <Weapons />
             </Tab>
             { magicSection }
             <Tab label="Ware">

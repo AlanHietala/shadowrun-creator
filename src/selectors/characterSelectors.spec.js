@@ -110,6 +110,7 @@ describe('StrengthSelector', function () {
           ],
         }],
         ware:[],
+        weapons: [],
       },
     }
 
@@ -146,6 +147,7 @@ describe('AgilitySelector', function () {
           ],
         }],
         ware:[],
+        weapons: [],
       },
     }
 
@@ -181,6 +183,7 @@ describe('AgilitySelector', function () {
           ],
         }],
         ware:[],
+        weapons: [],
       },
     }
 
@@ -226,6 +229,7 @@ describe('AgilitySelector', function () {
           ],
         }],
         ware:[],
+        weapons: [],
       },
     }
 
@@ -265,6 +269,7 @@ describe('WillpowerSelector', function () {
           ],
         }],
         ware:[],
+        weapons: [],
       },
     }
 
@@ -300,6 +305,7 @@ describe('WillpowerSelector', function () {
           ],
         }],
         ware:[],
+        weapons: [],
       },
     }
 
@@ -345,6 +351,7 @@ describe('WillpowerSelector', function () {
           ],
         }],
         ware:[],
+        weapons: [],
       },
     }
 
@@ -384,6 +391,7 @@ describe('magicSelector', function () {
           ],
         }],
         ware:[],
+        weapons: [],
       },
     }
 
@@ -1283,6 +1291,7 @@ describe('AttributeSelector', function () {
             ],
           }],
           ware:[],
+          weapons: [],
         },
       }
 
@@ -1318,6 +1327,7 @@ describe('AttributeSelector', function () {
               },
             ],
           }],
+          weapons: [],
           ware:[
             {
               name: 'Reaction Enhancers 1',

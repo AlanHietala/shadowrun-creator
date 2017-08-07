@@ -5,7 +5,7 @@ import {getModReduce, resourcesModReduce} from './modHelpers'
 
 export const resourcesSelector = state => {
   const initialResources = state.character.creation.availableResources
-  const listsOfThingsThatCostMoney = [state.character.items, state.character.ware]
+  const listsOfThingsThatCostMoney = [state.character.items, state.character.ware, state.character.weapons]
   const spentResources = listsOfThingsThatCostMoney
     .map(listThatCostsMoney => {
       return listThatCostsMoney.reduce(resourcesModReduce, 0)
@@ -98,7 +98,7 @@ export const characterSheetSelector = (state) => {
     initiativeDice: {value: 1, modifiedBy: []},
   }
 
-  const itemsList = state.character.items.concat(state.character.ware)
+  const itemsList = state.character.items.concat(state.character.ware).concat(state.character.weapons)
   let computedCharacterSheet = itemsList
     .reduce((characterSheet, item) => {
       return updateCharacterSheet(characterSheet, item)
