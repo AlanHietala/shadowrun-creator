@@ -1,3 +1,23 @@
+# Shadowrun Creator
+Character creation tool for characters in the shadowrun table top universe.
+https://shadowruncreator.surge.sh
+
+I'm always looking for contributors so feel free to reach out.
+
+## mods
+
+All Attributes are built up by parsing items that have been added to the character.
+If the item causes an effect the mods array will contain a list of effects to apply
+to the character sheet.
+
+## Tagging
+
+All Items that are addable to a character have a tags array which is used in
+searching. This gives flexibility in searching for things you really want while
+not being tied to explicit groupings.
+
+# Create React App Details
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -1760,7 +1780,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
