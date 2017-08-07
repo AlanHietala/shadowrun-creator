@@ -12,6 +12,7 @@ import Ware from '../Ware'
 import Equipment from '../Equipment'
 import * as magicTypes from '../../constants/magicTypes'
 import {Tabs, Tab} from 'material-ui/Tabs'
+import {Link} from 'react-router-dom'
 
 export class CharacterSheet extends React.Component {
   constructor(props) {
@@ -34,29 +35,33 @@ export class CharacterSheet extends React.Component {
 
   render() {
     const {characterSheet} = this.props
-    const magicSection = this.getMagicSection(characterSheet.magicType)
-    return (
-      <div>
-        <CharacterSheetAttributes attributes={characterSheet} />
-        <Tabs>
-          <Tab label="Attr">
-            <Attributes />
-          </Tab>
-          <Tab label="Qual">
-            <Qualities />
-          </Tab>
-          <Tab label="Equip">
-            <Equipment />
-          </Tab>
-          { magicSection }
-          <Tab label="Ware">
-            <Ware />
-          </Tab>
-          <Tab label="Skills">
-            <Skills />
-          </Tab>
-        </Tabs>
-      </div>)
+    if (!characterSheet) {
+      return (<div>{'please set your '}<Link to={'/creation/priority'}>{'priorities'}</Link></div>)
+    } else {
+      const magicSection = this.getMagicSection(characterSheet.magicType)
+      return (
+        <div>
+          <CharacterSheetAttributes attributes={characterSheet} />
+          <Tabs>
+            <Tab label="Attr">
+              <Attributes />
+            </Tab>
+            <Tab label="Qual">
+              <Qualities />
+            </Tab>
+            <Tab label="Equip">
+              <Equipment />
+            </Tab>
+            { magicSection }
+            <Tab label="Ware">
+              <Ware />
+            </Tab>
+            <Tab label="Skills">
+              <Skills />
+            </Tab>
+          </Tabs>
+        </div>)
+    }
   }
 }
 
