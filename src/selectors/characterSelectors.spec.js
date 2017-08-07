@@ -10,7 +10,8 @@ import { strengthSelector,
   logicSelector,
   essenceSelector,
   attributeSelector,
-  resourcesSelector } from './characterSelectors'
+  resourcesSelector,
+  characterSheetSelector} from './characterSelectors'
 import * as modTypes from '../constants/modTypes'
 
 describe('StrengthSelector', function () {
@@ -1351,9 +1352,93 @@ describe('AttributeSelector', function () {
       expect(resourcesSelector(state)).toEqual(expectedValue)
     })
 
+  })
+  describe('CharacterSheetSelector', () => {
+    it('should calculate limits at the end even if ware affects it', () => {
+      const state = {
+        character: {
+          creation: {
+            availableResources: 10000,
+          },
+          attributes: {
+            essence: {
+              key: 'essence',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+            strength: {
+              key: 'strength',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+            body: {
+              key: 'body',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+            agility: {
+              key: 'agility',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+            reaction: {
+              key: 'reaction',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+            charisma: {
+              key: 'charisma',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+            intuition: {
+              key: 'intuition',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+            logic: {
+              key: 'logic',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+            willpower: {
+              key: 'willpower',
+              minValue: 1,
+              maxValue: 5,
+              value: 4,
+            },
+          },
+          items: [],
+          weapons: [],
+          ware:[
+            {
+              name: 'Reaction Enhancers 1',
+              mods: [
+                {
+                  modType: modTypes.PHYSICAL_LIMIT_MOD,
+                  effect: 1,
+                },
+                {
+                  modType: modTypes.RESOURCES_MOD,
+                  effect: 2000,
+                },
 
-
+              ],
+            },
+          ],
+        },
+      }
+      const expectedPhysicalLimit = 7
+      expect(characterSheetSelector(state).physicalLimit).toBe(expectedPhysicalLimit)
+    })
 
   })
-
 })
