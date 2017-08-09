@@ -15,7 +15,7 @@ class AdeptPowerPicker extends React.Component {
   render() {
     const {adeptPowerList, handleAddPower, handleRemovePower, characterAdeptPowers} = this.props
 
-    return (<Paper style={{minWidth: 300, margin: 5}}>
+    return (<Paper style={{minWidth: 300, margin: 5, flexGrow: 1}}>
       <h2>Adept Powers</h2>
       <CharacterSheetSection sectionTitle={'adept Powers'}
         characterSheetItems={characterAdeptPowers}
