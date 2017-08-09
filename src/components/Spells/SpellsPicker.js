@@ -11,7 +11,7 @@ class SpellsPicker extends React.Component {
   render() {
     const { availableSpellCount, addSpell, removeSpell, chosenSpells } = this.props
 
-    return (<Paper>
+    return (<Paper style={{minWidth: 300, flexGrow: 1, margin: 5}}>
       <h2>Spells</h2>
       <div>Available Spells: {availableSpellCount}</div>
       <CharacterSheetSection
