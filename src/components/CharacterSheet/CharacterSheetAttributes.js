@@ -2,6 +2,7 @@ import React from 'react'
 import Toggle from 'material-ui/Toggle'
 import CharacterSheetAttributesView from './CharacterSheetAttributesView'
 import Attributes from '../Attributes'
+import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
 
 class CharacterSheetAttributes extends React.Component {
@@ -26,16 +27,19 @@ class CharacterSheetAttributes extends React.Component {
     const characterSheetAttributeComponent = this.state.editToggled ?
       <Attributes /> :
       <CharacterSheetAttributesView attributes={attributes} />
-      
+
     return (
       <div>
-        {characterSheetAttributeComponent}
-        <div style={styles.toggleBlock}>
-          <Toggle
-            toggle={this.state.editToggled}
-            onToggle={this.toggleEdit}
-            label={'edit'} />
-        </div>
+        <Paper>
+          {characterSheetAttributeComponent}
+          <div style={styles.toggleBlock}>
+            <Toggle
+              toggle={this.state.editToggled}
+              onToggle={this.toggleEdit}
+              label={'edit'} />
+          </div>
+        </Paper>
+
       </div>
     )
   }

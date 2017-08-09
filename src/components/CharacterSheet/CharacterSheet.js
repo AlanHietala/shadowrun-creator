@@ -11,7 +11,6 @@ import AdeptPowers from '../AdeptPowers'
 import Ware from '../Ware'
 import Equipment from '../Equipment'
 import * as magicTypes from '../../constants/magicTypes'
-import {Tabs, Tab} from 'material-ui/Tabs'
 import {Link} from 'react-router-dom'
 
 export class CharacterSheet extends React.Component {
@@ -21,14 +20,10 @@ export class CharacterSheet extends React.Component {
   getMagicSection = (magicType) => {
     let magicSection = null
     if (magicType === magicTypes.ADEPT) {
-      magicSection = ( <Tab label="Powers">
-        <AdeptPowers />
-      </Tab>)
+      magicSection = (<AdeptPowers />)
     } else if (magicType === magicTypes.MAGICIAN ||
     magicType === magicTypes.ASPECTED_MAGICIAN) {
-      magicSection = ( <Tab label="Spells">
-        <Spells/>
-      </Tab>)
+      magicSection = (<Spells/>)
     }
     return magicSection
   }
@@ -42,29 +37,30 @@ export class CharacterSheet extends React.Component {
       return (
         <div>
           <CharacterSheetAttributes attributes={characterSheet} />
-          <Tabs>
-            <Tab label="Qual">
-              <Qualities />
-            </Tab>
-            <Tab label="Equip">
-              <Equipment />
-            </Tab>
-            <Tab label="Weapons">
-              <Weapons />
-            </Tab>
+          <div style={styles.wrapper}>
+            <Qualities />
+            <Equipment />
+            <Weapons />
             { magicSection }
-            <Tab label="Ware">
-              <Ware />
-            </Tab>
-            <Tab label="Skills">
-              <Skills />
-            </Tab>
-          </Tabs>
+            <Ware />
+            <Skills />
+          </div>
         </div>)
     }
   }
 }
 
+const styles = {
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    alignItems: 'stretch',
+  },
+  section: {
+    width: 300,
+  },
+}
 CharacterSheet.propTypes = {
   characterSheet: PropTypes.object.isRequired,
 }
