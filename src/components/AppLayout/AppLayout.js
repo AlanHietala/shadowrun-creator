@@ -35,7 +35,7 @@ class AppLayout extends React.Component {
     const { children } = this.props
     return (<div>
       <AppBar
-        title="Shadowrun Creator">
+        title="Shadowrun Creator s">
       </AppBar>
       <Paper style={styles.paper}>{children}</Paper>
     </div>)
