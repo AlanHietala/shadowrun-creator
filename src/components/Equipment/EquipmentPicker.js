@@ -12,7 +12,7 @@ class EquipmentPicker extends React.Component {
 
   render() {
     const { characterEquipment, handleAddEquipment, handleRemoveEquipment} = this.props
-    return(<Paper>
+    return(<Paper style={{minWidth: 300, flexGrow: 1, margin: 5}}>
       <h2>Equipment</h2>
       <CharacterSheetSection
         sectionTitle={'Equipment'}

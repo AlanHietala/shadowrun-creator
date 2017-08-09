@@ -15,7 +15,7 @@ class WarePicker extends React.Component {
 
   render() {
     const {characterWare, handleAddWare, handleRemoveWare} = this.props
-    return (<Paper>
+    return (<Paper style={{minWidth:300, flexGrow: 1, margin: 5}}>
       <h2>Ware</h2>
       <CharacterSheetSection
         sectionTitle={'ware'}

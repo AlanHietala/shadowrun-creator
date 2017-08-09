@@ -15,7 +15,7 @@ class QualityPicker extends React.Component {
   render() {
     const { selectedQualities, removeQuality, addQuality, karma } = this.props
     const qualities = positiveQualities.concat(negativeQualities)
-    return (<Paper>
+    return (<Paper style={{minWidth: 300, flexGrow: 1, margin: 5}}>
       <h2>Qualities</h2>
       <div>Karma: { karma }</div>
       <CharacterSheetSection
