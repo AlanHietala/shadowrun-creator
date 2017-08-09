@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { characterSheetSelector } from '../../selectors/characterSelectors'
 import CharacterSheetAttributes from './CharacterSheetAttributes'
-import Attributes from '../Attributes'
 import Qualities from '../Qualities'
 import Skills from '../Skills'
 import Spells from '../Spells'
@@ -44,9 +43,6 @@ export class CharacterSheet extends React.Component {
         <div>
           <CharacterSheetAttributes attributes={characterSheet} />
           <Tabs>
-            <Tab label="Attr">
-              <Attributes />
-            </Tab>
             <Tab label="Qual">
               <Qualities />
             </Tab>
