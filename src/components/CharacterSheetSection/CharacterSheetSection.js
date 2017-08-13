@@ -29,7 +29,7 @@ class CharacterSheetSection extends React.Component {
   }
 
   render() {
-    const {sectionTitle, characterSheetItems, allItems, handleAddItem, handleRemoveItem, ItemComponent, AddedItemComponent} = this.props
+    const {sectionTitle, characterSheetItems, allItems, handleAddItem, handleRemoveItem, handleSelectOption, ItemComponent, AddedItemComponent} = this.props
 
     const actions = [
       <FlatButton
@@ -40,7 +40,7 @@ class CharacterSheetSection extends React.Component {
       />]
     const CharacterItemComponent = AddedItemComponent || ItemComponent
     return (<div>
-      <CharacterItems ItemComponent={CharacterItemComponent} characterItems={characterSheetItems} handleRemoveItem={handleRemoveItem}/>
+      <CharacterItems ItemComponent={CharacterItemComponent} handleSelectOption={handleSelectOption} characterItems={characterSheetItems} handleRemoveItem={handleRemoveItem}/>
       <Dialog actions={actions}
         modal={false}
         open={this.state.open}
@@ -61,6 +61,7 @@ CharacterSheetSection.propTypes = {
   allItems: PropTypes.array,
   handleAddItem: PropTypes.func,
   handleRemoveItem: PropTypes.func,
+  handleSelectOption: PropTypes.func,
   ItemComponent: PropTypes.func,
   AddedItemComponent:  PropTypes.func,
 }
