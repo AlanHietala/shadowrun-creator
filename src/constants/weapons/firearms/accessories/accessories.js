@@ -1,6 +1,25 @@
 import * as accessoryTypes from './accessoryTypes'
 import * as modTypes from '../../../modTypes'
 
+export const internalAccessories = [
+  {
+    key: 'SmartgunSystemInternal',
+    name: 'Smartgun System Internal',
+    mounts: [
+      accessoryTypes.ALL,
+    ],
+    avail: '(+2)R',
+    cost: 'Weapon Cost x2',
+    tags: [],
+    mods: [
+      {
+        modType: modTypes.WEAPON_COST_MULTIPLE_MOD,
+        effect: 2,
+      },
+    ],
+  },
+]
+
 export const stockAccessories = [
   {
     key: 'ShockPad',
@@ -276,23 +295,6 @@ export const theRest = [
       {
         modType: modTypes.RESOURCES_MOD,
         effect: -175,
-      },
-    ],
-  },
-
-  {
-    key: 'SmartgunSystemInternal',
-    name: 'Smartgun System Internal',
-    mounts: [
-      accessoryTypes.ALL,
-    ],
-    avail: '(+2)R',
-    cost: 'Weapon Cost x2',
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.WEAPON_COST_MULTIPLE_MOD,
-        effect: 2,
       },
     ],
   },

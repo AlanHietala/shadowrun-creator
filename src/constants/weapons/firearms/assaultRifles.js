@@ -57,6 +57,7 @@ export default [
     },
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.UNDER,
@@ -82,6 +83,7 @@ export default [
         accessories: [],
         allowedAccessories: [
           accessoryTypes.ALL,
+          accessoryTypes.INTERNAL,
           accessoryTypes.TOP,
           accessoryTypes.UNDER,
           accessoryTypes.BARREL,
@@ -120,6 +122,7 @@ export default [
     accessories: [],
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.UNDER,
@@ -176,6 +179,7 @@ export default [
     ],
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.UNDER,
@@ -207,6 +211,7 @@ export default [
     accessories: [],
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.TOP,
       accessoryTypes.UNDER,
