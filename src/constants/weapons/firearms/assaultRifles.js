@@ -1,10 +1,20 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'AK97',
     name: 'AK97',
     tags: ['assault rifle'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: null,
@@ -27,6 +37,32 @@ export default [
     key: 'Ares Alpha',
     name: 'Ares Alpha',
     tags: ['assault rifle'],
+    accessories: {
+      internal: {
+        key: 'SmartgunSystemInternal',
+        name: 'Smartgun System Internal',
+        isStandard: true,
+        mounts: [
+          accessoryTypes.ALL,
+        ],
+        avail: '(+2)R',
+        cost: 'Weapon Cost x2',
+        tags: [],
+        mods: [],
+      },
+      barrel: null,
+      top: null,
+      bottom: null,
+      stock: null,
+    },
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.UNDER,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 7,
@@ -43,6 +79,14 @@ export default [
         key: 'aresAlphaGL',
         name: 'Grenade Launcher',
         tags: ['grenade Launcher'],
+        accessories: [],
+        allowedAccessories: [
+          accessoryTypes.ALL,
+          accessoryTypes.TOP,
+          accessoryTypes.UNDER,
+          accessoryTypes.BARREL,
+          accessoryTypes.STOCK,
+        ],
         weaponStats: {
           acc: 4,
           accWithMods: 6,
@@ -73,6 +117,15 @@ export default [
     key: 'coltm23',
     name: 'Colt M23',
     tags: ['assault rifle'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.UNDER,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,
@@ -92,9 +145,74 @@ export default [
     ],
   },
   {
+    key: 'FNHAR',
+    name: 'FN HAR',
+    tags: ['assault rifle'],
+    accessories: [
+      {
+        key: 'GasVentSystemII',
+        name: 'Gas Vent System II',
+        isStandard: true,
+        mounts: [
+          accessoryTypes.BARREL,
+        ],
+        avail: '6R',
+        cost: 400,
+        tags: [],
+        mods: [],
+      },
+      {
+        key: 'LaserSight',
+        name: 'Laser Sight',
+        mounts: [
+          accessoryTypes.TOP,
+          accessoryTypes.UNDER,
+        ],
+        avail: '2',
+        cost: 125,
+        tags: [],
+        mods: [],
+      },
+    ],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.UNDER,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
+    weaponStats: {
+      acc: 5,
+      accWithMods: 6,
+      damage: '10P',
+      ap: -2,
+      mode: 'SA/BF/FA',
+      rc: 2,
+      ammo: '35(c)',
+      avail: '8R',
+      cost: 1500,
+    },
+    mods: [
+      {
+        modType: modTypes.RESOURCES_MOD,
+        effect: -1500,
+      },
+    ],
+  },
+  {
     key: 'yamaharaiden',
     name: 'Yamaha reloadWithDebugInfo',
     tags: ['assault rifle'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 6,
       accWithMods: 8,

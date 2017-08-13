@@ -1,10 +1,20 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'AresDesertStrike',
     name: 'Ares Desert Strike',
     tags: ['sniper rifle'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 7,
       accWithMods: null,
@@ -27,6 +37,15 @@ export default [
     key: 'CavalierArmsCrocketEBR',
     name: 'Cavalier Arms Crocket EBR',
     tags: ['sniper rifle'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 6,
       accWithMods: null,
@@ -49,6 +68,15 @@ export default [
     key: 'RangerArmsSM-5',
     name: 'Ranger Arms SM-5',
     tags: ['sniper rifle'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 8,
       accWithMods: null,
@@ -71,6 +99,15 @@ export default [
     key: 'Remington950',
     name: 'Remington 950',
     tags: ['sniper rifle'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 7,
       accWithMods: null,
@@ -93,6 +130,15 @@ export default [
     key: 'Ruger100',
     name: 'Ruger 100',
     tags: ['sniper rifle'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 6,
       accWithMods: null,

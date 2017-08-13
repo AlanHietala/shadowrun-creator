@@ -1,10 +1,17 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'fichettiTiffaniNeedler',
     name: 'Fichetti Tiffani Needler',
     tags: ['holdout', 'semiauto'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ARM_SLIDE,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: null,
@@ -27,6 +34,12 @@ export default [
     key: 'StreetlineSpecial',
     name: 'Streetline Special',
     tags: ['holdout'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ARM_SLIDE,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,
@@ -49,6 +62,12 @@ export default [
     key: 'WaltherPalmPistol',
     name: 'Walther Palm Pistol',
     tags: ['holdout'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ARM_SLIDE,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,

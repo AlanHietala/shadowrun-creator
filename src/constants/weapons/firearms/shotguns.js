@@ -1,10 +1,19 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'DefianceT-250',
     name: 'Defiance T-250',
     tags: ['shotgun'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.UNDER,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,
@@ -27,6 +36,7 @@ export default [
     key: 'EnfieldAS-7',
     name: 'Enfield AS-7',
     tags: ['shotgun'],
+    accessories: [],
     weaponStats: {
       acc: 4,
       accWithMods: 5,
@@ -49,6 +59,7 @@ export default [
     key: 'PJSSModel55',
     name: 'PJSS Model 55',
     tags: ['shotgun'],
+    accessories: [],
     weaponStats: {
       acc: 6,
       accWithMods: null,

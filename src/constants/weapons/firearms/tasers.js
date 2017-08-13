@@ -1,10 +1,19 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'exShocker',
     name: 'Defiance EX Shocker',
-    tags: ['taser '],
+    tags: ['taser'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.ARM_SLIDE,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,
@@ -27,6 +36,14 @@ export default [
     key: 'yamahaPulsar',
     name: 'Yamaha Pulsar',
     tags: ['taser'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.ARM_SLIDE,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,

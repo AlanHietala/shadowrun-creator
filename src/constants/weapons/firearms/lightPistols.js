@@ -1,10 +1,21 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'AresLightfire75',
     name: 'Ares Light Fire 75',
     tags: ['light pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.ARM_SLIDE,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 7,
@@ -27,6 +38,16 @@ export default [
     key: 'AresLightFire70',
     name: 'Ares Light Fire 70',
     tags: ['light pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.ARM_SLIDE,
+    ],
     weaponStats: {
       acc: 7,
       accWithMods: null,
@@ -49,6 +70,16 @@ export default [
     key: 'Beretta201T',
     name: 'Beretta 201T',
     tags: ['light pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.ARM_SLIDE,
+    ],
     weaponStats: {
       acc: 6,
       accWithMods: null,
@@ -71,6 +102,16 @@ export default [
     key: 's',
     name: 'Colt America L36',
     tags: ['light pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.ARM_SLIDE,
+    ],
     weaponStats: {
       acc: 7,
       accWithMods: null,
@@ -93,6 +134,16 @@ export default [
     key: 'FichettiSecurity600',
     name: 'Fichetti Security 600',
     tags: ['light pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.ARM_SLIDE,
+    ],
     weaponStats: {
       acc: 6,
       accWithMods: 7,
@@ -115,6 +166,16 @@ export default [
     key: 'TaurusOmni-6',
     name: 'Taurus Omni-6',
     tags: ['light pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.CONCEALED_HOLSTER,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.ARM_SLIDE,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 6,

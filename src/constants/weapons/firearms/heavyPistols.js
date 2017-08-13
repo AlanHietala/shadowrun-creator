@@ -1,10 +1,19 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'AresPredatorV',
     name: 'Ares Predator V',
     tags: ['heavy pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 7,
@@ -27,6 +36,14 @@ export default [
     key: 'AresViperSilverGun',
     name: 'Ares Viper Silvergun',
     tags: ['heavy pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,
@@ -49,6 +66,14 @@ export default [
     key: 'BrowningUltraPower',
     name: 'Browning Ultra-Power',
     tags: ['heavy pistol', 'pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 6,
@@ -71,6 +96,14 @@ export default [
     key: 'ColtGovernment2066',
     name: 'Colt Government 2066',
     tags: ['heavy pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+    ],
     weaponStats: {
       acc: 6,
       accWithMods: null,
@@ -93,6 +126,13 @@ export default [
     key: 'Remington Roomsweeper',
     name: 'Remington Roomsweeper',
     tags: ['heavy pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,
@@ -109,6 +149,8 @@ export default [
         key: 'remington w flechettes',
         name: 'w/ flechettes',
         tags: [],
+        accessories: [],
+        allowedAccessories: [],
         weaponStats: {
           acc: null,
           accWithMods: null,
@@ -135,6 +177,13 @@ export default [
     key: 'RugerSuperWarhawk',
     name: 'Ruger Super Warhawk',
     tags: ['heavy pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.QUICK_DRAW_HOLSTER,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: null,

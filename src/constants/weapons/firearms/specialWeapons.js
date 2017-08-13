@@ -1,10 +1,17 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'AresS-IIISuperSquirt',
     name: 'Ares S-III Super Squirt',
     tags: ['special weapon'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 3,
       accWithMods: null,
@@ -27,6 +34,12 @@ export default [
     key: 'FichettiPainInducer',
     name: 'Fichetti Pain Inducer',
     tags: ['special weapon'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 3,
       accWithMods: null,
@@ -49,6 +62,11 @@ export default [
     key: 'ParashieldDartPistol',
     name: 'Parashield Dart Pistol',
     tags: ['special weapon'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: null,
@@ -71,6 +89,12 @@ export default [
     key: 'ParashieldDartRifle',
     name: 'Parashield Dart Rifle',
     tags: ['special weapon'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 6,
       accWithMods: null,

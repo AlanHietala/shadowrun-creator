@@ -3,9 +3,10 @@ import React from 'react'
 import {connect} from 'react-redux'
 import weaponsList from '../../constants/weapons'
 import { addWeapon, removeWeapon } from '../../actions/itemActions'
-import { characterWeaponsSelector } from '../../selectors/itemSelectors'
+import { characterWeaponsSelector } from '../../selectors/weaponsSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
 import WeaponItem from './WeaponItem'
+import AddedWeaponItem from './AddedWeaponItem'
 import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
 
@@ -22,6 +23,7 @@ class EquipmentPicker extends React.Component {
         handleAddItem={handleAddWeapon}
         handleRemoveItem={handleRemoveWeapon}
         ItemComponent={WeaponItem}
+        AddedItemComponent={AddedWeaponItem}
       />
     </Paper>)
   }

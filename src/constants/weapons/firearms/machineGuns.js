@@ -1,10 +1,20 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'IngramValiant',
     name: 'Ingram Valiant',
     tags: ['machine gun'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.UNDER,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 6,
@@ -27,6 +37,15 @@ export default [
     key: 'StonerAresM202',
     name: 'Stoner Ares M202',
     tags: ['machine gun'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.UNDER,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: null,
@@ -49,6 +68,15 @@ export default [
     key: 'RPKHMG',
     name: 'RPK HMG',
     tags: ['machine gun'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.UNDER,
+      accessoryTypes.STOCK,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: null,

@@ -1,0 +1,5 @@
+export const INTERNAL_MOUNT = 'INTERNAL_MOUNT'
+export const BARREL_MOUNT = 'BARREL_MOUNT'
+export const TOP_MOUNT = 'TOP_MOUNT'
+export const BOTTOM_MOUNT = 'BOTTOM_MOUNT'
+export const STOCK_MOUNT = 'STOCK_MOUNT'

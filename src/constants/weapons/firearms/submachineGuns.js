@@ -1,10 +1,18 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'coltCobratz-12',
     name: 'Colt Cobra TZ-120',
     tags: ['machine pistol'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: 5,
@@ -27,6 +35,13 @@ export default [
     key: 'FNP93praetor',
     name: 'FN P93 Praetor',
     tags: ['submachine gun'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+    ],
     weaponStats: {
       acc: 6,
       accWithMods: null,
@@ -49,6 +64,13 @@ export default [
     key: 'HK-227',
     name: 'HK-227',
     tags: ['submachine gun'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 7,
@@ -71,6 +93,13 @@ export default [
     key: 'IngramSmartgunX',
     name: 'Ingram Smartgun X',
     tags: ['submachine gun'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: 6,
@@ -93,6 +122,13 @@ export default [
     key: 'SCKModel100',
     name: 'SCK Model 100',
     tags: ['submachine gun'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 7,

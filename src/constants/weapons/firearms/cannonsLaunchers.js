@@ -1,10 +1,17 @@
 import * as modTypes from '../../modTypes'
+import * as accessoryTypes from './accessories/accessoryTypes'
 
 export default [
   {
     key: 'AresAntioch-2',
     name: 'Ares Antioch-2',
     tags: ['grenade launcher'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: 6,
@@ -27,6 +34,12 @@ export default [
     key: 'ArmTechMGL-12',
     name: 'ArmTech MGL-12',
     tags: ['grenade launcher'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,
@@ -49,6 +62,12 @@ export default [
     key: 'AztechnologyStriker',
     name: 'Aztechnology Striker',
     tags: ['missile launcher'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: null,
@@ -71,6 +90,12 @@ export default [
     key: 'KrimeCannon',
     name: 'Krime Cannon',
     tags: ['cannon'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: null,
@@ -93,6 +118,12 @@ export default [
     key: 'OnotariInterceptor',
     name: 'Onotari Interceptor',
     tags: ['missile launcher'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 4,
       accWithMods: 6,
@@ -115,6 +146,12 @@ export default [
     key: 'PantherXXL',
     name: 'Panther XXL',
     tags: ['cannon'],
+    accessories: [],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.UNDER,
+    ],
     weaponStats: {
       acc: 5,
       accWithMods: 7,
