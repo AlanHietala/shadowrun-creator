@@ -6,6 +6,7 @@ import wareList from '../../constants/ware'
 import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
 import WareItem from './WareItem'
+import AddedWareItem from './AddedWareItem'
 import PropTypes from 'prop-types'
 
 class WarePicker extends React.Component {
@@ -24,6 +25,7 @@ class WarePicker extends React.Component {
         handleAddItem={handleAddWare}
         handleRemoveItem={handleRemoveWare}
         ItemComponent={WareItem}
+        AddedItemComponent={AddedWareItem}
       />
     </Paper>)
   }

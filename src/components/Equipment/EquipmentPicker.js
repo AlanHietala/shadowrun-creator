@@ -5,6 +5,7 @@ import { addItem, removeItem } from '../../actions/itemActions'
 import { characterItemsSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
 import EquipmentItem from './EquipmentItem'
+import AddedEquipmentItem from './AddedEquipmentItem'
 import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
 
@@ -21,6 +22,7 @@ class EquipmentPicker extends React.Component {
         handleAddItem={handleAddEquipment}
         handleRemoveItem={handleRemoveEquipment}
         ItemComponent={EquipmentItem}
+        AddedItemComponent={AddedEquipmentItem}
       />
     </Paper>)
   }

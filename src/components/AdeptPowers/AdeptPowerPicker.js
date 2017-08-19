@@ -5,6 +5,7 @@ import { addPower, removePower } from '../../actions/powerActions'
 import { characterAdeptPowersSelector, adeptPowersSelector } from '../../selectors/adeptPowerSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
 import AdeptPowerItem from './AdeptPowerItem'
+import AddedAdeptPowerItem from './AddedAdeptPowerItem'
 import PropTypes from 'prop-types'
 
 class AdeptPowerPicker extends React.Component {
@@ -23,6 +24,7 @@ class AdeptPowerPicker extends React.Component {
         handleAddItem={handleAddPower}
         handleRemoveItem={handleRemovePower}
         ItemComponent={AdeptPowerItem}
+        AddedItemComponent={AddedAdeptPowerItem}
       />
     </Paper>)
   }

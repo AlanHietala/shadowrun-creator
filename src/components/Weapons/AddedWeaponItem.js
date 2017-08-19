@@ -4,7 +4,7 @@ import WeaponAccessories from './WeaponAccessories'
 import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 
-const AddedWeaponItem = ({item}) => {
+const AddedWeaponItem = ({item, handleRemoveItem}) => {
 
   const {weaponStats: {acc, accWithMods, damage, ap, mode, rc, ammo, avail, cost}} = item
   const accString = accWithMods ? `${acc}(${accWithMods})` : `${acc}`
@@ -20,12 +20,13 @@ const AddedWeaponItem = ({item}) => {
         expandable={true} >
         <WeaponAccessories weapon={item}/>
         <CardActions>
-          <FlatButton label="Remove" />
+          <FlatButton label="Remove" onTouchTap={handleRemoveItem}/>
         </CardActions>
       </CardText>
     </Card>)
 }
 AddedWeaponItem.propTypes = {
   item: PropTypes.object,
+  handleRemoveItem: PropTypes.func,
 }
 export default AddedWeaponItem
