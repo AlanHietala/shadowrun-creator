@@ -8,7 +8,6 @@ export const selectAccessory = createAction(itemActionTypes.SELECT_ACCESSORY, (w
     weaponIndex,
     accessoryPosition,
     accessory,
-    a: 'asd',
   }
 })
 export const addItem = createAction(itemActionTypes.ADD_ITEM)

@@ -22,7 +22,7 @@ ReactDOM.render(
   document.getElementById('root')
 )
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
+  module.hot.accept('./components/App.js', () => {
     ReactDOM.render(
       <Provider store={store}>
         <App />
