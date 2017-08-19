@@ -1,14 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route} from 'react-router-dom'
 import configureStore from './store/configureStore'
-import AppLayout from './components/AppLayout/AppLayout'
-import Creation from './components/Creation/Creation'
-import PrioritiesList from './components/PrioritiesList/PrioritiesList'
-import CharacterSheet from './components/CharacterSheet'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 import './index.css'
 // Needed for onTouchTap
@@ -22,18 +17,17 @@ const store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>
-    <MuiThemeProvider>
-      <div>
-        <BrowserRouter>
-          <AppLayout>
-            <Route exact path="/" component={PrioritiesList}/>
-            <Route path="/creation" component={Creation} />
-            <Route path="/sheet" component={ CharacterSheet } />
-          </AppLayout>
-        </BrowserRouter>
-      </div>
-    </MuiThemeProvider>
+    <App />
   </Provider>,
   document.getElementById('root')
 )
+if (module.hot) {
+  module.hot.accept('./components/App.js', () => {
+    ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>, document.getElementById('root'))
+  })
+}
+
 registerServiceWorker()

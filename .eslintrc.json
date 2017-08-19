@@ -26,6 +26,6 @@
         "space-before-blocks": ["error", "always"],
         "comma-dangle": ["error", "always-multiline"],
         "eol-last": ["error", "always"],
-         "import/newline-after-import": ["error"]
+        "import/newline-after-import": ["error"]
     }
 }

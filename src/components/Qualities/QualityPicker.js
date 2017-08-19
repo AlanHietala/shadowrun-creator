@@ -5,6 +5,7 @@ import {addQuality, removeQuality } from '../../actions/qualityActions'
 import Paper from 'material-ui/Paper'
 import CharacterSheetSection from '../CharacterSheetSection'
 import QualityItem from './QualityItem'
+import AddedQualityItem from './AddedQualityItem'
 import PropTypes from 'prop-types'
 
 class QualityPicker extends React.Component {
@@ -25,6 +26,7 @@ class QualityPicker extends React.Component {
         handleAddItem={addQuality}
         handleRemoveItem={removeQuality}
         ItemComponent={QualityItem}
+        AddedItemComponent={AddedQualityItem}
       />
     </Paper>)
   }
