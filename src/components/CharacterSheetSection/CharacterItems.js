@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 
 const CharacterItems = ({ItemComponent, characterItems, handleRemoveItem, handleSelectOption}) => {
   const itemComponents = characterItems
-    .map((item, index) => <ItemComponent key={index} item={item} handleSelectOption={handleSelectOption} handleRemoveItem={ () => { handleRemoveItem(index)} }/>)
+    .map((item, index) => (<ItemComponent
+      key={index} item={item}
+      handleSelectOption={(accessoryPosition, accessory) => {handleSelectOption(index, accessoryPosition, accessory)}} 
+      handleRemoveItem={ () => { handleRemoveItem(index)} }/>))
   return (<div>
     {itemComponents}
   </div>)

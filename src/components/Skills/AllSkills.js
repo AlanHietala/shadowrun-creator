@@ -25,7 +25,7 @@ const AllSkills = ({skills, filterFn, modifyFn, addSpecializationFn, removeSpeci
 
   return (
     <List>
-      <Subheader>Skills</Subheader>
+      <Subheader>Skillssss</Subheader>
       {skillList}
 
     </List>)

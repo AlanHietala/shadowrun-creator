@@ -15,18 +15,23 @@ const store = configureStore()
 // Required for replaying actions from devtools to work
 
 
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
 )
-if (module.hot) {
+
+if(module.hot) {
   module.hot.accept('./components/App.js', () => {
+    const NextApp = require('./components/App').default
     ReactDOM.render(
       <Provider store={store}>
-        <App />
-      </Provider>, document.getElementById('root'))
+        <NextApp />
+      </Provider>,
+      document.getElementById('root')
+    )
   })
 }
 

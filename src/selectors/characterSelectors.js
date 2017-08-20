@@ -59,7 +59,29 @@ const updateMod = (currentSheetItem, mod, item) => {
     modifiedBy: currentSheetItem.modifiedBy.concat([item]),
   }
 }
+const updateChracterSheetWeaponAccessories = (characterSheet, item) => {
+  if(item.accessories) {
+    if(item.accessories.barrel) {
+      characterSheet = updateCharacterSheet(characterSheet, item.accessories.barrel)
+    }
+    if(item.accessories.top && !item.accessories.top.isInstalled) {
+      characterSheet = updateCharacterSheet(characterSheet, item.accessories.top)
+    }
+    if(item.accessories.under && !item.accessories.under.isInstalled) {
+      characterSheet = updateCharacterSheet(characterSheet, item.accessories.under)
+    }
+    if(item.accessories.internal && !item.accessories.internal.isInstalled) {
+      characterSheet = updateCharacterSheet(characterSheet, item.accessories.internal)
+    }
+    if(item.accessories.stock && !item.accessories.internal.isInstalled) {
+      characterSheet = updateCharacterSheet(characterSheet, item.accessories.stock)
+    }
+  }
+  return characterSheet
+}
+
 const updateCharacterSheet = (characterSheet, item) => {
+  characterSheet = updateChracterSheetWeaponAccessories(characterSheet, item)
   return item.mods.reduce((sheet, mod) => {
     return mod.modType === modTypes.ESSENCE_MOD ? {...sheet, essence: updateMod(sheet.essence, mod, item)}
       : mod.modType === modTypes.RESOURCES_MOD ?  {...sheet, resources: updateMod(sheet.resources, mod, item)}
