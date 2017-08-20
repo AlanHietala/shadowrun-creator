@@ -22,31 +22,35 @@ const WeaponAccessories = ({weapon, handleSelectOption}) => {
         availableAccessories={availableBarrelAccessories}
         accessoryTitle={'Barrel'}
         selectedValue={selectedBarrel}
-        handleSelectOption={handleSelectOption} />
+        handleSelectOption={(accessory) => handleSelectOption('barrel', accessory)}
+      />
 
       <AvailableAccessoryList
         availableAccessories={availableStockAccessories}
         accessoryTitle={'Stock'}
         selectedValue={selectedStock}
-        handleSelectOption={handleSelectOption} />
-
+        handleSelectOption={(accessory) => handleSelectOption('stock', accessory)}
+      />
       <AvailableAccessoryList
         availableAccessories={availableUnderAccessories}
         accessoryTitle={'Under'}
         selectedValue={selectedUnder}
-        handleSelectOption={handleSelectOption} />
+        handleSelectOption={(accessory) => handleSelectOption('under', accessory)}
+      />
 
       <AvailableAccessoryList
         availableAccessories={availableTopAccessories}
         accessoryTitle={'Top'}
         selectedValue={selectedTop}
-        handleSelectOption={handleSelectOption} />
+        handleSelectOption={(accessory) => handleSelectOption('top', accessory)} 
+      />
 
       <AvailableAccessoryList
         availableAccessories={availableInternalAccessories}
         accessoryTitle={'Internal'}
         selectedValue={selectedInternal}
-        handleSelectOption={handleSelectOption} />
+        handleSelectOption={(accessory) => handleSelectOption('internal', accessory)}
+      />
 
     </div>)
 }

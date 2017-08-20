@@ -9,7 +9,13 @@ const AvailableAccessoryList = ({availableAccessories, accessoryTitle, selectedV
       <SelectField
         value={selectedValue}
         floatingLabelText={accessoryTitle}
-        onChange={handleSelectOption}>
+        onChange={(event, index) => {
+          let selectedAccessory = null
+          if (index > 0) {
+            selectedAccessory = availableAccessories[index - 1]
+          }
+          handleSelectOption(selectedAccessory)}
+        }>
         <MenuItem value={null} primaryText={''}/>
         {availableAccessories.map(accessory => {
           const style = accessory.isInstalled ? styles.isInstalled : null

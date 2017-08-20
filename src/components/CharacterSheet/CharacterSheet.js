@@ -62,7 +62,7 @@ const styles = {
   },
 }
 CharacterSheet.propTypes = {
-  characterSheet: PropTypes.object.isRequired,
+  characterSheet: PropTypes.object,
 }
 
 const mapStateToProps = (state) => {
