@@ -100,6 +100,9 @@ const character = (state = defaultState, action) => {
     case itemActionTypes.REMOVE_WEAPON:
       return weapons(state, action)
 
+    case itemActionTypes.SELECT_ACCESSORY:
+      return weapons(state, action)
+      
     case itemActionTypes.ADD_WARE:
       return ware(state, action)
 
