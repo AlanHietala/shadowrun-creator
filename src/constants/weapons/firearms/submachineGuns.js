@@ -6,7 +6,7 @@ export default [
     key: 'coltCobratz-12',
     name: 'Colt Cobra TZ-120',
     tags: ['machine pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -35,7 +35,7 @@ export default [
     key: 'FNP93praetor',
     name: 'FN P93 Praetor',
     tags: ['submachine gun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -64,7 +64,7 @@ export default [
     key: 'HK-227',
     name: 'HK-227',
     tags: ['submachine gun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -93,7 +93,7 @@ export default [
     key: 'IngramSmartgunX',
     name: 'Ingram Smartgun X',
     tags: ['submachine gun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -122,7 +122,7 @@ export default [
     key: 'SCKModel100',
     name: 'SCK Model 100',
     tags: ['submachine gun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,

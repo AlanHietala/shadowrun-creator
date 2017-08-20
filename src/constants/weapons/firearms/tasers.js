@@ -6,7 +6,7 @@ export default [
     key: 'exShocker',
     name: 'Defiance EX Shocker',
     tags: ['taser'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -36,7 +36,7 @@ export default [
     key: 'yamahaPulsar',
     name: 'Yamaha Pulsar',
     tags: ['taser'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,

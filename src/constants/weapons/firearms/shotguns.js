@@ -6,7 +6,7 @@ export default [
     key: 'DefianceT-250',
     name: 'Defiance T-250',
     tags: ['shotgun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -36,7 +36,7 @@ export default [
     key: 'EnfieldAS-7',
     name: 'Enfield AS-7',
     tags: ['shotgun'],
-    accessories: [],
+    accessories: {},
     weaponStats: {
       acc: 4,
       accWithMods: 5,
@@ -59,7 +59,7 @@ export default [
     key: 'PJSSModel55',
     name: 'PJSS Model 55',
     tags: ['shotgun'],
-    accessories: [],
+    accessories: {},
     weaponStats: {
       acc: 6,
       accWithMods: null,

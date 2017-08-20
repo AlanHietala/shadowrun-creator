@@ -6,7 +6,7 @@ export default [
     key: 'AresLightfire75',
     name: 'Ares Light Fire 75',
     tags: ['light pistol', 'pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -38,7 +38,7 @@ export default [
     key: 'AresLightFire70',
     name: 'Ares Light Fire 70',
     tags: ['light pistol', 'pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -70,7 +70,7 @@ export default [
     key: 'Beretta201T',
     name: 'Beretta 201T',
     tags: ['light pistol', 'pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -102,7 +102,7 @@ export default [
     key: 's',
     name: 'Colt America L36',
     tags: ['light pistol', 'pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -134,7 +134,7 @@ export default [
     key: 'FichettiSecurity600',
     name: 'Fichetti Security 600',
     tags: ['light pistol', 'pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -166,7 +166,7 @@ export default [
     key: 'TaurusOmni-6',
     name: 'Taurus Omni-6',
     tags: ['light pistol', 'pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,

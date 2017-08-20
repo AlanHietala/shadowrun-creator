@@ -6,7 +6,7 @@ export default [
     key: 'aresCrusaderII',
     name: 'Ares Crusader II',
     tags: ['machine pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -37,7 +37,7 @@ export default [
     key: 'CeskaBlackScorpion',
     name: 'Ceska Black Scorpion',
     tags: ['machine pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -67,7 +67,7 @@ export default [
     key: 'SteyrTMP',
     name: 'Steyr TMP',
     tags: ['machine pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,

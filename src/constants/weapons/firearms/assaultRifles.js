@@ -1,12 +1,14 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { smartgunSystemInternal } from './accessories/accessories'
 
 export default [
   {
     key: 'AK97',
     name: 'AK97',
     tags: ['assault rifle'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.INTERNAL,
@@ -39,18 +41,7 @@ export default [
     name: 'Ares Alpha',
     tags: ['assault rifle'],
     accessories: {
-      internal: {
-        key: 'SmartgunSystemInternal',
-        name: 'Smartgun System Internal',
-        isStandard: true,
-        mounts: [
-          accessoryTypes.ALL,
-        ],
-        avail: '(+2)R',
-        cost: 'Weapon Cost x2',
-        tags: [],
-        mods: [],
-      },
+      internal: internalize(smartgunSystemInternal),
       barrel: null,
       top: null,
       bottom: null,
@@ -81,7 +72,7 @@ export default [
         key: 'aresAlphaGL',
         name: 'Grenade Launcher',
         tags: ['grenade Launcher'],
-        accessories: [],
+        accessories: {},
         allowedAccessories: [
           accessoryTypes.ALL,
           accessoryTypes.INTERNAL,
@@ -120,7 +111,7 @@ export default [
     key: 'coltm23',
     name: 'Colt M23',
     tags: ['assault rifle'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.INTERNAL,
@@ -209,7 +200,7 @@ export default [
     key: 'yamaharaiden',
     name: 'Yamaha reloadWithDebugInfo',
     tags: ['assault rifle'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.INTERNAL,

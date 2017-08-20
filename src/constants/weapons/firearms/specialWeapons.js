@@ -6,7 +6,7 @@ export default [
     key: 'AresS-IIISuperSquirt',
     name: 'Ares S-III Super Squirt',
     tags: ['special weapon'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -34,7 +34,7 @@ export default [
     key: 'FichettiPainInducer',
     name: 'Fichetti Pain Inducer',
     tags: ['special weapon'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -62,7 +62,7 @@ export default [
     key: 'ParashieldDartPistol',
     name: 'Parashield Dart Pistol',
     tags: ['special weapon'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -89,7 +89,7 @@ export default [
     key: 'ParashieldDartRifle',
     name: 'Parashield Dart Rifle',
     tags: ['special weapon'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
