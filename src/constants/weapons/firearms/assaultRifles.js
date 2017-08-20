@@ -16,7 +16,7 @@ export default [
       accessoryTypes.UNDER,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.BARREL,
-      accessoryTypes.STOCK,
+      accessoryTypes.SHOCK_PAD,
     ],
     weaponStats: {
       acc: 5,
@@ -45,7 +45,7 @@ export default [
       barrel: null,
       top: null,
       bottom: null,
-      stock: null,
+      SHOCK_PAD: null,
     },
     allowedAccessories: [
       accessoryTypes.ALL,
@@ -54,7 +54,7 @@ export default [
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.UNDER,
       accessoryTypes.BARREL,
-      accessoryTypes.STOCK,
+      accessoryTypes.SHOCK_PAD,
     ],
     weaponStats: {
       acc: 5,
@@ -79,7 +79,7 @@ export default [
           accessoryTypes.TOP,
           accessoryTypes.UNDER,
           accessoryTypes.BARREL,
-          accessoryTypes.STOCK,
+          accessoryTypes.SHOCK_PAD,
         ],
         weaponStats: {
           acc: 4,
@@ -119,7 +119,7 @@ export default [
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.UNDER,
       accessoryTypes.BARREL,
-      accessoryTypes.STOCK,
+      accessoryTypes.SHOCK_PAD,
     ],
     weaponStats: {
       acc: 4,
@@ -176,7 +176,7 @@ export default [
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.UNDER,
       accessoryTypes.BARREL,
-      accessoryTypes.STOCK,
+      accessoryTypes.SHOCK_PAD,
     ],
     weaponStats: {
       acc: 5,
@@ -208,7 +208,7 @@ export default [
       accessoryTypes.TOP,
       accessoryTypes.UNDER,
       accessoryTypes.BARREL,
-      accessoryTypes.STOCK,
+      accessoryTypes.SHOCK_PAD,
     ],
     weaponStats: {
       acc: 6,

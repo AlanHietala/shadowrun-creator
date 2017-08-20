@@ -1,16 +1,23 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { foldingStock, gasVentSystemII, smartgunSystemInternal, laserSight } from './accessories/accessories'
 
 export default [
   {
     key: 'aresCrusaderII',
     name: 'Ares Crusader II',
     tags: ['machine pistol'],
-    accessories: {},
+    accessories: {
+      internal: internalize(smartgunSystemInternal),
+      barrel: internalize(gasVentSystemII),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
       accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
+      accessoryTypes.INTERNAL,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.QUICK_DRAW_HOLSTER,
       accessoryTypes.CONCEALED_HOLSTER,
@@ -37,11 +44,14 @@ export default [
     key: 'CeskaBlackScorpion',
     name: 'Ceska Black Scorpion',
     tags: ['machine pistol'],
-    accessories: {},
+    accessories: {
+      stock: internalize(foldingStock),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
       accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
       accessoryTypes.QUICK_DRAW_HOLSTER,
       accessoryTypes.CONCEALED_HOLSTER,
     ],
@@ -67,11 +77,14 @@ export default [
     key: 'SteyrTMP',
     name: 'Steyr TMP',
     tags: ['machine pistol'],
-    accessories: {},
+    accessories: {
+      top: internalize(laserSight),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
       accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
       accessoryTypes.QUICK_DRAW_HOLSTER,
       accessoryTypes.CONCEALED_HOLSTER,
     ],

@@ -1,6 +1,57 @@
 import * as accessoryTypes from './accessoryTypes'
 import * as modTypes from '../../../modTypes'
 
+export const foldingStock = {
+  key: 'foldingStock',
+  name: 'Folding Stock',
+  mounts: [
+    accessoryTypes.FOLDING_STOCK,
+  ],
+  avail: '2',
+  cost: 30,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -30,
+    },
+  ],
+}
+
+export const suppressorGasVentII = {
+  key: '',
+  name: 'Suppressor / Gas Vent II',
+  mounts: [
+    accessoryTypes.SUPPRESSOR_GAS_VENT_II,
+  ],
+  avail: '6R',
+  cost: 400,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -400,
+    },
+  ],
+}
+
+export const gasVentSystemII = {
+  key: 'GasVentSystemII',
+  name: 'Gas Vent System II',
+  mounts: [
+    accessoryTypes.BARREL,
+  ],
+  avail: '6R',
+  cost: 400,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -400,
+    },
+  ],
+}
+
 export const smartgunSystemInternal = {
   key: 'SmartgunSystemInternal',
   name: 'Smartgun System Internal',
@@ -57,11 +108,12 @@ export const internalAccessories = [
 ]
 
 export const stockAccessories = [
+  foldingStock,
   {
     key: 'ShockPad',
     name: 'Shock Pad',
     mounts: [
-      accessoryTypes.STOCK,
+      accessoryTypes.SHOCK_PAD,
     ],
     avail: '2',
     cost: 50,
@@ -185,22 +237,7 @@ export const barrelAccessories = [
       },
     ],
   },
-  {
-    key: 'GasVentSystemII',
-    name: 'Gas Vent System II',
-    mounts: [
-      accessoryTypes.BARREL,
-    ],
-    avail: '6R',
-    cost: 400,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -400,
-      },
-    ],
-  },
+  gasVentSystemII,
   {
     key: 'GasVentSystemIII',
     name: 'Gas Vent System III',
