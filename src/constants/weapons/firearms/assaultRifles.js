@@ -9,6 +9,7 @@ export default [
     accessories: [],
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
       accessoryTypes.UNDER,
       accessoryTypes.SILENCER_SUPPRESSOR,
