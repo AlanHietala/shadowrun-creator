@@ -71,7 +71,7 @@ const updateChracterSheetWeaponAccessories = (characterSheet, item) => {
       characterSheet = updateCharacterSheet(characterSheet, item.accessories.under)
     }
     if(item.accessories.internal && !item.accessories.internal.isInstalled) {
-      characterSheet = updateCharacterSheet(characterSheet, item.accessories.internal)
+      characterSheet = updateCharacterSheet(characterSheet, item.accessories.internal, item)
     }
     if(item.accessories.stock && !item.accessories.internal.isInstalled) {
       characterSheet = updateCharacterSheet(characterSheet, item.accessories.stock)
@@ -80,7 +80,7 @@ const updateChracterSheetWeaponAccessories = (characterSheet, item) => {
   return characterSheet
 }
 
-const updateCharacterSheet = (characterSheet, item) => {
+const updateCharacterSheet = (characterSheet, item, parentItem) => {
   characterSheet = updateChracterSheetWeaponAccessories(characterSheet, item)
   return item.mods.reduce((sheet, mod) => {
     return mod.modType === modTypes.ESSENCE_MOD ? {...sheet, essence: updateMod(sheet.essence, mod, item)}
@@ -100,7 +100,12 @@ const updateCharacterSheet = (characterSheet, item) => {
                                 : mod.modType === modTypes.SOCIAL_LIMIT_MOD ? {...sheet, socialLimitMod: updateMod(sheet.socialLimitMod, mod, item)}
                                   : mod.modType === modTypes.MENTAL_LIMIT_MOD ? {...sheet, mentalLimitMod: updateMod(sheet.mentalLimitMod, mod, item)}
                                     : mod.modType === modTypes.OVERFLOW_MOD ? {...sheet, overflowMod: updateMod(sheet.overflowMod, mod, item)}
-                                      : sheet
+                                      : mod.modType === modTypes.WEAPON_COST_MULTIPLE_MOD ? {...sheet, resources: updateMod(sheet.resources, {
+                                        effect: parentItem.mods.find(foundMod => {
+                                          return foundMod.modType === modTypes.RESOURCES_MOD
+                                        }).effect * (mod.effect - 1),
+                                      }, item)}
+                                        : sheet
   }, characterSheet)
 }
 
