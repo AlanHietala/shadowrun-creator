@@ -6,7 +6,7 @@ export default [
     key: 'AresAntioch-2',
     name: 'Ares Antioch-2',
     tags: ['grenade launcher'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -34,7 +34,7 @@ export default [
     key: 'ArmTechMGL-12',
     name: 'ArmTech MGL-12',
     tags: ['grenade launcher'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -62,7 +62,7 @@ export default [
     key: 'AztechnologyStriker',
     name: 'Aztechnology Striker',
     tags: ['missile launcher'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -90,7 +90,7 @@ export default [
     key: 'KrimeCannon',
     name: 'Krime Cannon',
     tags: ['cannon'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -118,7 +118,7 @@ export default [
     key: 'OnotariInterceptor',
     name: 'Onotari Interceptor',
     tags: ['missile launcher'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -146,7 +146,7 @@ export default [
     key: 'PantherXXL',
     name: 'Panther XXL',
     tags: ['cannon'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,

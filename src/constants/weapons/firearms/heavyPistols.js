@@ -1,15 +1,20 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { laserSight, smartgunSystemInternal, suppressor } from './accessories/accessories'
 
 export default [
   {
     key: 'AresPredatorV',
     name: 'Ares Predator V',
     tags: ['heavy pistol', 'pistol'],
-    accessories: [],
+    accessories: {
+      internal: internalize(smartgunSystemInternal),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
+      accessoryTypes.INTERNAL,
       accessoryTypes.BARREL,
       accessoryTypes.QUICK_DRAW_HOLSTER,
       accessoryTypes.SILENCER_SUPPRESSOR,
@@ -36,7 +41,9 @@ export default [
     key: 'AresViperSilverGun',
     name: 'Ares Viper Silvergun',
     tags: ['heavy pistol', 'pistol'],
-    accessories: [],
+    accessories: {
+      barrel: internalize(suppressor),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -66,7 +73,9 @@ export default [
     key: 'BrowningUltraPower',
     name: 'Browning Ultra-Power',
     tags: ['heavy pistol', 'pistol'],
-    accessories: [],
+    accessories: {
+      top: internalize(laserSight),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -96,7 +105,7 @@ export default [
     key: 'ColtGovernment2066',
     name: 'Colt Government 2066',
     tags: ['heavy pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -126,7 +135,7 @@ export default [
     key: 'Remington Roomsweeper',
     name: 'Remington Roomsweeper',
     tags: ['heavy pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -149,8 +158,8 @@ export default [
         key: 'remington w flechettes',
         name: 'w/ flechettes',
         tags: [],
-        accessories: [],
-        allowedAccessories: [],
+        accessories: {},
+        allowedaccessories: {},
         weaponStats: {
           acc: null,
           accWithMods: null,
@@ -177,7 +186,7 @@ export default [
     key: 'RugerSuperWarhawk',
     name: 'Ruger Super Warhawk',
     tags: ['heavy pistol'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,

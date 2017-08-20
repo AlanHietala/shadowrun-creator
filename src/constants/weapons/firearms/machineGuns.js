@@ -6,7 +6,7 @@ export default [
     key: 'IngramValiant',
     name: 'Ingram Valiant',
     tags: ['machine gun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -37,7 +37,7 @@ export default [
     key: 'StonerAresM202',
     name: 'Stoner Ares M202',
     tags: ['machine gun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.SILENCER_SUPPRESSOR,
@@ -68,7 +68,7 @@ export default [
     key: 'RPKHMG',
     name: 'RPK HMG',
     tags: ['machine gun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,

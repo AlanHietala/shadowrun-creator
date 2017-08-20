@@ -6,7 +6,7 @@ export default [
     key: 'AresDesertStrike',
     name: 'Ares Desert Strike',
     tags: ['sniper rifle'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -37,7 +37,7 @@ export default [
     key: 'CavalierArmsCrocketEBR',
     name: 'Cavalier Arms Crocket EBR',
     tags: ['sniper rifle'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -68,7 +68,7 @@ export default [
     key: 'RangerArmsSM-5',
     name: 'Ranger Arms SM-5',
     tags: ['sniper rifle'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -99,7 +99,7 @@ export default [
     key: 'Remington950',
     name: 'Remington 950',
     tags: ['sniper rifle'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -130,7 +130,7 @@ export default [
     key: 'Ruger100',
     name: 'Ruger 100',
     tags: ['sniper rifle'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,

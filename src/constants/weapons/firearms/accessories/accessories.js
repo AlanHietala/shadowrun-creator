@@ -1,31 +1,119 @@
 import * as accessoryTypes from './accessoryTypes'
 import * as modTypes from '../../../modTypes'
 
+export const foldingStock = {
+  key: 'foldingStock',
+  name: 'Folding Stock',
+  mounts: [
+    accessoryTypes.FOLDING_STOCK,
+  ],
+  avail: '2',
+  cost: 30,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -30,
+    },
+  ],
+}
+
+export const suppressorGasVentII = {
+  key: '',
+  name: 'Suppressor / Gas Vent II',
+  mounts: [
+    accessoryTypes.SUPPRESSOR_GAS_VENT_II,
+  ],
+  avail: '6R',
+  cost: 400,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -400,
+    },
+  ],
+}
+
+export const gasVentSystemII = {
+  key: 'GasVentSystemII',
+  name: 'Gas Vent System II',
+  mounts: [
+    accessoryTypes.BARREL,
+  ],
+  avail: '6R',
+  cost: 400,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -400,
+    },
+  ],
+}
+
+export const smartgunSystemInternal = {
+  key: 'SmartgunSystemInternal',
+  name: 'Smartgun System Internal',
+  mounts: [
+    accessoryTypes.ALL,
+  ],
+  avail: '(+2)R',
+  cost: 'Weapon Cost x2',
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.WEAPON_COST_MULTIPLE_MOD,
+      effect: 2,
+    },
+  ],
+}
+
+export const laserSight = {
+  key: 'LaserSight',
+  name: 'Laser Sight',
+  mounts: [
+    accessoryTypes.TOP,
+    accessoryTypes.UNDER,
+  ],
+  avail: '2',
+  cost: 125,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -125,
+    },
+  ],
+}
+
+export const suppressor = {
+  key: 'supressor',
+  name: 'Silencer/Supressor',
+  mounts: [
+    accessoryTypes.SILENCER_SUPPRESSOR,
+  ],
+  avail: '9F',
+  cost: 500,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -500,
+    },
+  ],
+}
 export const internalAccessories = [
-  {
-    key: 'SmartgunSystemInternal',
-    name: 'Smartgun System Internal',
-    mounts: [
-      accessoryTypes.ALL,
-    ],
-    avail: '(+2)R',
-    cost: 'Weapon Cost x2',
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.WEAPON_COST_MULTIPLE_MOD,
-        effect: 2,
-      },
-    ],
-  },
+  smartgunSystemInternal,
 ]
 
 export const stockAccessories = [
+  foldingStock,
   {
     key: 'ShockPad',
     name: 'Shock Pad',
     mounts: [
-      accessoryTypes.STOCK,
+      accessoryTypes.SHOCK_PAD,
     ],
     avail: '2',
     cost: 50,
@@ -73,24 +161,9 @@ export const topAccessories = [
       },
     ],
   },
-  {
-    key: 'LaserSight',
-    name: 'Laser Sight',
-    mounts: [
-      accessoryTypes.TOP,
-      accessoryTypes.UNDER,
-    ],
-    avail: '2',
-    cost: 125,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -125,
-      },
-    ],
-  },
+  laserSight,
 ]
+
 export const underAccessories = [
   {
     key: 'SmartFiringPlatform',
@@ -140,41 +213,11 @@ export const underAccessories = [
       },
     ],
   },
-  {
-    key: 'LaserSight',
-    name: 'Laser Sight',
-    mounts: [
-      accessoryTypes.TOP,
-      accessoryTypes.UNDER,
-    ],
-    avail: '2',
-    cost: 125,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -125,
-      },
-    ],
-  },
+  laserSight,
 ]
+
 export const silencerAccessories = [
-  {
-    key: 'Silencer/Supressor',
-    name: 'Silencer/Supressor',
-    mounts: [
-      accessoryTypes.SILENCER_SUPPRESSOR,
-    ],
-    avail: '9F',
-    cost: 500,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -500,
-      },
-    ],
-  },
+  suppressor,
 ]
 
 export const barrelAccessories = [
@@ -194,22 +237,7 @@ export const barrelAccessories = [
       },
     ],
   },
-  {
-    key: 'GasVentSystemII',
-    name: 'Gas Vent System II',
-    mounts: [
-      accessoryTypes.BARREL,
-    ],
-    avail: '6R',
-    cost: 400,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -400,
-      },
-    ],
-  },
+  gasVentSystemII,
   {
     key: 'GasVentSystemIII',
     name: 'Gas Vent System III',

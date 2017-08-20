@@ -6,7 +6,7 @@ export default [
     key: 'fichettiTiffaniNeedler',
     name: 'Fichetti Tiffani Needler',
     tags: ['holdout', 'semiauto'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ARM_SLIDE,
       accessoryTypes.CONCEALED_HOLSTER,
@@ -34,7 +34,7 @@ export default [
     key: 'StreetlineSpecial',
     name: 'Streetline Special',
     tags: ['holdout'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ARM_SLIDE,
       accessoryTypes.CONCEALED_HOLSTER,
@@ -62,7 +62,7 @@ export default [
     key: 'WaltherPalmPistol',
     name: 'Walther Palm Pistol',
     tags: ['holdout'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ARM_SLIDE,
       accessoryTypes.CONCEALED_HOLSTER,

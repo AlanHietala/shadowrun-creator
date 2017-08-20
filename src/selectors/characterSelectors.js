@@ -73,7 +73,7 @@ const updateChracterSheetWeaponAccessories = (characterSheet, item) => {
     if(item.accessories.internal && !item.accessories.internal.isInstalled) {
       characterSheet = updateCharacterSheet(characterSheet, item.accessories.internal, item)
     }
-    if(item.accessories.stock && !item.accessories.internal.isInstalled) {
+    if(item.accessories.stock && !item.accessories.stock.isInstalled) {
       characterSheet = updateCharacterSheet(characterSheet, item.accessories.stock)
     }
   }

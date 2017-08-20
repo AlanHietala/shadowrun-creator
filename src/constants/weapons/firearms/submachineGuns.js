@@ -1,17 +1,25 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { suppressorGasVentII, suppressor, foldingStock, gasVentSystemII, smartgunSystemInternal, laserSight } from './accessories/accessories'
 
 export default [
   {
     key: 'coltCobratz-12',
     name: 'Colt Cobra TZ-120',
     tags: ['machine pistol'],
-    accessories: [],
+    accessories: {
+      stock: internalize(foldingStock),
+      top: internalize(laserSight),
+      barrel: internalize(gasVentSystemII),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
     ],
     weaponStats: {
       acc: 4,
@@ -35,12 +43,14 @@ export default [
     key: 'FNP93praetor',
     name: 'FN P93 Praetor',
     tags: ['submachine gun'],
-    accessories: [],
+    accessories: {},
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
     ],
     weaponStats: {
       acc: 6,
@@ -64,12 +74,17 @@ export default [
     key: 'HK-227',
     name: 'HK-227',
     tags: ['submachine gun'],
-    accessories: [],
+    accessories: {
+      internal: internalize(smartgunSystemInternal),
+      barrel: internalize(suppressor),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
     ],
     weaponStats: {
       acc: 5,
@@ -93,12 +108,17 @@ export default [
     key: 'IngramSmartgunX',
     name: 'Ingram Smartgun X',
     tags: ['submachine gun'],
-    accessories: [],
+    accessories: {
+      internal: internalize(smartgunSystemInternal),
+      barrel: internalize(suppressorGasVentII),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
-      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.SUPPRESSOR_GAS_VENT_II,
       accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
     ],
     weaponStats: {
       acc: 4,
@@ -122,12 +142,17 @@ export default [
     key: 'SCKModel100',
     name: 'SCK Model 100',
     tags: ['submachine gun'],
-    accessories: [],
+    accessories: {
+      internal: internalize(smartgunSystemInternal),
+      stock: internalize(foldingStock),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
       accessoryTypes.TOP,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
     ],
     weaponStats: {
       acc: 5,
@@ -150,6 +175,18 @@ export default [
   {
     key: 'UziIV',
     name: 'Uzi IV',
+    accessories: {
+      stock: internalize(foldingStock),
+      top: internalize(laserSight),
+    },
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.INTERNAL,
+      accessoryTypes.TOP,
+      accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.BARREL,
+      accessoryTypes.FOLDING_STOCK,
+    ],
     tags: ['submachine gun'],
     weaponStats: {
       acc: 4,
