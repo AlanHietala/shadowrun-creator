@@ -1,17 +1,22 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { foldingStock, laserSight, lightFireSuppressor } from './accessories/accessories'
 
 export default [
   {
     key: 'AresLightfire75',
     name: 'Ares Light Fire 75',
     tags: ['light pistol', 'pistol'],
-    accessories: {},
+    accessories: {
+      barrel: internalize(lightFireSuppressor),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
       accessoryTypes.BARREL,
       accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.LIGHTFIRE_SUPPRESSOR,
       accessoryTypes.CONCEALED_HOLSTER,
       accessoryTypes.QUICK_DRAW_HOLSTER,
       accessoryTypes.ARM_SLIDE,
@@ -44,6 +49,7 @@ export default [
       accessoryTypes.TOP,
       accessoryTypes.BARREL,
       accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.LIGHTFIRE_SUPPRESSOR,
       accessoryTypes.CONCEALED_HOLSTER,
       accessoryTypes.QUICK_DRAW_HOLSTER,
       accessoryTypes.ARM_SLIDE,
@@ -134,11 +140,15 @@ export default [
     key: 'FichettiSecurity600',
     name: 'Fichetti Security 600',
     tags: ['light pistol', 'pistol'],
-    accessories: {},
+    accessories: {
+      top: internalize(laserSight),
+      stock: internalize(foldingStock),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
       accessoryTypes.SILENCER_SUPPRESSOR,
+      accessoryTypes.FOLDING_STOCK,
       accessoryTypes.BARREL,
       accessoryTypes.CONCEALED_HOLSTER,
       accessoryTypes.QUICK_DRAW_HOLSTER,

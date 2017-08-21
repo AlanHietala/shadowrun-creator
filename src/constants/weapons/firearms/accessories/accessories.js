@@ -86,6 +86,22 @@ export const laserSight = {
     },
   ],
 }
+export const lightFireSuppressor = {
+  key: 'supressor',
+  name: 'Silencer/Supressor',
+  mounts: [
+    accessoryTypes.LIGHTFIRE_SUPPRESSOR,
+  ],
+  avail: '9F',
+  cost: 750,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -750,
+    },
+  ],
+}
 
 export const suppressor = {
   key: 'supressor',
@@ -218,6 +234,7 @@ export const underAccessories = [
 
 export const silencerAccessories = [
   suppressor,
+  lightFireSuppressor,
 ]
 
 export const barrelAccessories = [

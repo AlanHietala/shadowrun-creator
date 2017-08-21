@@ -1,12 +1,16 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { smartgunSystemInternal } from './accessories/accessories'
 
 export default [
   {
     key: 'AresAntioch-2',
     name: 'Ares Antioch-2',
     tags: ['grenade launcher'],
-    accessories: {},
+    accessories: {
+      internal: internalize(smartgunSystemInternal),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -118,7 +122,9 @@ export default [
     key: 'OnotariInterceptor',
     name: 'Onotari Interceptor',
     tags: ['missile launcher'],
-    accessories: {},
+    accessories: {
+      internal: internalize(smartgunSystemInternal),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -146,7 +152,9 @@ export default [
     key: 'PantherXXL',
     name: 'Panther XXL',
     tags: ['cannon'],
-    accessories: {},
+    accessories: {
+      internal: internalize(smartgunSystemInternal),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
