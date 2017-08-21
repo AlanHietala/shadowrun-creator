@@ -1,6 +1,23 @@
 import * as accessoryTypes from './accessoryTypes'
 import * as modTypes from '../../../modTypes'
 
+export const imagingScope = {
+  key: 'ImagingScope',
+  name: 'Imaging Scope',
+  mounts: [
+    accessoryTypes.TOP,
+  ],
+  avail: '2',
+  cost: 300,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -300,
+    },
+  ],
+}
+
 export const foldingStock = {
   key: 'foldingStock',
   name: 'Folding Stock',
@@ -86,6 +103,22 @@ export const laserSight = {
     },
   ],
 }
+export const lightFireSuppressor = {
+  key: 'supressor',
+  name: 'Silencer/Supressor',
+  mounts: [
+    accessoryTypes.LIGHTFIRE_SUPPRESSOR,
+  ],
+  avail: '9F',
+  cost: 750,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -750,
+    },
+  ],
+}
 
 export const suppressor = {
   key: 'supressor',
@@ -103,29 +136,30 @@ export const suppressor = {
     },
   ],
 }
+
+export const shockPad = {
+  key: 'ShockPad',
+  name: 'Shock Pad',
+  mounts: [
+    accessoryTypes.SHOCK_PAD,
+  ],
+  avail: '2',
+  cost: 50,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -50,
+    },
+  ],
+}
 export const internalAccessories = [
   smartgunSystemInternal,
 ]
 
 export const stockAccessories = [
   foldingStock,
-  {
-    key: 'ShockPad',
-    name: 'Shock Pad',
-    mounts: [
-      accessoryTypes.SHOCK_PAD,
-    ],
-    avail: '2',
-    cost: 50,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -50,
-      },
-    ],
-  },
-
+  shockPad,
 ]
 
 export const topAccessories = [
@@ -145,22 +179,7 @@ export const topAccessories = [
       },
     ],
   },
-  {
-    key: 'ImagingScope',
-    name: 'Imaging Scope',
-    mounts: [
-      accessoryTypes.TOP,
-    ],
-    avail: '2',
-    cost: 300,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -300,
-      },
-    ],
-  },
+  imagingScope,
   laserSight,
 ]
 
@@ -218,6 +237,7 @@ export const underAccessories = [
 
 export const silencerAccessories = [
   suppressor,
+  lightFireSuppressor,
 ]
 
 export const barrelAccessories = [
