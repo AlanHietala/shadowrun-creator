@@ -1,6 +1,23 @@
 import * as accessoryTypes from './accessoryTypes'
 import * as modTypes from '../../../modTypes'
 
+export const imagingScope = {
+  key: 'ImagingScope',
+  name: 'Imaging Scope',
+  mounts: [
+    accessoryTypes.TOP,
+  ],
+  avail: '2',
+  cost: 300,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -300,
+    },
+  ],
+}
+
 export const foldingStock = {
   key: 'foldingStock',
   name: 'Folding Stock',
@@ -119,29 +136,30 @@ export const suppressor = {
     },
   ],
 }
+
+export const shockPad = {
+  key: 'ShockPad',
+  name: 'Shock Pad',
+  mounts: [
+    accessoryTypes.SHOCK_PAD,
+  ],
+  avail: '2',
+  cost: 50,
+  tags: [],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -50,
+    },
+  ],
+}
 export const internalAccessories = [
   smartgunSystemInternal,
 ]
 
 export const stockAccessories = [
   foldingStock,
-  {
-    key: 'ShockPad',
-    name: 'Shock Pad',
-    mounts: [
-      accessoryTypes.SHOCK_PAD,
-    ],
-    avail: '2',
-    cost: 50,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -50,
-      },
-    ],
-  },
-
+  shockPad,
 ]
 
 export const topAccessories = [
@@ -161,22 +179,7 @@ export const topAccessories = [
       },
     ],
   },
-  {
-    key: 'ImagingScope',
-    name: 'Imaging Scope',
-    mounts: [
-      accessoryTypes.TOP,
-    ],
-    avail: '2',
-    cost: 300,
-    tags: [],
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -300,
-      },
-    ],
-  },
+  imagingScope,
   laserSight,
 ]
 

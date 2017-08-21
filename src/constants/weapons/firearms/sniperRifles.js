@@ -1,12 +1,17 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { supressor, shockPad, imagingScope } from './accessories/accessories'
 
 export default [
   {
     key: 'AresDesertStrike',
     name: 'Ares Desert Strike',
     tags: ['sniper rifle'],
-    accessories: {},
+    accessories: {
+      stock: internalize(shockPad),
+      top: internalize(imagingScope),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -37,7 +42,10 @@ export default [
     key: 'CavalierArmsCrocketEBR',
     name: 'Cavalier Arms Crocket EBR',
     tags: ['sniper rifle'],
-    accessories: {},
+    accessories: {
+      stock: internalize(shockPad),
+      top: internalize(imagingScope),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -68,7 +76,11 @@ export default [
     key: 'RangerArmsSM-5',
     name: 'Ranger Arms SM-5',
     tags: ['sniper rifle'],
-    accessories: {},
+    accessories: {
+      stock: internalize(shockPad),
+      top: internalize(imagingScope),
+      barrel: internalize(supressor),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
@@ -99,11 +111,12 @@ export default [
     key: 'Remington950',
     name: 'Remington 950',
     tags: ['sniper rifle'],
-    accessories: {},
+    accessories: {
+      top: internalize(imagingScope),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
-      accessoryTypes.UNDER,
       accessoryTypes.SILENCER_SUPPRESSOR,
       accessoryTypes.BARREL,
       accessoryTypes.STOCK,
@@ -130,7 +143,10 @@ export default [
     key: 'Ruger100',
     name: 'Ruger 100',
     tags: ['sniper rifle'],
-    accessories: {},
+    accessories: {
+      stock: internalize(shockPad),
+      top: internalize(imagingScope),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
