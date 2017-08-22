@@ -5,11 +5,11 @@ import machinePistols from './firearms/machinePistols'
 import submachineGuns from './firearms/submachineGuns'
 import assaultRifles from './firearms/assaultRifles'
 import sniperRifles from './firearms/sniperRifles'
-// import shotguns from './firearms/shotguns'
-// import specialWeapons from './firearms/specialWeapons'
-// import machineGuns from './firearms/machineGuns'
+import shotguns from './firearms/shotguns'
+import specialWeapons from './firearms/specialWeapons'
+import machineGuns from './firearms/machineGuns'
 import cannonsLaunchers from './firearms/cannonsLaunchers'
-// import tasers from './firearms/tasers'
+import tasers from './firearms/tasers'
 //
 export default [
   ...holdouts,
@@ -19,9 +19,9 @@ export default [
   ...submachineGuns,
   ...assaultRifles,
   ...sniperRifles,
-  // ...shotguns,
-  // ...specialWeapons,
-  // ...machineGuns,
+  ...shotguns,
+  ...specialWeapons,
+  ...machineGuns,
   ...cannonsLaunchers,
-  // ...tasers,
+  ...tasers,
 ]
