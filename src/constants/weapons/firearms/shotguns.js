@@ -1,5 +1,7 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { laserSight, shockPad } from './accessories/accessories'
 
 export default [
   {
@@ -36,7 +38,9 @@ export default [
     key: 'EnfieldAS-7',
     name: 'Enfield AS-7',
     tags: ['shotgun'],
-    accessories: {},
+    accessories: {
+      top: internalize(laserSight),
+    },
     weaponStats: {
       acc: 4,
       accWithMods: 5,
@@ -59,7 +63,9 @@ export default [
     key: 'PJSSModel55',
     name: 'PJSS Model 55',
     tags: ['shotgun'],
-    accessories: {},
+    accessories: {
+      stock: internalize(shockPad),
+    },
     weaponStats: {
       acc: 6,
       accWithMods: null,
