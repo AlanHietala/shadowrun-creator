@@ -38,6 +38,13 @@ export default [
     key: 'EnfieldAS-7',
     name: 'Enfield AS-7',
     tags: ['shotgun'],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.UNDER,
+      accessoryTypes.STOCK,
+    ],
     accessories: {
       top: internalize(laserSight),
     },
@@ -63,6 +70,13 @@ export default [
     key: 'PJSSModel55',
     name: 'PJSS Model 55',
     tags: ['shotgun'],
+    allowedAccessories: [
+      accessoryTypes.ALL,
+      accessoryTypes.TOP,
+      accessoryTypes.BARREL,
+      accessoryTypes.UNDER,
+      accessoryTypes.STOCK,
+    ],
     accessories: {
       stock: internalize(shockPad),
     },
