@@ -18,7 +18,7 @@ const AddSkillGroup = ({ skillGroup, modifySkillGroupFn }) => {
 }
 
 AddSkillGroup.propTypes = {
-  skillGroup: PropTypes.array,
+  skillGroup: PropTypes.object,
   modifySkillGroupFn: PropTypes.func,
 }
 
