@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Paper from 'material-ui/Paper'
-import { addWare, removeWare } from '../../actions/itemActions'
+import { addWare, removeWare, toggleCapacityOption } from '../../actions/itemActions'
 import wareList from '../../constants/ware'
 import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
@@ -15,7 +15,7 @@ class WarePicker extends React.Component {
   }
 
   render() {
-    const {characterWare, handleAddWare, handleRemoveWare} = this.props
+    const {characterWare, handleAddWare, handleRemoveWare, handleToggleCapacityOption} = this.props
     return (<Paper style={{minWidth:300, flexGrow: 1, margin: 5}}>
       <h2>Ware</h2>
       <CharacterSheetSection
@@ -24,6 +24,7 @@ class WarePicker extends React.Component {
         allItems={wareList}
         handleAddItem={handleAddWare}
         handleRemoveItem={handleRemoveWare}
+        handleToggleCapacityOption={handleToggleCapacityOption}
         ItemComponent={WareItem}
         AddedItemComponent={AddedWareItem}
       />
@@ -49,6 +50,10 @@ const mapDispatchToProps = (dispatch) => {
       const removeWareAction = removeWare(wareIndex)
       dispatch(removeWareAction)
     },
+    handleToggleCapacityOption: (wareIndex, capacityOption) => {
+      const addCapacityOptionAction = toggleCapacityOption(wareIndex, capacityOption)
+      dispatch(addCapacityOptionAction)
+    },
   }
 }
 
@@ -56,6 +61,7 @@ WarePicker.propTypes = {
   characterWare: PropTypes.array,
   handleAddWare: PropTypes.func,
   handleRemoveWare: PropTypes.func,
+  handleToggleCapacityOption: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(WarePicker)
