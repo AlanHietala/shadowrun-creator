@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ListItem } from 'material-ui/List'
 
-const WareItem = ({item}) => (<ListItem>{item.name}</ListItem>)
+const WareItem = ({item}) => (<div>{item.name}</div>)
 
 WareItem.propTypes = {
   item: PropTypes.object,

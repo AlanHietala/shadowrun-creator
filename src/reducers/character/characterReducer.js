@@ -102,11 +102,14 @@ const character = (state = defaultState, action) => {
 
     case itemActionTypes.SELECT_ACCESSORY:
       return weapons(state, action)
-      
+
     case itemActionTypes.ADD_WARE:
       return ware(state, action)
 
     case itemActionTypes.REMOVE_WARE:
+      return ware(state, action)
+
+    case itemActionTypes.TOGGLE_CAPACITY_OPTION:
       return ware(state, action)
 
     default:

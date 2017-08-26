@@ -9,6 +9,7 @@ const installableOption = (option) => {
   return {
     ...option,
     mods,
+    isInstalled: false,
   }
 }
 
@@ -16,7 +17,7 @@ const flareCompensation = {
   key: 'flareCompensation',
   name: 'Flare Compensation',
   tags: [],
-  capacity: -1,
+  capacityRequired: 1,
   cost: 1000,
   avail: 3,
   mods: [
@@ -38,7 +39,6 @@ export default [
     key: 'cybereyesI',
     name: 'Cybereyes I',
     tags: [],
-    installedOptions: [],
     availableOptions: [
       installableOption(flareCompensation),
     ],
