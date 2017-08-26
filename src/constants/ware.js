@@ -1,8 +1,10 @@
 import * as modTypes from './modTypes'
 import cyberEyes from './ware/cybereyes/cybereyes'
+import earware from './ware/earware'
 
 export default [
   ...cyberEyes,
+  ...earware,
   {
     name: 'Reaction Enhancer 1',
     tags: [],
