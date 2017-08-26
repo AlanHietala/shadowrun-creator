@@ -1,12 +1,18 @@
 import * as modTypes from '../../modTypes'
 import * as accessoryTypes from './accessories/accessoryTypes'
+import internalize from './accessories/accessoryHelpers'
+import { gasVentSystemII, shockPad, laserSight } from './accessories/accessories'
 
 export default [
   {
     key: 'IngramValiant',
     name: 'Ingram Valiant',
     tags: ['machine gun'],
-    accessories: {},
+    accessories: {
+      top: internalize(laserSight),
+      stock: internalize(shockPad),
+      barrel: internalize(gasVentSystemII),
+    },
     allowedAccessories: [
       accessoryTypes.ALL,
       accessoryTypes.TOP,
