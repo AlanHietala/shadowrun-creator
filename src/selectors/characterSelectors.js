@@ -80,8 +80,23 @@ const updateChracterSheetWeaponAccessories = (characterSheet, item) => {
   return characterSheet
 }
 
+const updateCharacterSheetWareOptions = (characterSheet, item) => {
+  if (item.availableOptions) {
+    characterSheet = item.availableOptions.reduce((characterSheet, option) => {
+      if(option.isInstalled) {
+        return updateCharacterSheet(characterSheet, option)
+      } else {
+        return characterSheet
+      }
+    }, characterSheet)
+  }
+
+  return characterSheet
+}
+
 const updateCharacterSheet = (characterSheet, item, parentItem) => {
   characterSheet = updateChracterSheetWeaponAccessories(characterSheet, item)
+  characterSheet = updateCharacterSheetWareOptions(characterSheet, item)
   return item.mods.reduce((sheet, mod) => {
     return mod.modType === modTypes.ESSENCE_MOD ? {...sheet, essence: updateMod(sheet.essence, mod, item)}
       : mod.modType === modTypes.RESOURCES_MOD ?  {...sheet, resources: updateMod(sheet.resources, mod, item)}

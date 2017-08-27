@@ -5,7 +5,7 @@ import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import AddedCapacityItem from './AddedCapacityItem'
 
-const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleRatingChange}) => {
+const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleChangeWareCapacityRating, handleRatingChange}) => {
 
   if (item.availableOptions) {
     return (<AddedCapacityItem
@@ -13,6 +13,7 @@ const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleRat
       handleRatingChange={handleRatingChange}
       handleRemoveItem={handleRemoveItem}
       handleToggleCapacityOption={handleToggleCapacityOption}
+      handleChangeWareCapacityRating={handleChangeWareCapacityRating}
     />)
   } else {
     return (<Card>
@@ -33,5 +34,6 @@ WareItem.propTypes = {
   handleRemoveItem: PropTypes.func,
   handleToggleCapacityOption: PropTypes.func,
   handleRatingChange: PropTypes.func,
+  handleChangeWareCapacityRating: PropTypes.func,
 }
 export default WareItem

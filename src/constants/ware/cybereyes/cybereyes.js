@@ -1,6 +1,58 @@
 import * as modTypes from '../../modTypes'
 import {installableOption} from '../wareHelpers'
 
+const retinalDuplication = {
+  key: 'retinalDuplication',
+  name: 'Retinal Duplication',
+  tags: [],
+  capacityRequired: 1,
+  cost: 20000,
+  avail: '16F',
+  selectedRatingIndex: 1,
+  rating: 1,
+  ratings:[
+    {
+      rating: 1,
+      cost: 20000,
+      avail: '16F',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -20000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 2,
+      cost: 40000,
+      avail: '16F',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -40000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+  ],
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -20000,
+    },
+    {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.1,
+    },
+  ],
+}
 
 const flareCompensation = {
   key: 'flareCompensation',
@@ -193,6 +245,7 @@ export default [
   visionEnhancementII,
   visionEnhancementIII,
   visionMagnification,
+  retinalDuplication,
   {
     key: 'cybereyes',
     name: 'Cybereyes',
@@ -274,6 +327,7 @@ export default [
       installableOption(visionEnhancementIII),
       installableOption(visionMagnification),
       installableOption(ocularDrone),
+      installableOption(retinalDuplication),
     ],
   },
 ]

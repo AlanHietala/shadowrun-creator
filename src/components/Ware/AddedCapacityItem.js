@@ -5,18 +5,26 @@ import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
 import Rating from '../Rating'
 
-const AddedCapacityItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleRatingChange}) => {
+const AddedCapacityItem = ({item, handleChangeWareCapacityRating, handleRemoveItem, handleToggleCapacityOption, handleRatingChange}) => {
   const checkBoxes = item.availableOptions.map((option, index) => {
+    const ratingSection = option.ratings ? <Rating
+      ratings={option.ratings}
+      onRatingChange={(ratingIndex) => {handleChangeWareCapacityRating(index, ratingIndex)}}
+      value={option.rating}
+    /> : null
+
     return (
-      <Checkbox
-        key={index}
-        label={option.name}
-        checked={option.isInstalled}
-        onCheck={() => {
-          handleToggleCapacityOption(index)
-        }
-        }
-      />
+      <div key={index}>
+        <Checkbox
+          label={option.name}
+          checked={option.isInstalled}
+          onCheck={() => {
+            handleToggleCapacityOption(index)
+          }
+          }
+        />
+        {ratingSection}
+      </div>
     )
   })
 
@@ -41,6 +49,7 @@ AddedCapacityItem.propTypes = {
   handleRemoveItem: PropTypes.func,
   handleToggleCapacityOption: PropTypes.func,
   handleRatingChange: PropTypes.func,
+  handleChangeWareCapacityRating: PropTypes.func,
 }
 
 export default AddedCapacityItem

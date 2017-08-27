@@ -115,6 +115,9 @@ const character = (state = defaultState, action) => {
     case itemActionTypes.CHANGE_WARE_RATING:
       return ware(state, action)
       
+    case itemActionTypes.CHANGE_WARE_CAPACITY_RATING:
+      return ware(state, action)
+
     default:
       return state
     }
