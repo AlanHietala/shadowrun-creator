@@ -8,6 +8,8 @@ const wareReducer = (state, action) => {
     return handleRemoveWare(state, action)
   case itemActions.TOGGLE_CAPACITY_OPTION:
     return handleToggleCapacityOption(state, action)
+  case itemActions.CHANGE_WARE_RATING:
+    return handleChangeWareRating(state, action)
   default:
     return state
   }
@@ -19,10 +21,27 @@ const handleToggleCapacityOption = (state, action) => {
   const ware = [...state.ware]
   const capacityItem = ware[wareIndex].availableOptions[capacityIndex]
   capacityItem.isInstalled = !capacityItem.isInstalled
-  
+
   return {
     ...state,
     ware,
+  }
+}
+
+const handleChangeWareRating = (state, action) => {
+  let wareItem = state.ware[action.payload.wareIndex]
+  const newWareItem = {
+    ...wareItem,
+    ...wareItem.ratings[action.payload.ratingIndex],
+    selectedRatingIndex: action.payload.ratingIndex,
+  }
+
+  let newWareList = [...state.ware]
+  newWareList[action.payload.wareIndex] = newWareItem
+
+  return {
+    ...state,
+    ware: newWareList,
   }
 }
 
@@ -39,8 +58,15 @@ const handleRemoveWare = (state, action) => {
 }
 
 const handleAddWare = (state, action) => {
-
-  const ware = state.ware.concat([action.payload])
+  let addWare = action.payload
+  if(action.payload.ratings) {
+    addWare = {
+      ...addWare,
+      ...addWare.ratings[0],
+      selectedRatingIndex: 0,
+    }
+  }
+  const ware = state.ware.concat([addWare])
   return {
     ...state,
     ware,

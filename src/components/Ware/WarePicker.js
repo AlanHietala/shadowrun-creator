@@ -1,7 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Paper from 'material-ui/Paper'
-import { addWare, removeWare, toggleCapacityOption } from '../../actions/itemActions'
+import { changeWareRating, addWare, removeWare, toggleCapacityOption } from '../../actions/itemActions'
 import wareList from '../../constants/ware'
 import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
@@ -15,7 +15,7 @@ class WarePicker extends React.Component {
   }
 
   render() {
-    const {characterWare, handleAddWare, handleRemoveWare, handleToggleCapacityOption} = this.props
+    const {characterWare, handleAddWare, handleRemoveWare, handleToggleCapacityOption, handleRatingChange} = this.props
     return (<Paper style={{minWidth:300, flexGrow: 1, margin: 5}}>
       <h2>Ware</h2>
       <CharacterSheetSection
@@ -24,6 +24,7 @@ class WarePicker extends React.Component {
         allItems={wareList}
         handleAddItem={handleAddWare}
         handleRemoveItem={handleRemoveWare}
+        handleRatingChange={handleRatingChange}
         handleToggleCapacityOption={handleToggleCapacityOption}
         ItemComponent={WareItem}
         AddedItemComponent={AddedWareItem}
@@ -54,6 +55,10 @@ const mapDispatchToProps = (dispatch) => {
       const addCapacityOptionAction = toggleCapacityOption(wareIndex, capacityOption)
       dispatch(addCapacityOptionAction)
     },
+    handleRatingChange: (wareIndex, ratingIndex) => {
+      const changeWareRatingAction = changeWareRating(wareIndex, ratingIndex)
+      dispatch(changeWareRatingAction)
+    },
   }
 }
 
@@ -62,6 +67,7 @@ WarePicker.propTypes = {
   handleAddWare: PropTypes.func,
   handleRemoveWare: PropTypes.func,
   handleToggleCapacityOption: PropTypes.func,
+  handleRatingChange: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(WarePicker)

@@ -194,8 +194,75 @@ export default [
   visionEnhancementIII,
   visionMagnification,
   {
-    key: 'cybereyesI',
-    name: 'Cybereyes I',
+    key: 'cybereyes',
+    name: 'Cybereyes',
+    selectedRatingIndex: 0,
+    ratings: [
+      {
+        rating: 1,
+        capacity: 4,
+        avail: 3,
+        cost: 4000,
+        mods: [
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: -4000,
+          },
+          {
+            modType: modTypes.ESSENCE_MOD,
+            effect: -0.2,
+          },
+        ],
+      },
+      {
+        rating: 2,
+        capacity: 8,
+        avail: 6,
+        cost: 4000,
+        mods: [
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: -6000,
+          },
+          {
+            modType: modTypes.ESSENCE_MOD,
+            effect: -0.3,
+          },
+        ],
+      },
+      {
+        rating: 3,
+        capacity: 12,
+        avail: 9,
+        cost: 10000,
+        mods: [
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: -10000,
+          },
+          {
+            modType: modTypes.ESSENCE_MOD,
+            effect: -0.4,
+          },
+        ],
+      },
+      {
+        rating: 4,
+        capacity: 16,
+        avail: 12,
+        cost: 14000,
+        mods: [
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: -14000,
+          },
+          {
+            modType: modTypes.ESSENCE_MOD,
+            effect: -0.5,
+          },
+        ],
+      },
+    ],
     tags: [],
     availableOptions: [
       installableOption(flareCompensation),
@@ -206,106 +273,7 @@ export default [
       installableOption(visionEnhancementII),
       installableOption(visionEnhancementIII),
       installableOption(visionMagnification),
-    ],
-    capacity: 4,
-    cost: 4000,
-    avail: 3,
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -4000,
-      },
-      {
-        modType: modTypes.ESSENCE_MOD,
-        effect: -0.2,
-      },
-    ],
-  },
-  {
-    key: 'cybereyesII',
-    name: 'Cybereyes II',
-    tags: [],
-    availableOptions: [
-      installableOption(flareCompensation),
-      installableOption(lowLightVision),
       installableOption(ocularDrone),
-      installableOption(smartLink),
-      installableOption(thermographicVision),
-      installableOption(visionEnhancementI),
-      installableOption(visionEnhancementII),
-      installableOption(visionEnhancementIII),
-      installableOption(visionMagnification),
-    ],
-    capacity: 8,
-    cost: 6000,
-    avail: 6,
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -6000,
-      },
-      {
-        modType: modTypes.ESSENCE_MOD,
-        effect: -0.3,
-      },
-    ],
-  },
-  {
-    key: 'cybereyesIII',
-    name: 'Cybereyes III',
-    tags: [],
-    availableOptions: [
-      installableOption(flareCompensation),
-      installableOption(lowLightVision),
-      installableOption(ocularDrone),
-      installableOption(smartLink),
-      installableOption(thermographicVision),
-      installableOption(visionEnhancementI),
-      installableOption(visionEnhancementII),
-      installableOption(visionEnhancementIII),
-      installableOption(visionMagnification),
-    ],
-    capacity: 9,
-    cost: 10000,
-    avail: 9,
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -10000,
-      },
-      {
-        modType: modTypes.ESSENCE_MOD,
-        effect: -0.4,
-      },
-    ],
-  },
-  {
-    key: 'cybereyesIV',
-    name: 'Cybereyes IV',
-    tags: [],
-    availableOptions: [
-      installableOption(flareCompensation),
-      installableOption(lowLightVision),
-      installableOption(ocularDrone),
-      installableOption(smartLink),
-      installableOption(thermographicVision),
-      installableOption(visionEnhancementI),
-      installableOption(visionEnhancementII),
-      installableOption(visionEnhancementIII),
-      installableOption(visionMagnification),
-    ],
-    capacity: 12,
-    cost: 14000,
-    avail: 9,
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -14000,
-      },
-      {
-        modType: modTypes.ESSENCE_MOD,
-        effect: -0.5,
-      },
     ],
   },
 ]

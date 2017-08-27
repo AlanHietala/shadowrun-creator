@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card'
 import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
+import Rating from '../Rating'
 
-const AddedCapacityItem = ({item, handleRemoveItem, handleToggleCapacityOption}) => {
+const AddedCapacityItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleRatingChange}) => {
   const checkBoxes = item.availableOptions.map((option, index) => {
     return (
       <Checkbox
@@ -18,6 +19,7 @@ const AddedCapacityItem = ({item, handleRemoveItem, handleToggleCapacityOption})
       />
     )
   })
+
   return (<Card>
     <CardHeader title={item.name}
       actAsExpander={true}
@@ -25,6 +27,7 @@ const AddedCapacityItem = ({item, handleRemoveItem, handleToggleCapacityOption})
     <CardText
       expandable={true}>
       <div>Remaining Capacity: {item.remainingCapacity}</div>
+      <Rating ratings={item.ratings} onRatingChange={handleRatingChange} value={item.rating} />
       {checkBoxes}
       <CardActions>
         <FlatButton label="Remove" onTouchTap={handleRemoveItem}/>
@@ -37,6 +40,7 @@ AddedCapacityItem.propTypes = {
   item: PropTypes.object,
   handleRemoveItem: PropTypes.func,
   handleToggleCapacityOption: PropTypes.func,
+  handleRatingChange: PropTypes.func,
 }
 
 export default AddedCapacityItem

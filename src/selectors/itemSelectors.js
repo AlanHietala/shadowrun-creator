@@ -1,5 +1,3 @@
-import {essenceSelector, resourcesSelector} from './characterSelectors'
-import {getEssenceCostForItem, getResourceCostForItem} from './modHelpers'
 
 export const characterItemsSelector = (state) => {
   return state.character.items
@@ -7,6 +5,17 @@ export const characterItemsSelector = (state) => {
 
 export const characterWeaponsSelector = (state) => {
   return state.character.weapons
+}
+
+const calcRating = (wareItem) => {
+  if(wareItem.selectedRatingIndex > -1) {
+    return {
+      ...wareItem,
+      ...wareItem.ratings[wareItem.selectedRatingIndex],
+    }
+  } else {
+    return wareItem
+  }
 }
 
 const calcCapacity = (wareItem) => {
@@ -23,24 +32,11 @@ const calcCapacity = (wareItem) => {
 export const characterWareSelector = (state) => {
   return state.character.ware.map(wareItem => {
     if (wareItem.availableOptions) {
-      return calcCapacity(wareItem)
+      return calcRating(calcCapacity(wareItem))
     } else {
       return wareItem
     }
   })
 }
 
-export const wareListSelector = (state) => {
-  const availableResources = resourcesSelector(state)
-  const essence = essenceSelector(state)
-
-  return state.wareList.map(ware => {
-    const isEnoughEssence = essence.computed > getEssenceCostForItem(ware)
-    const isEnoughResources = availableResources > getResourceCostForItem(ware)
-    return {
-      ...ware,
-      isEnoughEssence,
-      isEnoughResources,
-    }
-  })
-}
+export const wareListSelector = (state) => state.wareList
