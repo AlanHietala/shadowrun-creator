@@ -5,6 +5,7 @@ import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import AddedCapacityItem from './AddedCapacityItem'
 import Rating from '../Rating'
+import WareGradeSelector from '../WareGradeSelector'
 
 const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleWareGradeChange, handleChangeWareCapacityRating, handleRatingChange}) => {
 
@@ -25,6 +26,7 @@ const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleWar
         showExpandableButton={true} />
       <CardText
         expandable={true}>
+        <WareGradeSelector value={item.grade} onWareGradeChange={handleWareGradeChange} />
         {ratingSection}
         <CardActions>
           <FlatButton label="Remove" onTouchTap={handleRemoveItem}/>
