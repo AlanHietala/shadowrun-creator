@@ -6,7 +6,7 @@ import FlatButton from 'material-ui/FlatButton'
 import AddedCapacityItem from './AddedCapacityItem'
 import Rating from '../Rating'
 
-const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleChangeWareCapacityRating, handleRatingChange}) => {
+const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleWareGradeChange, handleChangeWareCapacityRating, handleRatingChange}) => {
 
   if (item.availableOptions) {
     return (<AddedCapacityItem
@@ -15,6 +15,7 @@ const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleCha
       handleRemoveItem={handleRemoveItem}
       handleToggleCapacityOption={handleToggleCapacityOption}
       handleChangeWareCapacityRating={handleChangeWareCapacityRating}
+      handleWareGradeChange={handleWareGradeChange}
     />)
   } else {
     const ratingSection = item.ratings ? <Rating ratings={item.ratings} onRatingChange={handleRatingChange} value={item.rating} /> : null
@@ -38,5 +39,6 @@ WareItem.propTypes = {
   handleToggleCapacityOption: PropTypes.func,
   handleRatingChange: PropTypes.func,
   handleChangeWareCapacityRating: PropTypes.func,
+  handleWareGradeChange: PropTypes.func,
 }
 export default WareItem

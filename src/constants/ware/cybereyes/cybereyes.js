@@ -323,6 +323,7 @@ export default [
     key: 'cybereyes',
     name: 'Cybereyes',
     selectedRatingIndex: 0,
+    grade: 'Standard',
     ratings: [
       {
         rating: 1,
