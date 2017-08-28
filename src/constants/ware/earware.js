@@ -275,8 +275,8 @@ export default [
   soundLink,
   spacialRecognizer,
   {
-    key: 'cyberearsI',
-    name: 'Cyberears I',
+    key: 'cyberears',
+    name: 'Cyberears',
     tags: [],
     rating: 1,
     selectedRatingIndex: 0,

@@ -20,13 +20,65 @@ export const commlink = {
   ],
 }
 
-const controlRigI = {
-  key: 'controlRigI',
-  name: 'Control Rig I',
+const controlRig = {
+  key: 'controlRig',
+  name: 'Control Rig',
   tags: [],
   capacityRequired: 0,
   cost: 43000,
   avail: '5R',
+  selectedRatingIndex: 0,
+  rating: 1,
+  ratings: [
+    {
+      rating: 1,
+      capacityRequired: 0,
+      cost: 43000,
+      avail: '5R',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -43000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -1,
+        },
+      ],
+    },
+    {
+      rating: 2,
+      capacityRequired: 0,
+      cost: 97000,
+      avail: '10R',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -97000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -2,
+        },
+      ],
+    },
+    {
+      rating: 3,
+      capacityRequired: 0,
+      cost: 208000,
+      avail: '15R',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -97000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -3,
+        },
+      ],
+    },
+  ],
   mods: [
     {
       modType: modTypes.RESOURCES_MOD,
@@ -35,43 +87,6 @@ const controlRigI = {
     {
       modType: modTypes.ESSENCE_MOD,
       effect: -1,
-    },
-  ],
-}
-
-const controlRigII = {
-  key: 'controlRigII',
-  name: 'Control Rig II',
-  tags: [],
-  capacityRequired: 0,
-  cost: 97000,
-  avail: '10R',
-  mods: [
-    {
-      modType: modTypes.RESOURCES_MOD,
-      effect: -97000,
-    },
-    {
-      modType: modTypes.ESSENCE_MOD,
-      effect: -2,
-    },
-  ],
-}
-const controlRigIII = {
-  key: 'controlRigIII',
-  name: 'Control Rig III',
-  tags: [],
-  capacityRequired: 0,
-  cost: 208000,
-  avail: '15R',
-  mods: [
-    {
-      modType: modTypes.RESOURCES_MOD,
-      effect: -208000,
-    },
-    {
-      modType: modTypes.ESSENCE_MOD,
-      effect: -3,
     },
   ],
 }
@@ -159,9 +174,7 @@ const datajack = {
 
 export default [
   commlink,
-  controlRigI,
-  controlRigII,
-  controlRigIII,
+  controlRig,
   cortexBombKink,
   cortexBombMicroBomb,
   cortexBombAreaBomb,
