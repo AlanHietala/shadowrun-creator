@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import AddedCapacityItem from './AddedCapacityItem'
+import Rating from '../Rating'
 
 const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleChangeWareCapacityRating, handleRatingChange}) => {
 
@@ -16,12 +17,14 @@ const WareItem = ({item, handleRemoveItem, handleToggleCapacityOption, handleCha
       handleChangeWareCapacityRating={handleChangeWareCapacityRating}
     />)
   } else {
+    const ratingSection = item.ratings ? <Rating ratings={item.ratings} onRatingChange={handleRatingChange} value={item.rating} /> : null
     return (<Card>
       <CardHeader title={item.name}
         actAsExpander={true}
         showExpandableButton={true} />
       <CardText
         expandable={true}>
+        {ratingSection}
         <CardActions>
           <FlatButton label="Remove" onTouchTap={handleRemoveItem}/>
         </CardActions>

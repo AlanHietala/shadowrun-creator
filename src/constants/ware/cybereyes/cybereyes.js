@@ -41,6 +41,66 @@ const retinalDuplication = {
         },
       ],
     },
+    {
+      rating: 3,
+      cost: 60000,
+      avail: '16F',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -60000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 4,
+      cost: 80000,
+      avail: '16F',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -80000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 5,
+      cost: 100000,
+      avail: '16F',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -100000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 6,
+      cost: 120000,
+      avail: '16F',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -120000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
   ],
   mods: [
     {
@@ -161,54 +221,69 @@ const thermographicVision = {
     },
   ],
 }
-const visionEnhancementI = {
-  key: 'visionEnhancementI',
-  name: 'Vision Enhancement I',
+const visionEnhancement = {
+  key: 'visionEnhancement',
+  name: 'Vision Enhancement',
   tags: [],
   capacityRequired: 1,
   cost: 4000,
   avail: '3',
+  selectedRatingIndex: 1,
+  rating: 1,
+  ratings:[
+    {
+      rating: 1,
+      capacityRequired: 1,
+      cost: 4000,
+      avail: '3',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -4000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 2,
+      capacityRequired: 2,
+      cost: 8000,
+      avail: '3',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -8000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 3,
+      capacityRequired: 3,
+      cost: 12000,
+      avail: '3',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -12000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+  ],
   mods: [
     {
       modType: modTypes.RESOURCES_MOD,
       effect: -4000,
-    },
-    {
-      modType: modTypes.ESSENCE_MOD,
-      effect: -0.1,
-    },
-  ],
-}
-const visionEnhancementII = {
-  key: 'visionEnhancementII',
-  name: 'Vision Enhancement II',
-  tags: [],
-  capacityRequired: 2,
-  cost: 8000,
-  avail: '6',
-  mods: [
-    {
-      modType: modTypes.RESOURCES_MOD,
-      effect: -8000,
-    },
-    {
-      modType: modTypes.ESSENCE_MOD,
-      effect: -0.1,
-    },
-  ],
-}
-
-const visionEnhancementIII = {
-  key: 'visionEnhancementIII',
-  name: 'Vision Enhancement III',
-  tags: [],
-  capacityRequired: 3,
-  cost: 12000,
-  avail: '9',
-  mods: [
-    {
-      modType: modTypes.RESOURCES_MOD,
-      effect: -12000,
     },
     {
       modType: modTypes.ESSENCE_MOD,
@@ -241,9 +316,7 @@ export default [
   lowLightVision,
   smartLink,
   thermographicVision,
-  visionEnhancementI,
-  visionEnhancementII,
-  visionEnhancementIII,
+  visionEnhancement,
   visionMagnification,
   retinalDuplication,
   {
@@ -322,9 +395,7 @@ export default [
       installableOption(lowLightVision),
       installableOption(smartLink),
       installableOption(thermographicVision),
-      installableOption(visionEnhancementI),
-      installableOption(visionEnhancementII),
-      installableOption(visionEnhancementIII),
+      installableOption(visionEnhancement),
       installableOption(visionMagnification),
       installableOption(ocularDrone),
       installableOption(retinalDuplication),

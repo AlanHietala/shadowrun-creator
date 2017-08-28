@@ -1,55 +1,69 @@
 import * as modTypes from '../modTypes'
 import {installableOption} from './wareHelpers'
 
-const audioEnhancementI = {
-  key: 'audioEnhancementI',
-  name: 'Audio Enchancement I',
+const audioEnhancement = {
+  key: 'audioEnhancement',
+  name: 'Audio Enchancement',
   tags: [],
   capacityRequired: 1,
   cost: 4000,
   avail: '3',
+  selectedRatingIndex: 0,
+  rating: 1,
+  ratings: [
+    {
+      rating: 1,
+      capacityRequired: 1,
+      cost: 4000,
+      avail: '3',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -4000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 2,
+      capacityRequired: 2,
+      cost: 8000,
+      avail: '6',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -8000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating:3,
+      capacityRequired: 3,
+      cost: 12000,
+      avail: '9',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -12000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+  ],
   mods: [
     {
       modType: modTypes.RESOURCES_MOD,
       effect: -4000,
-    },
-    {
-      modType: modTypes.ESSENCE_MOD,
-      effect: -0.1,
-    },
-  ],
-}
-
-const audioEnhancementII = {
-  key: 'audioEnhancementII',
-  name: 'Audio Enhancement II',
-  tags: [],
-  capacityRequired: 2,
-  cost: 8000,
-  avail: '6',
-  mods: [
-    {
-      modType: modTypes.RESOURCES_MOD,
-      effect: -8000,
-    },
-    {
-      modType: modTypes.ESSENCE_MOD,
-      effect: -0.1,
-    },
-  ],
-}
-
-const audioEnhancementIII = {
-  key: 'audioEnhancementIII',
-  name: 'Audio Enhancement III',
-  tags: [],
-  capacityRequired: 3,
-  cost: 12000,
-  avail: '9',
-  mods: [
-    {
-      modType: modTypes.RESOURCES_MOD,
-      effect: -12000,
     },
     {
       modType: modTypes.ESSENCE_MOD,
@@ -98,11 +112,112 @@ const damper = {
 
 const selectSoundFilter = {
   key: 'selectSoundFilter',
-  name: 'Select Sound Filter TBD',
+  name: 'Select Sound Filter',
   tags: [],
   capacityRequired: 1,
   cost: 3500,
   avail: '3',
+  selectedRatingIndex: 0,
+  rating: 1,
+  ratings: [
+    {
+      rating: 1,
+      capacityRequired: 1,
+      cost: 3500,
+      avail: '3',
+      selectedRatingIndex: 0,
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -3500,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 2,
+      capacityRequired: 2,
+      cost: 7000,
+      avail: '6',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -7000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 3,
+      capacityRequired: 3,
+      cost: 10500,
+      avail: '9',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -10500,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 4,
+      capacityRequired: 4,
+      cost: 14000,
+      avail: '12',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -14000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 5,
+      capacityRequired: 5,
+      cost: 17500,
+      avail: '15',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -17500,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+    {
+      rating: 6,
+      capacityRequired: 6,
+      cost: 21000,
+      avail: '18',
+      mods: [
+        {
+          modType: modTypes.RESOURCES_MOD,
+          effect: -21000,
+        },
+        {
+          modType: modTypes.ESSENCE_MOD,
+          effect: -0.1,
+        },
+      ],
+    },
+  ],
   mods: [
     {
       modType: modTypes.RESOURCES_MOD,
@@ -153,9 +268,7 @@ const spacialRecognizer = {
   ],
 }
 export default [
-  audioEnhancementI,
-  audioEnhancementII,
-  audioEnhancementIII,
+  audioEnhancement,
   balanceAugmenter,
   damper,
   selectSoundFilter,
@@ -165,10 +278,76 @@ export default [
     key: 'cyberearsI',
     name: 'Cyberears I',
     tags: [],
+    rating: 1,
+    selectedRatingIndex: 0,
+    ratings: [
+      {
+        rating: 1,
+        capacity: 4,
+        cost: 3000,
+        avail: 3,
+        mods: [
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: -3000,
+          },
+          {
+            modType: modTypes.ESSENCE_MOD,
+            effect: -0.2,
+          },
+        ],
+      },
+      {
+        rating: 2,
+        capacity: 8,
+        cost: 4500,
+        avail: 6,
+        mods: [
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: -4500,
+          },
+          {
+            modType: modTypes.ESSENCE_MOD,
+            effect: -0.3,
+          },
+        ],
+      },
+      {
+        rating: 3,
+        capacity: 12,
+        cost: 7500,
+        avail: 9,
+        mods: [
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: -7500,
+          },
+          {
+            modType: modTypes.ESSENCE_MOD,
+            effect: -0.4,
+          },
+        ],
+      },
+      {
+        rating: 4,
+        capacity: 16,
+        cost: 11000,
+        avail: 9,
+        mods: [
+          {
+            modType: modTypes.RESOURCES_MOD,
+            effect: -11000,
+          },
+          {
+            modType: modTypes.ESSENCE_MOD,
+            effect: -0.5,
+          },
+        ],
+      },
+    ],
     availableOptions: [
-      installableOption(audioEnhancementI),
-      installableOption(audioEnhancementII),
-      installableOption(audioEnhancementIII),
+      installableOption(audioEnhancement),
       installableOption(balanceAugmenter),
       installableOption(damper),
       installableOption(selectSoundFilter),
@@ -185,87 +364,6 @@ export default [
       {
         modType: modTypes.ESSENCE_MOD,
         effect: -0.2,
-      },
-    ],
-  },
-  {
-    key: 'cyberearsII',
-    name: 'Cyberears II',
-    tags: [],
-    availableOptions: [
-      installableOption(audioEnhancementI),
-      installableOption(audioEnhancementII),
-      installableOption(audioEnhancementIII),
-      installableOption(balanceAugmenter),
-      installableOption(damper),
-      installableOption(selectSoundFilter),
-      installableOption(spacialRecognizer),
-    ],
-    capacity: 8,
-    cost: 4500,
-    avail: 6,
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -4500,
-      },
-      {
-        modType: modTypes.ESSENCE_MOD,
-        effect: -0.3,
-      },
-    ],
-  },
-  {
-    key: 'cyberearsIII',
-    name: 'Cyberears III',
-    tags: [],
-    availableOptions: [
-      installableOption(audioEnhancementI),
-      installableOption(audioEnhancementII),
-      installableOption(audioEnhancementIII),
-      installableOption(balanceAugmenter),
-      installableOption(damper),
-      installableOption(selectSoundFilter),
-      installableOption(spacialRecognizer),
-    ],
-    capacity: 12,
-    cost: 7500,
-    avail: 9,
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -7500,
-      },
-      {
-        modType: modTypes.ESSENCE_MOD,
-        effect: -0.4,
-      },
-    ],
-  },
-  {
-    key: 'cyberearsIV',
-    name: 'Cyberears IV',
-    tags: [],
-    availableOptions: [
-      installableOption(audioEnhancementI),
-      installableOption(audioEnhancementII),
-      installableOption(audioEnhancementIII),
-      installableOption(balanceAugmenter),
-      installableOption(damper),
-      installableOption(selectSoundFilter),
-      installableOption(spacialRecognizer),
-    ],
-    capacity: 16,
-    cost: 11000,
-    avail: 12,
-    mods: [
-      {
-        modType: modTypes.RESOURCES_MOD,
-        effect: -12000,
-      },
-      {
-        modType: modTypes.ESSENCE_MOD,
-        effect: -0.5,
       },
     ],
   },
