@@ -41,8 +41,6 @@ describe('Item Selectors', function () {
             effect: 2,
           },
         ],
-        isEnoughEssence: true,
-        isEnoughResources: true,
       }]
 
       expect(wareListSelector(state)).toEqual(expectedSelection)
