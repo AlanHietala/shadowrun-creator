@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Paper from 'material-ui/Paper'
-import {changeWareCapacityRating, changeWareRating, addWare, removeWare, toggleCapacityOption } from '../../actions/itemActions'
+import {changeWareGrade, changeWareCapacityRating, changeWareRating, addWare, removeWare, toggleCapacityOption } from '../../actions/itemActions'
 import wareList from '../../constants/ware'
 import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
@@ -15,7 +15,7 @@ class WarePicker extends React.Component {
   }
 
   render() {
-    const {characterWare, handleAddWare, handleRemoveWare, handleToggleCapacityOption, handleRatingChange, handleChangeWareCapacityRating} = this.props
+    const {characterWare, handleAddWare, handleRemoveWare, handleWareGradeChange, handleToggleCapacityOption, handleRatingChange, handleChangeWareCapacityRating} = this.props
     return (<Paper style={{minWidth:300, flexGrow: 1, margin: 5}}>
       <h2>Ware</h2>
       <CharacterSheetSection
@@ -27,6 +27,7 @@ class WarePicker extends React.Component {
         handleRatingChange={handleRatingChange}
         handleToggleCapacityOption={handleToggleCapacityOption}
         handleChangeWareCapacityRating={handleChangeWareCapacityRating}
+        handleWareGradeChange={handleWareGradeChange}
         ItemComponent={WareItem}
         AddedItemComponent={AddedWareItem}
       />
@@ -64,6 +65,10 @@ const mapDispatchToProps = (dispatch) => {
       const changeWareCapacityRatingAction = changeWareCapacityRating(wareIndex, capacityIndex, ratingIndex)
       dispatch(changeWareCapacityRatingAction)
     },
+    handleWareGradeChange: (wareIndex, grade) => {
+      const changeWareGradeAction = changeWareGrade(wareIndex, grade)
+      dispatch(changeWareGradeAction)
+    },
   }
 }
 
@@ -74,6 +79,7 @@ WarePicker.propTypes = {
   handleToggleCapacityOption: PropTypes.func,
   handleRatingChange: PropTypes.func,
   handleChangeWareCapacityRating: PropTypes.func,
+  handleWareGradeChange: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(WarePicker)

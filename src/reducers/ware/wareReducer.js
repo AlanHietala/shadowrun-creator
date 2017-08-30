@@ -1,4 +1,5 @@
 import * as itemActions from '../../constants/itemActionTypes'
+import {STANDARD} from '../../constants/ware/wareGrades'
 
 const wareReducer = (state, action) => {
   switch(action.type) {
@@ -12,10 +13,28 @@ const wareReducer = (state, action) => {
     return handleChangeWareRating(state, action)
   case itemActions.CHANGE_WARE_CAPACITY_RATING:
     return handleChangeWareCapacityRating(state, action)
+  case itemActions.CHANGE_WARE_GRADE:
+    return handleChangeWareGrade(state, action)
   default:
     return state
   }
 }
+
+const handleChangeWareGrade = (state, action) => {
+  const { grade, wareIndex } = action.payload
+  const wareItem = state.ware[wareIndex]
+  const newWareItem = {
+    ...wareItem,
+    grade,
+  }
+  let newWareList = [...state.ware]
+  newWareList[wareIndex] = newWareItem
+  return {
+    ...state,
+    ware: newWareList,
+  }
+}
+
 const handleToggleCapacityOption = (state, action) => {
   const wareIndex = action.payload.wareIndex
   const capacityIndex = action.payload.capacityIndex
@@ -96,6 +115,7 @@ const handleAddWare = (state, action) => {
       ...addWare,
       ...addWare.ratings[0],
       selectedRatingIndex: 0,
+      grade: STANDARD,
     }
   }
   const ware = state.ware.concat([addWare])

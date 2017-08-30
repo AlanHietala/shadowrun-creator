@@ -35,3 +35,10 @@ export const changeWareCapacityRating = createAction(itemActionTypes.CHANGE_WARE
     ratingIndex,
   }
 })
+
+export const changeWareGrade = createAction(itemActionTypes.CHANGE_WARE_GRADE, (wareIndex, grade) => {
+  return {
+    wareIndex,
+    grade,
+  }
+})

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const CharacterItems = ({ItemComponent, characterItems, handleRemoveItem, handleChangeWareCapacityRating, handleSelectOption, handleToggleCapacityOption, handleRatingChange, ...props}) => {
+const CharacterItems = ({ItemComponent, characterItems, handleRemoveItem, handleWareGradeChange, handleChangeWareCapacityRating, handleSelectOption, handleToggleCapacityOption, handleRatingChange, ...props}) => {
   const itemComponents = characterItems
     .map((item, index) => (<ItemComponent
       key={index} item={item}
@@ -9,6 +9,7 @@ const CharacterItems = ({ItemComponent, characterItems, handleRemoveItem, handle
       handleSelectOption={(accessoryPosition, accessory) => {handleSelectOption(index, accessoryPosition, accessory)}}
       handleRatingChange={(ratingIndex) => {handleRatingChange(index, ratingIndex)}}
       handleChangeWareCapacityRating={(capacityIndex, ratingIndex) => {handleChangeWareCapacityRating(index, capacityIndex, ratingIndex)}}
+      handleWareGradeChange={(wareGrade) => { handleWareGradeChange(index, wareGrade)}}
       {...props}
       handleRemoveItem={ () => { handleRemoveItem(index)} }/>))
   return (<div>
@@ -24,6 +25,7 @@ CharacterItems.propTypes = {
   handleRatingChange: PropTypes.func,
   handleToggleCapacityOption: PropTypes.func,
   handleChangeWareCapacityRating: PropTypes.func,
+  handleWareGradeChange: PropTypes.func,
 }
 
 export default CharacterItems

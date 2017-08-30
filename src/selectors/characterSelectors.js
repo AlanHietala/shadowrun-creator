@@ -2,6 +2,7 @@ import { createSelector } from 'reselect'
 import * as attributeTypes from '../constants/attributeTypes'
 import * as modTypes from '../constants/modTypes'
 import {getModReduce, resourcesModReduce} from './modHelpers'
+import { wareMultipliers } from '../constants/ware/wareGrades'
 
 export const resourcesSelector = state => {
   const initialResources = state.character.creation.availableResources
@@ -80,11 +81,11 @@ const updateChracterSheetWeaponAccessories = (characterSheet, item) => {
   return characterSheet
 }
 
-const updateCharacterSheetWareOptions = (characterSheet, item) => {
+const updateCharacterSheetWareOptions = (characterSheet, item, multipliers) => {
   if (item.availableOptions) {
     characterSheet = item.availableOptions.reduce((characterSheet, option) => {
       if(option.isInstalled) {
-        return updateCharacterSheet(characterSheet, option)
+        return updateCharacterSheet(characterSheet, option, null, multipliers)
       } else {
         return characterSheet
       }
@@ -94,12 +95,20 @@ const updateCharacterSheetWareOptions = (characterSheet, item) => {
   return characterSheet
 }
 
-const updateCharacterSheet = (characterSheet, item, parentItem) => {
+const updateCharacterSheet = (characterSheet, item, parentItem, multipliers = {
+  ESSENCE_MOD: 1.0,
+  RESOURCES_MOD: 1.0,
+  AVAILABILITY_MOD: 0,
+}) => {
+  if (item.grade) {
+    multipliers = wareMultipliers[item.grade]
+  }
+
   characterSheet = updateChracterSheetWeaponAccessories(characterSheet, item)
-  characterSheet = updateCharacterSheetWareOptions(characterSheet, item)
+  characterSheet = updateCharacterSheetWareOptions(characterSheet, item, multipliers)
   return item.mods.reduce((sheet, mod) => {
-    return mod.modType === modTypes.ESSENCE_MOD ? {...sheet, essence: updateMod(sheet.essence, mod, item)}
-      : mod.modType === modTypes.RESOURCES_MOD ?  {...sheet, resources: updateMod(sheet.resources, mod, item)}
+    return mod.modType === modTypes.ESSENCE_MOD ? {...sheet, essence: updateMod(sheet.essence, {...mod, effect: multipliers.ESSENCE_MOD * mod.effect}, item)}
+      : mod.modType === modTypes.RESOURCES_MOD ?  {...sheet, resources: updateMod(sheet.resources,{...mod, effect: multipliers.RESOURCES_MOD * mod.effect}, item)}
         : mod.modType === modTypes.WILLPOWER_MOD ? {...sheet, willpower: updateMod(sheet.willpower, mod, item)}
           : mod.modType === modTypes.REACTION_MOD ? {...sheet, reaction: updateMod(sheet.reaction, mod, item)}
             : mod.modType === modTypes.MAGIC_MOD ? {...sheet, magic: updateMod(sheet.magic, mod, item)}

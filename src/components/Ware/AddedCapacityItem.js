@@ -6,8 +6,18 @@ import FlatButton from 'material-ui/FlatButton'
 import Rating from '../Rating'
 import Divider from 'material-ui/Divider'
 import Subheader from 'material-ui/Subheader'
+import WareGradeSelector from '../WareGradeSelector'
 
-const AddedCapacityItem = ({item, handleChangeWareCapacityRating, handleRemoveItem, handleToggleCapacityOption, handleRatingChange}) => {
+const AddedCapacityItem = (
+  {
+    item,
+    handleChangeWareCapacityRating,
+    handleRemoveItem,
+    handleWareGradeChange,
+    handleToggleCapacityOption,
+    handleRatingChange,
+  }
+) => {
   const checkBoxes = item.availableOptions.map((option, index) => {
     const ratingSection = option.ratings && option.isInstalled ? <Rating
       ratings={option.ratings}
@@ -37,6 +47,7 @@ const AddedCapacityItem = ({item, handleChangeWareCapacityRating, handleRemoveIt
       showExpandableButton={true} />
     <CardText
       expandable={true}>
+      <WareGradeSelector value={item.grade} onWareGradeChange={handleWareGradeChange} />
       <Rating ratings={item.ratings} onRatingChange={handleRatingChange} value={item.rating} />
       <Subheader>Options: [{item.remainingCapacity}]</Subheader>
 
@@ -65,6 +76,7 @@ AddedCapacityItem.propTypes = {
   handleToggleCapacityOption: PropTypes.func,
   handleRatingChange: PropTypes.func,
   handleChangeWareCapacityRating: PropTypes.func,
+  handleWareGradeChange: PropTypes.func,
 }
 
 export default AddedCapacityItem

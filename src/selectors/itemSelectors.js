@@ -34,7 +34,7 @@ export const characterWareSelector = (state) => {
     if (wareItem.availableOptions) {
       return calcRating(calcCapacity(wareItem))
     } else {
-      return wareItem
+      return calcRating(wareItem)
     }
   })
 }
