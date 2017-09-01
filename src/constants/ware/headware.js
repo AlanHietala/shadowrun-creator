@@ -1,5 +1,6 @@
-
+import R from 'ramda'
 import * as modTypes from '../modTypes'
+import { createRating } from './wareHelpers'
 
 export const commlink = {
   key: 'commlink',
@@ -30,54 +31,18 @@ const controlRig = {
   selectedRatingIndex: 0,
   rating: 1,
   ratings: [
-    {
-      rating: 1,
-      capacityRequired: 0,
-      cost: 43000,
-      avail: '5R',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -43000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -1,
-        },
-      ],
-    },
-    {
-      rating: 2,
-      capacityRequired: 0,
-      cost: 97000,
-      avail: '10R',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -97000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -2,
-        },
-      ],
-    },
-    {
-      rating: 3,
-      capacityRequired: 0,
-      cost: 208000,
-      avail: '15R',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -97000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -3,
-        },
-      ],
-    },
+    createRating(1, 43000, '5R',  {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -1,
+    }),
+    createRating(2, 97000, '10R',  {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -2,
+    }),
+    createRating(3, 208000, '15R',  {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -3,
+    }),
   ],
   mods: [
     {
@@ -172,6 +137,193 @@ const datajack = {
   ],
 }
 
+const datalock = {
+  key: 'datalock',
+  name: 'Data Lock',
+  tags: [],
+  capacityRequired: 0,
+  cost: 1000,
+  avail: '2',
+  rating: 1,
+  selectedRatingIndex: 0,
+  ratings: R.range(1, 13)
+    .map(rating => createRating(rating, 1000 * rating, 2 * rating, [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.1,
+    }])),
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -1000,
+    },
+    {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.1,
+    },
+  ],
+}
+
+const olfactoryBooster = {
+  key: 'olfactoryBooster',
+  name: 'Olfactory Booster',
+  tags: [],
+  capacityRequired: 0,
+  cost: 4000,
+  avail: '3',
+  rating: 1,
+  selectedRatingIndex: 0,
+  ratings: R.range(1, 7)
+    .map(rating => createRating(rating, 4000 * rating, 3 * rating, [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.2,
+    }])),
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -4000,
+    },
+    {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.2,
+    },
+  ],
+}
+
+const simRig =  {
+  key: 'simRig',
+  name: 'Sim Rig',
+  tags: [],
+  cost: 4000,
+  avail: '12R',
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -4000,
+    },
+    {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.2,
+    },
+  ],
+}
+
+const skillJack = {
+  key: 'skillJack',
+  name: 'Skill Jack',
+  tags: [],
+  capacityRequired: 0,
+  cost: 4000,
+  avail: '3',
+  rating: 1,
+  selectedRatingIndex: 0,
+  ratings: R.range(1, 7)
+    .map(rating => createRating(rating, 20000 * rating, 2 * rating, [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -rating * 0.1,
+    }])),
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -20000,
+    },
+    {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.1,
+    },
+  ],
+}
+
+const tasteBooster = {
+  key: 'tasteBooster',
+  name: 'Taste Booster',
+  tags: [],
+  capacityRequired: 0,
+  cost: 4000,
+  avail: '3',
+  rating: 1,
+  selectedRatingIndex: 0,
+  ratings: R.range(1, 7)
+    .map(rating => createRating(rating, rating * 3000, rating * 2, [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -rating * 0.2,
+    }])),
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -3000,
+    },
+    {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.2,
+    },
+  ],
+}
+
+const toothCompartment =  {
+  key: 'toothCompartment',
+  name: 'Tooth Compartment',
+  tags: [],
+  cost: 800,
+  avail: '8',
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -800,
+    },
+  ],
+}
+
+const ultrasoundSensor = {
+  key: 'ultrasoundSensor',
+  name: 'Ultrasound Sensor',
+  tags: [],
+  capacityRequired: 2,
+  cost: 4000,
+  avail: '10',
+  rating: 1,
+  selectedRatingIndex: 0,
+  ratings: R.range(1, 7)
+    .map(rating => createRating(rating, rating * 12000, 10, [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.25,
+    }])),
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -12000,
+    },
+    {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.25,
+    },
+  ],
+}
+
+const voiceModulator = {
+  key: 'voiceModulator',
+  name: 'Voice Modulator',
+  tags: [],
+  cost: 5000,
+  avail: '3F',
+  rating: 1,
+  selectedRatingIndex: 0,
+  ratings: R.range(1, 7)
+    .map(rating => createRating(rating, rating * 5000, rating * 3 + 'F', [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.2,
+    }])),
+  mods: [
+    {
+      modType: modTypes.RESOURCES_MOD,
+      effect: -5000,
+    },
+    {
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.2,
+    },
+  ],
+}
+
 export default [
   commlink,
   controlRig,
@@ -180,4 +332,12 @@ export default [
   cortexBombAreaBomb,
   cyberdeck,
   datajack,
+  datalock,
+  olfactoryBooster,
+  simRig,
+  skillJack,
+  tasteBooster,
+  toothCompartment,
+  ultrasoundSensor,
+  voiceModulator,
 ]
