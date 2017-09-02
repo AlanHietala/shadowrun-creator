@@ -12,7 +12,7 @@ const audioEnhancement = {
   selectedRatingIndex: 0,
   rating: 1,
   ratings: R.range(1, 4)
-    .map(rating => createRating(rating, rating * 3 ,rating * 4000, [{
+    .map(rating => createRating(rating, rating * 4000, rating * 3, [{
       modType: modTypes.ESSENCE_MOD,
       effect: -0.1,
     }], null, rating)),
@@ -76,7 +76,7 @@ const selectSoundFilter = {
   selectedRatingIndex: 0,
   rating: 1,
   ratings: R.range(1, 7)
-    .map(rating => createRating(rating, rating * 3 ,rating * 3500, [{
+    .map(rating => createRating(rating, rating * 3500, rating * 3, [{
       modType: modTypes.ESSENCE_MOD,
       effect: -0.1,
     }], null, rating)),
@@ -144,11 +144,11 @@ export default [
     rating: 1,
     selectedRatingIndex: 0,
     ratings: [
-      createRating(1, 3, 3000, [{
+      createRating(1, 3000, 3, [{
         modType: modTypes.ESSENCE_MOD,
         effect: -0.2,
       }], 4),
-      createRating(2, 6, 4500, [{
+      createRating(2, 4500, 6, [{
         modType: modTypes.ESSENCE_MOD,
         effect: -0.3,
       }], 8),
@@ -156,7 +156,7 @@ export default [
         modType: modTypes.ESSENCE_MOD,
         effect: -0.4,
       }], 12),
-      createRating(4, 12, 11000, [{
+      createRating(4, 11000, 12, [{
         modType: modTypes.ESSENCE_MOD,
         effect: -0.5,
       }], 16),

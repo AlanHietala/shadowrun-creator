@@ -1,5 +1,5 @@
 import * as modTypes from '../modTypes'
-import { createRating } from './wareHelpers'
+import {installableOption, createRating } from './wareHelpers'
 import R from 'ramda'
 
 const plasticBoneLacing = {
@@ -65,7 +65,7 @@ const dermalPlating = {
   selectedRatingIndex: 0,
   rating: 1,
   ratings: R.range(1, 7)
-    .map(rating => createRating(rating, rating * 4 + 'R' ,rating * 3000, [{
+    .map(rating => createRating(rating, rating * 3000, rating * 4 + 'R', [{
       modType: modTypes.ESSENCE_MOD,
       effect: rating * -0.5,
     }])),
@@ -129,7 +129,7 @@ const airTank = {
   selectedRatingIndex: 0,
   rating: 1,
   ratings: R.range(1, 4)
-    .map(rating => createRating(rating, rating, rating * 4500, [{
+    .map(rating => createRating(rating, rating * 4500, rating, [{
       modType: modTypes.ESSENCE_MOD,
       effect: rating * -0.25,
     }]), null, 3),
@@ -149,7 +149,7 @@ const muscleReplacement = {
   key: 'muscleReplacement',
   name: 'Muscle Replacement',
   tags: [],
-  ...createRating(1, '5R', 25000,  [{
+  ...createRating(1, 25000, '5R', [{
     modType: modTypes.ESSENCE_MOD,
     effect: -1,
   },
@@ -165,7 +165,7 @@ const muscleReplacement = {
   selectedRatingIndex: 0,
   rating: 1,
   ratings: R.range(1, 5)
-    .map(rating => createRating(rating, rating, rating * 25000, [
+    .map(rating => createRating(rating, rating * 25000, rating, [
       {
         modType: modTypes.ESSENCE_MOD,
         effect: rating * -1,
@@ -185,7 +185,7 @@ const reactionEnhancers = {
   key: 'reactionEnhancers',
   name: 'Reaction Enhancers',
   tags: [],
-  ...createRating(1, '5R', 13000,  [{
+  ...createRating(1, 13000, '5R', [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.3,
   },
@@ -197,7 +197,7 @@ const reactionEnhancers = {
   selectedRatingIndex: 0,
   rating: 1,
   ratings: R.range(1, 4)
-    .map(rating => createRating(rating, rating * 5 + 'R', rating * 13000, [
+    .map(rating => createRating(rating, rating * 13000, rating * 5 + 'R', [
       {
         modType: modTypes.ESSENCE_MOD,
         effect: rating * -0.3,
@@ -213,14 +213,14 @@ const skillwires = {
   key: 'skillwires',
   name: 'Skillwires',
   tags: [],
-  ...createRating(1, 4, 20000,  [{
+  ...createRating(1, 20000, 4 , [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.1,
   }]),
   selectedRatingIndex: 0,
   rating: 1,
   ratings: R.range(1, 7)
-    .map(rating => createRating(rating, rating * 4, rating * 20000, [
+    .map(rating => createRating(rating, rating * 20000, rating * 4, [
       {
         modType: modTypes.ESSENCE_MOD,
         effect: rating * -0.1,
@@ -232,17 +232,17 @@ export const smugglingCompartment = {
   name: 'Smuggling Compartment',
   tags: [],
   capacityRequired: 2,
-  ...createRating(1, 6, 7500,  [{
+  ...createRating(null, 7500, 6, [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.2,
-  }]),
+  }], null, 2),
 }
 
 const wiredReflexes = {
   key: 'wiredReflexes',
   name: 'Wired Reflexes',
   tags: [],
-  ...createRating(1, '8R', 39000,  [{
+  ...createRating(1, 39000, '8R',  [{
     modType: modTypes.ESSENCE_MOD,
     effect: -2,
   },
@@ -258,7 +258,7 @@ const wiredReflexes = {
   selectedRatingIndex: 0,
   rating: 1,
   ratings: [
-    createRating(1, '8R', 39000,  [
+    createRating(1, 39000, '8R', [
       {
         modType: modTypes.ESSENCE_MOD,
         effect: -2,
@@ -272,7 +272,7 @@ const wiredReflexes = {
         effect: 1,
       },
     ]),
-    createRating(2, '12R', 149000,  [
+    createRating(2, 149000, '12R', [
       {
         modType: modTypes.ESSENCE_MOD,
         effect: -3,
@@ -286,7 +286,7 @@ const wiredReflexes = {
         effect: 2,
       },
     ]),
-    createRating(3, '20R', 217000,  [
+    createRating(3, 217000, '20R', [
       {
         modType: modTypes.ESSENCE_MOD,
         effect: -5,
@@ -302,6 +302,13 @@ const wiredReflexes = {
     ]),
   ],
 }
+
+export const limbInstallables = [
+  installableOption(smugglingCompartment),
+  installableOption(airTank),
+  installableOption(grappleGun),
+  installableOption(fingertipCompartment),
+]
 
 export default [
   plasticBoneLacing,

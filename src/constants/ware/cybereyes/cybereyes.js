@@ -146,7 +146,7 @@ const visionEnhancement = {
   selectedRatingIndex: 1,
   rating: 1,
   ratings: R.range(1, 4)
-    .map(rating => createRating(rating, 3,rating * 1000, [{
+    .map(rating => createRating(rating, rating * 1000, 3, [{
       modType: modTypes.ESSENCE_MOD,
       effect: -0.1,
     }], null, 1)),
@@ -195,19 +195,19 @@ export default [
     selectedRatingIndex: 0,
     grade: 'Standard',
     ratings: [
-      createRating(1, 3, 4000, [{
+      createRating(1, 4000, 3, [{
         modType: modTypes.ESSENCE_MOD,
         effect: -0.2,
       }], 4),
-      createRating(2, 6, 6000, [{
+      createRating(2, 6000, 6, [{
         modType: modTypes.ESSENCE_MOD,
         effect: -0.3,
       }], 8),
-      createRating(3, 9, 10000, [{
+      createRating(3, 10000, 9, [{
         modType: modTypes.ESSENCE_MOD,
         effect: -0.4,
       }], 12),
-      createRating(4, 12, 14000, [{
+      createRating(4, 14000, 12, [{
         modType: modTypes.ESSENCE_MOD,
         effect: -0.5,
       }], 16),
