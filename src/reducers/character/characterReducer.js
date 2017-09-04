@@ -94,6 +94,12 @@ const character = (state = defaultState, action) => {
     case itemActionTypes.REMOVE_ITEM:
       return items(state, action)
 
+    case itemActionTypes.CHANGE_ITEM_RATING:
+      return items(state, action)
+
+    case itemActionTypes.CHANGE_ITEM_COUNT:
+      return items(state, action)
+
     case itemActionTypes.ADD_WEAPON:
       return weapons(state, action)
 

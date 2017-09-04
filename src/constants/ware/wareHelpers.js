@@ -13,6 +13,7 @@ export const installableOption = (option) => {
   }
 }
 
+
 export const createRating = (rating, cost, avail, mods, capacity, capacityRequired) => {
   return {
     rating,

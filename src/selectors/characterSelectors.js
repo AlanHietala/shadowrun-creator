@@ -104,6 +104,13 @@ const updateCharacterSheet = (characterSheet, item, parentItem, multipliers = {
     multipliers = wareMultipliers[item.grade]
   }
 
+  if (item.count) {
+    multipliers = {
+      ...multipliers,
+      RESOURCES_MOD: multipliers.RESOURCES_MOD * item.count,
+    }
+  }
+
   characterSheet = updateChracterSheetWeaponAccessories(characterSheet, item)
   characterSheet = updateCharacterSheetWareOptions(characterSheet, item, multipliers)
   return item.mods.reduce((sheet, mod) => {

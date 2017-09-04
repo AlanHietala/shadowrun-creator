@@ -12,6 +12,21 @@ export const selectAccessory = createAction(itemActionTypes.SELECT_ACCESSORY, (w
 })
 export const addItem = createAction(itemActionTypes.ADD_ITEM)
 export const removeItem = createAction(itemActionTypes.REMOVE_ITEM)
+
+export const changeItemRating = createAction(itemActionTypes.CHANGE_ITEM_RATING, (itemIndex, ratingIndex) => {
+  return {
+    itemIndex,
+    ratingIndex,
+  }
+})
+
+export const changeCount = createAction(itemActionTypes.CHANGE_ITEM_COUNT, (itemIndex, count) => {
+  return {
+    itemIndex,
+    count,
+  }
+})
+
 export const addWare = createAction(itemActionTypes.ADD_WARE)
 export const removeWare = createAction(itemActionTypes.REMOVE_WARE)
 export const toggleCapacityOption = createAction(itemActionTypes.TOGGLE_CAPACITY_OPTION, (wareIndex, capacityIndex) => {

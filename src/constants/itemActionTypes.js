@@ -1,5 +1,7 @@
 export const ADD_ITEM = 'ADD_ITEM'
 export const REMOVE_ITEM = 'REMOVE_ITEM'
+export const CHANGE_ITEM_RATING = 'CHANGE_ITEM_RATING'
+export const CHANGE_ITEM_COUNT = 'CHANGE_ITEM_COUNT'
 export const ADD_WARE = 'ADD_WARE'
 export const REMOVE_WARE = 'REMOVE_WARE'
 export const ADD_WEAPON = 'ADD_WEAPON'

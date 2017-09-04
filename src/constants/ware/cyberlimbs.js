@@ -1,5 +1,5 @@
 import * as modTypes from '../modTypes'
-import { createRating } from './wareHelpers'
+import { createRating, installableOption } from './wareHelpers'
 import { limbInstallables as installableBodyOptions } from './bodyware'
 import cyberWeapons from './cyberweapons'
 
@@ -98,6 +98,18 @@ const largeSmugglingCompartment = {
   ...createRating(null ,8000, 6, [], null, 5),
 }
 
+const cyberLimbStandardOptions = [
+  ...installableBodyOptions.map(option => installableOption(option)),
+  agilityEnhancement,
+  armorEnhancement,
+  strengthEnhancement,
+  installableOption(cyberarmGyromount),
+  installableOption(cyberarmSlide),
+  installableOption(cyberarmHolster),
+  installableOption(hydraulicJacks),
+  installableOption(largeSmugglingCompartment),
+]
+
 const obviousFullArm = {
   key: 'obviousFullArm',
   name: 'Obvious Full Arm',
@@ -108,16 +120,8 @@ const obviousFullArm = {
   }], 15),
   tags: [],
   availableOptions: [
-    ...installableBodyOptions,
-    agilityEnhancement,
-    armorEnhancement,
-    strengthEnhancement,
-    cyberarmGyromount,
-    cyberarmSlide,
-    cyberarmHolster,
-    hydraulicJacks,
-    largeSmugglingCompartment,
-    ...cyberWeapons,
+    ...cyberLimbStandardOptions,
+    ...cyberWeapons.map(option => installableOption(option)),
   ],
 }
 
@@ -141,16 +145,8 @@ const obviousHand = {
   }], 4),
   tags: [],
   availableOptions: [
-    ...installableBodyOptions,
-    agilityEnhancement,
-    armorEnhancement,
-    strengthEnhancement,
-    cyberarmGyromount,
-    cyberarmSlide,
-    cyberarmHolster,
-    hydraulicJacks,
-    largeSmugglingCompartment,
-    ...cyberWeapons,
+    ...cyberLimbStandardOptions,
+    ...cyberWeapons.map(option => installableOption(option)),
   ],
 }
 
@@ -174,15 +170,7 @@ const obviousFoot = {
   }], 4),
   tags: [],
   availableOptions: [
-    ...installableBodyOptions,
-    agilityEnhancement,
-    armorEnhancement,
-    strengthEnhancement,
-    cyberarmGyromount,
-    cyberarmSlide,
-    cyberarmHolster,
-    hydraulicJacks,
-    largeSmugglingCompartment,
+    ...cyberLimbStandardOptions,
   ],
 }
 
@@ -206,13 +194,7 @@ const obviousFullLeg = {
   }], 20),
   tags: [],
   availableOptions: [
-    ...installableBodyOptions,
-    agilityEnhancement,
-    armorEnhancement,
-    strengthEnhancement,
-    cyberarmHolster,
-    hydraulicJacks,
-    largeSmugglingCompartment,
+    ...cyberLimbStandardOptions,
   ],
 }
 
@@ -236,14 +218,8 @@ const obviousLowerArm = {
   }], 10),
   tags: [],
   availableOptions: [
-    ...installableBodyOptions,
-    agilityEnhancement,
-    armorEnhancement,
-    strengthEnhancement,
-    cyberarmHolster,
-    hydraulicJacks,
-    largeSmugglingCompartment,
-    ...cyberWeapons,
+    ...cyberLimbStandardOptions,
+    ...cyberWeapons.map(option => installableOption(option)),
   ],
 }
 
@@ -267,13 +243,7 @@ const obviousLowerLeg = {
   }], 12),
   tags: [],
   availableOptions: [
-    ...installableBodyOptions,
-    agilityEnhancement,
-    armorEnhancement,
-    strengthEnhancement,
-    cyberarmHolster,
-    hydraulicJacks,
-    largeSmugglingCompartment,
+    ...cyberLimbStandardOptions,
   ],
 }
 
@@ -297,13 +267,7 @@ const obviousTorso = {
   }], 10),
   tags: [],
   availableOptions: [
-    ...installableBodyOptions,
-    agilityEnhancement,
-    armorEnhancement,
-    strengthEnhancement,
-    cyberarmHolster,
-    hydraulicJacks,
-    largeSmugglingCompartment,
+    ...cyberLimbStandardOptions,
   ],
 }
 
@@ -327,13 +291,7 @@ const obviousSkull = {
   }], 10),
   tags: [],
   availableOptions: [
-    ...installableBodyOptions,
-    agilityEnhancement,
-    armorEnhancement,
-    strengthEnhancement,
-    cyberarmHolster,
-    hydraulicJacks,
-    largeSmugglingCompartment,
+    ...cyberLimbStandardOptions,
   ],
 }
 
