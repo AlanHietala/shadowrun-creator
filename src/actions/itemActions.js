@@ -20,6 +20,13 @@ export const changeItemRating = createAction(itemActionTypes.CHANGE_ITEM_RATING,
   }
 })
 
+export const toggleItemCapacityOption = createAction(itemActionTypes.TOGGLE_ITEM_CAPACITY_OPTION, (wareIndex, capacityIndex) => {
+  return  {
+    wareIndex,
+    capacityIndex,
+  }
+})
+
 export const changeCount = createAction(itemActionTypes.CHANGE_ITEM_COUNT, (itemIndex, count) => {
   return {
     itemIndex,

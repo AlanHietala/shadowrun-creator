@@ -1,5 +1,6 @@
 import * as itemActions from '../../constants/itemActionTypes'
 import {STANDARD} from '../../constants/ware/wareGrades'
+import {changeRating, changeCapacityRating, toggleCapacityOption } from '../itemHelpers'
 
 const wareReducer = (state, action) => {
   switch(action.type) {
@@ -39,9 +40,7 @@ const handleToggleCapacityOption = (state, action) => {
   const wareIndex = action.payload.wareIndex
   const capacityIndex = action.payload.capacityIndex
 
-  const ware = [...state.ware]
-  const capacityItem = ware[wareIndex].availableOptions[capacityIndex]
-  capacityItem.isInstalled = !capacityItem.isInstalled
+  const ware = toggleCapacityOption(state.ware, wareIndex, capacityIndex)
 
   return {
     ...state,
@@ -54,45 +53,23 @@ const handleChangeWareCapacityRating = (state, action) => {
   const wareIndex = action.payload.wareIndex
   const ratingIndex = action.payload.ratingIndex
 
-  const wareItem = state.ware[wareIndex]
-  const capacityItem = wareItem.availableOptions[capacityIndex]
-
-  const newCapacityItem = {
-    ...capacityItem,
-    ...capacityItem.ratings[ratingIndex],
-    selectedRatingIndex: ratingIndex,
-  }
-  let newCapacityList = [...wareItem.availableOptions]
-  newCapacityList[capacityIndex] = newCapacityItem
-
-  const newWareItem = {
-    ...wareItem,
-    availableOptions: newCapacityList,
-  }
-
-  let newWareList = [...state.ware]
-  newWareList[action.payload.wareIndex] = newWareItem
+  const ware = changeCapacityRating(state.ware, wareIndex, capacityIndex, ratingIndex)
 
   return {
     ...state,
-    ware: newWareList,
+    ware,
   }
 }
 
 const handleChangeWareRating = (state, action) => {
-  let wareItem = state.ware[action.payload.wareIndex]
-  const newWareItem = {
-    ...wareItem,
-    ...wareItem.ratings[action.payload.ratingIndex],
-    selectedRatingIndex: action.payload.ratingIndex,
-  }
+  let wareIndex = action.payload.wareIndex
+  let ratingIndex = action.payload.ratingIndex
 
-  let newWareList = [...state.ware]
-  newWareList[action.payload.wareIndex] = newWareItem
+  const ware = changeRating(state.ware, wareIndex, ratingIndex)
 
   return {
     ...state,
-    ware: newWareList,
+    ware,
   }
 }
 

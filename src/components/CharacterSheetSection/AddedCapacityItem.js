@@ -11,7 +11,7 @@ import WareGradeSelector from '../WareGradeSelector'
 const AddedCapacityItem = (
   {
     item,
-    handleChangeWareCapacityRating,
+    handleChangeCapacityRating,
     handleRemoveItem,
     handleWareGradeChange,
     handleToggleCapacityOption,
@@ -21,7 +21,7 @@ const AddedCapacityItem = (
   const checkBoxes = item.availableOptions.map((option, index) => {
     const ratingSection = option.ratings && option.isInstalled ? <Rating
       ratings={option.ratings}
-      onRatingChange={(ratingIndex) => {handleChangeWareCapacityRating(index, ratingIndex)}}
+      onRatingChange={(ratingIndex) => {handleChangeCapacityRating(index, ratingIndex)}}
       value={option.rating}
     /> : null
 
@@ -77,7 +77,7 @@ AddedCapacityItem.propTypes = {
   handleRemoveItem: PropTypes.func,
   handleToggleCapacityOption: PropTypes.func,
   handleRatingChange: PropTypes.func,
-  handleChangeWareCapacityRating: PropTypes.func,
+  handleChangeCapacityRating: PropTypes.func,
   handleWareGradeChange: PropTypes.func,
 }
 
