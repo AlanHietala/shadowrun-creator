@@ -5,6 +5,7 @@ import R from 'ramda'
 const adrenalinePump = {
   key: 'adrenalinePump',
   name: 'Adrenaline Pump',
+  tags: ['bioware'],
   ...createRating(1, 55000, '6F', [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.75,
@@ -21,6 +22,7 @@ const adrenalinePump = {
 const boneDensityAug = {
   key: 'boneDensityAug',
   name: 'Bone Density Augmentation',
+  tags: ['bioware'],
   ...createRating(1, 5000, 4, [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.3,
@@ -45,6 +47,7 @@ const boneDensityAug = {
 const catsEye = {
   key: 'catsEye',
   name: 'Cats Eye',
+  tags: ['bioware'],
   ...createRating(null, 4000, 4, [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.1,
@@ -54,6 +57,7 @@ const catsEye = {
 const enhancedArticulation = {
   key: 'enhancedArticulation',
   name: 'Enhanced Articulation',
+  tags: ['bioware'],
   ...createRating(null, 24000, 12, [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.3,
@@ -63,6 +67,7 @@ const enhancedArticulation = {
 const muscleAugmentation = {
   key: 'muscleAugmentation',
   name: 'Muscle Augmentation',
+  tags: ['bioware'],
   ...createRating(1, 31000, '5R', [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -91,6 +96,7 @@ const muscleAugmentation = {
 const muscleToner = {
   key: 'muscleToner',
   name: 'Muscle Toner',
+  tags: ['bioware'],
   ...createRating(1, 32000, '5R', [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -119,6 +125,7 @@ const muscleToner = {
 const orthoskin = {
   key: 'orthoskin',
   name: 'Orthoskin',
+  tags: ['bioware'],
   ...createRating(1, 6000, '5R', [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -147,6 +154,7 @@ const orthoskin = {
 const pathogenicDefense = {
   key: 'pathogenicDefense',
   name: 'Pathogenic Defense',
+  tags: ['bioware'],
   ...createRating(1, 4500, '5R', [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -167,6 +175,7 @@ const pathogenicDefense = {
 const plateletFactories = {
   key: 'plateletFactories',
   name: 'Platelet Factories',
+  tags: ['bioware'],
   ...createRating(null, 17000, 12, [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.2,
@@ -176,6 +185,7 @@ const plateletFactories = {
 const skinPocket = {
   key: 'skinPocket',
   name: 'Skin Pocket',
+  tags: ['bioware'],
   ...createRating(null, 12000, 4, [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.1,
@@ -185,6 +195,7 @@ const skinPocket = {
 const suprathyroidGland = {
   key: 'suprathyroidGland',
   name: 'Suprathyroid Gland',
+  tags: ['bioware'],
   ...createRating(null, 140000, '20R', [{
     modType: modTypes.ESSENCE_MOD,
     effect: -0.7,
@@ -194,6 +205,7 @@ const suprathyroidGland = {
 const symbiotes = {
   key: 'symbiotes',
   name: 'Symbiotes',
+  tags: ['bioware'],
   ...createRating(1, 3500, 5, [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -214,6 +226,7 @@ const symbiotes = {
 const synthacardium = {
   key: 'synthacardium',
   name: 'Synthacardium',
+  tags: ['bioware'],
   ...createRating(1, 30000, 4, [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -234,6 +247,7 @@ const synthacardium = {
 const tailoredPheromones = {
   key: 'tailoredPheromones',
   name: 'Tailored Pheromones',
+  tags: ['bioware'],
   ...createRating(1, 30000, 4, [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -262,6 +276,7 @@ const tailoredPheromones = {
 const toxinExtractor = {
   key: 'toxinExtractor',
   name: 'Toxin Extractor',
+  tags: ['bioware'],
   ...createRating(1, 4800, 3, [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -282,6 +297,7 @@ const toxinExtractor = {
 const trachealFilter = {
   key: 'trachealFilter',
   name: 'Tracheal Filter',
+  tags: ['bioware'],
   ...createRating(1, 4500, 3, [
     {
       modType: modTypes.ESSENCE_MOD,

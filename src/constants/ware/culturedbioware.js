@@ -6,6 +6,7 @@ import R from 'ramda'
 const cerebralBooster = {
   key: 'cerebralBooster',
   name: 'Cerebral Booster',
+  tags: ['cultured bioware'],
   ...createRating(1, 31500, 6, [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -26,6 +27,7 @@ const cerebralBooster = {
 const damageCompensators = {
   key: 'damageCompensator',
   name: 'Damage Compensator',
+  tags: ['cultured bioware'],
   ...createRating(1, 2000, 3, [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -46,6 +48,7 @@ const damageCompensators = {
 const mnemonicEnhancer = {
   key: 'mnemonicEnhancer',
   name: 'Mnemonic Enhancer',
+  tags: ['cultured bioware'],
   ...createRating(1, 9000, 5, [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -66,7 +69,7 @@ const mnemonicEnhancer = {
 const painEditor = {
   key: 'painEditor',
   name: 'Pain Editor',
-  tags: [],
+  tags: ['cultured bioware'],
   ...createRating(null ,48000, '18F', [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -78,7 +81,7 @@ const painEditor = {
 const sleepRegulator = {
   key: 'sleepRegulator',
   name: 'Sleep Regulator',
-  tags: [],
+  tags: ['cultured bioware'],
   ...createRating(null ,12000, '6', [
     {
       modType: modTypes.ESSENCE_MOD,
@@ -90,6 +93,7 @@ const sleepRegulator = {
 const synapticBooster = {
   key: 'synapticBooster',
   name: 'Synaptic Booster',
+  tags: ['cultured bioware'],
   ...createRating(1, 95000, '6R', [
     {
       modType: modTypes.ESSENCE_MOD,
