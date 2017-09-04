@@ -40,7 +40,9 @@ const AddedCapacityItem = (
       </div>
     )
   })
-
+  const itemRatingSection = item.ratings ?
+    <Rating ratings={item.ratings} onRatingChange={handleRatingChange} value={item.rating} /> :
+    null
   return (<Card>
     <CardHeader title={item.name}
       actAsExpander={true}
@@ -48,7 +50,7 @@ const AddedCapacityItem = (
     <CardText
       expandable={true}>
       <WareGradeSelector value={item.grade} onWareGradeChange={handleWareGradeChange} />
-      <Rating ratings={item.ratings} onRatingChange={handleRatingChange} value={item.rating} />
+      {itemRatingSection}
       <Subheader>Options: [{item.remainingCapacity}]</Subheader>
 
       {checkBoxes}

@@ -38,6 +38,7 @@ class AllItemsList extends React.Component {
       <TextField
         name={"search"}
         hintText={"search"}
+        value={this.state.filterString}
         onChange={this.handleOnChange} />
       {itemList}
     </List>)

@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import equipmentList from '../../constants/equipment'
-import { addItem, removeItem } from '../../actions/itemActions'
+import {changeCount, addItem, removeItem, changeItemRating } from '../../actions/itemActions'
 import { characterItemsSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
 import EquipmentItem from './EquipmentItem'
@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
 class EquipmentPicker extends React.Component {
 
   render() {
-    const { characterEquipment, handleAddEquipment, handleRemoveEquipment} = this.props
+    const { characterEquipment, handleAddEquipment, handleChangeCount, handleRatingChange, handleRemoveEquipment} = this.props
     return(<Paper style={{minWidth: 300, flexGrow: 1, margin: 5}}>
       <h2>Equipment</h2>
       <CharacterSheetSection
@@ -20,8 +20,10 @@ class EquipmentPicker extends React.Component {
         characterSheetItems={characterEquipment}
         allItems={equipmentList}
         handleAddItem={handleAddEquipment}
+        handleRatingChange={handleRatingChange}
         handleRemoveItem={handleRemoveEquipment}
         ItemComponent={EquipmentItem}
+        handleChangeCount={handleChangeCount}
         AddedItemComponent={AddedEquipmentItem}
       />
     </Paper>)
@@ -39,6 +41,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleAddEquipment: equipment => dispatch(addItem(equipment)),
     handleRemoveEquipment: index => dispatch(removeItem(index)),
+    handleRatingChange: (index, ratingIndex) => dispatch(changeItemRating(index, ratingIndex)),
+    handleChangeCount: (index, count) => dispatch(changeCount(index, count)),
   }
 }
 
@@ -46,6 +50,8 @@ EquipmentPicker.propTypes = {
   characterEquipment: PropTypes.array,
   handleAddEquipment: PropTypes.func,
   handleRemoveEquipment: PropTypes.func,
+  handleRatingChange: PropTypes.func,
+  handleChangeCount: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EquipmentPicker)

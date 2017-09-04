@@ -12,3 +12,21 @@ export const installableOption = (option) => {
     isInstalled: false,
   }
 }
+
+
+export const createRating = (rating, cost, avail, mods, capacity, capacityRequired) => {
+  return {
+    rating,
+    capacity,
+    capacityRequired,
+    cost,
+    avail: '6',
+    mods: [
+      {
+        modType: modTypes.RESOURCES_MOD,
+        effect: -cost,
+      },
+      ...mods,
+    ],
+  }
+}

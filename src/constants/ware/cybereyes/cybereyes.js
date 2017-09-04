@@ -1,5 +1,6 @@
 import * as modTypes from '../../modTypes'
-import {installableOption} from '../wareHelpers'
+import { installableOption, createRating } from '../wareHelpers'
+import R from 'ramda'
 
 const retinalDuplication = {
   key: 'retinalDuplication',
@@ -10,98 +11,11 @@ const retinalDuplication = {
   avail: '16F',
   selectedRatingIndex: 1,
   rating: 1,
-  ratings:[
-    {
-      rating: 1,
-      cost: 20000,
-      avail: '16F',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -20000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-    {
-      rating: 2,
-      cost: 40000,
-      avail: '16F',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -40000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-    {
-      rating: 3,
-      cost: 60000,
-      avail: '16F',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -60000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-    {
-      rating: 4,
-      cost: 80000,
-      avail: '16F',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -80000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-    {
-      rating: 5,
-      cost: 100000,
-      avail: '16F',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -100000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-    {
-      rating: 6,
-      cost: 120000,
-      avail: '16F',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -120000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-  ],
+  ratings: R.range(1, 7)
+    .map(rating => createRating(rating, rating * 20000, '16F', [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.1,
+    }], null, 1)),
   mods: [
     {
       modType: modTypes.RESOURCES_MOD,
@@ -184,6 +98,7 @@ const ocularDrone = {
     },
   ],
 }
+
 const smartLink = {
   key: 'smartlink',
   name: 'Smartlink',
@@ -230,56 +145,11 @@ const visionEnhancement = {
   avail: '3',
   selectedRatingIndex: 1,
   rating: 1,
-  ratings:[
-    {
-      rating: 1,
-      capacityRequired: 1,
-      cost: 4000,
-      avail: '3',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -4000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-    {
-      rating: 2,
-      capacityRequired: 2,
-      cost: 8000,
-      avail: '3',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -8000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-    {
-      rating: 3,
-      capacityRequired: 3,
-      cost: 12000,
-      avail: '3',
-      mods: [
-        {
-          modType: modTypes.RESOURCES_MOD,
-          effect: -12000,
-        },
-        {
-          modType: modTypes.ESSENCE_MOD,
-          effect: -0.1,
-        },
-      ],
-    },
-  ],
+  ratings: R.range(1, 4)
+    .map(rating => createRating(rating, rating * 1000, 3, [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.1,
+    }], null, 1)),
   mods: [
     {
       modType: modTypes.RESOURCES_MOD,
@@ -325,70 +195,22 @@ export default [
     selectedRatingIndex: 0,
     grade: 'Standard',
     ratings: [
-      {
-        rating: 1,
-        capacity: 4,
-        avail: 3,
-        cost: 4000,
-        mods: [
-          {
-            modType: modTypes.RESOURCES_MOD,
-            effect: -4000,
-          },
-          {
-            modType: modTypes.ESSENCE_MOD,
-            effect: -0.2,
-          },
-        ],
-      },
-      {
-        rating: 2,
-        capacity: 8,
-        avail: 6,
-        cost: 4000,
-        mods: [
-          {
-            modType: modTypes.RESOURCES_MOD,
-            effect: -6000,
-          },
-          {
-            modType: modTypes.ESSENCE_MOD,
-            effect: -0.3,
-          },
-        ],
-      },
-      {
-        rating: 3,
-        capacity: 12,
-        avail: 9,
-        cost: 10000,
-        mods: [
-          {
-            modType: modTypes.RESOURCES_MOD,
-            effect: -10000,
-          },
-          {
-            modType: modTypes.ESSENCE_MOD,
-            effect: -0.4,
-          },
-        ],
-      },
-      {
-        rating: 4,
-        capacity: 16,
-        avail: 12,
-        cost: 14000,
-        mods: [
-          {
-            modType: modTypes.RESOURCES_MOD,
-            effect: -14000,
-          },
-          {
-            modType: modTypes.ESSENCE_MOD,
-            effect: -0.5,
-          },
-        ],
-      },
+      createRating(1, 4000, 3, [{
+        modType: modTypes.ESSENCE_MOD,
+        effect: -0.2,
+      }], 4),
+      createRating(2, 6000, 6, [{
+        modType: modTypes.ESSENCE_MOD,
+        effect: -0.3,
+      }], 8),
+      createRating(3, 10000, 9, [{
+        modType: modTypes.ESSENCE_MOD,
+        effect: -0.4,
+      }], 12),
+      createRating(4, 14000, 12, [{
+        modType: modTypes.ESSENCE_MOD,
+        effect: -0.5,
+      }], 16),
     ],
     tags: [],
     availableOptions: [
