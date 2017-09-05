@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Paper from 'material-ui/Paper'
-import {changeWareGrade, changeWareCapacityRating, changeWareRating, addWare, removeWare, toggleCapacityOption } from '../../actions/itemActions'
+import {changeItemGrade, changeItemCapacityRating, changeItemRating, addItem, removeItem, toggleItemCapacityOption } from '../../actions/itemActions'
 import wareList from '../../constants/ware'
 import { characterWareSelector, wareListSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
 import WareItem from './WareItem'
-import AddedWareItem from './AddedWareItem'
+import AddedItem from '../CharacterSheetSection/AddedItem'
 import PropTypes from 'prop-types'
+import { WARE } from '../../constants/itemTypes'
 
 class WarePicker extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class WarePicker extends React.Component {
   }
 
   render() {
-    const {characterWare, handleAddWare, handleRemoveWare, handleWareGradeChange, handleToggleCapacityOption, handleRatingChange, handleChangeWareCapacityRating} = this.props
+    const {characterWare, handleAddWare, handleRemoveWare, handleWareGradeChange, handleToggleCapacityOption, handleRatingChange, handleChangeCapacityRating} = this.props
     return (<Paper style={{minWidth:300, flexGrow: 1, margin: 5}}>
       <h2>Ware</h2>
       <CharacterSheetSection
@@ -26,10 +27,10 @@ class WarePicker extends React.Component {
         handleRemoveItem={handleRemoveWare}
         handleRatingChange={handleRatingChange}
         handleToggleCapacityOption={handleToggleCapacityOption}
-        handleChangeWareCapacityRating={handleChangeWareCapacityRating}
+        handleChangeCapacityRating={handleChangeCapacityRating}
         handleWareGradeChange={handleWareGradeChange}
         ItemComponent={WareItem}
-        AddedItemComponent={AddedWareItem}
+        AddedItemComponent={AddedItem}
       />
     </Paper>)
   }
@@ -46,27 +47,27 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleAddWare: (ware) => {
-      const addWareAction = addWare(ware)
+      const addWareAction = addItem(ware, WARE)
       dispatch(addWareAction)
     },
     handleRemoveWare: (wareIndex) => {
-      const removeWareAction = removeWare(wareIndex)
+      const removeWareAction = removeItem(wareIndex, WARE)
       dispatch(removeWareAction)
     },
     handleToggleCapacityOption: (wareIndex, capacityOption) => {
-      const addCapacityOptionAction = toggleCapacityOption(wareIndex, capacityOption)
+      const addCapacityOptionAction = toggleItemCapacityOption(wareIndex, capacityOption, WARE)
       dispatch(addCapacityOptionAction)
     },
     handleRatingChange: (wareIndex, ratingIndex) => {
-      const changeWareRatingAction = changeWareRating(wareIndex, ratingIndex)
+      const changeWareRatingAction = changeItemRating(wareIndex, ratingIndex, WARE)
       dispatch(changeWareRatingAction)
     },
-    handleChangeWareCapacityRating: (wareIndex, capacityIndex, ratingIndex) => {
-      const changeWareCapacityRatingAction = changeWareCapacityRating(wareIndex, capacityIndex, ratingIndex)
+    handleChangeCapacityRating: (wareIndex, capacityIndex, ratingIndex) => {
+      const changeWareCapacityRatingAction = changeItemCapacityRating(wareIndex, capacityIndex, ratingIndex, WARE)
       dispatch(changeWareCapacityRatingAction)
     },
     handleWareGradeChange: (wareIndex, grade) => {
-      const changeWareGradeAction = changeWareGrade(wareIndex, grade)
+      const changeWareGradeAction = changeItemGrade(wareIndex, grade, WARE)
       dispatch(changeWareGradeAction)
     },
   }
@@ -78,7 +79,7 @@ WarePicker.propTypes = {
   handleRemoveWare: PropTypes.func,
   handleToggleCapacityOption: PropTypes.func,
   handleRatingChange: PropTypes.func,
-  handleChangeWareCapacityRating: PropTypes.func,
+  handleChangeCapacityRating: PropTypes.func,
   handleWareGradeChange: PropTypes.func,
 }
 

@@ -132,7 +132,7 @@ const airTank = {
     .map(rating => createRating(rating, rating * 4500, rating, [{
       modType: modTypes.ESSENCE_MOD,
       effect: rating * -0.25,
-    }]), null, 3),
+    }], null, 3)),
   mods: [
     {
       modType: modTypes.RESOURCES_MOD,

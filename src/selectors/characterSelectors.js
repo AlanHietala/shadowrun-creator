@@ -164,7 +164,7 @@ export const characterSheetSelector = (state) => {
     overflowMod: {value: 0, modifiedBy: []},
   }
 
-  const itemsList = state.character.items.concat(state.character.ware).concat(state.character.weapons)
+  const itemsList = state.characterEquipment.concat(state.characterWare).concat(state.character.weapons)
   let computedCharacterSheet = itemsList
     .reduce((characterSheet, item) => {
       return updateCharacterSheet(characterSheet, item)

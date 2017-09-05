@@ -13,9 +13,7 @@ import setMagicOrResonanceOption from '../magic-or-resonance'
 import setMetatype from '../metatype'
 import setStats from '../stats'
 import spells from '../spells'
-import items from '../items'
 import weapons from '../weapons'
-import ware from '../ware'
 import * as adeptPowerActionTypes from '../../constants/adeptPowerActionTypes'
 import adeptPowers from '../adept-powers'
 
@@ -88,18 +86,6 @@ const character = (state = defaultState, action) => {
     case qualityActionTypes.REMOVE_QUALITY:
       return quality(state, action)
 
-    case itemActionTypes.ADD_ITEM:
-      return items(state, action)
-
-    case itemActionTypes.REMOVE_ITEM:
-      return items(state, action)
-
-    case itemActionTypes.CHANGE_ITEM_RATING:
-      return items(state, action)
-
-    case itemActionTypes.CHANGE_ITEM_COUNT:
-      return items(state, action)
-
     case itemActionTypes.ADD_WEAPON:
       return weapons(state, action)
 
@@ -108,24 +94,6 @@ const character = (state = defaultState, action) => {
 
     case itemActionTypes.SELECT_ACCESSORY:
       return weapons(state, action)
-
-    case itemActionTypes.ADD_WARE:
-      return ware(state, action)
-
-    case itemActionTypes.REMOVE_WARE:
-      return ware(state, action)
-
-    case itemActionTypes.TOGGLE_CAPACITY_OPTION:
-      return ware(state, action)
-
-    case itemActionTypes.CHANGE_WARE_RATING:
-      return ware(state, action)
-
-    case itemActionTypes.CHANGE_WARE_CAPACITY_RATING:
-      return ware(state, action)
-
-    case itemActionTypes.CHANGE_WARE_GRADE:
-      return ware(state, action)
 
     default:
       return state
