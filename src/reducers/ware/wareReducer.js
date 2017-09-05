@@ -2,7 +2,10 @@ import * as itemActions from '../../constants/itemActionTypes'
 import {STANDARD} from '../../constants/ware/wareGrades'
 import {changeRating, changeCapacityRating, toggleCapacityOption } from '../itemHelpers'
 
-const wareReducer = (state, action) => {
+const getInitialState = () => {
+  return []
+}
+const wareReducer = (state = getInitialState(), action) => {
   switch(action.type) {
   case itemActions.ADD_WARE:
     return handleAddWare(state, action)
@@ -23,29 +26,23 @@ const wareReducer = (state, action) => {
 
 const handleChangeWareGrade = (state, action) => {
   const { grade, wareIndex } = action.payload
-  const wareItem = state.ware[wareIndex]
+  const wareItem = state[wareIndex]
   const newWareItem = {
     ...wareItem,
     grade,
   }
-  let newWareList = [...state.ware]
+  let newWareList = [...state]
   newWareList[wareIndex] = newWareItem
-  return {
-    ...state,
-    ware: newWareList,
-  }
+  return newWareList
 }
 
 const handleToggleCapacityOption = (state, action) => {
   const wareIndex = action.payload.wareIndex
   const capacityIndex = action.payload.capacityIndex
 
-  const ware = toggleCapacityOption(state.ware, wareIndex, capacityIndex)
+  const ware = toggleCapacityOption(state, wareIndex, capacityIndex)
 
-  return {
-    ...state,
-    ware,
-  }
+  return ware
 }
 
 const handleChangeWareCapacityRating = (state, action) => {
@@ -53,36 +50,27 @@ const handleChangeWareCapacityRating = (state, action) => {
   const wareIndex = action.payload.wareIndex
   const ratingIndex = action.payload.ratingIndex
 
-  const ware = changeCapacityRating(state.ware, wareIndex, capacityIndex, ratingIndex)
+  const ware = changeCapacityRating(state, wareIndex, capacityIndex, ratingIndex)
 
-  return {
-    ...state,
-    ware,
-  }
+  return ware
 }
 
 const handleChangeWareRating = (state, action) => {
   let wareIndex = action.payload.wareIndex
   let ratingIndex = action.payload.ratingIndex
 
-  const ware = changeRating(state.ware, wareIndex, ratingIndex)
+  const ware = changeRating(state, wareIndex, ratingIndex)
 
-  return {
-    ...state,
-    ware,
-  }
+  return ware
 }
 
 const handleRemoveWare = (state, action) => {
   const ware = [
-    ...state.ware.slice(0, action.payload),
-    ...state.ware.slice(action.payload + 1),
+    ...state.slice(0, action.payload),
+    ...state.slice(action.payload + 1),
   ]
 
-  return {
-    ...state,
-    ware,
-  }
+  return ware
 }
 
 const handleAddWare = (state, action) => {
@@ -95,11 +83,8 @@ const handleAddWare = (state, action) => {
       grade: STANDARD,
     }
   }
-  const ware = state.ware.concat([addWare])
-  return {
-    ...state,
-    ware,
-  }
+  const ware = state.concat([addWare])
+  return ware
 }
 
 export default wareReducer

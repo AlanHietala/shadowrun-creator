@@ -1,6 +1,6 @@
 
 export const characterItemsSelector = (state) => {
-  return state.character.items
+  return state.characterEquipment
 }
 
 export const characterWeaponsSelector = (state) => {
@@ -30,7 +30,7 @@ const calcCapacity = (wareItem) => {
   }
 }
 export const characterWareSelector = (state) => {
-  return state.character.ware.map(wareItem => {
+  return state.characterWare.map(wareItem => {
     if (wareItem.availableOptions) {
       return calcRating(calcCapacity(wareItem))
     } else {

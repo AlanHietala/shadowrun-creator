@@ -1,5 +1,5 @@
 import { addItem, removeItem } from '../../actions/itemActions'
-import itemsReducer from './itemsReducer'
+import { itemsReducer } from './itemsReducer'
 
 describe('Items Reducer', function () {
   describe('ADD_ITEM', function () {
@@ -14,45 +14,41 @@ describe('Items Reducer', function () {
         ],
       }
 
-      const initialState = {
-        items: [],
-      }
 
-      const stateAfter = {
-        items: [item],
-      }
+      const initialState = []
 
-      const addItemAction = addItem(item)
-      expect(itemsReducer(initialState, addItemAction)).toEqual(stateAfter)
+
+      const stateAfter = [item]
+
+      const addItemAction = addItem(item, 'SOMETYPE')
+      expect(itemsReducer(initialState, addItemAction, 'SOMETYPE')).toEqual(stateAfter)
     })
   })
 
   describe('REMOVE_ITEM', function () {
     it('should remove an item indicated by the item index', function () {
-      const initialState = {
-        items: [
-          {
-            name: 'item 1',
-            mods: [],
-          },
-          {
-            name: 'item 2',
-            mods: [],
-          },
-        ],
-      }
+      const initialState = [
+        {
+          name: 'item 1',
+          mods: [],
+        },
+        {
+          name: 'item 2',
+          mods: [],
+        },
+      ]
 
-      const stateAfter = {
-        items: [
-          {
-            name: 'item 1',
-            mods: [],
-          },
-        ],
-      }
 
-      const removeItemAction = removeItem(1)
-      expect(itemsReducer(initialState, removeItemAction)).toEqual(stateAfter)
+      const stateAfter = [
+        {
+          name: 'item 1',
+          mods: [],
+        },
+      ]
+
+
+      const removeItemAction = removeItem(1, 'SOMETYPE')
+      expect(itemsReducer(initialState, removeItemAction, 'SOMETYPE')).toEqual(stateAfter)
     })
 
   })

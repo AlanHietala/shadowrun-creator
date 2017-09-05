@@ -1358,6 +1358,23 @@ describe('AttributeSelector', function () {
     beforeEach(() => {
 
       state = {
+        characterEquipment: [],
+        characterWare: [
+          {
+            name: 'Reaction Enhancers 1',
+            mods: [
+              {
+                modType: modTypes.PHYSICAL_LIMIT_MOD,
+                effect: 1,
+              },
+              {
+                modType: modTypes.RESOURCES_MOD,
+                effect: 2000,
+              },
+
+            ],
+          },
+        ],
         character: {
           creation: {
             availableResources: 10000,
@@ -1418,24 +1435,9 @@ describe('AttributeSelector', function () {
               value: 4,
             },
           },
-          items: [],
-          weapons: [],
-          ware:[
-            {
-              name: 'Reaction Enhancers 1',
-              mods: [
-                {
-                  modType: modTypes.PHYSICAL_LIMIT_MOD,
-                  effect: 1,
-                },
-                {
-                  modType: modTypes.RESOURCES_MOD,
-                  effect: 2000,
-                },
 
-              ],
-            },
-          ],
+          weapons: [],
+
         },
       }
     })
@@ -1451,7 +1453,7 @@ describe('AttributeSelector', function () {
       expect(characterSheetSelector(state).physicalBoxes).toBe(expectedPhysicalBoxes)
     })
     it('should calculate the overflow with an augmentation', () => {
-      state.character.ware.push({
+      state.characterWare.push({
         name: 'overflow Thing',
         mods: [
           {

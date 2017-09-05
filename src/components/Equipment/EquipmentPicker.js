@@ -8,6 +8,7 @@ import EquipmentItem from './EquipmentItem'
 import AddedItem from '../CharacterSheetSection/AddedItem'
 import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
+import { EQUIPMENT } from '../../constants/itemTypes'
 
 class EquipmentPicker extends React.Component {
 
@@ -41,12 +42,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleAddEquipment: equipment => dispatch(addItem(equipment)),
-    handleRemoveEquipment: index => dispatch(removeItem(index)),
-    handleRatingChange: (index, ratingIndex) => dispatch(changeItemRating(index, ratingIndex)),
-    handleChangeCount: (index, count) => dispatch(changeCount(index, count)),
-    handleToggleCapacityOption: (index, capacityIndex) => dispatch(toggleItemCapacityOption(index, capacityIndex)),
-    handleChangeCapacityRating: (index, capacityIndex, ratingIndex) => dispatch(changeItemCapacityRating(index, capacityIndex, ratingIndex)),
+    handleAddEquipment: equipment => dispatch(addItem(equipment, EQUIPMENT)),
+    handleRemoveEquipment: index => dispatch(removeItem(index, EQUIPMENT)),
+    handleRatingChange: (index, ratingIndex) => dispatch(changeItemRating(index, ratingIndex, EQUIPMENT)),
+    handleChangeCount: (index, count) => dispatch(changeCount(index, count, EQUIPMENT)),
+    handleToggleCapacityOption: (index, capacityIndex) => dispatch(toggleItemCapacityOption(index, capacityIndex, EQUIPMENT)),
+    handleChangeCapacityRating: (index, capacityIndex, ratingIndex) => dispatch(changeItemCapacityRating(index, capacityIndex, ratingIndex, EQUIPMENT)),
   }
 }
 
