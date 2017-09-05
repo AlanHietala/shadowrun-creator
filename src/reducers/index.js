@@ -16,6 +16,7 @@ const shadowrunApp = combineReducers({
   visibility,
   characterWare: createItemsReducer(itemTypes.WARE),
   characterEquipment: createItemsReducer(itemTypes.EQUIPMENT),
+  characterArmor: createItemsReducer(itemTypes.ARMOR),
   routing: routerReducer,
 })
 

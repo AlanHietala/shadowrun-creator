@@ -194,6 +194,10 @@ export default [
     name: 'Cybereyes',
     selectedRatingIndex: 0,
     grade: 'Standard',
+    ...createRating(1, 4000, 3, [{
+      modType: modTypes.ESSENCE_MOD,
+      effect: -0.2,
+    }], 4),
     ratings: [
       createRating(1, 4000, 3, [{
         modType: modTypes.ESSENCE_MOD,

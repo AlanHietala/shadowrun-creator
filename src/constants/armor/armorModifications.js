@@ -1,5 +1,5 @@
 import R from 'ramda'
-import modTypes from '../modTypes'
+import * as modTypes from '../modTypes'
 import { createRating } from '../ware/wareHelpers'
 
 const chemicalProtection = {
