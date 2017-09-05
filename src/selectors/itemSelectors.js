@@ -3,6 +3,17 @@ export const characterItemsSelector = (state) => {
   return state.characterEquipment
 }
 
+
+export const characterArmorSelector = (state) => {
+  return state.characterArmor.map(item => {
+    if (item.availableOptions) {
+      return calcRating(calcCapacity(item))
+    } else {
+      return calcRating(item)
+    }
+  })
+}
+
 export const characterWeaponsSelector = (state) => {
   return state.character.weapons
 }

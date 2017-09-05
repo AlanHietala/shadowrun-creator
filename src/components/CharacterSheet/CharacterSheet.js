@@ -10,6 +10,7 @@ import Weapons from '../Weapons'
 import AdeptPowers from '../AdeptPowers'
 import Ware from '../Ware'
 import Equipment from '../Equipment'
+import Armor from '../Armor'
 import * as magicTypes from '../../constants/magicTypes'
 import {Link} from 'react-router-dom'
 
@@ -40,6 +41,7 @@ export class CharacterSheet extends React.Component {
           <div style={styles.wrapper}>
             <Qualities />
             <Equipment />
+            <Armor />
             <Weapons />
             { magicSection }
             <Ware />
