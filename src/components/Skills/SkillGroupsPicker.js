@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from  'react-redux'
 import {modifySkill, modifyBonusSkill, modifySkillGroup, filterSkill, addSkillSpecialization, removeSkillSpecialization } from '../../actions/skillActions'
-import CharacterSkills from './CharacterSkills'
+import CharacterSkillGroups from './CharacterSkillGroups'
 
 import * as attributeTypes from  '../../constants/attributeTypes'
 import AllSkills from './AllSkills'
+import AllGroupSkills from './AllGroupSkills'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import RaisedButton from 'material-ui/RaisedButton'
@@ -68,7 +69,7 @@ class SkillPicker extends React.Component {
     const {
       modifySkill,
       modifySkillGroup,
-      skillPoints,
+      skillGroupPoints,
       individualSkills,
       skillGroups,
       filterSkills,
@@ -99,41 +100,36 @@ class SkillPicker extends React.Component {
       return skills.points === 0 && bonusSkills && skills.attribute === bonusSkills.attributeType
     }
 
-    const bonusPoints = bonusSkills ? bonusSkills.count : 0
-    const bonusRating = bonusSkills ? bonusSkills.rating : 0
-    const bonusSection = bonusSkills ? <span>Bonus Points: { bonusPoints } at level { bonusRating }</span> : null
-    const actions = [
+
+    const groupActions = [
       <FlatButton
         key="close"
         label="close"
         primary={true}
-        onTouchTap={this.handleClose}
+        onTouchTap={this.handleGroupClose}
       />]
 
-    return (
-      <Paper style={{minWidth: 300, flexGrow: 1, margin: 5}}>
-        <div>
-          <div>Skill Points: { skillPoints } {bonusSection}</div>
-        </div>
-        <div>
-          <h3 style={styles.header}>Skills</h3>
-          <CharacterSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>
-        </div>
-        <Dialog actions={actions}
-          modal={false}
-          open={this.state.skillOpen}
-          autoScrollBodyContent={true}
-          onRequestClose={this.handleClose}>
+    return (<Paper style={{minWidth: 300, flexGrow: 1, margin: 5}}>
+      <div>
+        <div>Skill Group Points: { skillGroupPoints }</div>
+      </div>
+      <h3 style={styles.header}>Skill Groups</h3>
+      <CharacterSkillGroups skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ moreThanZeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup } addSpecializationFn={addSpecialization} removeSpecializationFn={removeSpecialization}/>
 
-          <h2>Bonus Skills</h2>
-          <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
-          <h2>Skill List</h2>
-          <input type="text" onChange={ filterSkills } />
-          <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup }/>
-        </Dialog>
+      <Dialog actions={groupActions}
+        modal={false}
+        open={this.state.groupOpen}
+        autoScrollBodyContent={true}
+        onRequestClose={this.handleGroupClose}>
 
-        <RaisedButton style={styles.button} label="Add" primary={true} onTouchTap={this.handleOpen} />
-      </Paper>)
+        <h2>Bonus Skills</h2>
+        <AllSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ bonusSkillsFilter } modifyFn={ modifyBonusSkill } modifySkillGroupFn={ modifySkillGroup } />
+        <h2>Skill List</h2>
+        <input type="text" onChange={ filterSkills } />
+        <AllGroupSkills skills={ individualSkills } skillGroups={ skillGroups } editable={true} filterFn={ zeroPoints } modifyFn={ modifySkill } modifySkillGroupFn={ modifySkillGroup }/>
+      </Dialog>
+      <RaisedButton style={styles.button} label="Add" primary={true} onTouchTap={this.handleGroupOpen} />
+    </Paper>)
   }
 }
 

@@ -5,6 +5,7 @@ import { characterSheetSelector } from '../../selectors/characterSelectors'
 import CharacterSheetAttributes from './CharacterSheetAttributes'
 import Qualities from '../Qualities'
 import Skills from '../Skills'
+import SkillGroupPicker from '../Skills/SkillGroupsPicker'
 import Spells from '../Spells'
 import Weapons from '../Weapons'
 import AdeptPowers from '../AdeptPowers'
@@ -46,6 +47,7 @@ export class CharacterSheet extends React.Component {
             { magicSection }
             <Ware />
             <Skills />
+            <SkillGroupPicker />
           </div>
         </div>)
     }

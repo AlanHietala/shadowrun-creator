@@ -1,9 +1,8 @@
 import React from 'react'
 import CharacterItems from './CharacterItems'
 import Dialog from 'material-ui/Dialog'
+import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
-import ContentAdd from 'material-ui/svg-icons/content/add'
-import FloatingActionButton from 'material-ui/FloatingActionButton'
 import AllItemsList from './AllItemsList'
 import PropTypes from 'prop-types'
 
@@ -60,13 +59,15 @@ class CharacterSheetSection extends React.Component {
         onRequestClose={this.handleClose}>
         <AllItemsList title={sectionTitle} allItems={allItems} handleAddItem={handleAddItem} ItemComponent={ItemComponent}/>
       </Dialog>
-      <FloatingActionButton onTouchTap={this.handleOpen}>
-        <ContentAdd />
-      </FloatingActionButton>
+      <RaisedButton style={styles.button} label="Add" primary={true} onTouchTap={this.handleOpen} />
     </div>)
   }
 }
-
+const styles = {
+  button: {
+    marginTop: 10,
+  },
+}
 CharacterSheetSection.propTypes = {
   sectionTitle: PropTypes.string,
   characterSheetItems: PropTypes.array,

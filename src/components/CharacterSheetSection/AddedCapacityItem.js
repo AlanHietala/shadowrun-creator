@@ -40,6 +40,7 @@ const AddedCapacityItem = (
       </div>
     )
   })
+  const gradeSection = item.grade ? <WareGradeSelector value={item.grade} onWareGradeChange={handleWareGradeChange} /> : null
   const itemRatingSection = item.ratings ?
     <Rating ratings={item.ratings} onRatingChange={handleRatingChange} value={item.rating} /> :
     null
@@ -49,10 +50,9 @@ const AddedCapacityItem = (
       showExpandableButton={true} />
     <CardText
       expandable={true}>
-      <WareGradeSelector value={item.grade} onWareGradeChange={handleWareGradeChange} />
+      {gradeSection}
       {itemRatingSection}
       <Subheader>Options: [{item.remainingCapacity}]</Subheader>
-
       {checkBoxes}
       <CardActions>
         <FlatButton label="Remove" onTouchTap={handleRemoveItem}/>

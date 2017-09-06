@@ -18,7 +18,7 @@ class WarePicker extends React.Component {
   render() {
     const {characterWare, handleAddWare, handleRemoveWare, handleWareGradeChange, handleToggleCapacityOption, handleRatingChange, handleChangeCapacityRating} = this.props
     return (<Paper style={{minWidth:300, flexGrow: 1, margin: 5}}>
-      <h2>Ware</h2>
+      <h3 style={styles.header}>Ware</h3>
       <CharacterSheetSection
         sectionTitle={'ware'}
         characterSheetItems={characterWare}
@@ -35,6 +35,12 @@ class WarePicker extends React.Component {
     </Paper>)
   }
 
+}
+
+const styles = {
+  header: {
+    margin: 10,
+  },
 }
 
 const mapStateToProps = (state) => {

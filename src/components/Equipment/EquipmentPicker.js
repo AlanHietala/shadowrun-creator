@@ -15,7 +15,7 @@ class EquipmentPicker extends React.Component {
   render() {
     const { characterEquipment, handleAddEquipment, handleChangeCapacityRating, handleToggleCapacityOption, handleChangeCount, handleRatingChange, handleRemoveEquipment} = this.props
     return(<Paper style={{minWidth: 300, flexGrow: 1, margin: 5}}>
-      <h2>Equipment</h2>
+      <h3 style={styles.header}>Equipment</h3>
       <CharacterSheetSection
         sectionTitle={'Equipment'}
         characterSheetItems={characterEquipment}
@@ -49,6 +49,12 @@ const mapDispatchToProps = (dispatch) => {
     handleToggleCapacityOption: (index, capacityIndex) => dispatch(toggleItemCapacityOption(index, capacityIndex, EQUIPMENT)),
     handleChangeCapacityRating: (index, capacityIndex, ratingIndex) => dispatch(changeItemCapacityRating(index, capacityIndex, ratingIndex, EQUIPMENT)),
   }
+}
+
+const styles = {
+  header: {
+    margin: 10,
+  },
 }
 
 EquipmentPicker.propTypes = {
