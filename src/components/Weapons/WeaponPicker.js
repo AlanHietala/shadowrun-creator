@@ -15,7 +15,7 @@ class EquipmentPicker extends React.Component {
   render() {
     const { handleSelectAccessory, characterWeapons, handleAddWeapon, handleRemoveWeapon} = this.props
     return(<Paper style={{minWidth: 300, flexGrow: 1, margin: 5}}>
-      <h2>Weapons</h2>
+      <h3 style={styles.header}>Weapons</h3>
       <CharacterSheetSection
         sectionTitle={'Equipment'}
         characterSheetItems={characterWeapons}
@@ -28,6 +28,12 @@ class EquipmentPicker extends React.Component {
       />
     </Paper>)
   }
+}
+
+const styles = {
+  header: {
+    margin: 10,
+  },
 }
 
 const mapStateToProps = (state) => {

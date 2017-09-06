@@ -42,8 +42,8 @@ const CharacterSheetAttributesView = ({attributes}) => {
     <AttributeItem title="M lim" value={mentalLimit} />
     <AttributeItem title="S lim" value={socialLimit} />
     <AttributeItem title="Pbox" value={physicalBoxes} />
-    <AttributeItem title="Pbox" value={stunBoxes} />
-    <AttributeItem title="Pbox" value={overflowBoxes} />
+    <AttributeItem title="Sbox" value={stunBoxes} />
+    <AttributeItem title="Obox" value={overflowBoxes} />
   </div>)
 }
 const styles = {
