@@ -6,42 +6,55 @@ export default (state, action) => {
 
   const valueToAdd = action.type === creationOptionActionTypes.ADD_ATTRIBUTE ? 1 : -1
   const attributeToSet = state.attributes[action.payload.key]
-  const { creation } = state
   const isSpecialAttribute = action.payload.isSpecialAttribute
-  const availableAttributePoints = isSpecialAttribute ?
-    creation.availableSpecialAttributePoints : creation.availableAttributePoints
+  const availableAttributePoints = getAvailableAttributePoints(isSpecialAttribute, state)
   const newAttributeValue = attributeToSet.value + valueToAdd
   const newAvailableAttributePoints = availableAttributePoints - valueToAdd
   let newState = state
   if(isAttributeChangeValid(state, attributeToSet, newAttributeValue, newAvailableAttributePoints, action.payload.key)) {
     newState = setAttribute(state, action, attributeToSet, newAttributeValue)
-    newState = addAttributePoint(-valueToAdd, newState, isSpecialAttribute)
   }
 
   return newState
 }
 
-const addAttributePoint = (pointsToAdd, state, isSpecialAttribute) => {
-  let creation = null
+const getAvailableAttributePoints = (isSpecialAttribute, state)  => {
+  const { creation } = state
+  const { body, agility, reaction, strength, willpower, logic, intuition, charisma, edge, magic } = state.attributes
 
-  if(isSpecialAttribute) {
-
-    creation = {
-      ...state.creation,
-      availableSpecialAttributePoints: state.creation.availableSpecialAttributePoints + pointsToAdd,
+  if (isSpecialAttribute) {
+    let usedSpecialPoints = edge.value
+    if (magic) {
+      usedSpecialPoints = usedSpecialPoints + magic.value
     }
+    return creation.availableSpecialAttributePoints - usedSpecialPoints
   } else {
-    creation = {
-      ...state.creation,
-      availableAttributePoints: state.creation.availableAttributePoints + pointsToAdd,
-    }
-  }
-
-  return {
-    ...state,
-    creation,
+    const usedPoints = body.value + agility.value + reaction.value + strength.value + willpower.value + logic.value + intuition.value + charisma.value
+    return creation.availableAttributePoints - usedPoints
   }
 }
+
+// const addAttributePoint = (pointsToAdd, state, isSpecialAttribute) => {
+//   let creation = null
+//
+//   if(isSpecialAttribute) {
+//
+//     creation = {
+//       ...state.creation,
+//       availableSpecialAttributePoints: state.creation.availableSpecialAttributePoints + pointsToAdd,
+//     }
+//   } else {
+//     creation = {
+//       ...state.creation,
+//       availableAttributePoints: state.creation.availableAttributePoints + pointsToAdd,
+//     }
+//   }
+//
+//   return {
+//     ...state,
+//     creation,
+//   }
+// }
 
 const setAttribute = (state, action, attributeToSet, value) => {
   let newState = {
@@ -74,8 +87,8 @@ const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAva
   }, 0)
 
 
-  const changeWithinRange = attributeToSet.minValue <= newAttributeValue
-  && newAttributeValue <= attributeToSet.maxValue + attributeToSetMaxMod
+  const changeWithinRange = newAttributeValue >= 0
+  && newAttributeValue + attributeToSet.minValue <= attributeToSet.maxValue + attributeToSetMaxMod
   && newAvailableAttributePoints >= 0
 
   if(changeWithinRange) {
@@ -90,7 +103,7 @@ const isAttributeChangeValid = (state, attributeToSet, newAttributeValue, newAva
 }
 
 const isAttributeBeingIncreasedToNaturalLimit = (attributeToSet, newAttributeValue) => {
-  return attributeToSet.maxValue === newAttributeValue
+  return attributeToSet.maxValue === newAttributeValue + attributeToSet.minValue
 }
 
 const isAnyAttributeAtNaturalLimit = (state) => {
@@ -98,7 +111,7 @@ const isAnyAttributeAtNaturalLimit = (state) => {
   for(let key in state.attributes) {
     const attribute = state.attributes[key]
     if(attribute.key !== 'essence' && attribute.key !== 'racial') {
-      if(attribute.maxValue === attribute.value) {
+      if(attribute.maxValue === attribute.value + attribute.minValue) {
         foundAttributeAtNaturalLimit = true
         break
       }
