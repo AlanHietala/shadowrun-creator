@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { availableSpecialAttributePointSelector, availableAttributePointSelector } from '../../selectors/characterSelectors'
 import {addAttribute, subtractAttribute} from '../../actions/attributeActions'
 import FlatButton from 'material-ui/FlatButton'
 import PropTypes from 'prop-types'
@@ -12,7 +13,7 @@ const getAttributeCreator = (addAttributeFn, subtractAttributeFn) => (attribute)
       event.preventDefault()
       subtractAttributeFn(attribute)
     }}/>
-    {attribute.value}
+    {attribute.value + attribute.minValue}
     <FlatButton label="+"
       onTouchTap={(event) => {
         event.preventDefault()
@@ -58,7 +59,8 @@ class AttributesComponent extends React.Component {
 const mapStateToProps = (state) => {
   let props = {}
   if(state.character.attributes) {
-    const {availableAttributePoints, availableSpecialAttributePoints} = state.character.creation
+    const availableSpecialAttributePoints = availableSpecialAttributePointSelector(state)
+    const availableAttributePoints = availableAttributePointSelector(state)
     const availablePointsSum = availableSpecialAttributePoints + availableAttributePoints
     props = {
       ...state.character.attributes,

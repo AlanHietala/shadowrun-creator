@@ -18,6 +18,23 @@ export const resourcesSelector = state => {
   return spentResources
 }
 
+export const availableAttributePointSelector = state => {
+  const { body, agility, reaction, strength, willpower, logic, intuition, charisma } = state.character.attributes
+  const usedPoints = body.value + agility.value + reaction.value + strength.value + willpower.value + logic.value + intuition.value + charisma.value
+  return state.character.creation.availableAttributePoints - usedPoints
+}
+
+export const availableSpecialAttributePointSelector = state => {
+  const { edge, magic } = state.character.attributes
+  let usedPoints = edge.value
+  if (magic) {
+    usedPoints = usedPoints + magic
+  }
+
+  return state.character.creation.availableSpecialAttributePoints - usedPoints
+}
+
+
 export const strengthSelector = state => computeAttribute(state, attributeTypes.STRENGTH, modTypes.STRENGTH_MOD)
 export const agilitySelector = state => computeAttribute(state, attributeTypes.AGILITY, modTypes.AGILITY_MOD)
 export const willpowerSelector = state => computeAttribute(state, attributeTypes.WILLPOWER, modTypes.WILLPOWER_MOD)
