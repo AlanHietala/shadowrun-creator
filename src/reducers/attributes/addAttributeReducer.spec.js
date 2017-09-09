@@ -6,12 +6,46 @@ describe('Add Attribute Reducer', function () {
   it('should increase an attribute referenced by key if the type is ADD_ATTRIBUTE', function () {
     const initialState = {
       creation: {
-        availableAttributePoints: 5,
+        availableAttributePoints: 100,
         availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:1,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -20,12 +54,46 @@ describe('Add Attribute Reducer', function () {
     }
     const stateAfter = {
       creation: {
-        availableAttributePoints: 4,
+        availableAttributePoints: 100,
         availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:2,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -45,12 +113,46 @@ describe('Add Attribute Reducer', function () {
   it('should decrease available creation attribute points by one when an SUBTRACT_ATTRIBUTE is received', function () {
     const initialState = {
       creation: {
-        availableAttributePoints: 5,
+        availableAttributePoints: 200,
         availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:2,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -59,12 +161,46 @@ describe('Add Attribute Reducer', function () {
     }
     const stateAfter = {
       creation: {
-        availableAttributePoints: 6,
+        availableAttributePoints: 200,
         availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:1,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -84,12 +220,46 @@ describe('Add Attribute Reducer', function () {
   it('should not make a change if there are no attribute points available', function () {
     const initialState = {
       creation: {
-        availableAttributePoints: 0,
+        availableAttributePoints: 5,
         availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:2,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -98,12 +268,46 @@ describe('Add Attribute Reducer', function () {
     }
     const stateAfter = {
       creation: {
-        availableAttributePoints:0,
+        availableAttributePoints: 5,
         availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:2,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -130,6 +334,40 @@ describe('Add Attribute Reducer', function () {
           value:6,
           minValue:1,
           maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
+          minValue:1,
+          maxValue:6,
         },
       },
       qualities: [],
@@ -142,6 +380,40 @@ describe('Add Attribute Reducer', function () {
       attributes: {
         strength: {
           value:6,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -160,12 +432,46 @@ describe('Add Attribute Reducer', function () {
   it('should make a change if the attribute would bring it over the maximum allowed natural value but there is a mod', function () {
     const initialState = {
       creation: {
-        availableAttributePoints: 4,
+        availableAttributePoints: 100,
         availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
           value:6,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -181,12 +487,46 @@ describe('Add Attribute Reducer', function () {
     }
     const stateAfter = {
       creation: {
-        availableAttributePoints: 3,
+        availableAttributePoints: 100,
         availableSpecialAttributePoints: 2,
       },
       attributes: {
         strength: {
-          value:7,
+          value:6,
+          minValue:1,
+          maxValue:6,
+        },agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -218,6 +558,41 @@ describe('Add Attribute Reducer', function () {
           minValue:1,
           maxValue:6,
         },
+        agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
       },
       qualities: [],
     }
@@ -229,6 +604,41 @@ describe('Add Attribute Reducer', function () {
       attributes: {
         strength: {
           value:1,
+          minValue:1,
+          maxValue:6,
+        },
+        agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        intuition: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
@@ -252,12 +662,42 @@ describe('Add Attribute Reducer', function () {
       },
       attributes: {
         strength: {
-          value:5,
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
         intuition: {
-          value:6,
+          value:5,
           minValue:1,
           maxValue:6,
         },
@@ -271,12 +711,42 @@ describe('Add Attribute Reducer', function () {
       },
       attributes: {
         strength: {
-          value:5,
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        agility: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        willpower: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        charisma: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        reaction: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        logic: {
+          value:4,
+          minValue:1,
+          maxValue:6,
+        },
+        body: {
+          value:4,
           minValue:1,
           maxValue:6,
         },
         intuition: {
-          value:6,
+          value:5,
           minValue:1,
           maxValue:6,
         },
