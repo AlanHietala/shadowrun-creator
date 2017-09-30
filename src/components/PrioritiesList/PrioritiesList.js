@@ -2,10 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Priority from '../Priority/Priority'
+import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card'
 import * as priorityActionCreators from '../../actions/priorityActions'
 import priorityStats from '../../constants/statsForPriorities'
 import RaisedButton from 'material-ui/RaisedButton'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 
@@ -22,23 +22,29 @@ class PrioritiesListComponent extends React.Component {
         />)
       })
     return (
-      <div>
-        <h2>Priorities</h2>
-        {insertItems}
-
-        <RaisedButton
-          label="Save"
-          primary={true}
-          disabled={!this.props.isValid}
-          containerElement={<Link to={'/creation/metatype'} />}
-          onTouchTap={() => {
-            onSaveClick(this.props.metatypePriority,
-              this.props.attributesPriority,
-              this.props.magicOrResonancePriority,
-              this.props.resourcesPriority,
-              this.props.skillsPriority)
-          }} />
-      </div>
+      <Card>
+        <CardHeader
+          title={'Priorities'}
+          actAsExpander={true}
+          showExpandableButton={true} />
+        <CardText
+          expandable={true}>
+          {insertItems}
+          <CardActions>
+            <RaisedButton
+              label="Save"
+              primary={true}
+              disabled={!this.props.isValid}
+              onTouchTap={() => {
+                onSaveClick(this.props.metatypePriority,
+                  this.props.attributesPriority,
+                  this.props.magicOrResonancePriority,
+                  this.props.resourcesPriority,
+                  this.props.skillsPriority)
+              }} />
+          </CardActions>
+        </CardText>
+      </Card>
     )
   }
 }

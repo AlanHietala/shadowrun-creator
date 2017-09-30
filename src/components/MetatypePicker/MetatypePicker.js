@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as metatypeActionCreators from '../../actions/metatypeActions'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
+import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -21,19 +22,28 @@ class MetatypePickerComponent extends React.Component {
           label={`${metatype.metatype} (${metatype.specialAttributePoints})`}
         />)
       })
-    return (<div>
-      <h2>Metatype</h2>
-      <RadioButtonGroup name="metatypegroup" onChange={(event, value) => {
-        selectMetatype(value)
-      }}>
-        {metatypes}
-      </RadioButtonGroup>
-      <RaisedButton
-        label="Save"
-        primary={true}
-        containerElement={<Link to={nextLink} />}
-      />
-    </div>)
+    return (
+      <Card>
+        <CardHeader
+          title={'Metatypes'}
+          actAsExpander={true}
+          showExpandableButton={true} />
+        <CardText
+          expandable={true}>
+          <RadioButtonGroup name="metatypegroup" onChange={(event, value) => {
+            selectMetatype(value)
+          }}>
+            {metatypes}
+          </RadioButtonGroup>
+          <CardActions>
+            <RaisedButton
+              label="Save"
+              primary={true}
+              containerElement={<Link to={nextLink} />}
+            />
+          </CardActions>
+        </CardText>
+      </Card>)
   }
 }
 

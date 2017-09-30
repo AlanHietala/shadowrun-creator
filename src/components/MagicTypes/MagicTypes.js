@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {selectMagicType} from '../../actions/magicTypeActions'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
-import RaisedButton from 'material-ui/RaisedButton'
-import { Link } from 'react-router-dom'
+import { Card, CardHeader, CardText } from 'material-ui/Card'
 import PropTypes from 'prop-types'
 
 class MagicTypesComponent extends React.Component {
@@ -18,21 +17,22 @@ class MagicTypesComponent extends React.Component {
 
         })
       return (
-        <div>
-          <h2>Magic Class</h2>
-          <RadioButtonGroup
-            name="magicgroup"
-            onChange={(event, value) => {
-              selectMagicType(value)
-            }}>
-            {magicTypeComponents}
-          </RadioButtonGroup>
-          <RaisedButton
-            label="Save"
-            primary={true}
-            containerElement={<Link to={'/sheet'} />}
-          />
-        </div>)
+        <Card>
+          <CardHeader
+            title={'magic types'}
+            actAsExpander={true}
+            showExpandableButton={true} />
+          <CardText
+            expandable={true}>
+            <RadioButtonGroup
+              name="magicgroup"
+              onChange={(event, value) => {
+                selectMagicType(value)
+              }}>
+              {magicTypeComponents}
+            </RadioButtonGroup>
+          </CardText>
+        </Card>)
     } else {
       return (<div>{'Can\'t select magic yet'}</div>)
     }
