@@ -7,9 +7,13 @@ let component = ReasonReact.statelessComponent "ArmorItem";
 /* underscore before names indicate unused variables. We name them for clarity */
 let make ::item _children => {
   ...component,
-  render: fun _self => <div>(ReasonReact.stringToElement item.name)</div>
+  render: fun _self => <div>(ReasonReact.stringToElement item##name)</div>
 };
 
-let default = ReasonReact.wrapReasonForJs
+let jsComponent = ReasonReact.wrapReasonForJs
   ::component
-  (fun jsProps => make item::jsProps##item [||]);
+  (fun jsProps =>
+    make
+      item::jsProps##item
+      [||]
+    );

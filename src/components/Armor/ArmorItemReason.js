@@ -2,25 +2,23 @@
 'use strict';
 
 var React       = require("react");
-var ReasonReact = require("reason-react/lib/js/src/reasonReact.js");
+var ReasonReact = require("reason-react/src/reasonReact.js");
 
-var component = ReasonReact.statelessComponent("ArmorItemReason");
+var component = ReasonReact.statelessComponent("ArmorItem");
 
 function make(item, _) {
   var newrecord = component.slice();
   newrecord[/* render */9] = (function () {
-      return React.createElement("div", undefined, item[/* name */0]);
+      return React.createElement("div", undefined, item.name);
     });
   return newrecord;
 }
 
-var $$default = ReasonReact.wrapReasonForJs(component, (function (jsProps) {
+var jsComponent = ReasonReact.wrapReasonForJs(component, (function (jsProps) {
         return make(jsProps.item, /* array */[]);
       }));
 
-exports.component = component;
-exports.make      = make;
-exports.$$default = $$default;
-exports.default   = $$default;
-exports.__esModule= true;
+exports.component   = component;
+exports.make        = make;
+exports.jsComponent = jsComponent;
 /* component Not a pure module */
