@@ -4,11 +4,13 @@ import armorList from '../../constants/armor/armor'
 import {changeItemCapacityRating, changeCount, addItem, removeItem, changeItemRating, toggleItemCapacityOption } from '../../actions/itemActions'
 import { characterArmorSelector } from '../../selectors/itemSelectors'
 import CharacterSheetSection from '../CharacterSheetSection'
-import ArmorItem from './ArmorItem'
 import AddedItem from '../CharacterSheetSection/AddedItem'
 import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
 import { ARMOR } from '../../constants/itemTypes'
+
+const ArmorItem = require('./ArmorItemReason.js').jsComponent
+
 
 class ArmorPicker extends React.Component {
 

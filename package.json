@@ -39,6 +39,7 @@
     "react-router-dom": "^4.1.2",
     "react-router-redux": "^4.0.8",
     "react-tap-event-plugin": "^2.0.1",
+    "reason-react": "^0.2.4",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-devtools": "^3.4.0",
@@ -60,6 +61,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "deploy": "mv build/index.html build/200.html && surge --project ./build --domain shadowruncreator.surge.sh",
+    "buckle:up": "bsb -make-world -w",
+    "buckle:clean": "bsb -clean-world",
     "lint": "eslint src"
   },
   "devDependencies": {
