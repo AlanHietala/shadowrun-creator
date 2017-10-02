@@ -1141,12 +1141,19 @@ babel-register@^6.24.1, babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.23.0, babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+babel-runtime@6.23.0, babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
+
+babel-runtime@^6.26.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
+  dependencies:
+    core-js "^2.4.0"
+    regenerator-runtime "^0.11.0"
 
 babel-template@^6.16.0, babel-template@^6.24.1, babel-template@^6.25.0, babel-template@^6.26.0:
   version "6.26.0"
@@ -1392,9 +1399,16 @@ browserslist@^2.1.2, browserslist@^2.1.3:
     caniuse-lite "^1.0.30000718"
     electron-to-chromium "^1.3.18"
 
-"bs-fetch@github:buckletypes/bs-fetch":
+bs-fetch@BuckleTypes/bs-fetch:
   version "0.1.1"
-  resolved "https://codeload.github.com/buckletypes/bs-fetch/tar.gz/c84f7ea54c6f4c80e5a1a9e307c886eb583f2ecc"
+  resolved "https://codeload.github.com/BuckleTypes/bs-fetch/tar.gz/c84f7ea54c6f4c80e5a1a9e307c886eb583f2ecc"
+
+bs-loader@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/bs-loader/-/bs-loader-1.8.1.tgz#9ab40f1a6cef5ad78eba555f675b44bec00e20cb"
+  dependencies:
+    loader-utils "^1.1.0"
+    read-bsconfig "^1.0.1"
 
 bs-platform@^1.9.3:
   version "1.9.3"
@@ -5348,7 +5362,7 @@ prompt@~0.2.14:
     utile "0.2.x"
     winston "0.8.x"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5590,6 +5604,12 @@ read-all-stream@^3.0.0:
   dependencies:
     pinkie-promise "^2.0.0"
     readable-stream "^2.0.0"
+
+read-bsconfig@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/read-bsconfig/-/read-bsconfig-1.0.2.tgz#8f3cec0b1c80465de1d96d32b328174243804836"
+  dependencies:
+    json5 "^0.5.1"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
