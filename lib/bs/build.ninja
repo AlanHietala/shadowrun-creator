@@ -1,0 +1,31 @@
+bs_package_flags = -bs-package-name shadowrun-creator-react
+src_root_dir = /Users/alanhietala/Documents/personal-projects/shadowrun-creator-react
+bsc = /Users/alanhietala/Documents/personal-projects/shadowrun-creator-react/node_modules/bs-platform/bin/bsc.exe
+bsdep = /Users/alanhietala/Documents/personal-projects/shadowrun-creator-react/node_modules/bs-platform/bin/bsb_helper.exe
+warnings = -w -40+6+7+27+32..39+44+45
+bsc_flags = -nostdlib -I '/Users/alanhietala/Documents/personal-projects/shadowrun-creator-react/node_modules/bs-platform/lib/ocaml' -no-alias-deps -color always
+ppx_flags = 
+bs_package_includes = -I /Users/alanhietala/Documents/personal-projects/shadowrun-creator-react/node_modules/reason-react/lib/ocaml -I /Users/alanhietala/Documents/personal-projects/shadowrun-creator-react/node_modules/reason-js/lib/ocaml
+bs_package_dev_includes = 
+refmt = /Users/alanhietala/Documents/personal-projects/shadowrun-creator-react/node_modules/bs-platform/bin/refmt.exe
+reason_react_jsx = -ppx '/Users/alanhietala/Documents/personal-projects/shadowrun-creator-react/node_modules/bs-platform/bin/reactjs_jsx_ppx_2.exe'
+refmt_flags = --print binary
+namespace = 
+bsb_dir_group = 0
+bsc_lib_includes = -I src/actions -I src/components/AdeptPowers -I src/components/AppLayout -I src/components/Armor -I src/components/Attributes -I src/components/CharacterSheet -I src/components/CharacterSheetSection -I src/components/Count -I src/components/Creation -I src/components/CreationSummary -I src/components/Equipment -I src/components/MagicTypes -I src/components/MetatypePicker -I src/components/PrioritiesList -I src/components/Priority -I src/components/PriorityInfo -I src/components/Qualities -I src/components/Rating -I src/components/Skills -I src/components/Spells -I src/components/Ware -I src/components/WareGradeSelector -I src/components/Weapons -I src/components -I src/constants/armor -I src/constants/equipment -I src/constants/ware/cybereyes -I src/constants/ware -I src/constants/weapons/firearms/accessories -I src/constants/weapons/firearms -I src/constants/weapons -I src/constants -I src/reducers/adept-powers -I src/reducers/attributes -I src/reducers/character -I src/reducers/items -I src/reducers/magic-or-resonance -I src/reducers/metatype -I src/reducers/priority -I src/reducers/quality -I src/reducers/skills -I src/reducers/spells -I src/reducers/stats -I src/reducers/ware -I src/reducers/weapons -I src/reducers -I src/selectors -I src/store -I src
+rule build_ast_and_module_sets_from_re
+  command = ${bsc} -pp "${refmt} ${refmt_flags}" ${reason_react_jsx}  ${ppx_flags} ${warnings} ${bsc_flags} -c -o ${out} -bs-syntax-only -bs-binary-ast -impl ${in}
+  description = [34mBuilding[39m [2m${out}[22m
+build src/components/Armor/ArmorItemReason.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/components/Armor/ArmorItemReason.re
+rule build_deps
+  command = ${bsdep} ${namespace} -g ${bsb_dir_group} -MD ${in}
+  description = [34mBuilding[39m [2m${out}[22m
+build src/components/Armor/ArmorItemReason.mlast.d : build_deps src/components/Armor/ArmorItemReason.mlast
+rule build_cmj_cmi
+  command = ${bsc} ${bs_package_flags} -bs-assume-no-mli -bs-no-builtin-ppx-ml -bs-no-implicit-include ${bs_package_includes} ${bsc_lib_includes} ${bsc_extra_includes} ${warnings} ${bsc_flags} -o ${out} -c  ${in} $postbuild
+  depfile = ${in}.d
+  description = [34mBuilding[39m [2m${out}[22m
+build src/components/Armor/ArmorItemReason.cmj |  $src_root_dir/src/components/Armor/ArmorItemReason.js src/components/Armor/ArmorItemReason.cmi : build_cmj_cmi src/components/Armor/ArmorItemReason.mlast
+  bsc_flags = $bsc_flags -bs-re-error -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:src/components/Armor
+build build.ninja : phony  ||  src/components/Armor/ArmorItemReason.mlast.d

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { characterSheetSelector } from '../../selectors/characterSelectors'
 import CharacterSheetAttributes from './CharacterSheetAttributes'
+import PrioritiesList from '../PrioritiesList'
+import MetatypePicker from '../MetatypePicker'
 import Qualities from '../Qualities'
 import Skills from '../Skills'
 import SkillGroupPicker from '../Skills/SkillGroupsPicker'
@@ -13,7 +15,7 @@ import Ware from '../Ware'
 import Equipment from '../Equipment'
 import Armor from '../Armor'
 import * as magicTypes from '../../constants/magicTypes'
-import {Link} from 'react-router-dom'
+import MagicTypes from '../MagicTypes'
 
 export class CharacterSheet extends React.Component {
   constructor(props) {
@@ -33,11 +35,18 @@ export class CharacterSheet extends React.Component {
   render() {
     const {characterSheet} = this.props
     if (!characterSheet) {
-      return (<div>{'please set your '}<Link to={'/creation/priority'}>{'priorities'}</Link></div>)
+
+      return (<div>
+        <PrioritiesList />
+        <MetatypePicker />
+      </div>)
     } else {
       const magicSection = this.getMagicSection(characterSheet.magicType)
       return (
         <div>
+          <PrioritiesList />
+          <MetatypePicker />
+          <MagicTypes />
           <CharacterSheetAttributes attributes={characterSheet} />
           <div style={styles.wrapper}>
             <Qualities />
