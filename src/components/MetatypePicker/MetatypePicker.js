@@ -3,17 +3,14 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as metatypeActionCreators from '../../actions/metatypeActions'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
-import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card'
-import RaisedButton from 'material-ui/RaisedButton'
-import { Link } from 'react-router-dom'
+import { Card, CardHeader, CardText } from 'material-ui/Card'
 import PropTypes from 'prop-types'
 
 
 class MetatypePickerComponent extends React.Component {
 
   render() {
-    const {hasMagic, selectMetatype, availableMetatypes} = this.props
-    const nextLink = hasMagic ? '/creation/magic' : '/sheet'
+    const { selectMetatype, availableMetatypes} = this.props
     const metatypes = availableMetatypes
       .map((metatype) => {
         return (<RadioButton
@@ -30,18 +27,13 @@ class MetatypePickerComponent extends React.Component {
           showExpandableButton={true} />
         <CardText
           expandable={true}>
-          <RadioButtonGroup name="metatypegroup" onChange={(event, value) => {
-            selectMetatype(value)
-          }}>
+          <RadioButtonGroup
+            name="metatypegroup"
+            onChange={(event, value) => {
+              selectMetatype(value)
+            }}>
             {metatypes}
           </RadioButtonGroup>
-          <CardActions>
-            <RaisedButton
-              label="Save"
-              primary={true}
-              containerElement={<Link to={nextLink} />}
-            />
-          </CardActions>
         </CardText>
       </Card>)
   }
