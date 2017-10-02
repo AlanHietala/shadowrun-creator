@@ -161,17 +161,28 @@ export const characterSheetSelector = (state) => {
   if (!state.character.attributes) {
     return null
   }
+  const {
+    strength,
+    agility,
+    willpower,
+    magic,
+    body,
+    reaction,
+    charisma,
+    intuition,
+    logic,
+  } = state.character.attributes
 
   const initialCharacterSheet = {
-    strength: {value: state.character.attributes.strength.value, modifiedBy: []},
-    agility: {value: state.character.attributes.agility.value, modifiedBy: []},
-    willpower: {value: state.character.attributes.willpower.value, modifiedBy: []},
-    magic: {value: state.character.attributes.magic ? state.character.attributes.magic.value : 0, modifiedBy: []},
-    body: {value: state.character.attributes.body.value, modifiedBy: []},
-    reaction: {value: state.character.attributes.reaction.value, modifiedBy: []},
-    charisma: {value: state.character.attributes.charisma.value, modifiedBy: []},
-    intuition: {value: state.character.attributes.intuition.value, modifiedBy: []},
-    logic: {value: state.character.attributes.logic.value, modifiedBy: []},
+    strength: {value: strength.minValue + strength.value, modifiedBy: []},
+    agility: {value: agility.minValue + agility.value, modifiedBy: []},
+    willpower: {value: willpower.minValue + willpower.value, modifiedBy: []},
+    magic: {value: magic ? magic.minValue + magic.value : 0, modifiedBy: []},
+    body: {value: body.minValue + body.value, modifiedBy: []},
+    reaction: {value: reaction.minValue + reaction.value, modifiedBy: []},
+    charisma: {value: charisma.minValue + charisma.value, modifiedBy: []},
+    intuition: {value: intuition.minValue + intuition.value, modifiedBy: []},
+    logic: {value: logic.minValue + logic.value, modifiedBy: []},
     essence: {value: state.character.attributes.essence.value, modifiedBy:[]},
     resources: {value: state.character.creation.availableResources, modifiedBy: []},
     initiativeDice: {value: 1, modifiedBy: []},

@@ -1443,13 +1443,13 @@ describe('AttributeSelector', function () {
     })
     it('should calculate limits at the end even if ware affects it', () => {
 
-      const expectedPhysicalLimit = 7
+      const expectedPhysicalLimit = 8
       expect(characterSheetSelector(state).physicalLimit).toBe(expectedPhysicalLimit)
     })
 
     it('should calculate the number of physical boxes', () => {
 
-      const expectedPhysicalBoxes = 10
+      const expectedPhysicalBoxes = 11
       expect(characterSheetSelector(state).physicalBoxes).toBe(expectedPhysicalBoxes)
     })
     it('should calculate the overflow with an augmentation', () => {
@@ -1467,7 +1467,7 @@ describe('AttributeSelector', function () {
 
         ],
       })
-      const expectedOverflow = 5
+      const expectedOverflow = 6
       expect(characterSheetSelector(state).overflowBoxes).toBe(expectedOverflow)
     })
   })
